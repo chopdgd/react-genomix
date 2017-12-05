@@ -1,4 +1,4 @@
-# ReactJS Genomix
+# ReactJS GenomiX
 
 [![npm version](https://badge.fury.io/js/react-genomix.svg)](https://badge.fury.io/js/react-genomix)
 
@@ -15,7 +15,7 @@ Core library for Nexus projects using ReactJS
 Clone repo
 
 ````
-git clone https://github.com/chopdgd/react-genomix.git
+yarn add react-genomix --dev
 ````
 
 Install dependencies
