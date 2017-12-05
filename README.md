@@ -1,5 +1,11 @@
 # ReactJS Genomix
 
+[![npm version](https://badge.fury.io/js/react-genomix.svg)](https://badge.fury.io/js/react-genomix)
+
+[![Build Status](https://travis-ci.org/chopdgd/react-genomix.svg?branch=develop)](https://travis-ci.org/chopdgd/react-genomix)
+
+[![codecov](https://codecov.io/gh/chopdgd/react-genomix/branch/develop/graph/badge.svg)](https://codecov.io/gh/chopdgd/react-genomix)
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/chopdgd/react-genomix.svg)](https://greenkeeper.io/)
 
 Core library for Nexus projects using ReactJS

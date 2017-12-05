@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,9 @@
   "homepage": "https://github.com/chopdgd/react-genomix#readme",
   "license": "MIT",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.17",
+    "@storybook/addon-links": "^3.2.17",
+    "@storybook/react": "^3.2.17",
     "autoprefixer": "7.2.1",
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
@@ -34,7 +39,7 @@
     "chalk": "2.3.0",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
-    "eslint": "3.19.0",
+    "eslint": "^4.12.1",
     "eslint-config-react-app": "^2.0.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
@@ -51,6 +56,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.9",
     "promise": "8.0.1",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.2.0",
@@ -72,7 +78,9 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
+      "src/**/*.{js,jsx}",
+      "!src/demo/*.{js,jsx}",
+      "!src/lib/index.js"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
