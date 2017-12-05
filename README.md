@@ -1,5 +1,7 @@
 # ReactJS Genomix
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chopdgd/react-genomix.svg)](https://greenkeeper.io/)
+
 Core library for Nexus projects using ReactJS
 
 ## Getting Started
