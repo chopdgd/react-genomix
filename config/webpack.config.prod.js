@@ -23,6 +23,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
+    alias: {
+      'LibSrc': paths.appLibSrc,
+      'LibIndex': paths.appLibIndexJs,
+      'Stylesheets': paths.appStylesheets,
+    },
   },
   module: {
     strictExportPresence: true,
@@ -133,7 +138,7 @@ module.exports = {
           // Make sure to add the new loader(s) before the "file" loader.
         ]
       }
-    ]    
+    ]
   },
   plugins: [
     // Minify the code.

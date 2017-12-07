@@ -56,4 +56,5 @@ module.exports = {
   appIndexJs: resolveApp('src/demo/index.js'),
   appLibIndexJs: resolveApp('src/lib/index.js'),
   appLibSrc: resolveApp('src/lib'),
+  appStylesheets: resolveApp('src/stylesheets'),
 };

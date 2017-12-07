@@ -1,12 +1,17 @@
-import React from 'react';
-import Example from '../lib';
-import { SecondExample } from '../lib';
+import React from 'react'
+
+// Demo Components
+import Example from './components/Example'
+import SecondExample from './components/SecondExample'
+import Buttons from './components/Buttons'
+
 
 const App = () => (
   <div>
     <Example />
     <SecondExample />
+    <Buttons />
   </div>
-);
+)
 
 export default App;
