@@ -10,6 +10,8 @@ import DownloadButton from 'LibSrc/atoms/buttons/DownloadButton';
 import FilterButton from 'LibSrc/atoms/buttons/FilterButton';
 import SearchButton from 'LibSrc/atoms/buttons/SearchButton';
 
+//Navbar
+import Navbar from 'LibSrc/organisms/Navbar';
 
 // Export Buttons
 export {
@@ -18,4 +20,9 @@ export {
   DownloadButton,
   FilterButton,
   SearchButton,
+};
+
+// Export Navbar
+export {
+  Navbar,
 };

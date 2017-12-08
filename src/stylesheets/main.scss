@@ -2,3 +2,8 @@
 
 /* Partials */
 @import "partials/buttons";
+@import "partials/navbar";
+
+body {
+  background: genomix-color(dark-snow);
+}

@@ -1,0 +1,22 @@
+.ui.borderless.menu.navbar {
+  border: none;
+}
+
+.menu.transition.visible.NavbarDropdownMenu {
+  margin-top: 20px !important;
+}
+
+.ui.menu .item {
+  color: genomix-color(silver);
+  font: bold;
+}
+.ui.menu .item:hover {
+  color: genomix-color(dark-grey);
+}
+.ui.menu .active.item {
+    background: none;
+    color: genomix-color(light-blue)
+}
+.ui.menu .active.item:hover {
+    background: none;
+}

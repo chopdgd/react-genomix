@@ -10,6 +10,16 @@ $brand-green: #91A01E;
 $brand-brown: #786452;
 $brand-white: #FFF;
 
+$brand-black: #1F2D3D;
+$brand-steel: #273444;
+$brand-slate: #3C4858;
+$brand-silver: #8492A6;
+
+$brand-light-smoke: #E0E6ED;
+$brand-dark-smoke: #D3DCE6;
+$brand-light-snow: #F9FAFC;
+$brand-dark-snow: #EFF2F7;
+
 
 // GenomiX color theme
 
@@ -23,6 +33,16 @@ $genomix-colors: (
   green: $brand-green,
   brown: $brand-brown,
   white: $brand-white,
+
+  black: $brand-black,
+  steel: $brand-steel,
+  slate: $brand-slate,
+  silver: $brand-silver,
+
+  light-smoke: $brand-light-smoke,
+  dark-smoke: $brand-dark-smoke,
+  light-snow: $brand-light-snow,
+  dark-snow: $brand-dark-snow,
 
   // Access via theme
   base: $brand-white,

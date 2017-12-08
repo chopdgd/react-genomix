@@ -4,10 +4,12 @@ import React from 'react'
 import Example from './components/Example'
 import SecondExample from './components/SecondExample'
 import Buttons from './components/Buttons'
+import NavbarExample from './components/NavbarExample'
 
 
 const App = () => (
   <div>
+    <NavbarExample />
     <Example />
     <SecondExample />
     <Buttons />
