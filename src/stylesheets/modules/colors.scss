@@ -1,0 +1,87 @@
+// CHOP Brand guidelines
+// https://coolors.co/005587-ed1f7f-005587-58595b-a7a9ab
+// https://coolors.co/005587-ed1f7f-005587-91a01e-786452
+$brand-light-blue: #41B6E6;
+$brand-dark-blue: #005587;
+$brand-light-grey: #A7A9AB;
+$brand-dark-grey: #58595B;
+$brand-pink: #ED1F7F;
+$brand-green: #91A01E;
+$brand-brown: #786452;
+$brand-white: #FFFFFF;
+
+
+// Layout colors
+
+$foreground: #ADADAD;
+$background: #F9F9F9;
+
+// Action color theme
+
+$action-info: #1C77C3;  // Standard colors (dark/light): 276F86/A9D5DE
+$action-success: #2ECC40;  // Standard colors (dark/light): 2C662D/A3C293
+$action-warning: #FFE100;  // Standard colors (dark/light): 573A08/C9BA9B
+$action-error: #FF695E;  // Standard colors (dark/light): 9F3A38/E0B4B4
+
+
+// GenomiX color theme
+
+$genomix-colors: (
+  // Access via color name
+  'light-blue': $brand-light-blue,
+  'dark-blue': $brand-dark-blue,
+  'light-grey': $brand-light-grey,
+  'dark-grey': $brand-dark-grey,
+  'pink': $brand-pink,
+  'green': $brand-green,
+  'brown': $brand-brown,
+  'white': $brand-white,
+
+  // Access via theme
+  'base': $brand-white,
+  'primary': $brand-light-blue,
+  'accent': $brand-pink,
+  'secondary': $brand-dark-blue,
+  'tertiary': $brand-green,
+
+  'foreground': $foreground,
+  'background': $background,
+
+  // Access via action
+  'info': $action-info,
+  'success': $action-success,
+  'warning': $action-warning,
+  'error': $action-error,
+  'attention': $action-info,
+  'positive': $action-success,
+  'caution': $action-warning,
+  'negative': $action-error,
+);
+
+$color-interval: 10% !global;
+
+
+// Functions
+
+@function genomix-color($key: 'primary') {
+  @return map-get($genomix-colors, $key);
+}
+
+@function genomix-color-level($color-name: 'primary', $level: 0) {
+  $color: genomix-color($color-name);
+  $color-base: if($level < 0, black, white);
+
+  @return mix($color-base, $color, $level * $color-interval);
+}
+
+@function genomix-color-darken($color-name: 'primary', $amount: 0) {
+  $color: genomix-color($color-name);
+
+  @return darken($color, $amount);
+}
+
+@function genomix-color-lighten($color-name: 'primary', $amount: 0) {
+  $color: genomix-color($color-name);
+
+  @return lighten($color, $amount);
+}

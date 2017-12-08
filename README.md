@@ -15,7 +15,7 @@ Core library for Nexus projects using ReactJS
 Clone repo
 
 ````
-yarn add react-genomix --dev
+git clone https://github.com/chopdgd/react-genomix.git
 ````
 
 Install dependencies
@@ -29,20 +29,31 @@ Start development server
 Runs the demo app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Library files
+Start storybook server
+
+`npm storybook` or `yarn storybook`
+
+Runs the demo app in a storybook.
+Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+
+### Library files
 
 All library files are located inside `src/lib`  
 
-## Demo app
+### Demo app
 
 Is located inside `src/demo` directory, here you can test your library while developing
 
-## Testing
+### Testing
 
 `npm run test` or `yarn run test`
 
-## Build library
+### Build library
 
 `npm run build` or `yarn run build`
 
 Produces production version of library under the `build` folder.
+
+## Using in a project
+
+`npm install react-genomix` or `yarn add react-genomix`
