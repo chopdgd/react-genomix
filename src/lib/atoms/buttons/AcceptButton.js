@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'semantic-ui-react'
+import Button from './Button';
 
 
 const AcceptButton = ({ ...props }) => (
-  <Button { ...props } />
+  <Button
+    { ...props }
+  />
 )
 
 
@@ -19,7 +21,7 @@ AcceptButton.defaultProps = {
   content: 'Accept',
   icon: 'checkmark',
   inverted: true,
-  color: 'green',
+  color: 'positive',
 }
 
 export default AcceptButton

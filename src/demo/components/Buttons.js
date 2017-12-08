@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 
 import {
+  Button,
   AcceptButton,
   CancelButton,
   DownloadButton,
@@ -17,9 +18,11 @@ const Buttons = () => (
 
       <AcceptButton />
       <CancelButton />
-      <DownloadButton />
-      <FilterButton />
-      <SearchButton />
+      <Button content="Default" />
+      <DownloadButton color="secondary" inverted />
+      <FilterButton color="primary" />
+      <SearchButton color="pink" inverted />
+      <SearchButton color="light-grey" />
 
     </Grid.Column>
   </Grid>

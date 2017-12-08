@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'semantic-ui-react'
+import Button from './Button';
 
 
 const CancelButton = ({ ...props }) => (
-  <Button { ...props } />
+  <Button
+    { ...props }
+  />
 )
 
 
@@ -19,7 +21,7 @@ CancelButton.defaultProps = {
   content: 'Cancel',
   icon: 'cancel',
   inverted: true,
-  color: 'red',
+  color: 'negative',
 }
 
 export default CancelButton
