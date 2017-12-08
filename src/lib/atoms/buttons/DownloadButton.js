@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'semantic-ui-react'
-import cx from 'classnames'
+import Button from './Button';
 
 
 const DownloadButton = ({ ...props }) => (
   <Button
     { ...props }
-    className={cx(props.className, 'genomix')}
   />
 )
 
