@@ -40,6 +40,8 @@
     "classnames": "^2.2.5",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.12.1",
     "eslint-config-react-app": "^2.0.0",
     "eslint-loader": "1.9.0",
@@ -83,6 +85,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!src/demo/**.{js,jsx}",
+      "!src/lib/constants/**.{js,jsx}",
       "!src/lib/index.js"
     ],
     "setupFiles": [
@@ -103,8 +106,12 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/enzyme.js",
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "^LibSrc(.*)$": "<rootDir>/src/lib$1",
+      "^LibIndex(.*)$": "<rootDir>/src/lib/index",
+      "^Stylesheets(.*)$": "<rootDir>/src/stylesheets$1"
     },
     "moduleFileExtensions": [
       "web.js",

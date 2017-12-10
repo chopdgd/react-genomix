@@ -1,28 +1,34 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 
-import {
-  Button,
-  AcceptButton,
-  CancelButton,
-  DownloadButton,
-  FilterButton,
-  SearchButton,
-} from 'LibIndex'
+import * as GenomiX from 'LibIndex'
 
 
 const Buttons = () => (
   <Grid centered>
     <Grid.Column width={16} textAlign="center">
-      <h1>Buttons</h1>
 
-      <AcceptButton />
-      <CancelButton />
-      <Button content="Default" />
-      <DownloadButton color="secondary" inverted />
-      <FilterButton color="primary" />
-      <SearchButton color="pink" inverted />
-      <SearchButton color="light-grey" />
+      <Grid.Row>
+        <h1>Buttons</h1>
+        <GenomiX.Button content="Default" />
+        <GenomiX.AcceptButton />
+        <GenomiX.AddButton color="dark-blue" />
+        <GenomiX.CancelButton />
+        <GenomiX.DownloadButton color="action-info" />
+        <GenomiX.SearchButton color="action-warning" />
+        <GenomiX.UploadButton color="light-blue" />
+      </Grid.Row>
+
+      <Grid.Row>
+        <h1>Inverted Buttons</h1>
+        <GenomiX.Button content="Default" inverted />
+        <GenomiX.AcceptButton inverted />
+        <GenomiX.AddButton color="dark-blue" inverted />
+        <GenomiX.CancelButton inverted />
+        <GenomiX.DownloadButton color="action-info" inverted />
+        <GenomiX.SearchButton color="action-warning" inverted />
+        <GenomiX.UploadButton color="light-blue" inverted />
+      </Grid.Row>
 
     </Grid.Column>
   </Grid>
