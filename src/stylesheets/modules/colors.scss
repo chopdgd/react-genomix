@@ -48,17 +48,38 @@ $genomix-colors: (
   'background': $background,
 
   // Access via action
-  'info': $action-info,
-  'success': $action-success,
-  'warning': $action-warning,
-  'error': $action-error,
-  'attention': $action-info,
-  'positive': $action-success,
-  'caution': $action-warning,
-  'negative': $action-error,
+  'action-info': $action-info,
+  'action-success': $action-success,
+  'action-warning': $action-warning,
+  'action-error': $action-error,
+  'action-attention': $action-info,
+  'action-positive': $action-success,
+  'action-caution': $action-warning,
+  'action-negative': $action-error,
 );
 
 $color-interval: 10% !global;
+
+$button-and-icon-colors: (
+  'default',
+  'light-blue',
+  'dark-blue',
+  'light-grey',
+  'dark-grey',
+  'pink',
+  'green',
+  'primary',
+  'secondary',
+  'tertiary',
+  'action-success',
+  'action-positive',
+  'action-error',
+  'action-negative',
+  'action-info',
+  'action-attention',
+  'action-warning',
+  'action-caution',
+);
 
 
 // Functions

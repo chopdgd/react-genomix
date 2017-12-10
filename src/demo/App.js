@@ -4,6 +4,7 @@ import React from 'react'
 import Example from './components/Example'
 import SecondExample from './components/SecondExample'
 import Buttons from './components/Buttons'
+import Icons from './components/Icons'
 
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
     <Example />
     <SecondExample />
     <Buttons />
+    <Icons />
   </div>
 )
 

@@ -1,0 +1,11 @@
+@each $name in $button-and-icon-colors {
+  @if $name == default {
+    i.icon.genomix {
+      color: genomix-color('dark-grey') !important;
+    }
+  } @else {
+    i.icon.genomix.#{$name} {
+      color: genomix-color($name) !important;
+    }
+  }
+}
