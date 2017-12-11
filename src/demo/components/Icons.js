@@ -20,6 +20,7 @@ const Buttons = () => (
       <GenomiX.MaleIcon />
       <GenomiX.ManualIcon />
       <GenomiX.QuestionIcon color="dark-grey" />
+      <GenomiX.SaveIcon color="action-positive" />
       <GenomiX.SearchIcon color="green" />
       <GenomiX.UploadIcon />
       <GenomiX.WarningIcon />
