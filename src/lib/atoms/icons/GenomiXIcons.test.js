@@ -121,7 +121,7 @@ describe('Test SaveIcon', () => {
 
   it('SaveIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiXIcons.SaveIcon />);
-    expect(wrapper.props().details).toEqual({"action-positive", "icon": "save"});
+    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "save"});
   });
 })
 
