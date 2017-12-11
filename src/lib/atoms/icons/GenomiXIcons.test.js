@@ -113,6 +113,18 @@ describe('Test QuestionIcon', () => {
   });
 })
 
+describe('Test SaveIcon', () => {
+  it('SaveIcon renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<GenomiXIcons.SaveIcon />, div);
+  });
+
+  it('SaveIcon props are set correctly', () => {
+    const wrapper = shallow(<GenomiXIcons.SaveIcon />);
+    expect(wrapper.props().details).toEqual({"action-positive", "icon": "save"});
+  });
+})
+
 describe('Test SearchIcon', () => {
   it('SearchIcon renders without crashing', () => {
     const div = document.createElement('div');

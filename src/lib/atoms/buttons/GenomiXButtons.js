@@ -37,6 +37,14 @@ export const DownloadButton = ({ ...props }) => (
   />
 )
 
+export const SaveButton = ({ ...props }) => (
+  <Button
+    {...props}
+    content={get(props, 'content', 'Save')}
+    details={constants.Save}
+  />
+)
+
 export const SearchButton = ({ ...props }) => (
   <Button
     {...props}

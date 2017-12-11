@@ -10,6 +10,7 @@ import {
   AddButton,
   CancelButton,
   DownloadButton,
+  SaveButton,
   SearchButton,
   UploadButton,
 } from 'LibSrc/atoms/buttons/GenomiXButtons'
@@ -25,6 +26,7 @@ import {
   MaleIcon,
   ManualIcon,
   QuestionIcon,
+  SaveIcon,
   SearchIcon,
   UploadIcon,
   WarningIcon,
@@ -42,6 +44,7 @@ export {
   AddButton,
   CancelButton,
   DownloadButton,
+  SaveButton,
   SearchButton,
   UploadButton,
 }
@@ -58,6 +61,7 @@ export {
   MaleIcon,
   ManualIcon,
   QuestionIcon,
+  SaveIcon,
   SearchIcon,
   UploadIcon,
   WarningIcon,
