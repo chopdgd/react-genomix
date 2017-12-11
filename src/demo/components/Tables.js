@@ -1,8 +1,19 @@
 import React from 'react';
-import { Divider, Table, Grid } from 'semantic-ui-react';
+import { Divider, Table, Grid, Dropdown } from 'semantic-ui-react';
 
 import * as GenomiX from 'LibIndex';
-
+const options = [
+  {
+  'key': 1,
+  'label': 'option 1',
+  'value': 'option 1',
+  },
+  {
+  'key': 2,
+  'label': 'option 2',
+  'value': 'option 2',
+  }
+]
 
 const Tables = () => (
   <Grid padded centered>
@@ -16,13 +27,16 @@ const Tables = () => (
     </Grid.Row>
     <Grid.Row>
 
-      <Grid.Column width={6} textAlign="center">
+      <Grid.Column textAlign="center">
         <Table>
           <Table.Body>
             <Table.Row>
               <GenomiX.TableCell />
               <GenomiX.TextCell content="text cell info" />
-              <GenomiX.TextCell />
+              <GenomiX.ExternalLinkCell content="external link" url="http://www.google.com" />
+              <GenomiX.InternalLinkCell content="internal link" url="app/internal-link" />
+              <GenomiX.CheckboxCell />
+              <GenomiX.DropdownCell dropdown={<Dropdown options={options} selection />} />
             </Table.Row>
           </Table.Body>
         </Table>

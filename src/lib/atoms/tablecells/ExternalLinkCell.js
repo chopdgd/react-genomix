@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table } from 'semantic-ui-react';
+import { Table, Icon } from 'semantic-ui-react';
 import { omit, get } from 'lodash';
 
 const ExternalLinkCell = ({...props}) => {
@@ -8,11 +8,11 @@ const ExternalLinkCell = ({...props}) => {
   const content = get(props, 'content', 'missing data')
   const url = get(props, 'url', 'missing data')
   return (
-    <Table.Cell
-      {...cellProps}
-      content={content}
-      url={url}
-    />
+    <Table.Cell {...cellProps} >
+      <p>{content}&nbsp; 
+        <a href={url} ><Icon name="external" /></a>
+      </p>
+    </Table.Cell>
   );
 }
 
