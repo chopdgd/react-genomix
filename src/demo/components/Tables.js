@@ -29,9 +29,17 @@ const Tables = () => (
 
       <Grid.Column textAlign="center">
         <Table>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Text Cell</Table.HeaderCell>
+              <Table.HeaderCell>External Link Cell</Table.HeaderCell>
+              <Table.HeaderCell>Internal Link Cell</Table.HeaderCell>
+              <Table.HeaderCell>Checkbox Cell</Table.HeaderCell>
+              <Table.HeaderCell>Dropdown Cell</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
           <Table.Body>
             <Table.Row>
-              <GenomiX.TableCell />
               <GenomiX.TextCell content="text cell info" />
               <GenomiX.ExternalLinkCell content="external link" url="http://www.google.com" />
               <GenomiX.InternalLinkCell content="internal link" url="app/internal-link" />
