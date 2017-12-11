@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Divider, Grid } from 'semantic-ui-react'
 
 import * as GenomiX from 'LibIndex'
 
@@ -9,6 +9,7 @@ const Buttons = () => (
     <Grid.Column width={16} textAlign="center">
 
       <h1>Icons</h1>
+      <Divider />
       <GenomiX.Icon color="action-info" />
       <GenomiX.AcceptIcon />
       <GenomiX.AddIcon color="action-warning" />
