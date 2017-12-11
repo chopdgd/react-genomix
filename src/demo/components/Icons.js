@@ -15,6 +15,7 @@ const Buttons = () => (
       <GenomiX.AddIcon color="action-warning" />
       <GenomiX.CancelIcon />
       <GenomiX.DownloadIcon color="dark-blue" />
+      <GenomiX.ExternalIcon />
       <GenomiX.FemaleIcon />
       <GenomiX.InfoIcon color="light-grey" />
       <GenomiX.MaleIcon />

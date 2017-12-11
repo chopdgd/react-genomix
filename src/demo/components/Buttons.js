@@ -19,6 +19,7 @@ const Buttons = () => (
         <GenomiX.SaveButton />
         <GenomiX.SearchButton color="action-warning" />
         <GenomiX.UploadButton color="light-blue" />
+        <GenomiX.ExportButton />
       </Grid.Row>
 
       <Grid.Row>
@@ -32,6 +33,7 @@ const Buttons = () => (
         <GenomiX.SaveButton inverted />
         <GenomiX.SearchButton color="action-warning" inverted />
         <GenomiX.UploadButton color="light-blue" inverted />
+        <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />
       </Grid.Row>
 
     </Grid.Column>

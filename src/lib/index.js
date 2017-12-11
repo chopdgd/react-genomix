@@ -5,6 +5,7 @@ import 'Stylesheets/main.scss'
 
 // Atoms
 import Button from 'LibSrc/atoms/buttons/Button'
+import ExportButton from 'LibSrc/atoms/buttons/ExportButton'
 import {
   AcceptButton,
   AddButton,
@@ -21,6 +22,7 @@ import {
   AddIcon,
   CancelIcon,
   DownloadIcon,
+  ExternalIcon,
   FemaleIcon,
   InfoIcon,
   MaleIcon,
@@ -51,6 +53,7 @@ export {
   AddButton,
   CancelButton,
   DownloadButton,
+  ExportButton,
   SaveButton,
   SearchButton,
   UploadButton,
@@ -63,6 +66,7 @@ export {
   AddIcon,
   CancelIcon,
   DownloadIcon,
+  ExternalIcon,
   FemaleIcon,
   InfoIcon,
   MaleIcon,
