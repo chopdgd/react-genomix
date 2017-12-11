@@ -5,6 +5,7 @@ import 'Stylesheets/main.scss'
 
 // Atoms
 import Button from 'LibSrc/atoms/buttons/Button'
+import ExportButton from 'LibSrc/atoms/buttons/ExportButton'
 import {
   AcceptButton,
   AddButton,
@@ -42,6 +43,7 @@ export {
   AddButton,
   CancelButton,
   DownloadButton,
+  ExportButton,
   SearchButton,
   UploadButton,
 }

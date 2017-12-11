@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Form } from 'semantic-ui-react'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'enzyme'
 
 import { Button } from 'LibIndex/Button'
 import SaveForm from './save-form'
