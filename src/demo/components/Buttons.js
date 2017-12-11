@@ -16,6 +16,7 @@ const Buttons = () => (
         <GenomiX.AddButton color="dark-blue" />
         <GenomiX.CancelButton />
         <GenomiX.DownloadButton color="action-info" />
+        <GenomiX.SaveButton />
         <GenomiX.SearchButton color="action-warning" />
         <GenomiX.UploadButton color="light-blue" />
         <GenomiX.ExportButton />
@@ -29,6 +30,7 @@ const Buttons = () => (
         <GenomiX.AddButton color="dark-blue" inverted />
         <GenomiX.CancelButton inverted />
         <GenomiX.DownloadButton color="action-info" inverted />
+        <GenomiX.SaveButton inverted />
         <GenomiX.SearchButton color="action-warning" inverted />
         <GenomiX.UploadButton color="light-blue" inverted />
         <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />

@@ -57,6 +57,19 @@ describe('Test DownloadButton', () => {
   });
 })
 
+describe('Test SaveButton', () => {
+  it('SaveButton renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<GenomiXButtons.SaveButton />, div);
+  });
+
+  it('SaveButton props are set correctly', () => {
+    const wrapper = shallow(<GenomiXButtons.SaveButton />);
+    expect(wrapper.props().content).toEqual("Save");
+    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "save"});
+  });
+})
+
 describe('Test SearchButton', () => {
   it('SearchButton renders without crashing', () => {
     const div = document.createElement('div');
