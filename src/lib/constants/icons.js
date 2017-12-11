@@ -16,6 +16,10 @@ export const Download = {
   icon: 'download',
 }
 
+export const External = {
+  icon: 'external',
+}
+
 export const Female = {
   icon: 'female',
   color: 'pink',

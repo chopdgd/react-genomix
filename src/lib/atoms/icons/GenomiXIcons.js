@@ -32,6 +32,13 @@ export const DownloadIcon = ({ ...props }) => (
   />
 )
 
+export const ExternalIcon = ({ ...props }) => (
+  <Icon
+    {...props}
+    details={constants.External}
+  />
+)
+
 export const FemaleIcon = ({ ...props }) => (
   <Icon
     {...props}
