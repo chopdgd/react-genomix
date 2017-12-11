@@ -32,6 +32,9 @@ import {
   WarningIcon,
 } from 'LibSrc/atoms/icons/GenomiXIcons'
 
+import TableCell from 'LibSrc/atoms/tablecells/TableCell'
+import TextCell from 'LibSrc/atoms/tablecells/TextCell'
+
 // Molecules
 import SaveForm from 'LibSrc/molecules/save-form'
 import SaveFormModal from 'LibSrc/molecules/save-form-modal'
@@ -65,6 +68,12 @@ export {
   SearchIcon,
   UploadIcon,
   WarningIcon,
+}
+
+// Export tablecells
+export {
+  TableCell,
+  TextCell,
 }
 
 // Export Forms
