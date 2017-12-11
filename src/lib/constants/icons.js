@@ -38,6 +38,11 @@ export const Question = {
   icon: 'help',
 }
 
+export const Save = {
+  icon: 'save',
+  color: 'action-positive',
+}
+
 export const Search = {
   icon: 'search',
 }

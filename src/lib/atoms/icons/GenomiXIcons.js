@@ -67,6 +67,13 @@ export const QuestionIcon = ({ ...props }) => (
   />
 )
 
+export const SaveIcon = ({ ...props }) => (
+  <Icon
+    {...props}
+    details={constants.Save}
+  />
+)
+
 export const SearchIcon = ({ ...props }) => (
   <Icon
     {...props}
