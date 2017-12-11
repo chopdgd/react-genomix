@@ -66,7 +66,7 @@ describe('Test SaveButton', () => {
   it('SaveButton props are set correctly', () => {
     const wrapper = shallow(<GenomiXButtons.SaveButton />);
     expect(wrapper.props().content).toEqual("Save");
-    expect(wrapper.props().details).toEqual({"icon": "save"});
+    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "save"});
   });
 })
 
