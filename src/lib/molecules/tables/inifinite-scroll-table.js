@@ -57,7 +57,7 @@ class InfiniteScrollTable extends React.Component {
             <Table.Row textAlign="center">
               {map(headerCells, (element, index) =>
                 <Table.HeaderCell key={index}>
-                  <Sticky context={contextRef}>
+                  <Sticky className="genomix sticky th" context={contextRef}>
                     <div className="genomix infinite th">
                       {element}
                     </div>
