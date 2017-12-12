@@ -1,16 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown, Table } from 'semantic-ui-react'
 import { mount } from 'enzyme'
 
 import DropdownCell from './DropdownCell'
 
 const TextDropdownCell = ({...props}) => {
   return (
-    <DropdownCell
-      {...props}
-      dropdown={<Dropdown options={[{'key': 1, 'value': 1, 'text': 'option 1'}]}/>}
-    />
+    <Table>
+      <Table.Body>
+        <Table.Row>
+          <DropdownCell
+          {...props}
+          dropdown={<Dropdown options={[{'key': 1, 'value': 1, 'text': 'option 1'}]}/>}
+          />
+        </Table.Row>
+      </Table.Body>
+    </Table>
   );
 }
 

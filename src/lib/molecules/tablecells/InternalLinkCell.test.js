@@ -1,16 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { mount } from 'enzyme'
+import { Table } from 'semantic-ui-react'
 
 import InternalLinkCell from './InternalLinkCell'
 
 const TestInternalLinkCell = ({...props}) => {
   return (
-    <InternalLinkCell
-      {...props}
-      content="test"
-      url="/app/test/"
-    />
+    <Table>
+      <Table.Body>
+        <Table.Row>
+          <InternalLinkCell
+            {...props}
+            content="test"
+            url="/app/test/"
+          />
+        </Table.Row>
+      </Table.Body>
+    </Table>
   );
 }
 
@@ -22,7 +29,7 @@ describe('Test InternalLinkCell', () => {
 
   it('InternalLinkCell initial props are set correctly', () => {
     const wrapper = mount(TestInternalLinkCell())
-    expect(wrapper.find('InternalLinkCell').props().content).toEqual(['test'])
-    expect(wrapper.find('ExternalLinkCell').props().url).toEqual(['/app/test/'])
+    expect(wrapper.find('InternalLinkCell').props().content).toEqual('test')
+    expect(wrapper.find('InternalLinkCell').props().url).toEqual('/app/test/')
   })
 })

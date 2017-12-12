@@ -24,7 +24,7 @@ const options = [
 
 const ExampleInfiniteTable = () => (
   <Grid>
-    <Grid.Column width={8}>
+    <Grid.Column>
       <InfiniteScrollTable
         headerCells={['Checkbox', 'Text', 'Internal Link', 'External Link', 'Dropdown']}
         celled

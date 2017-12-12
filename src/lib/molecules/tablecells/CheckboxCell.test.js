@@ -21,6 +21,6 @@ describe('Test CheckboxCell', () => {
 
   it('CheckboxCell initial props are set correctly', () => {
     const wrapper = mount(TestCheckboxCell())
-    expect(wrapper.find('CheckboxCell').props().content).toEqual(['test'])
+    expect(wrapper.find('CheckboxCell').props().content).toEqual('test')
   })
 })
