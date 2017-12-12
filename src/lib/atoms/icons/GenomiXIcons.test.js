@@ -53,6 +53,18 @@ describe('Test DownloadIcon', () => {
   });
 })
 
+describe('Test ExternalIcon', () => {
+  it('DownloadIcon renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<GenomiXIcons.ExternalIcon />, div);
+  });
+
+  it('DownloadIcon props are set correctly', () => {
+    const wrapper = shallow(<GenomiXIcons.ExternalIcon />);
+    expect(wrapper.props().details).toEqual({"icon": "external"});
+  });
+})
+
 describe('Test FemaleIcon', () => {
   it('FemaleIcon renders without crashing', () => {
     const div = document.createElement('div');
