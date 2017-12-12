@@ -22,6 +22,21 @@ const options = [
   }
 ]
 
+const mockedData = [
+  {
+    id: 1,
+    text: "result 1",
+    intLink: "/app/link-1",
+    extLink: "http://google.com"
+  },
+  {
+    id: 2,
+    text: "result 2",
+    intLink: "/app/link-2",
+    extLink: "http://apple.com"
+  }
+]
+
 const ExampleInfiniteTable = () => (
   <Grid>
     <Grid.Column>
@@ -29,20 +44,25 @@ const ExampleInfiniteTable = () => (
         headerCells={['Checkbox', 'Text', 'Internal Link', 'External Link', 'Dropdown']}
         celled
       >
-        {Array.from(new Array(300), (x,i) =>
-          <Table.Row>
-            <CheckboxCell />
-            <TextCell content="Hello there" />
-            <InternalLinkCell content="Link 1" url="/app/link-1/" />
-            <ExternalLinkCell content="Link 2" url="http://google.com" />
-            <DropdownCell dropdown={
-              <Dropdown
-              options={options}
-              selection
-            />
-          } />
-          </Table.Row>
-        )}
+        {mockedData.map((result) => {
+          return(
+            <Table.Row>
+              <CheckboxCell content="check me" onChange={() =>  alert(`row ${result.id}`)} />
+              <TextCell content={result.text} />
+              <InternalLinkCell content={result.intLink} url={result.intLink} />
+              <ExternalLinkCell content={result.extLink} url={result.extLink} />
+              <DropdownCell dropdown=
+                {
+                  <Dropdown
+                  options={options}
+                  selection
+                  />
+                }
+              />
+            </Table.Row>
+        )
+        })
+        }
       </InfiniteScrollTable>
     </Grid.Column>
   </Grid>
