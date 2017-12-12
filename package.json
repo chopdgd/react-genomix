@@ -123,5 +123,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "dependencies": {}
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
 }

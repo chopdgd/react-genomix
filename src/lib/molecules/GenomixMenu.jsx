@@ -1,30 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Dropdown, Icon, Divider } from 'semantic-ui-react';
+import { Dropdown, Icon } from 'semantic-ui-react';
 
-const trigger = (
-  <span>
-    <Icon name="sidebar" size="large"/>
-  </span>
-)
+class GenomixMenu extends React.Component {
+  constructor (props) {
+    super (props)
 
-const GenomixMenu = ({...props}) => {
-  return (
-      <Dropdown {...props} trigger={trigger} icon={null}>
-        <Dropdown.Menu className="NavbarDropdownMenu">
-          <Dropdown.Item text="Interpretation" />
-          <Dropdown.Item text="Primers" />
-          <Dropdown.Item text="Confirmations" />
-          <Dropdown.Item text="Test Tracking" />
-        </Dropdown.Menu>
-      </Dropdown>
-  );
-}
+    this.state = {}
+  }
 
-GenomixMenu.propTypes = {
-}
+  render () {
+    const trigger = (
+      <span>
+        <Icon name="sidebar" size="large"/>
+      </span>
+    );
 
-GenomixMenu.defaultProps = {
+    const genomixMenuItems = this.props.genomixMenuItems;
+
+    return (
+        <Dropdown trigger={trigger} icon={null}>
+          <Dropdown.Menu className="NavbarDropdownMenu">
+            {genomixMenuItems.map((c, index) =>
+              <Dropdown.Item
+                as="a"
+                key={index}
+                text={c.text}
+                href={c.to} />
+            )}
+          </Dropdown.Menu>
+        </Dropdown>
+    );
+  }
 }
 
 export default GenomixMenu;

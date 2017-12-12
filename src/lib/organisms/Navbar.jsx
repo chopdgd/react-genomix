@@ -1,35 +1,103 @@
 import React from 'react';
-import { Menu} from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
+import PropTypes from 'prop-types'
 
 import CHOPLogo from '../atoms/media/CHOP-Logo';
 import UserMenu from '../molecules/UserMenu';
 import GenomixMenu from '../molecules/GenomixMenu';
 
-const Navbar = () => {
+class Navbar extends React.Component {
+  constructor (props) {
+    super(props)
 
-  return (
-    <Menu className="navbar" borderless>
-      <Menu.Item>
-        <GenomixMenu />
-      </Menu.Item>
+    this.state = {
+      activeItem: this.props.activeItem,
+    };
 
-      <Menu.Item>
-        <CHOPLogo />
-      </Menu.Item>
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
 
-      <Menu.Menu position='right'>
-        <Menu.Item name="Dashboard" />
-        <Menu.Item name="Stats" active />
-        <Menu.Item name="Orders" />
-        <Menu.Item name="Patients" />
-        <Menu.Item icon="bell" />
+  handleItemClick(e, { name }) {
+    this.setState({
+      activeItem: name
+    });
+  }
+
+  render () {
+
+    const activeItem = this.state.activeItem;
+    const navbarItems = this.props.navbarItems;
+    const genomixMenuItems = this.props.genomixMenuItems;
+
+
+    return (
+      <Menu className="navbar" borderless>
         <Menu.Item>
-          <UserMenu className="user-menu" />
+          <GenomixMenu genomixMenuItems={genomixMenuItems} />
         </Menu.Item>
-      </Menu.Menu>
-    </Menu>
+        <Menu.Item>
+          <CHOPLogo />
+        </Menu.Item>
 
-  );
+        <Menu.Menu position='right'>
+          {navbarItems.map((c, index) =>
+            <Menu.Item
+              as="a"
+              key={index}
+              name={c.text}
+              href={c.to}
+              onClick={this.handleItemClick}
+              active={activeItem === c.text }
+            />
+          )}
+          <Menu.Item icon="bell" />
+          <Menu.Item>
+            <UserMenu className="user-menu" />
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
+    );
+  }
+}
+
+Navbar.propTypes = {
+  activeItem: PropTypes.string,
+  navbarItems: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    to: PropTypes.string
+  })),
+  genomixMenuItems: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    to: PropTypes.string
+  }))
+}
+Navbar.defaultProps = {
+  navbarItems: [{
+      text: "dashboard",
+      to: "/app/dashboard"
+    },{
+      text: "stats",
+      to: "/app/stats"
+    },{
+      text: "patients",
+      to: "/app/patients"
+    },{
+      text: "orders",
+      to: "/app/orders"
+    }],
+  genomixMenuItems: [{
+      text: "Interpretations",
+      to: "/app/interpretations"
+    },{
+      text: "Primers",
+      to: "/app/primers"
+    },{
+      text: "Confirmations",
+      to: "/app/confirmations"
+    },{
+      text: "Test Tracking",
+      to: "/app/test-tracking"
+    }]
 }
 
 export default Navbar;
