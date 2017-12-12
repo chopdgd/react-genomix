@@ -1,43 +1,34 @@
-$button-colors: (
-  default,
-  light-blue,
-  dark-blue,
-  light-grey,
-  dark-grey,
-  pink,
-  green,
-  primary,
-  secondary,
-  tertiary
-);
+.ui.genomix.button {
+  font-family: $font-family;
+}
 
-@each $name in $button-colors {
+@each $name in $button-and-icon-colors {
   @if $name == default {
     .ui.genomix.button {
-      background-color: genomix-color(dark-grey);
-      color: genomix-color(white);
+      background-color: genomix-color('dark-grey');
+      color: genomix-color('white');
     }
 
     .ui.genomix.button:hover {
       background-color: transparent;
-      box-shadow: 0 0 0 2px genomix-color(dark-grey) inset !important;
-      color: genomix-color(dark-grey);
+      box-shadow: 0 0 0 2px genomix-color('dark-grey') inset !important;
+      color: genomix-color('dark-grey');
     }
 
     .ui.genomix.button.inverted {
       background-color: transparent;
-      box-shadow: 0 0 0 2px genomix-color(dark-grey) inset !important;
-      color: genomix-color(dark-grey);
+      box-shadow: 0 0 0 2px genomix-color('dark-grey') inset !important;
+      color: genomix-color('dark-grey');
     }
 
     .ui.genomix.button.inverted:hover {
-      background-color: genomix-color(dark-grey);
-      color: genomix-color(white);
+      background-color: genomix-color('dark-grey');
+      color: genomix-color('white');
     }
   } @else {
     .ui.genomix.button.#{$name} {
       background-color: genomix-color($name);
-      color: genomix-color(white);
+      color: genomix-color('white');
     }
 
     .ui.genomix.button.#{$name}:hover {
@@ -54,7 +45,7 @@ $button-colors: (
 
     .ui.genomix.inverted.button.#{$name}:hover {
       background-color: genomix-color($name);
-      color: genomix-color(white);
+      color: genomix-color('white');
     }
   }
 }

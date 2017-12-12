@@ -8,7 +8,24 @@ $brand-dark-grey: #58595B;
 $brand-pink: #ED1F7F;
 $brand-green: #91A01E;
 $brand-brown: #786452;
-$brand-white: #FFF;
+$brand-white: #FFFFFF;
+
+
+// Layout colors
+
+$foreground: #ADADAD;
+$background: #F9F9F9;
+
+// Action color theme
+
+$action-info: #1C77C3;  // Standard colors (dark/light): 276F86/A9D5DE
+$action-success: #2ECC40;  // Standard colors (dark/light): 2C662D/A3C293
+$action-warning: #FFE100;  // Standard colors (dark/light): 573A08/C9BA9B
+$action-error: #FF695E;  // Standard colors (dark/light): 9F3A38/E0B4B4
+
+// Table colors
+
+$th-background: #F9FAFB;
 
 $brand-black: #1F2D3D;
 $brand-steel: #273444;
@@ -25,14 +42,14 @@ $brand-dark-snow: #EFF2F7;
 
 $genomix-colors: (
   // Access via color name
-  light-blue: $brand-light-blue,
-  dark-blue: $brand-dark-blue,
-  light-grey: $brand-light-grey,
-  dark-grey: $brand-dark-grey,
-  pink: $brand-pink,
-  green: $brand-green,
-  brown: $brand-brown,
-  white: $brand-white,
+  'light-blue': $brand-light-blue,
+  'dark-blue': $brand-dark-blue,
+  'light-grey': $brand-light-grey,
+  'dark-grey': $brand-dark-grey,
+  'pink': $brand-pink,
+  'green': $brand-green,
+  'brown': $brand-brown,
+  'white': $brand-white,
 
   black: $brand-black,
   steel: $brand-steel,
@@ -45,27 +62,74 @@ $genomix-colors: (
   dark-snow: $brand-dark-snow,
 
   // Access via theme
-  base: $brand-white,
-  primary: $brand-light-blue,
-  accent: $brand-pink,
-  secondary: $brand-dark-blue,
-  tertiary: $brand-green,
-  foreground: $brand-dark-grey,
-  background: $brand-light-grey,
+  'base': $brand-white,
+  'primary': $brand-light-blue,
+  'accent': $brand-pink,
+  'secondary': $brand-dark-blue,
+  'tertiary': $brand-green,
+
+  'foreground': $foreground,
+  'background': $background,
+
+  // Access via action
+  'action-info': $action-info,
+  'action-success': $action-success,
+  'action-warning': $action-warning,
+  'action-error': $action-error,
+  'action-attention': $action-info,
+  'action-positive': $action-success,
+  'action-caution': $action-warning,
+  'action-negative': $action-error,
+
+  // Table colors
+  'th-background': $th-background,
 );
 
 $color-interval: 10% !global;
 
+$button-and-icon-colors: (
+  'default',
+  'light-blue',
+  'dark-blue',
+  'light-grey',
+  'dark-grey',
+  'pink',
+  'green',
+  'primary',
+  'secondary',
+  'tertiary',
+  'action-success',
+  'action-positive',
+  'action-error',
+  'action-negative',
+  'action-info',
+  'action-attention',
+  'action-warning',
+  'action-caution',
+);
+
 
 // Functions
 
-@function genomix-color($key: primary) {
+@function genomix-color($key: 'primary') {
   @return map-get($genomix-colors, $key);
 }
 
-@function genomix-color-level($color-name: primary, $level: 0) {
+@function genomix-color-level($color-name: 'primary', $level: 0) {
   $color: genomix-color($color-name);
   $color-base: if($level < 0, black, white);
 
   @return mix($color-base, $color, $level * $color-interval);
+}
+
+@function genomix-color-darken($color-name: 'primary', $amount: 0) {
+  $color: genomix-color($color-name);
+
+  @return darken($color, $amount);
+}
+
+@function genomix-color-lighten($color-name: 'primary', $amount: 0) {
+  $color: genomix-color($color-name);
+
+  @return lighten($color, $amount);
 }

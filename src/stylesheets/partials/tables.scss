@@ -1,0 +1,13 @@
+.ui.table.genomix.infinite thead th {
+  padding: 0;
+}
+
+.genomix.sticky.th > * {
+  z-index: 99;
+}
+
+.genomix.infinite.th {
+  background: genomix-color('th-background');
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

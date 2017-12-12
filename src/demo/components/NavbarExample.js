@@ -10,7 +10,7 @@ const navbarItemsExample = [{
   to: "/app/patients"
 },{
   text: "orders",
-  tp: "/app/orders"
+  to: "/app/orders"
 }]
 
 const genomixMenuItemsExample = [{
