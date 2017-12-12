@@ -6,6 +6,7 @@ import SecondExample from './components/SecondExample'
 import Buttons from './components/Buttons'
 import Icons from './components/Icons'
 import Forms from './components/Forms'
+import ExampleInfiniteTable from './components/InfiniteScrollTable'
 
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
     <Buttons />
     <Icons />
     <Forms />
+    <ExampleInfiniteTable />
   </div>
 )
 
