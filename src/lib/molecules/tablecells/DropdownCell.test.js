@@ -26,8 +26,8 @@ describe('Test DropdownCell', () => {
     ReactDOM.render(TextDropdownCell(), div)
   })
 
-  // it('DropdownCell initial props are set correctly', () => {
-  //   const wrapper = mount(TextDropdownCell())
-  //   expect(wrapper.find('DropdownCell').props().dropdown).toEqual(['test'])
-  // })
+  it('DropdownCell initial props are set correctly', () => {
+    const wrapper = mount(TextDropdownCell())
+    expect(wrapper.find('DropdownCell').props().dropdown).toEqual(<Dropdown options={[{'key': 1, 'value': 1, 'text': 'option 1'}]}/>)
+  })
 })
