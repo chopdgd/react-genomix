@@ -42,7 +42,7 @@ const Tables = () => (
             <Table.Row>
               <GenomiX.TextCell content="text cell info" />
               <GenomiX.ExternalLinkCell content="external link" url="http://www.google.com" />
-              <GenomiX.InternalLinkCell content="internal link" url="app/internal-link" />
+              <GenomiX.InternalLinkCell content="internal link" url="/app/internal-link" />
               <GenomiX.CheckboxCell />
               <GenomiX.DropdownCell dropdown={<Dropdown options={options} selection />} />
             </Table.Row>

@@ -11,8 +11,9 @@ const InternalLinkCell = ({...props}) => {
   const url = get(props, 'url', 'missing data')
   return (
     <Table.Cell {...cellProps} >
-      <p>{content}&nbsp;
-        <a href={url} ><GenomiX.ExternalIcon /></a>
+      <p>
+        {content}&nbsp;
+        <a href={url} ><GenomiX.InfoIcon /></a>
       </p>
     </Table.Cell>
   );
