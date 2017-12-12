@@ -1,6 +1,7 @@
 // Stylesheets
 import 'semantic-ui-css/semantic.min.css'
 import 'Stylesheets/main.scss'
+import 'react-virtualized/styles.css'
 
 
 // Atoms
@@ -38,7 +39,7 @@ import {
 // Molecules
 import SaveForm from 'LibSrc/molecules/forms/save-form'
 import SaveFormModal from 'LibSrc/molecules/modals/save-form-modal'
-import InfiniteScrollTable from 'LibSrc/molecules/tables/inifinite-scroll-table'
+import BigDataTable from 'LibSrc/molecules/tables/big-data-table'
 
 
 // Export Buttons
@@ -81,5 +82,5 @@ export {
 
 // Export Tables
 export {
-  InfiniteScrollTable,
+  BigDataTable,
 }
