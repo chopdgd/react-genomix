@@ -34,9 +34,11 @@ import {
   WarningIcon,
 } from 'LibSrc/atoms/icons/GenomiXIcons'
 
+
 // Molecules
-import SaveForm from 'LibSrc/molecules/save-form'
-import SaveFormModal from 'LibSrc/molecules/save-form-modal'
+import SaveForm from 'LibSrc/molecules/forms/save-form'
+import SaveFormModal from 'LibSrc/molecules/modals/save-form-modal'
+import InfiniteScrollTable from 'LibSrc/molecules/tables/inifinite-scroll-table'
 
 
 // Export Buttons
@@ -75,4 +77,9 @@ export {
 export {
   SaveForm,
   SaveFormModal,
+}
+
+// Export Tables
+export {
+  InfiniteScrollTable,
 }
