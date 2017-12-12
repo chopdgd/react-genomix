@@ -1,21 +1,46 @@
 import React from 'react'
-import { Grid, Table } from 'semantic-ui-react'
+import { Grid, Table, Dropdown } from 'semantic-ui-react'
 
-import { InfiniteScrollTable } from 'LibIndex'
+import {
+  InfiniteScrollTable,
+  TextCell,
+  InternalLinkCell,
+  ExternalLinkCell,
+  CheckboxCell,
+  DropdownCell } from 'LibIndex'
 
+const options = [
+  {
+  'key': 1,
+  'label': 'option 1',
+  'value': 'option 1',
+  },
+  {
+  'key': 2,
+  'label': 'option 2',
+  'value': 'option 2',
+  }
+]
 
 const ExampleInfiniteTable = () => (
   <Grid>
-    <Grid.Column width={6}>
+    <Grid.Column width={8}>
       <InfiniteScrollTable
-        headerCells={['Column1', 'Column2', 'Column3']}
+        headerCells={['Checkbox', 'Text', 'Internal Link', 'External Link', 'Dropdown']}
         celled
       >
-        {Array.from(new Array(30), (x,i) =>
+        {Array.from(new Array(300), (x,i) =>
           <Table.Row>
-            <Table.Cell>Cell1</Table.Cell>
-            <Table.Cell>Cell2</Table.Cell>
-            <Table.Cell>Cell3</Table.Cell>
+            <CheckboxCell />
+            <TextCell content="Hello there" />
+            <InternalLinkCell content="Link 1" url="/app/link-1/" />
+            <ExternalLinkCell content="Link 2" url="http://google.com" />
+            <DropdownCell dropdown={
+              <Dropdown
+              options={options}
+              selection
+            />
+          } />
           </Table.Row>
         )}
       </InfiniteScrollTable>
