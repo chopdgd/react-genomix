@@ -1,31 +1,34 @@
 import React from 'react'
 import { Column } from 'react-virtualized'
+import { Grid } from 'semantic-ui-react'
 
 import { BigDataTable } from 'LibIndex'
 
 
 const list = Array.from(new Array(30), (x,i) => ({
-  name: 'Brian Vaughn',
-  description: 'Software engineer'
+  base: 'Base',
+  checkbox: true,
+  dropdown: 1,
+  link: 'http://www.google.com',
+  text: 'Text',
 }))
 
 
 const ExampleInfiniteTable = () => (
-  <BigDataTable
-    data={list}
-    height={400}
-  >
-    <Column
-      label="Name"
-      dataKey="name"
-      width={100}
-    />
-    <Column
-      label="Description"
-      dataKey="description"
-      width={150}
-    />
-  </BigDataTable>
+  <Grid>
+    <Grid.Column width={12}>
+      <BigDataTable
+        data={list}
+        height={400}
+      >
+        <Column
+          label="Base Column"
+          dataKey="base"
+          width={150}
+        />
+      </BigDataTable>
+    </Grid.Column>
+  </Grid>
 )
 
 export default ExampleInfiniteTable
