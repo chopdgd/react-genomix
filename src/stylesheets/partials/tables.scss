@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+.ui.table.genomix.infinite thead th {
+  padding: 0;
+  z-index: 99
+=======
 .genomix.big-data.table {
   width: 100%;
   margin-top: 15px;
+>>>>>>> develop
 }
 
 .genomix.big-data.table .header.row,
@@ -11,6 +17,13 @@
   font-family: $font-family;
 }
 
+<<<<<<< HEAD
+.genomix.infinite.th {
+  background: genomix-color('th-background');
+  padding-top: 15px;
+  padding-bottom: 15px;
+  z-index: 99
+=======
 .genomix.big-data.table .header.row {
   background-color: genomix-color('th-background');
 }
@@ -46,4 +59,5 @@
   justify-content: center;
   font-size: 1em;
   color: #bdbdbd;
+>>>>>>> develop
 }

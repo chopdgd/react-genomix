@@ -42,6 +42,12 @@ import SaveFormModal from 'LibSrc/molecules/modals/save-form-modal'
 import BigDataTable from 'LibSrc/molecules/tables/big-data-table'
 
 
+import TextCell from 'LibSrc/molecules/tablecells/TextCell'
+import InternalLinkCell from 'LibSrc/molecules/tablecells/InternalLinkCell'
+import ExternalLinkCell from 'LibSrc/molecules/tablecells/ExternalLinkCell'
+import CheckboxCell from 'LibSrc/molecules/tablecells/CheckboxCell'
+import DropdownCell from 'LibSrc/molecules/tablecells/DropdownCell'
+
 // Export Buttons
 export {
   Button,
@@ -72,6 +78,15 @@ export {
   SearchIcon,
   UploadIcon,
   WarningIcon,
+}
+
+// Export tablecells
+export {
+  TextCell,
+  InternalLinkCell,
+  ExternalLinkCell,
+  CheckboxCell,
+  DropdownCell,
 }
 
 // Export Forms
