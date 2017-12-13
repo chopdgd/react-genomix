@@ -1,68 +1,23 @@
 import React from 'react'
-import { Grid, Table, Dropdown } from 'semantic-ui-react'
+import { Grid, Table } from 'semantic-ui-react'
 
-import {
-  InfiniteScrollTable,
-  TextCell,
-  InternalLinkCell,
-  ExternalLinkCell,
-  CheckboxCell,
-  DropdownCell } from 'LibIndex'
+import { InfiniteScrollTable } from 'LibIndex'
 
-const options = [
-  {
-  'key': 1,
-  'label': 'option 1',
-  'value': 'option 1',
-  },
-  {
-  'key': 2,
-  'label': 'option 2',
-  'value': 'option 2',
-  }
-]
-
-const mockedData = [
-  {
-    id: 1,
-    text: "result 1",
-    intLink: "/app/link-1",
-    extLink: "http://google.com"
-  },
-  {
-    id: 2,
-    text: "result 2",
-    intLink: "/app/link-2",
-    extLink: "http://apple.com"
-  }
-]
 
 const ExampleInfiniteTable = () => (
   <Grid>
-    <Grid.Column>
+    <Grid.Column width={6}>
       <InfiniteScrollTable
-        headerCells={['Checkbox', 'Text', 'Internal Link', 'External Link', 'Dropdown']}
+        headerCells={['Column1', 'Column2', 'Column3']}
         celled
       >
-        {mockedData.map((result) => {
-          return(
-            <Table.Row>
-              <CheckboxCell content="check me" onChange={() =>  alert(`row ${result.id}`)} />
-              <TextCell content={result.text} />
-              <InternalLinkCell content={result.intLink} url={result.intLink} />
-              <ExternalLinkCell content={result.extLink} url={result.extLink} />
-              <DropdownCell dropdown=
-                {
-                  <Dropdown
-                  options={options}
-                  selection
-                  />
-                }
-              />
-            </Table.Row>
-        )
-        })
-        }
+        {Array.from(new Array(30), (x,i) =>
+          <Table.Row>
+            <Table.Cell>Cell1</Table.Cell>
+            <Table.Cell>Cell2</Table.Cell>
+            <Table.Cell>Cell3</Table.Cell>
+          </Table.Row>
+        )}
       </InfiniteScrollTable>
     </Grid.Column>
   </Grid>

@@ -1,15 +1,63 @@
+<<<<<<< HEAD
 .ui.table.genomix.infinite thead th {
   padding: 0;
   z-index: 99
+=======
+.genomix.big-data.table {
+  width: 100%;
+  margin-top: 15px;
+>>>>>>> develop
 }
 
-.genomix.sticky.th > * {
-  z-index: 99;
+.genomix.big-data.table .header.row,
+.genomix.big-data.table .even.row,
+.genomix.big-data.table .odd.row,{
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-family: $font-family;
 }
 
+<<<<<<< HEAD
 .genomix.infinite.th {
   background: genomix-color('th-background');
   padding-top: 15px;
   padding-bottom: 15px;
   z-index: 99
+=======
+.genomix.big-data.table .header.row {
+  background-color: genomix-color('th-background');
+}
+
+.genomix.big-data.table .odd.row {
+  background-color: #fafafa;
+}
+
+.genomix.big-data.table .header.col {
+  text-transform: none;
+}
+
+.genomix.big-data.table .row.left {
+  text-align: left;
+}
+
+.genomix.big-data.table .row.center {
+  text-align: center;
+}
+
+.genomix.big-data.table .row.right {
+  text-align: right;
+}
+
+.genomix.big-data.table .no.rows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #bdbdbd;
+>>>>>>> develop
 }
