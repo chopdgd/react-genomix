@@ -4,7 +4,7 @@ import { Modal } from 'semantic-ui-react'
 import { get } from 'lodash'
 
 import { Button, CancelButton } from 'LibIndex'
-import SaveForm from './save-form'
+import SaveForm from '../forms/save-form'
 
 
 class SaveFormModal extends React.Component {

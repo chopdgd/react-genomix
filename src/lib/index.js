@@ -1,6 +1,7 @@
 // Stylesheets
 import 'semantic-ui-css/semantic.min.css'
 import 'Stylesheets/main.scss'
+import 'react-virtualized/styles.css'
 
 
 // Atoms
@@ -34,9 +35,11 @@ import {
   WarningIcon,
 } from 'LibSrc/atoms/icons/GenomiXIcons'
 
+
 // Molecules
-import SaveForm from 'LibSrc/molecules/save-form'
-import SaveFormModal from 'LibSrc/molecules/save-form-modal'
+import SaveForm from 'LibSrc/molecules/forms/save-form'
+import SaveFormModal from 'LibSrc/molecules/modals/save-form-modal'
+import BigDataTable from 'LibSrc/molecules/tables/big-data-table'
 
 
 // Export Buttons
@@ -75,4 +78,9 @@ export {
 export {
   SaveForm,
   SaveFormModal,
+}
+
+// Export Tables
+export {
+  BigDataTable,
 }
