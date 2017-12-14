@@ -14,7 +14,7 @@ describe('Test CheckboxColumn', () => {
         label="test"
         dataKey={dataKey}
         width={100}
-        onChange={jest.fn()}
+        columnData={{onChange: jest.fn()}}
       />
     )
     const wrapper = shallow(element)
@@ -24,18 +24,20 @@ describe('Test CheckboxColumn', () => {
 
   it('cellRenderer returns expected content', () => {
     const cellData = 'mike'
+    const dataKey = 'name'
     const rowIndex = 1
     const onChange = jest.fn()
+    const columnData= { onChange: onChange }
     const element = (
       <CheckboxColumn
         label="test"
-        dataKey="test"
+        dataKey={dataKey}
         width={100}
-        onChange={onChange}
+        columnData={columnData}
       />
     )
     const wrapper = shallow(element)
-    expect(wrapper.find('Column').props().cellRenderer({ cellData, rowIndex }))
+    expect(wrapper.find('Column').props().cellRenderer({ dataKey, columnData, cellData, rowIndex }))
       .toEqual(<CheckboxCell as="div" onChange={onChange} content="mike" rowIndex={1} />)
   })
 
@@ -46,7 +48,7 @@ describe('Test CheckboxColumn', () => {
         label={label}
         dataKey="test"
         width={100}
-        onChange={jest.fn()}
+        columnData={{onChange: jest.fn()}}
       />
     )
     const wrapper = shallow(element)
