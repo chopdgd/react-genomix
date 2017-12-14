@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown, Divider } from 'semantic-ui-react';
 
-import Avatar from '../atoms/media/Avatar'
+import Avatar from 'LibSrc/atoms/media/Avatar'
 
 class UserMenu extends React.Component {
   constructor (props) {
@@ -14,7 +14,15 @@ class UserMenu extends React.Component {
 
   render () {
     const user = this.props.user;
-    const full_name = user.first_name + ' ' + user.last_name;
+    let full_name
+    let email
+    if (user !== undefined) {
+      full_name = user.first_name + ' ' + user.last_name;
+      email = user.email
+    } else {
+      full_name = "User unknown"
+      email = "Email Unknown"
+    }
 
     const trigger = (
       <span>
@@ -26,7 +34,7 @@ class UserMenu extends React.Component {
         <Dropdown trigger={trigger} icon={null}>
           <Dropdown.Menu className="NavbarDropdownMenu">
             <Dropdown.Item text={full_name} />
-            <Dropdown.Item text={user.email} disabled />
+            <Dropdown.Item text={email} disabled />
             <Divider />
             <Dropdown.Item text="Settings" as="a" href="/settings" />
             <Dropdown.Item text="Sign Out" as="a" href="/logout" />
@@ -49,14 +57,14 @@ UserMenu.propTypes = {
 }
 
 UserMenu.defaultProps = {
-  // user: undefined,
-  user: {
-    pk: 1,
-    username: 'doej',
-    email: 'doej@email.chop.edu',
-    first_name: 'Jane',
-    last_name: 'Doe',
-  }
+  user: undefined,
+  // user: {
+  //   pk: 1,
+  //   username: 'doej',
+  //   email: 'doej@email.chop.edu',
+  //   first_name: 'Jane',
+  //   last_name: 'Doe',
+  // }
 }
 
 export default UserMenu;

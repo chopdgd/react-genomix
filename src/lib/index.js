@@ -34,13 +34,18 @@ import {
   WarningIcon,
 } from 'LibSrc/atoms/icons/GenomiXIcons'
 
+import Avatar from 'LibSrc/atoms/media/Avatar'
+
 
 // Molecules
 import SaveForm from 'LibSrc/molecules/forms/save-form'
 import SaveFormModal from 'LibSrc/molecules/modals/save-form-modal'
 import InfiniteScrollTable from 'LibSrc/molecules/tables/inifinite-scroll-table'
+import UserMenu from 'LibSrc/molecules/menus/UserMenu'
+import GenomixMenu from 'LibSrc/molecules/menus/GenomixMenu'
 
-//Navbar
+
+// Organisms
 import Navbar from 'LibSrc/organisms/Navbar';
 
 // Export Buttons
@@ -88,5 +93,8 @@ export {
 
 // Export Navbar
 export {
+  Avatar,
+  UserMenu,
+  GenomixMenu,
   Navbar,
 };
