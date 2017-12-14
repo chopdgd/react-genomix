@@ -8,7 +8,8 @@ import Buttons from './components/Buttons'
 import NavbarExample from './components/NavbarExample'
 import Icons from './components/Icons'
 import Forms from './components/Forms'
-import ExampleInfiniteTable from './components/InfiniteScrollTable'
+import BigDataTableExample from './components/BigDataTableExample'
+import ExampleTableCells from './components/TableCellExamples'
 
 
 const App = () => (
@@ -19,7 +20,8 @@ const App = () => (
     <Buttons />
     <Icons />
     <Forms />
-    <ExampleInfiniteTable />
+    <ExampleTableCells />
+    <BigDataTableExample />
   </div>
 )
 
