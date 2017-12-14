@@ -61,6 +61,10 @@ import TextColumn from 'LibSrc/molecules/table-columns/text-column'
 // Tables
 import BigDataTable from 'LibSrc/molecules/tables/big-data-table'
 
+// Utils
+import * as urlBuilders from 'LibSrc/utils/urlBuilders'
+export { urlBuilders }
+
 
 // Export Buttons
 export {
