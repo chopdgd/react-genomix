@@ -8,6 +8,7 @@ import 'react-virtualized/styles.css'
 // Buttons
 import Button from 'LibSrc/atoms/buttons/Button'
 import ExportButton from 'LibSrc/atoms/buttons/ExportButton'
+import UploadButton from 'LibSrc/atoms/buttons/UploadButton'
 import {
   AcceptButton,
   AddButton,
@@ -15,7 +16,6 @@ import {
   DownloadButton,
   SaveButton,
   SearchButton,
-  UploadButton,
 } from 'LibSrc/atoms/buttons/GenomiXButtons'
 
 // Icons

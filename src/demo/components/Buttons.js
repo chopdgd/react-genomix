@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Grid } from 'semantic-ui-react'
+import { Divider, Grid, Button } from 'semantic-ui-react'
 
 import * as GenomiX from 'LibIndex'
 
@@ -11,29 +11,33 @@ const Buttons = () => (
       <Grid.Row>
         <h1>Buttons</h1>
         <Divider />
-        <GenomiX.Button content="Default" />
-        <GenomiX.AcceptButton />
-        <GenomiX.AddButton color="dark-blue" />
-        <GenomiX.CancelButton />
-        <GenomiX.DownloadButton color="action-info" />
-        <GenomiX.SaveButton />
-        <GenomiX.SearchButton color="action-warning" />
-        <GenomiX.UploadButton color="light-blue" />
-        <GenomiX.ExportButton />
+        <Button.Group>
+          <GenomiX.Button content="Default" />
+          <GenomiX.AcceptButton />
+          <GenomiX.AddButton color="dark-blue" />
+          <GenomiX.CancelButton />
+          <GenomiX.DownloadButton color="action-info" />
+          <GenomiX.SaveButton />
+          <GenomiX.SearchButton color="action-warning" />
+          <GenomiX.ExportButton />
+          <GenomiX.UploadButton />
+        </Button.Group>
       </Grid.Row>
 
       <Grid.Row>
         <h1>Inverted Buttons</h1>
         <Divider />
-        <GenomiX.Button content="Default" inverted />
-        <GenomiX.AcceptButton inverted />
-        <GenomiX.AddButton color="dark-blue" inverted />
-        <GenomiX.CancelButton inverted />
-        <GenomiX.DownloadButton color="action-info" inverted />
-        <GenomiX.SaveButton inverted />
-        <GenomiX.SearchButton color="action-warning" inverted />
-        <GenomiX.UploadButton color="light-blue" inverted />
-        <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />
+        <Button.Group>
+          <GenomiX.Button content="Default" inverted />
+          <GenomiX.AcceptButton inverted />
+          <GenomiX.AddButton color="dark-blue" inverted />
+          <GenomiX.CancelButton inverted />
+          <GenomiX.DownloadButton color="action-info" inverted />
+          <GenomiX.SaveButton inverted />
+          <GenomiX.SearchButton color="action-warning" inverted />
+          <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />
+          <GenomiX.UploadButton content={<GenomiX.Button content="Upload" icon="upload" color="light-blue" inverted />} />
+        </Button.Group>
       </Grid.Row>
 
     </Grid.Column>
