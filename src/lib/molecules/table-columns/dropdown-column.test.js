@@ -14,8 +14,10 @@ describe('Test DropdownColumn', () => {
         label="test"
         dataKey={dataKey}
         width={100}
-        options={[{ key: 'key2', value: 2, text: '2'}]}
-        onChange={jest.fn()}
+        columnData={{
+          options: [{ key: 'key2', value: 2, text: '2'}],
+          onChange: jest.fn(),
+        }}
       />
     )
     const wrapper = shallow(element)
@@ -25,15 +27,19 @@ describe('Test DropdownColumn', () => {
 
   it('cellRenderer returns expected content', () => {
     const cellData = 'mike'
+    const dataKey = 'test'
     const rowIndex = 1
     const onChange = jest.fn()
+    const columnData = {
+      options: [{ key: 'key2', value: 2, text: '2'}],
+      onChange: onChange,
+    }
     const element = (
       <DropdownColumn
         label="test"
-        dataKey="test"
+        dataKey={dataKey}
         width={100}
-        options={[{ key: 'key2', value: 2, text: '2'}]}
-        onChange={onChange}
+        columnData={columnData}
       />
     )
     const wrapper = shallow(element)
@@ -45,13 +51,15 @@ describe('Test DropdownColumn', () => {
         options={[{ key: 'key2', value: 2, text: '2'}]}
         content="mike"
         rowIndex={1}
-        fluid={false}
-        multiple={false}
-        selection={true}
-        search={true}
+        dropDownProps={{
+          fluid: false,
+          multiple: false,
+          selection: true,
+          search: true,
+        }}
       />
     )
-    expect(wrapper.find('Column').props().cellRenderer({ cellData, rowIndex }))
+    expect(wrapper.find('Column').props().cellRenderer({ dataKey, columnData, cellData, rowIndex }))
       .toEqual(cellElement)
   })
 
@@ -62,8 +70,10 @@ describe('Test DropdownColumn', () => {
         label="test"
         dataKey="test"
         width={100}
-        options={[{ key: 'key2', value: 2, text: '2'}]}
-        onChange={jest.fn()}
+        columnData={{
+          options: [{ key: 'key2', value: 2, text: '2'}],
+          onChange: jest.fn(),
+        }}
       />
     )
     const wrapper = shallow(element)

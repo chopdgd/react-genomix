@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Column } from 'react-virtualized'
-import { get, omit } from 'lodash'
+import { get } from 'lodash'
 
 import { LinkCell } from 'LibIndex'
 
@@ -11,57 +11,65 @@ import { LinkCell } from 'LibIndex'
 // But Table won't accept anything other than type of Column
 // Submitted an issue shown here: https://github.com/bvaughn/react-virtualized/issues/898
 
+const cellDataGetter = (props) => {
+  // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#celldatagetter
+  // props: { columnData, dataKey, rowData }
+  const { rowData, dataKey } = props
+  return get(rowData, dataKey, 'N/A')
+}
 
-class LinkColumn extends React.Component {
-  constructor(props){
-    super(props)
+const cellRenderer = (props) => {
+  // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
+  // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
+  const { cellData, columnData, rowIndex } = props
+  const { as, urlBuilder } = columnData
+  const path = urlBuilder(cellData)
 
-    this.prototype = Column
+  return (
+    <LinkCell
+      linkAs={as}
+      path={path}
+      content={cellData}
+      rowIndex={rowIndex}
+    />
+  )
+}
+
+const headerRenderer = (props) => {
+  // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#headerrenderer
+  // props: { columnData, dataKey, disableSort, label, sortBy, sortDirection, }
+  const { label } = props
+  return <p>{label}</p>
+}
+
+
+class LinkColumn extends Column {
+  static propTypes = {
+    ...Column.propTypes,
+    cellDataGetter: PropTypes.func.isRequired,
+    cellRenderer: PropTypes.func.isRequired,
+    headerRenderer: PropTypes.func.isRequired,
+    columnData: PropTypes.shape({
+      as: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.func,
+      ]),
+      urlBuilder: PropTypes.func.isRequired,
+    }),
   }
 
-  cellDataGetter = (props) => {
-    // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#celldatagetter
-    // props: { columnData, dataKey, rowData }
-    const { rowData, dataKey } = props
-    return get(rowData, dataKey, 'N/A')
-  }
-
-  cellRenderer = (props) => {
-    // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
-    // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
-    const { cellData, rowIndex } = props
-    const { as, path } = this.props
-
-    return (
-      <LinkCell
-        linkAs={as}
-        path={path}
-        content={cellData}
-        rowIndex={rowIndex}
-      />
-    )
-  }
-
-  headerRenderer = (props) => {
-    // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#headerrenderer
-    // props: { columnData, dataKey, disableSort, label, sortBy, sortDirection, }
-    const { label } = props
-    return <p>{label}</p>
+  static defaultProps = {
+    ...Column.defaultProps,
+    cellDataGetter: cellDataGetter,
+    cellRenderer: cellRenderer,
+    headerRenderer: headerRenderer,
+    columnData: {
+      as: 'a',
+    }
   }
 
   render() {
-    const { label, dataKey, width } = this.props
-
-    return (
-      <Column
-        label={label}
-        dataKey={dataKey}
-        width={width}
-        cellDataGetter={this.cellDataGetter}
-        cellRenderer={this.cellRenderer}
-        headerRenderer={this.headerRenderer}
-      />
-    )
+    return <Column {...this.props} />
   }
 }
 
