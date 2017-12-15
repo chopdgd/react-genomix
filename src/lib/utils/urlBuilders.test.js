@@ -142,13 +142,13 @@ describe('Test URL Builders', () => {
 
   it('Build URL to a locus in UCSC', () => {
     const observed = urlBuilders.ucscLocus(chr, pos, pos)
-    const expected = `${urls.UCSC}/cgi-bin/hgTracks?db=hg19&position=chr1:10-10`
+    const expected = `${urls.UCSC_URL}/cgi-bin/hgTracks?db=hg19&position=chr1:10-10`
     expect(observed).toEqual(expected)
   })
 
   it('Build URL to a locus in UCSC w/ genome', () => {
     const observed = urlBuilders.ucscLocus(chr, pos, pos, 'hg38')
-    const expected = `${urls.UCSC}/cgi-bin/hgTracks?db=hg38&position=chr1:10-10`
+    const expected = `${urls.UCSC_URL}/cgi-bin/hgTracks?db=hg38&position=chr1:10-10`
     expect(observed).toEqual(expected)
   })
 

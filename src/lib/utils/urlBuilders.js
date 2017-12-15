@@ -56,7 +56,7 @@ export const gnomadVariant = ( chr, pos, ref, alt ) =>
   `${urls.GNOMAD_URL}/variant/${chr}-${pos}-${ref}-${alt}`
 
 export const ucscLocus = ( chr, start, end, genome = 'hg19' ) =>
-  `${urls.UCSC}/cgi-bin/hgTracks?db=${genome}&position=chr${chr}:${start}-${end}`
+  `${urls.UCSC_URL}/cgi-bin/hgTracks?db=${genome}&position=chr${chr}:${start}-${end}`
 
 
 // Gene Resources
