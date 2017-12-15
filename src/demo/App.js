@@ -9,7 +9,7 @@ import Forms from './components/Forms'
 import BigDataTableExample from './components/BigDataTableExample'
 import ExampleTableCells from './components/TableCellExamples'
 import AutoCompleteDropDown from '../lib/atoms/dropdowns/autocomplete-dropdown'
-
+import TurnAroundTimeProgress from '../lib/atoms/progress-bars/turn-around-time-progress'
 
 const App = () => (
   <div>
@@ -17,6 +17,11 @@ const App = () => (
     <SecondExample />
     <Buttons />
     <Icons />
+    <TurnAroundTimeProgress
+      target={40}
+      start="12-11-2017"
+      // signout="12-17-2017"
+    />
     <AutoCompleteDropDown
       search={true}
       selection={true}
