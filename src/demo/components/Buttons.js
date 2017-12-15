@@ -3,6 +3,9 @@ import { Divider, Grid, Button } from 'semantic-ui-react'
 
 import * as GenomiX from 'LibIndex'
 
+const handleResults = (results) => {
+  alert(JSON.stringify(results))
+}
 
 const Buttons = () => (
   <Grid centered>
@@ -20,7 +23,7 @@ const Buttons = () => (
           <GenomiX.SaveButton />
           <GenomiX.SearchButton color="action-warning" />
           <GenomiX.ExportButton />
-          <GenomiX.UploadButton />
+          <GenomiX.UploadButton handleResults={handleResults}/>
         </Button.Group>
       </Grid.Row>
 
@@ -36,7 +39,7 @@ const Buttons = () => (
           <GenomiX.SaveButton inverted />
           <GenomiX.SearchButton color="action-warning" inverted />
           <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />
-          <GenomiX.UploadButton content={<GenomiX.Button content="Upload" icon="upload" color="light-blue" inverted />} />
+          <GenomiX.UploadButton content={<GenomiX.Button content="Upload" icon="upload" color="light-blue" inverted />} handleResults={handleResults} />
         </Button.Group>
       </Grid.Row>
 
