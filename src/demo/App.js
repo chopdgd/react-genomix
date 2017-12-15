@@ -11,7 +11,7 @@ import ExampleTableCells from './components/TableCellExamples'
 import AutoCompleteDropDown from '../lib/atoms/dropdowns/autocomplete-dropdown'
 
 
-const App = () =>
+const App = () => (
   <div>
     <Example />
     <SecondExample />
@@ -28,6 +28,6 @@ const App = () =>
     <ExampleTableCells />
     <BigDataTableExample />
   </div>
-
+)
 
 export default App;
