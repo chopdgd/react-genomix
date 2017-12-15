@@ -114,7 +114,7 @@ class UploadButton extends React.Component {
       this.setState({
         results,
     })
-    alert(JSON.stringify(results))
+    alert(JSON.stringify(results.data))
   }
     reader.readAsText(files[0]);
   }
