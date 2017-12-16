@@ -1,8 +1,16 @@
 import React from 'react'
 import { Table } from 'semantic-ui-react'
 
-import { CheckboxCell, DropdownCell, TextCell, LinkCell } from 'LibIndex'
-
+import {
+  CheckboxCell,
+  DropdownCell,
+  InterpretationCell,
+  LinkCell,
+  PublicEvidenceCell,
+  SexCell,
+  TextCell,
+  TurnAroundTimeProgressCell,
+} from 'LibIndex'
 
 class ExampleTableCells extends React.Component {
   constructor(props) {
@@ -29,18 +37,21 @@ class ExampleTableCells extends React.Component {
 
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>
-              Checkbox
-            </Table.HeaderCell>
-            <Table.HeaderCell>
-              Dropdown
-            </Table.HeaderCell>
-            <Table.HeaderCell>
-              Text
-            </Table.HeaderCell>
-            <Table.HeaderCell>
-              Link
-            </Table.HeaderCell>
+            <Table.HeaderCell> Checkbox </Table.HeaderCell>
+
+            <Table.HeaderCell> Dropdown </Table.HeaderCell>
+
+            <Table.HeaderCell> Text </Table.HeaderCell>
+
+            <Table.HeaderCell> Link </Table.HeaderCell>
+
+            <Table.HeaderCell> Sex </Table.HeaderCell>
+
+            <Table.HeaderCell> Interpretation </Table.HeaderCell>
+
+            <Table.HeaderCell> Turn Around Time </Table.HeaderCell>
+
+            <Table.HeaderCell>Public Evidence</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -64,6 +75,17 @@ class ExampleTableCells extends React.Component {
             />
             <TextCell as="td" content="text" />
             <LinkCell as="td" path="http://www.google.com" content="google" />
+            <SexCell as="td" sex="3" />
+            <InterpretationCell as="td" classification="pathogenic" labelProps={{ basic: true }} />
+            <TurnAroundTimeProgressCell as="td" target={40} start="12-18-1987" />
+            <PublicEvidenceCell
+              as="td"
+              chromosome="1"
+              position={10}
+              reference="A"
+              alternate="T"
+              cosmicId="Id"
+            />
           </Table.Row>
         </Table.Body>
 
