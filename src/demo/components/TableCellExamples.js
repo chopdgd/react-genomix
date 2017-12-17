@@ -4,12 +4,14 @@ import { Grid, Table } from 'semantic-ui-react'
 import {
   CheckboxCell,
   DropdownCell,
+  GeneCell,
   InterpretationCell,
   LinkCell,
   MolecularConsequenceCell,
   PublicEvidenceCell,
   SexCell,
   TextCell,
+  TranscriptCell,
   TurnAroundTimeProgressCell,
 } from 'LibIndex'
 
@@ -43,12 +45,14 @@ class ExampleTableCells extends React.Component {
               <Table.Row>
                 <Table.HeaderCell> Checkbox </Table.HeaderCell>
                 <Table.HeaderCell> Dropdown </Table.HeaderCell>
+                <Table.HeaderCell> Gene </Table.HeaderCell>
                 <Table.HeaderCell> Interpretation </Table.HeaderCell>
                 <Table.HeaderCell> Link </Table.HeaderCell>
                 <Table.HeaderCell> Consequence </Table.HeaderCell>
                 <Table.HeaderCell>Public Evidence</Table.HeaderCell>
                 <Table.HeaderCell> Sex </Table.HeaderCell>
                 <Table.HeaderCell> Text </Table.HeaderCell>
+                <Table.HeaderCell> Transcript </Table.HeaderCell>
                 <Table.HeaderCell> Turn Around Time </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
@@ -70,6 +74,10 @@ class ExampleTableCells extends React.Component {
                     { key: 'key1', value: 1, text: '1'},
                     { key: 'key2', value: 2, text: '2'}
                   ]}
+                />
+                <GeneCell
+                  as="td"
+                  gene="PNPLA6"
                 />
                 <InterpretationCell
                   as="td"
@@ -99,6 +107,10 @@ class ExampleTableCells extends React.Component {
                 <TextCell
                   as="td"
                   content="text"
+                />
+                <TranscriptCell
+                  as="td"
+                  transcript="transcript"
                 />
                 <TurnAroundTimeProgressCell
                   as="td"

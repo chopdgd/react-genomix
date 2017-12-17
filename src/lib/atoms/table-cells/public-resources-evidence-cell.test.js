@@ -6,7 +6,7 @@ import { shallow } from 'enzyme'
 import { PublicEvidenceCell } from 'LibIndex'
 
 
-describe('Test MolecularConsequenceCell', () => {
+describe('Test PublicEvidenceCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     const element = (

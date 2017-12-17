@@ -5,7 +5,7 @@ import { shallow } from 'enzyme'
 import { TurnAroundTimeProgressCell } from 'LibIndex'
 
 
-describe('Test InterpretationCell', () => {
+describe('Test TurnAroundTimeProgressCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(<TurnAroundTimeProgressCell target={40} />, div)
