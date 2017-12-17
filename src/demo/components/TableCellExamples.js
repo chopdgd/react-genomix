@@ -3,6 +3,7 @@ import { Grid, Table } from 'semantic-ui-react'
 
 import {
   CheckboxCell,
+  DateCell,
   DropdownCell,
   GeneCell,
   InterpretationCell,
@@ -10,6 +11,7 @@ import {
   MolecularConsequenceCell,
   PublicEvidenceCell,
   SexCell,
+  StatusCell,
   TextCell,
   TranscriptCell,
   TurnAroundTimeProgressCell,
@@ -44,6 +46,7 @@ class ExampleTableCells extends React.Component {
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell> Checkbox </Table.HeaderCell>
+                <Table.HeaderCell> Date </Table.HeaderCell>
                 <Table.HeaderCell> Dropdown </Table.HeaderCell>
                 <Table.HeaderCell> Gene </Table.HeaderCell>
                 <Table.HeaderCell> Interpretation </Table.HeaderCell>
@@ -51,6 +54,7 @@ class ExampleTableCells extends React.Component {
                 <Table.HeaderCell> Consequence </Table.HeaderCell>
                 <Table.HeaderCell>Public Evidence</Table.HeaderCell>
                 <Table.HeaderCell> Sex </Table.HeaderCell>
+                <Table.HeaderCell> Status </Table.HeaderCell>
                 <Table.HeaderCell> Text </Table.HeaderCell>
                 <Table.HeaderCell> Transcript </Table.HeaderCell>
                 <Table.HeaderCell> Turn Around Time </Table.HeaderCell>
@@ -63,6 +67,10 @@ class ExampleTableCells extends React.Component {
                   as="td"
                   rowIndex={1}
                   onChange={this.onChange}
+                />
+                <DateCell
+                  as="td"
+                  date="1987-12-18"
                 />
                 <DropdownCell
                   as="td"
@@ -103,6 +111,10 @@ class ExampleTableCells extends React.Component {
                 <SexCell
                   as="td"
                   sex="male"
+                />
+                <StatusCell
+                  as="td"
+                  status="running"
                 />
                 <TextCell
                   as="td"

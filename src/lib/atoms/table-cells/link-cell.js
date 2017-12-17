@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { InfoIcon, Link } from 'LibIndex'
+import { Link } from 'LibIndex'
 import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
 import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
@@ -32,15 +32,13 @@ LinkCell.propTypes = {
     PropTypes.element,
   ]).isRequired,
   linkAs: customPropTypes.as,
-  icon: PropTypes.element,
 }
 
 LinkCell.defaultProps = {
   as: 'div',
   linkAs: 'a',
-  icon: <InfoIcon />
 }
 
-LinkCell.handledProps = ['as', 'rowIndex', 'content', 'linkAs', 'icon']
+LinkCell.handledProps = ['as', 'rowIndex', 'content', 'linkAs']
 
 export default LinkCell

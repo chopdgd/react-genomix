@@ -12,6 +12,7 @@ import {
   MolecularConsequenceColumn,
   PublicEvidenceColumn,
   SexColumn,
+  StatusColumn,
   TextColumn,
   TranscriptColumn,
   TurnAroundTimeProgressColumn,
@@ -37,6 +38,7 @@ const list = Array.from(new Array(30), (x,i) => ({
   target: 8,
   start: '12-18-1987',
   signout: '12-19-1987',
+  status: 'running',
 }))
 
 
@@ -47,8 +49,9 @@ const ExampleInfiniteTable = () => (
         data={list}
         height={600}
         headerHeight={65}
+        headerTextAlign="center"
+        rowTextAlign="center"
         rowHeight={65}
-        headerTextAlign="left"
       >
         <Column
           label="Base"
@@ -85,7 +88,8 @@ const ExampleInfiniteTable = () => (
           dataKey="link"
           width={80}
           columnData={{
-            urlBuilder: (cellData) => `https://www.google.com/search?q=${cellData}`
+            urlBuilder: (cellData) => `https://www.google.com/search?q=${cellData}`,
+            as: 'a',
           }}
         />
         <MolecularConsequenceColumn
@@ -108,6 +112,11 @@ const ExampleInfiniteTable = () => (
         <SexColumn
           label="Sex"
           dataKey="sex"
+          width={50}
+        />
+        <StatusColumn
+          label="Status"
+          dataKey="status"
           width={50}
         />
         <TextColumn
