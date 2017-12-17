@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import { Form } from 'semantic-ui-react'
 import { mount } from 'enzyme'
 
-import { Button } from 'LibIndex/Button'
-import SaveForm from './save-form'
+import { Button, SaveForm } from 'LibIndex'
 
 
 const form = (onSubmit = jest.fn()) => {
@@ -51,7 +50,7 @@ describe('Test SaveForm', () => {
 
     wrapper.find('input#test2').simulate('change', { target: { name: 'test2', value: '89' } })
     expect(wrapper.state().formValues).toEqual({ 'test1': '7', 'test2': '89' })
-  });
+  })
 
   it('SaveForm test onSubmit using submit', () => {
     const onSubmit = jest.fn()
@@ -59,5 +58,5 @@ describe('Test SaveForm', () => {
     wrapper.find('form#test').simulate('submit')
     expect(onSubmit).toHaveBeenCalledWith({ 'test1': 'default' })
     expect(wrapper.state().formValues).toEqual({})
-  });
+  })
 })

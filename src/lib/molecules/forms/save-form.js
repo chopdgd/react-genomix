@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react'
 import { get } from 'lodash'
 
 
-class SaveForm extends React.Component {
+class SaveForm extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -37,7 +37,7 @@ class SaveForm extends React.Component {
       })
     )
 
-    let button;
+    let button
     if (this.props.saveButton) {
       button = React.cloneElement(this.props.saveButton, {
         type: 'submit',

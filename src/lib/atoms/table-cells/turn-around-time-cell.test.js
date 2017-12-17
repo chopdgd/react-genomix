@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import TurnAroundTimeProgressCell from './turn-around-time-cell'
+import { TurnAroundTimeProgressCell } from 'LibIndex'
 
 
 describe('Test InterpretationCell', () => {

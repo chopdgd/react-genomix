@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { SexCell } from 'LibIndex'
-import SexColumn from './sex-column'
+import { SexCell, SexColumn } from 'LibIndex'
 
 
 describe('Test SexColumn', () => {

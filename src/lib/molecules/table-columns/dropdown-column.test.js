@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { DropdownCell } from 'LibIndex'
-import DropdownColumn from './dropdown-column'
+import { DropdownCell, DropdownColumn } from 'LibIndex'
 
 
 describe('Test DropdownColumn', () => {
