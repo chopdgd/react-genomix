@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import { InterpretationCell, InterpretationColumn } from 'LibIndex'
 
 
-describe('Test SexColumn', () => {
+describe('Test InterpretationColumn', () => {
   it('cellDataGetter returns expected content', () => {
     const rowData = { interpretation: 'benign' }
     const dataKey = 'interpretation'
