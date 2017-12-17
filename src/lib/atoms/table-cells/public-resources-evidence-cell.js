@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Popup, Icon } from 'semantic-ui-react'
 
-import * as customPropTypes from '../../helpers/customPropTypes'
-import * as urls from '../../utils/urlBuilders'
-import getElementType from '../../helpers/getElementType'
-import getUnhandledProps from '../../helpers/getUnhandledProps'
+import { utils } from 'LibIndex'
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
 class PublicEvidenceCell extends React.PureComponent {
@@ -44,22 +44,22 @@ class PublicEvidenceCell extends React.PureComponent {
 
     let cosmicURL
     if (cosmicId) {
-      cosmicURL = urls.cosmicEntry(cosmicId)
+      cosmicURL = utils.urlBuilders.cosmicEntry(cosmicId)
     }
 
     let hgmdURL
     if (hgmdId) {
-      hgmdURL = urls.hgmdVariant(hgmdId)
+      hgmdURL = utils.urlBuilders.hgmdVariant(hgmdId)
     }
 
     let clinvarURL
     if (clinvarId) {
-      clinvarURL = urls.clinvarEntry(clinvarId)
+      clinvarURL = utils.urlBuilders.clinvarEntry(clinvarId)
     }
 
     let gnomadURL
     if (gnomadFrequency) {
-      gnomadURL = urls.gnomadVariant(chromosome, position, reference, alternate)
+      gnomadURL = utils.urlBuilders.gnomadVariant(chromosome, position, reference, alternate)
     }
 
     return (

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Button } from 'semantic-ui-react'
 import { shallow } from 'enzyme'
 
-import PublicEvidenceCell from './public-resources-evidence-cell'
+import { PublicEvidenceCell } from 'LibIndex'
 
 
 describe('Test MolecularConsequenceCell', () => {

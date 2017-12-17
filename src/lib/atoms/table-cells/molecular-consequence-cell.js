@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Label } from 'semantic-ui-react'
 
-import * as customPropTypes from '../../helpers/customPropTypes'
-import getElementType from '../../helpers/getElementType'
-import getUnhandledProps from '../../helpers/getUnhandledProps'
-import getMolecularConsequenceColor from '../../utils/getMolecularConsequenceColor'
+import { utils } from 'LibIndex'
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class MolecularConsequenceCell extends React.Component {
+class MolecularConsequenceCell extends React.PureComponent {
   render() {
     const ElementType = getElementType(MolecularConsequenceCell, this.props)
     const rest = getUnhandledProps(MolecularConsequenceCell, this.props)
     const { consequence, labelProps } = this.props
-    const color = getMolecularConsequenceColor(consequence)
+    const color = utils.getMolecularConsequenceColor(consequence)
 
     return (
       <ElementType {...rest}>

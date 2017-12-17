@@ -37,27 +37,28 @@ const list = Array.from(new Array(30), (x,i) => ({
 
 
 const ExampleInfiniteTable = () => (
-  <Grid>
-    <Grid.Column width={16}>
+  <Grid padded centered>
+    <Grid.Column width={16} textAlign="center">
       <BigDataTable
         data={list}
-        height={400}
+        height={600}
+        headerHeight={65}
         rowHeight={65}
         headerTextAlign="left"
       >
         <Column
-          label="Base Column"
+          label="Base"
           dataKey="base"
           width={150}
         />
         <CheckboxColumn
-          label="Checkbox Column"
+          label="Checkbox"
           dataKey="checkbox"
           width={150}
           columnData={{ onChange: (props) => alert(JSON.stringify(props)) }}
         />
         <DropdownColumn
-          label="Dropdown Column"
+          label="Dropdown"
           dataKey="dropdown"
           width={350}
           columnData={{
@@ -66,12 +67,12 @@ const ExampleInfiniteTable = () => (
           }}
         />
         <InterpretationColumn
-          label="Interpretation Column"
+          label="Interpretation"
           dataKey="interpretation"
           width={150}
         />
         <LinkColumn
-          label="Link Column"
+          label="Link"
           dataKey="link"
           width={150}
           columnData={{
@@ -79,12 +80,12 @@ const ExampleInfiniteTable = () => (
           }}
         />
         <MolecularConsequenceColumn
-          label="Consequence Column"
+          label="Consequence"
           dataKey="consequence"
           width={150}
         />
         <PublicEvidenceColumn
-          label="Evidence Column"
+          label="Evidence"
           dataKey="variant_annotation"
           width={150}
           columnData={{
@@ -96,17 +97,17 @@ const ExampleInfiniteTable = () => (
           }}
         />
         <SexColumn
-          label="Sex Column"
+          label="Sex"
           dataKey="sex"
           width={150}
         />
         <TextColumn
-          label="Text Column"
+          label="Text"
           dataKey="text"
           width={150}
         />
         <TurnAroundTimeProgressColumn
-          label="Turn Around Time Column"
+          label="Progress"
           dataKey="variant_annotation"
           width={350}
           columnData={{

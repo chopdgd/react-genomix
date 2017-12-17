@@ -4,7 +4,7 @@ import { Dropdown } from 'semantic-ui-react'
 import { concat, differenceWith, isEqual, omit } from 'lodash'
 
 
-class AutoCompleteDropDown extends React.Component {
+class AutoCompleteDropDown extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -16,7 +16,7 @@ class AutoCompleteDropDown extends React.Component {
   }
 
   componentWillMount() {
-    this.timeout = null;
+    this.timeout = null
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,7 +48,7 @@ class AutoCompleteDropDown extends React.Component {
 
     this.setState({
       loading: true,
-    });
+    })
   }
 
   render() {

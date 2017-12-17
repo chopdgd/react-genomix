@@ -3,11 +3,10 @@ import PropTypes from 'prop-types'
 import { Modal } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { Button, CancelButton } from 'LibIndex'
-import SaveForm from '../forms/save-form'
+import { Button, CancelButton, SaveForm } from 'LibIndex'
 
 
-class SaveFormModal extends React.Component {
+class SaveFormModal extends React.PureComponent {
   constructor(props) {
     super(props)
 

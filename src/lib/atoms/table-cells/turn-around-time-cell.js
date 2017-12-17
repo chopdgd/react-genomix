@@ -7,7 +7,7 @@ import getElementType from '../../helpers/getElementType'
 import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
-class TurnAroundTimeProgressCell extends React.Component {
+class TurnAroundTimeProgressCell extends React.PureComponent {
   render() {
     const ElementType = getElementType(TurnAroundTimeProgressCell, this.props)
     const rest = getUnhandledProps(TurnAroundTimeProgressCell, this.props)
