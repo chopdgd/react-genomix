@@ -67,7 +67,7 @@
     "react-csv": "1.0.8",
     "react-dev-utils": "4.2.1",
     "react-dom": "16.2.0",
-    "react-virtualized": "9.13.0",
+    "react-virtualized": "9.14.0",
     "sass-loader": "6.0.6",
     "semantic-ui-css": "2.2.12",
     "semantic-ui-react": "0.77.1",
