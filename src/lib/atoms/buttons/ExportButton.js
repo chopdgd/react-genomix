@@ -4,10 +4,10 @@ import { CSVLink } from 'react-csv'
 import moment from 'moment'
 import { get } from 'lodash'
 
-import Button from './Button'
+import { Button } from 'LibIndex'
 
 
-class ExportButton extends React.Component {
+class ExportButton extends React.PureComponent {
   constructor(props) {
     super(props)
 

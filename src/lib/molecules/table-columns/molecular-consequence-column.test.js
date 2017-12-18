@@ -1,11 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { MolecularConsequenceCell } from 'LibIndex'
-import MolecularConsequenceColumn from './molecular-consequence-column'
+import { MolecularConsequenceCell, MolecularConsequenceColumn } from 'LibIndex'
 
 
-describe('Test SexColumn', () => {
+describe('Test MolecularConsequenceColumn', () => {
   it('cellDataGetter returns expected content', () => {
     const rowData = { consequence: 'missense' }
     const dataKey = 'consequence'

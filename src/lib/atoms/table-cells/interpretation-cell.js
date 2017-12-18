@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Label } from 'semantic-ui-react'
 
-import * as customPropTypes from '../../helpers/customPropTypes'
-import getElementType from '../../helpers/getElementType'
-import getUnhandledProps from '../../helpers/getUnhandledProps'
-import getInterpretationColor from '../../utils/getInterpretationColor'
+import { utils } from 'LibIndex'
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
 class InterpretationCell extends React.PureComponent {
@@ -13,7 +13,7 @@ class InterpretationCell extends React.PureComponent {
     const ElementType = getElementType(InterpretationCell, this.props)
     const rest = getUnhandledProps(InterpretationCell, this.props)
     const { classification, labelProps } = this.props
-    const color = getInterpretationColor(classification)
+    const color = utils.getInterpretationColor(classification)
 
 
     return (

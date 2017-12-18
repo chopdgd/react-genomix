@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Popup, Progress } from 'semantic-ui-react'
 
-import dateFormatter from '../../utils/dateFormatter'
-import getTurnAroundTimeDetails from '../../utils/getTurnAroundTimeDetails'
+import { utils } from 'LibIndex'
 
 
 class TurnAroundTimeProgress extends React.PureComponent {
@@ -17,7 +16,7 @@ class TurnAroundTimeProgress extends React.PureComponent {
 
   renderProgress = () => {
     const { target, start, signout, ...rest } = this.props
-    const { label, color, value } = getTurnAroundTimeDetails(target, start, signout)
+    const { label, color, value } = utils.getTurnAroundTimeDetails(target, start, signout)
 
     return (
       <Popup
@@ -35,8 +34,8 @@ class TurnAroundTimeProgress extends React.PureComponent {
       >
         <Popup.Content>
           <strong>Target:</strong> {target} days<br />
-          <strong>Started:</strong> {dateFormatter(start)}<br />
-          <strong>Signed out:</strong> {signout ? dateFormatter(signout): "N/A"}
+          <strong>Started:</strong> {utils.dateFormatter(start)}<br />
+          <strong>Signed out:</strong> {signout ? utils.dateFormatter(signout): "N/A"}
         </Popup.Content>
       </Popup>
     )

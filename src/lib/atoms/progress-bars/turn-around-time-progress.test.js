@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import TurnAroundTimeProgress from './turn-around-time-progress'
+import { TurnAroundTimeProgress } from 'LibIndex'
 
 
 describe('Test TurnAroundTimeProgress', () => {
@@ -18,17 +18,17 @@ describe('Test TurnAroundTimeProgress', () => {
   })
 
   it('if start is defined, it should render a Progress component', () => {
-    const wrapper = shallow(<TurnAroundTimeProgress target={40} start="12-18-1987" />)
+    const wrapper = shallow(<TurnAroundTimeProgress target={40} start="1987-12-18" />)
     expect(wrapper.find('PopupContent')).toHaveLength(1)
   })
 
   it('if start is defined but signout is not, it should render a Progress component w/o signout date', () => {
-    const wrapper = shallow(<TurnAroundTimeProgress target={40} start="12-18-1987" />)
+    const wrapper = shallow(<TurnAroundTimeProgress target={40} start="1987-12-18" />)
     expect(wrapper.find('PopupContent').props().children).toContain("N/A")
   })
 
   it('if start and signout are defined, it should render a Progress component w/o signout date', () => {
-    const wrapper = shallow(<TurnAroundTimeProgress target={40} start="12-18-1987" signout="12-20-2017" />)
-    expect(wrapper.find('PopupContent').props().children).toContain("2017/12/20")
+    const wrapper = shallow(<TurnAroundTimeProgress target={40} start="1987-12-18" signout="2017-12-20" />)
+    expect(wrapper.find('PopupContent').props().children).toContain("12/18/1987")
   })
 })

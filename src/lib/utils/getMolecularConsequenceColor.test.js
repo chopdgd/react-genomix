@@ -1,33 +1,33 @@
-import getMolecularConsequenceColor from './getMolecularConsequenceColor'
+import { utils } from 'LibIndex'
 
 
 describe('Test Molecular Consequence Color', () => {
   it('frameshift should be red', () => {
-    expect(getMolecularConsequenceColor(' frameshift ')).toEqual('red')
+    expect(utils.getMolecularConsequenceColor(' frameshift ')).toEqual('red')
   })
 
   it('stop-gain/stop-loss or start-gain/start-loss should be red', () => {
-    expect(getMolecularConsequenceColor(' stop-gained ')).toEqual('red')
-    expect(getMolecularConsequenceColor('stop-loss ')).toEqual('red')
-    expect(getMolecularConsequenceColor('  start-gain ')).toEqual('red')
-    expect(getMolecularConsequenceColor(' start-loss')).toEqual('red')
+    expect(utils.getMolecularConsequenceColor(' stop-gained ')).toEqual('red')
+    expect(utils.getMolecularConsequenceColor('stop-loss ')).toEqual('red')
+    expect(utils.getMolecularConsequenceColor('  start-gain ')).toEqual('red')
+    expect(utils.getMolecularConsequenceColor(' start-loss')).toEqual('red')
   })
 
   it('missense should be orange', () => {
-    expect(getMolecularConsequenceColor('missense')).toEqual('orange')
+    expect(utils.getMolecularConsequenceColor('missense')).toEqual('orange')
   })
 
   it('splice should be blue', () => {
-    expect(getMolecularConsequenceColor('splice_acceptor')).toEqual('blue')
+    expect(utils.getMolecularConsequenceColor('splice_acceptor')).toEqual('blue')
   })
 
   it('insertion/deletion should be black', () => {
-    expect(getMolecularConsequenceColor('inframe insertion')).toEqual('black')
-    expect(getMolecularConsequenceColor('inframe deletion')).toEqual('black')
+    expect(utils.getMolecularConsequenceColor('inframe insertion')).toEqual('black')
+    expect(utils.getMolecularConsequenceColor('inframe deletion')).toEqual('black')
   })
 
   it('everything else should be grey', () => {
-    expect(getMolecularConsequenceColor('UTR')).toEqual('grey')
+    expect(utils.getMolecularConsequenceColor('UTR')).toEqual('grey')
   })
 
 })

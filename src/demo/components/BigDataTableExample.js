@@ -6,12 +6,15 @@ import {
   BigDataTable,
   CheckboxColumn,
   DropdownColumn,
+  GeneColumn,
   InterpretationColumn,
   LinkColumn,
   MolecularConsequenceColumn,
   PublicEvidenceColumn,
   SexColumn,
+  StatusColumn,
   TextColumn,
+  TranscriptColumn,
   TurnAroundTimeProgressColumn,
 } from 'LibIndex'
 
@@ -24,6 +27,8 @@ const list = Array.from(new Array(30), (x,i) => ({
   link: 'link',
   consequence: 'missense',
   text: 'Text',
+  transcript: 'NM_000010.1',
+  gene: 'PNPLA6',
   chromosome: '1',
   position: 10,
   reference: 'A',
@@ -33,60 +38,69 @@ const list = Array.from(new Array(30), (x,i) => ({
   target: 8,
   start: '12-18-1987',
   signout: '12-19-1987',
+  status: 'running',
 }))
 
 
 const ExampleInfiniteTable = () => (
-  <Grid>
-    <Grid.Column width={16}>
+  <Grid padded centered>
+    <Grid.Column width={16} textAlign="center">
       <BigDataTable
         data={list}
-        height={400}
+        height={600}
+        headerHeight={65}
+        headerTextAlign="center"
+        rowTextAlign="center"
         rowHeight={65}
-        headerTextAlign="left"
       >
         <Column
-          label="Base Column"
+          label="Base"
           dataKey="base"
-          width={150}
+          width={100}
         />
         <CheckboxColumn
-          label="Checkbox Column"
+          label="Checkbox"
           dataKey="checkbox"
-          width={150}
+          width={100}
           columnData={{ onChange: (props) => alert(JSON.stringify(props)) }}
         />
         <DropdownColumn
-          label="Dropdown Column"
+          label="Dropdown"
           dataKey="dropdown"
-          width={350}
+          width={250}
           columnData={{
             onChange: (props) => alert(JSON.stringify(props)),
             options: [{ key: 1, value: 1, text: '1' }],
           }}
         />
-        <InterpretationColumn
-          label="Interpretation Column"
-          dataKey="interpretation"
+        <GeneColumn
+          label="Gene"
+          dataKey="gene"
           width={150}
         />
+        <InterpretationColumn
+          label="Interpretation"
+          dataKey="interpretation"
+          width={120}
+        />
         <LinkColumn
-          label="Link Column"
+          label="Link"
           dataKey="link"
-          width={150}
+          width={80}
           columnData={{
-            urlBuilder: (cellData) => `https://www.google.com/search?q=${cellData}`
+            urlBuilder: (cellData) => `https://www.google.com/search?q=${cellData}`,
+            as: 'a',
           }}
         />
         <MolecularConsequenceColumn
-          label="Consequence Column"
+          label="Consequence"
           dataKey="consequence"
-          width={150}
+          width={100}
         />
         <PublicEvidenceColumn
-          label="Evidence Column"
+          label="Evidence"
           dataKey="variant_annotation"
-          width={150}
+          width={100}
           columnData={{
             chromosomeKey: 'chromosome',
             positionKey: 'position',
@@ -96,19 +110,29 @@ const ExampleInfiniteTable = () => (
           }}
         />
         <SexColumn
-          label="Sex Column"
+          label="Sex"
           dataKey="sex"
-          width={150}
+          width={50}
+        />
+        <StatusColumn
+          label="Status"
+          dataKey="status"
+          width={50}
         />
         <TextColumn
-          label="Text Column"
+          label="Text"
           dataKey="text"
+          width={50}
+        />
+        <TranscriptColumn
+          label="Transcript"
+          dataKey="transcript"
           width={150}
         />
         <TurnAroundTimeProgressColumn
-          label="Turn Around Time Column"
+          label="Progress"
           dataKey="variant_annotation"
-          width={350}
+          width={100}
           columnData={{
             targetKey: 'target',
             startKey: 'start',
