@@ -73,7 +73,7 @@ describe('Test BigDataTable', () => {
     const wrapper = mount(TestTable({ data: list }))
 
     expect(wrapper.state().rows).toEqual([{ name: 'Mike', description: 'Cool' }])
-    wrapper.setProps({ data: [{ name: 'Mike', description: 'Cool' }] });
+    wrapper.setProps({ data: [{ name: 'Mike', description: 'Cool' }] })
     expect(wrapper.state().rows).toEqual([{ name: 'Mike', description: 'Cool' }])
   })
 

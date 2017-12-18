@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { TextCell } from 'LibIndex'
-import TextColumn from './text-column'
+import { TextCell, TextColumn } from 'LibIndex'
 
 
 describe('Test TextColumn', () => {

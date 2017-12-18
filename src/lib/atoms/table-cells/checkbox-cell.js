@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Table, Checkbox } from 'semantic-ui-react'
+import { Checkbox } from 'semantic-ui-react'
+
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
 class CheckboxCell extends React.PureComponent {
@@ -10,19 +14,20 @@ class CheckboxCell extends React.PureComponent {
   }
 
   render() {
-    const { as, onChange, rowIndex, ...rest } = this.props
+    const ElementType = getElementType(CheckboxCell, this.props)
+    const rest = getUnhandledProps(CheckboxCell, this.props)
 
-    if (as === 'td') {
-      return <Table.Cell {...rest}><Checkbox onChange={this.onChange} /></Table.Cell>
-    } else {
-      return <div><Checkbox onChange={this.onChange} /></div>
-    }
+    return (
+      <ElementType {...rest}>
+        <Checkbox onChange={this.onChange} />
+      </ElementType>
+    )
   }
 }
 
 
 CheckboxCell.propTypes = {
-  as: PropTypes.oneOf(['td', 'div']),
+  as: customPropTypes.as,
   onChange: PropTypes.func.isRequired,
   rowIndex: PropTypes.number.isRequired,
 }
@@ -30,5 +35,7 @@ CheckboxCell.propTypes = {
 CheckboxCell.defaultProps = {
   as: 'div'
 }
+
+CheckboxCell.handledProps = ['as', 'onChange', 'rowIndex']
 
 export default CheckboxCell

@@ -23,14 +23,20 @@ const cellRenderer = (props) => {
   // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
   const { cellData, columnData, rowIndex } = props
   const { as, urlBuilder } = columnData
-  const path = urlBuilder(cellData)
+
+  const additionalProps = {}
+  if (as === 'a') {
+    additionalProps.href = urlBuilder(cellData)
+  } else {
+    additionalProps.to = urlBuilder(cellData)
+  }
 
   return (
     <LinkCell
       linkAs={as}
-      path={path}
       content={cellData}
       rowIndex={rowIndex}
+      {...additionalProps}
     />
   )
 }

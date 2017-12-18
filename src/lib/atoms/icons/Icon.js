@@ -1,34 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Icon } from 'semantic-ui-react'
+import { Icon as SemanticIcon } from 'semantic-ui-react'
 import cx from 'classnames'
 import { get, omit } from 'lodash'
 
 
-const icon = ({ ...props }) => {
+const Icon = ({ ...props }) => {
   const iconProps = omit(props, ['details', 'color', 'name'])
   const color = get(props, 'details.color', get(props, 'color'))
   const name = get(props, 'details.icon', get(props, 'name'))
 
   return (
-    <Icon
-      { ...iconProps }
+    <SemanticIcon
+      {...iconProps}
       className={cx(props.className, 'genomix', color, name)}
     />
   )
 }
 
 
-icon.propTypes = {
+Icon.propTypes = {
   details: PropTypes.shape({
     icon: PropTypes.string,
     color: PropTypes.string,
   })
-};
+}
 
-icon.defaultProps = {
+Icon.defaultProps = {
   details: undefined,
-};
+}
 
 
-export default icon;
+export default Icon

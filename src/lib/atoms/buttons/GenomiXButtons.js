@@ -1,7 +1,7 @@
 import React from 'react'
 import { get } from 'lodash'
 
-import Button from './Button'
+import { Button } from 'LibIndex'
 import * as constants from 'LibSrc/constants/icons'
 
 
