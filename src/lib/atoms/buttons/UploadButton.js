@@ -3,52 +3,38 @@ import PropTypes from 'prop-types'
 import Papa from 'papaparse'  // http://papaparse.com/docs
 import ReactFileReader from 'react-file-reader'
 
-import Button from './Button'
+import { Button } from 'LibIndex'
+
 
 class UploadButton extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {}
-
-    this.handleFiles = this.handleFiles.bind(this);
   }
 
   handleFiles = (files) => {
-    const config = {
-        	delimiter: "",	// auto-detect
-        	newline: "",	// auto-detect
-        	quoteChar: '"',
-        	header: true,
-        	dynamicTyping: false,
-        	preview: 0,
-        	encoding: "",
-        	worker: false,
-        	comments: false,
-        	step: undefined,
-        	complete: undefined,
-        	error: undefined,
-        	download: false,
-        	skipEmptyLines: false,
-        	chunk: undefined,
-        	fastMode: undefined,
-        	beforeFirstChunk: undefined,
-        	withCredentials: undefined
-        }
-    const reader = new FileReader();
+    const { config, handleResults } = this.props
+    const reader = new FileReader()
+
     reader.onload = () => {
-      const text = reader.result;
+      const text = reader.result
       let results = Papa.parse(text, config)
-      this.props.handleResults(results.data)
-  }
-    reader.readAsText(files[0]);
+      handleResults(results.data)
+    }
+
+    reader.readAsText(files[0])
   }
 
   render() {
-    const { content } = this.props
-    console.log(this.state)
+    const { content, fileTypes, multipleFiles } = this.props
+
     return (
-      <ReactFileReader handleFiles={this.handleFiles} fileTypes={['.csv', '.txt',]}>
+      <ReactFileReader
+        handleFiles={this.handleFiles}
+        fileTypes={fileTypes}
+        multipleFiles={multipleFiles}
+      >
         {content}
       </ReactFileReader>
     )
@@ -62,10 +48,54 @@ UploadButton.propTypes = {
     PropTypes.string,
   ]),
   handleResults: PropTypes.func.isRequired,
+  fileTypes: PropTypes.arrayOf(PropTypes.string),
+  multipleFiles: PropTypes.bool,
+  config: PropTypes.shape({
+    delimiter: PropTypes.string,
+    newline: PropTypes.string,
+    quoteChar: PropTypes.string,
+    header: PropTypes.bool,
+    dynamicTyping: PropTypes.bool,
+    preview: PropTypes.number,
+    encoding: PropTypes.string,
+    worker: PropTypes.bool,
+    comments: PropTypes.bool,
+    step: PropTypes.func,
+    complete: PropTypes.func,
+    error: PropTypes.func,
+    download: PropTypes.bool,
+    skipEmptyLines: PropTypes.bool,
+    chunk: PropTypes.func,
+    fastMode: PropTypes.bool,
+    beforeFirstChunk: PropTypes.func,
+    withCredentials: PropTypes.bool,
+  })
 }
 
 UploadButton.defaultProps = {
   content: <Button content="Upload" icon="upload" color="light-blue" />,
+  fileTypes: ['.csv', '.txt'],
+  multipleFiles: false,
+  config: {
+    delimiter: "",	// auto-detect
+    newline: "",	// auto-detect
+    quoteChar: '"',
+    header: true,
+    dynamicTyping: false,
+    preview: 0,
+    encoding: "",
+    worker: false,
+    comments: false,
+    step: undefined,
+    complete: undefined,
+    error: undefined,
+    download: false,
+    skipEmptyLines: false,
+    chunk: undefined,
+    fastMode: undefined,
+    beforeFirstChunk: undefined,
+    withCredentials: undefined,
+  }
 }
 
 export default UploadButton

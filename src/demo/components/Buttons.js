@@ -38,11 +38,16 @@ const items = [
   },
   {
     header: 'UploadButton',
-    description: <GenomiX.UploadButton color="light-blue" />,
+    description: (
+      <GenomiX.UploadButton
+        content={<GenomiX.Button content="Upload" icon="upload" />}
+        handleResults={handleResults}
+      />
+    ),
   },
   {
     header: 'ExportButton',
-    description: <GenomiX.ExportButton />,
+    description: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" />} />,
   },
 
   {
@@ -82,7 +87,12 @@ const items = [
   },
   {
     header: 'UploadButton',
-    description: <GenomiX.UploadButton color="light-blue" inverted />,
+    description: (
+      <GenomiX.UploadButton
+        content={<GenomiX.Button content="Upload" icon="upload" inverted />}
+        handleResults={handleResults}
+      />
+    ),
     meta: 'inverted',
   },
   {
