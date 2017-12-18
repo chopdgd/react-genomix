@@ -1,5 +1,5 @@
-import React from 'react';
-import './SecondExample.scss';
+import React from 'react'
+import './SecondExample.scss'
 
 const SecondExample = () => (
   <div className="SecondExample">
@@ -23,6 +23,6 @@ const SecondExample = () => (
       Documentation
     </a>
   </div>
-);
+)
 
-export default SecondExample;
+export default SecondExample

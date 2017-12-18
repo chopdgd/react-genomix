@@ -2,173 +2,173 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import * as GenomiXIcons from './GenomiXIcons'
+import * as GenomiX from 'LibIndex'
 
 
 describe('Test AcceptIcon', () => {
   it('AcceptIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.AcceptIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.AcceptIcon />, div)
+  })
 
   it('AcceptIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.AcceptIcon />);
-    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "checkmark"});
-  });
+    const wrapper = shallow(<GenomiX.AcceptIcon />)
+    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "checkmark"})
+  })
 })
 
 describe('Test AddIcon', () => {
   it('AddIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.AddIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.AddIcon />, div)
+  })
 
   it('AddIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.AddIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "plus"});
-  });
+    const wrapper = shallow(<GenomiX.AddIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "plus"})
+  })
 })
 
 describe('Test CancelIcon', () => {
   it('CancelIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.CancelIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.CancelIcon />, div)
+  })
 
   it('CancelIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.CancelIcon />);
-    expect(wrapper.props().details).toEqual({"color": "action-negative", "icon": "dont"});
-  });
+    const wrapper = shallow(<GenomiX.CancelIcon />)
+    expect(wrapper.props().details).toEqual({"color": "action-negative", "icon": "dont"})
+  })
 })
 
 describe('Test DownloadIcon', () => {
   it('DownloadIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.DownloadIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.DownloadIcon />, div)
+  })
 
   it('DownloadIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.DownloadIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "download"});
-  });
+    const wrapper = shallow(<GenomiX.DownloadIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "download"})
+  })
 })
 
 describe('Test ExternalIcon', () => {
   it('DownloadIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.ExternalIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.ExternalIcon />, div)
+  })
 
   it('DownloadIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.ExternalIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "external"});
-  });
+    const wrapper = shallow(<GenomiX.ExternalIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "external"})
+  })
 })
 
 describe('Test FemaleIcon', () => {
   it('FemaleIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.FemaleIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.FemaleIcon />, div)
+  })
 
   it('FemaleIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.FemaleIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "female", "color": "pink"});
-  });
+    const wrapper = shallow(<GenomiX.FemaleIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "female", "color": "pink"})
+  })
 })
 
 describe('Test InfoIcon', () => {
   it('InfoIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.InfoIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.InfoIcon />, div)
+  })
 
   it('InfoIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.InfoIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "info circle"});
-  });
+    const wrapper = shallow(<GenomiX.InfoIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "info circle"})
+  })
 })
 
 describe('Test MaleIcon', () => {
   it('MaleIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.MaleIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.MaleIcon />, div)
+  })
 
   it('MaleIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.MaleIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "male", "color": "light-blue"});
-  });
+    const wrapper = shallow(<GenomiX.MaleIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "male", "color": "light-blue"})
+  })
 })
 
 describe('Test ManualIcon', () => {
   it('ManualIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.ManualIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.ManualIcon />, div)
+  })
 
   it('ManualIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.ManualIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "write"});
-  });
+    const wrapper = shallow(<GenomiX.ManualIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "write"})
+  })
 })
 
 describe('Test QuestionIcon', () => {
   it('QuestionIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.QuestionIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.QuestionIcon />, div)
+  })
 
   it('QuestionIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.QuestionIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "help"});
-  });
+    const wrapper = shallow(<GenomiX.QuestionIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "help"})
+  })
 })
 
 describe('Test SaveIcon', () => {
   it('SaveIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.SaveIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.SaveIcon />, div)
+  })
 
   it('SaveIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.SaveIcon />);
-    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "save"});
-  });
+    const wrapper = shallow(<GenomiX.SaveIcon />)
+    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "save"})
+  })
 })
 
 describe('Test SearchIcon', () => {
   it('SearchIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.SearchIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.SearchIcon />, div)
+  })
 
   it('SearchIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.SearchIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "search"});
-  });
+    const wrapper = shallow(<GenomiX.SearchIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "search"})
+  })
 })
 
 describe('Test UploadIcon', () => {
   it('UploadIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.UploadIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.UploadIcon />, div)
+  })
 
   it('UploadIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.UploadIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "upload"});
-  });
+    const wrapper = shallow(<GenomiX.UploadIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "upload"})
+  })
 })
 
 describe('Test WarningIcon', () => {
   it('WarningIcon renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GenomiXIcons.WarningIcon />, div);
-  });
+    const div = document.createElement('div')
+    ReactDOM.render(<GenomiX.WarningIcon />, div)
+  })
 
   it('WarningIcon props are set correctly', () => {
-    const wrapper = shallow(<GenomiXIcons.WarningIcon />);
-    expect(wrapper.props().details).toEqual({"icon": "warning sign", "color": "action-warning"});
-  });
+    const wrapper = shallow(<GenomiX.WarningIcon />)
+    expect(wrapper.props().details).toEqual({"icon": "warning sign", "color": "action-warning"})
+  })
 })
