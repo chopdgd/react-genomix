@@ -7,97 +7,97 @@ import * as constants from 'LibSrc/constants/icons'
 export const AcceptIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Accept}
+    {...constants.Accept}
   />
 )
 
 export const AddIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Add}
+    {...constants.Add}
   />
 )
 
 export const CancelIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Cancel}
+    {...constants.Cancel}
   />
 )
 
 export const DownloadIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Download}
+    {...constants.Download}
   />
 )
 
 export const ExternalIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.External}
+    {...constants.External}
   />
 )
 
 export const FemaleIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Female}
+    {...constants.Female}
   />
 )
 
 export const InfoIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Info}
+    {...constants.Info}
   />
 )
 
 export const MaleIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Male}
+    {...constants.Male}
   />
 )
 
 export const ManualIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Manual}
+    {...constants.Manual}
   />
 )
 
 export const QuestionIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Question}
+    {...constants.Question}
   />
 )
 
 export const SaveIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Save}
+    {...constants.Save}
   />
 )
 
 export const SearchIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Search}
+    {...constants.Search}
   />
 )
 
 export const UploadIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Upload}
+    {...constants.Upload}
   />
 )
 
 export const WarningIcon = ({ ...props }) => (
   <Icon
     {...props}
-    details={constants.Warning}
+    {...constants.Warning}
   />
 )
