@@ -13,33 +13,17 @@ describe('Test Button', () => {
 
   it('initial props are set correctly', () => {
     const wrapper = shallow(<Button />)
-    expect(wrapper.props().color).toBe(undefined)
-    expect(wrapper.props().icon).toBe(undefined)
-    expect(wrapper.props().content).toBe(undefined)
-    expect(wrapper.props().className).toBe('genomix')
+    expect(wrapper.find('Button').props().color).toEqual(undefined)
+    expect(wrapper.find('Button').props().icon).toEqual(undefined)
+    expect(wrapper.find('Button').props().content).toEqual(undefined)
+    expect(wrapper.find('Button').props().className).toEqual('genomix')
   })
 
-  it('non default props are set correctly', () => {
+  it('non default props are set correctly (color is not passed)', () => {
     const wrapper = shallow(<Button color="red" icon="warning sign" />)
-    expect(wrapper.props().color).toBe(undefined)
-    expect(wrapper.props().icon).toBe('warning sign')
-    expect(wrapper.props().content).toBe(undefined)
-    expect(wrapper.props().className).toBe('genomix red')
-  })
-
-  it('detail props are set correctly', () => {
-    const wrapper = shallow(<Button content="test" details={{ color: 'blue', icon: 'info' }} />)
-    expect(wrapper.props().color).toBe(undefined)
-    expect(wrapper.props().icon).toBe('info')
-    expect(wrapper.props().content).toBe('test')
-    expect(wrapper.props().className).toBe('genomix blue')
-  })
-
-  it('detail props are overriding props', () => {
-    const wrapper = shallow(<Button content="Mike" icon="dont" color="red" details={{ color: 'blue', icon: 'info' }} />)
-    expect(wrapper.props().color).toBe(undefined)
-    expect(wrapper.props().icon).toBe('info')
-    expect(wrapper.props().content).toBe('Mike')
-    expect(wrapper.props().className).toBe('genomix blue')
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('warning sign')
+    expect(wrapper.props().content).toEqual(undefined)
+    expect(wrapper.props().className).toEqual('genomix red')
   })
 })

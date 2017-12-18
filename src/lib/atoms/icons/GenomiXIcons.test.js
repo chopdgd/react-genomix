@@ -13,7 +13,8 @@ describe('Test AcceptIcon', () => {
 
   it('AcceptIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.AcceptIcon />)
-    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "checkmark"})
+    expect(wrapper.props().color).toEqual('action-positive')
+    expect(wrapper.props().icon).toEqual('checkmark')
   })
 })
 
@@ -25,7 +26,8 @@ describe('Test AddIcon', () => {
 
   it('AddIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.AddIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "plus"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('plus')
   })
 })
 
@@ -37,7 +39,8 @@ describe('Test CancelIcon', () => {
 
   it('CancelIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.CancelIcon />)
-    expect(wrapper.props().details).toEqual({"color": "action-negative", "icon": "dont"})
+    expect(wrapper.props().color).toEqual('action-negative')
+    expect(wrapper.props().icon).toEqual('dont')
   })
 })
 
@@ -49,7 +52,8 @@ describe('Test DownloadIcon', () => {
 
   it('DownloadIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.DownloadIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "download"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('download')
   })
 })
 
@@ -61,7 +65,8 @@ describe('Test ExternalIcon', () => {
 
   it('DownloadIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.ExternalIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "external"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('external')
   })
 })
 
@@ -73,7 +78,8 @@ describe('Test FemaleIcon', () => {
 
   it('FemaleIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.FemaleIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "female", "color": "pink"})
+    expect(wrapper.props().color).toEqual('pink')
+    expect(wrapper.props().icon).toEqual('female')
   })
 })
 
@@ -85,7 +91,8 @@ describe('Test InfoIcon', () => {
 
   it('InfoIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.InfoIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "info circle"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('info circle')
   })
 })
 
@@ -97,7 +104,8 @@ describe('Test MaleIcon', () => {
 
   it('MaleIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.MaleIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "male", "color": "light-blue"})
+    expect(wrapper.props().color).toEqual('light-blue')
+    expect(wrapper.props().icon).toEqual('male')
   })
 })
 
@@ -109,7 +117,8 @@ describe('Test ManualIcon', () => {
 
   it('ManualIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.ManualIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "write"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('write')
   })
 })
 
@@ -121,7 +130,8 @@ describe('Test QuestionIcon', () => {
 
   it('QuestionIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.QuestionIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "help"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('help')
   })
 })
 
@@ -133,7 +143,8 @@ describe('Test SaveIcon', () => {
 
   it('SaveIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.SaveIcon />)
-    expect(wrapper.props().details).toEqual({"color": "action-positive", "icon": "save"})
+    expect(wrapper.props().color).toEqual('action-positive')
+    expect(wrapper.props().icon).toEqual('save')
   })
 })
 
@@ -145,7 +156,8 @@ describe('Test SearchIcon', () => {
 
   it('SearchIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.SearchIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "search"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('search')
   })
 })
 
@@ -157,7 +169,8 @@ describe('Test UploadIcon', () => {
 
   it('UploadIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.UploadIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "upload"})
+    expect(wrapper.props().color).toEqual(undefined)
+    expect(wrapper.props().icon).toEqual('upload')
   })
 })
 
@@ -169,6 +182,7 @@ describe('Test WarningIcon', () => {
 
   it('WarningIcon props are set correctly', () => {
     const wrapper = shallow(<GenomiX.WarningIcon />)
-    expect(wrapper.props().details).toEqual({"icon": "warning sign", "color": "action-warning"})
+    expect(wrapper.props().color).toEqual('action-warning')
+    expect(wrapper.props().icon).toEqual('warning sign')
   })
 })
