@@ -6,7 +6,7 @@ import { concat, differenceWith, isEqual } from 'lodash'
 import cx from 'classnames'
 
 
-class BigDataTable extends React.Component {
+class BigDataTable extends React.PureComponent {
   constructor(props, context) {
     super(props)
 

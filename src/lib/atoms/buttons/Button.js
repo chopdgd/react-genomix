@@ -1,34 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'semantic-ui-react'
+import { Button as SemanticButton } from 'semantic-ui-react'
 import cx from 'classnames'
-import { get, omit } from 'lodash'
+
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-const button = ({ ...props }) => {
-  const buttonProps = omit(props, ['details', 'color', 'icon'])
-  const color = get(props, 'details.color', get(props, 'color'))
-  const icon = get(props, 'details.icon', get(props, 'icon'))
+class Button extends React.PureComponent {
+  render() {
+    const buttonProps = getUnhandledProps(Button, this.props)
+    const { color, icon } = this.props
 
-  return (
-    <Button
-      { ...buttonProps }
-      className={cx(props.className, 'genomix', color)}
-      icon={icon}
-    />
-  )
+    return (
+      <SemanticButton
+        { ...buttonProps }
+        className={cx(this.props.className, 'genomix', color)}
+        icon={icon}
+      />
+    )
+  }
 }
 
 
-button.propTypes = {
-  details: PropTypes.shape({
-    icon: PropTypes.string,
-    color: PropTypes.string,
-  })
-};
+Button.propTypes = {
+  icon: PropTypes.string,
+  color: PropTypes.string,
+  className: PropTypes.string,
+}
 
-button.defaultProps = {
-  details: undefined,
-};
+Button.defaultProps = {}
 
-export default button
+Button.handledProps = ['className', 'icon', 'color']
+
+export default Button
