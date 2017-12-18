@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { LinkCell } from 'LibIndex'
-import LinkColumn from './link-column'
+import { LinkCell, LinkColumn } from 'LibIndex'
 
 
 describe('Test LinkColumn', () => {
@@ -27,6 +26,24 @@ describe('Test LinkColumn', () => {
     const cellData = 'mike'
     const rowIndex = 1
     const urlBuilder = (cellData) => `http://example.com/${cellData}`
+    const columnData = { as: 'a', urlBuilder }
+    const element = (
+      <LinkColumn
+        label="test"
+        dataKey="test"
+        width={100}
+        columnData={columnData}
+      />
+    )
+    const wrapper = shallow(element)
+    expect(wrapper.find('Column').props().cellRenderer({ columnData, cellData, rowIndex }))
+      .toEqual(<LinkCell as="div" linkAs="a" href="http://example.com/mike" content="mike" rowIndex={1} />)
+  })
+
+  it('cellRenderer returns expected content', () => {
+    const cellData = 'mike'
+    const rowIndex = 1
+    const urlBuilder = (cellData) => `http://example.com/${cellData}`
     const columnData = { urlBuilder }
     const element = (
       <LinkColumn
@@ -38,7 +55,7 @@ describe('Test LinkColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellRenderer({ columnData, cellData, rowIndex }))
-      .toEqual(<LinkCell as="div" linkAs="a" path="http://example.com/mike" content="mike" rowIndex={1} />)
+      .toEqual(<LinkCell as="div" linkAs="a" to="http://example.com/mike" content="mike" rowIndex={1} />)
   })
 
   it('urlBuilder is called when cellRenderer is fired' , () => {
