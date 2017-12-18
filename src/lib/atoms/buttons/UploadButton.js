@@ -17,9 +17,10 @@ class UploadButton extends React.Component {
     const { config, handleResults } = this.props
     const reader = new FileReader()
 
-    reader.onload = () => {
-      const text = reader.result
-      let results = Papa.parse(text, config)
+    // TODO: How do we test this?
+    // NOTE: Currently, very hard to test.  Be aware
+    reader.onload = (e) => {
+      let results = Papa.parse(e.target.result, config)
       handleResults(results.data)
     }
 
