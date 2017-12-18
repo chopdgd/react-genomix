@@ -88,17 +88,3 @@ describe('Test SearchButton', () => {
     expect(wrapper.props().icon).toEqual("search")
   })
 })
-
-describe('Test UploadButton', () => {
-  it('UploadButton renders without crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(<GenomiX.UploadButton />, div)
-  })
-
-  it('UploadButton props are set correctly', () => {
-    const wrapper = shallow(<GenomiX.UploadButton />)
-    expect(wrapper.props().content).toEqual("Upload")
-    expect(wrapper.props().color).toEqual(undefined)
-    expect(wrapper.props().icon).toEqual("upload")
-  })
-})

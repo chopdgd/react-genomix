@@ -22,8 +22,8 @@ export {
   DownloadButton,
   SaveButton,
   SearchButton,
-  UploadButton,
 } from 'LibSrc/atoms/buttons/GenomiXButtons'
+export { default as UploadButton } from 'LibSrc/atoms/buttons/UploadButton'
 
 // Dropdowns
 export { default as AutoCompleteDropDown } from 'LibSrc/atoms/dropdowns/autocomplete-dropdown'

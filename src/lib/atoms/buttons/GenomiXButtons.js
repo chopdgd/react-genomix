@@ -52,11 +52,3 @@ export const SearchButton = ({ ...props }) => (
     {...constants.Search}
   />
 )
-
-export const UploadButton = ({ ...props }) => (
-  <Button
-    {...props}
-    content={get(props, 'content', 'Upload')}
-    {...constants.Upload}
-  />
-)
