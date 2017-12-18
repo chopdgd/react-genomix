@@ -1,23 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Table } from 'semantic-ui-react'
+
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
 class TextCell extends React.PureComponent {
   render() {
-    const { as, content, rowIndex, ...rest } = this.props
+    const ElementType = getElementType(TextCell, this.props)
+    const rest = getUnhandledProps(TextCell, this.props)
+    const { content } = this.props
 
-    if (as === 'td') {
-      return <Table.Cell {...rest}>{content}</Table.Cell>
-    } else {
-      return <div>{content}</div>
-    }
+    return (
+      <ElementType {...rest}>
+        {content}
+      </ElementType>
+    )
   }
 }
 
 
 TextCell.propTypes = {
-  as: PropTypes.oneOf(['td', 'div']),
+  as: customPropTypes.as,
   content: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -29,5 +34,7 @@ TextCell.propTypes = {
 TextCell.defaultProps = {
   as: 'div'
 }
+
+TextCell.handledProps = ['as', 'content', 'rowIndex']
 
 export default TextCell
