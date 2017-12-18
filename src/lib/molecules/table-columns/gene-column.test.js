@@ -1,15 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { MolecularConsequenceCell, MolecularConsequenceColumn } from 'LibIndex'
+import { GeneCell, GeneColumn } from 'LibIndex'
 
 
-describe('Test MolecularConsequenceColumn', () => {
+describe('Test GeneColumn', () => {
   it('cellDataGetter returns expected content', () => {
-    const rowData = { consequence: 'missense' }
-    const dataKey = 'consequence'
+    const rowData = { gene: 'PNPLA6' }
+    const dataKey = 'gene'
     const element = (
-      <MolecularConsequenceColumn
+      <GeneColumn
         label="test"
         dataKey={dataKey}
         width={100}
@@ -17,15 +17,15 @@ describe('Test MolecularConsequenceColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellDataGetter({ rowData, dataKey }))
-      .toEqual('missense')
+      .toEqual('PNPLA6')
   })
 
 
   it('cellRenderer returns expected content', () => {
-    const cellData = 'splice'
+    const cellData = 'PNPLA6'
     const rowIndex = 1
     const element = (
-      <MolecularConsequenceColumn
+      <GeneColumn
         label="test"
         dataKey="test"
         width={100}
@@ -33,13 +33,13 @@ describe('Test MolecularConsequenceColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellRenderer({ cellData, rowIndex }))
-      .toEqual(<MolecularConsequenceCell as="div" consequence="splice" rowIndex={1} />)
+      .toEqual(<GeneCell as="div" gene="PNPLA6" rowIndex={1} />)
   })
 
   it('headerRenderer returns expected content', () => {
     const label = 'Header Column'
     const element = (
-      <MolecularConsequenceColumn
+      <GeneColumn
         label={label}
         dataKey="test"
         width={100}

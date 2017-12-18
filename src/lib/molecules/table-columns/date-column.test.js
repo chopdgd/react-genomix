@@ -1,15 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { MolecularConsequenceCell, MolecularConsequenceColumn } from 'LibIndex'
+import { DateCell, DateColumn } from 'LibIndex'
 
 
-describe('Test MolecularConsequenceColumn', () => {
+describe('Test DateColumn', () => {
   it('cellDataGetter returns expected content', () => {
-    const rowData = { consequence: 'missense' }
-    const dataKey = 'consequence'
+    const rowData = { date: '1987-12-18' }
+    const dataKey = 'date'
     const element = (
-      <MolecularConsequenceColumn
+      <DateColumn
         label="test"
         dataKey={dataKey}
         width={100}
@@ -17,29 +17,31 @@ describe('Test MolecularConsequenceColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellDataGetter({ rowData, dataKey }))
-      .toEqual('missense')
+      .toEqual('1987-12-18')
   })
 
 
   it('cellRenderer returns expected content', () => {
-    const cellData = 'splice'
+    const cellData = '1987-12-18'
     const rowIndex = 1
+    const columnData = { format: 'YYYYDDMM' }
     const element = (
-      <MolecularConsequenceColumn
+      <DateColumn
         label="test"
         dataKey="test"
         width={100}
+        columnData={columnData}
       />
     )
     const wrapper = shallow(element)
-    expect(wrapper.find('Column').props().cellRenderer({ cellData, rowIndex }))
-      .toEqual(<MolecularConsequenceCell as="div" consequence="splice" rowIndex={1} />)
+    expect(wrapper.find('Column').props().cellRenderer({ cellData, columnData, rowIndex }))
+      .toEqual(<DateCell as="div" date="1987-12-18" format="YYYYDDMM" rowIndex={1} />)
   })
 
   it('headerRenderer returns expected content', () => {
     const label = 'Header Column'
     const element = (
-      <MolecularConsequenceColumn
+      <DateColumn
         label={label}
         dataKey="test"
         width={100}

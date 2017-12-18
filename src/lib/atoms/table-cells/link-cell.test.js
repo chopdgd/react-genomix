@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { mount, shallow } from 'enzyme'
 
-import { InfoIcon, LinkCell } from 'LibIndex'
+import { LinkCell } from 'LibIndex'
 
 
 describe('Test LinkCell', () => {
@@ -30,7 +30,6 @@ describe('Test LinkCell', () => {
     expect(wrapper.instance().props.rowIndex).toEqual(undefined)
     expect(wrapper.instance().props.content).toEqual('hi')
     expect(wrapper.instance().props.linkAs).toEqual('a')
-    expect(wrapper.instance().props.icon).toEqual(<InfoIcon />)
     expect(wrapper.instance().props.href).toEqual('http://www.google.com')
   })
 
