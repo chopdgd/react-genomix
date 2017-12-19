@@ -50,6 +50,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "3.0.2",
+    "faker": "^4.1.0",
     "file-loader": "1.1.5",
     "fs-extra": "4.0.3",
     "html-webpack-plugin": "2.30.1",
@@ -134,7 +135,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "dependencies": {
-    "faker": "^4.1.0"
-  }
+  "dependencies": {}
 }
