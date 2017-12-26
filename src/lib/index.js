@@ -1,6 +1,7 @@
 // Stylesheets
 import 'semantic-ui-css/semantic.min.css'
 import 'react-virtualized/styles.css'
+import 'fixed-data-table-2/dist/fixed-data-table.css'
 import 'Stylesheets/main.scss'
 
 /* Utils */
@@ -91,3 +92,4 @@ export { default as TurnAroundTimeProgressColumn } from 'LibSrc/molecules/table-
 
 // Tables
 export { default as BigDataTable } from 'LibSrc/molecules/tables/big-data-table'
+export { default as FixedDataTable } from 'LibSrc/molecules/tables/fixed-data-table'
