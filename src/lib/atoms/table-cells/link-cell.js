@@ -1,67 +1,44 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Table } from 'semantic-ui-react'
 
-import { ExternalIcon, InfoIcon } from 'LibIndex'
+import { Link } from 'LibIndex'
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
 class LinkCell extends React.PureComponent {
   render() {
-    const { as, content, linkAs, path, rowIndex, ...rest } = this.props
+    const { as, linkAs, content } = this.props
 
-    let link = (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={path}
-      >
-        {content} <ExternalIcon />
-      </a>
+    const ElementType = getElementType(LinkCell, { as })
+    const rest = getUnhandledProps(LinkCell, this.props)
+
+    return (
+      <ElementType {...rest}>
+        <Link {...rest} as={linkAs} content={content} />
+      </ElementType>
     )
-
-    if (linkAs !== 'a') {
-      link = (
-        <linkAs to={path}>
-          {content} <InfoIcon />
-        </linkAs>
-      )
-    }
-
-    if (as === 'td') {
-      return (
-        <Table.Cell {...rest}>
-          {link}
-        </Table.Cell>
-      )
-    } else {
-      return (
-        <div>
-          {link}
-        </div>
-      )
-    }
   }
 }
 
 
 LinkCell.propTypes = {
-  as: PropTypes.oneOf(['td', 'div']),
-  linkAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
-  path: PropTypes.string.isRequired,
+  as: customPropTypes.as,
+  rowIndex: PropTypes.number,
   content: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.element,
   ]).isRequired,
-  rowIndex: PropTypes.number,
+  linkAs: customPropTypes.as,
 }
 
 LinkCell.defaultProps = {
   as: 'div',
   linkAs: 'a',
 }
+
+LinkCell.handledProps = ['as', 'rowIndex', 'content', 'linkAs']
 
 export default LinkCell

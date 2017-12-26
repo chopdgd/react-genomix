@@ -1,34 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Icon } from 'semantic-ui-react'
+import { Icon as SemanticIcon } from 'semantic-ui-react'
 import cx from 'classnames'
-import { get, omit } from 'lodash'
+
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-const icon = ({ ...props }) => {
-  const iconProps = omit(props, ['details', 'color', 'name'])
-  const color = get(props, 'details.color', get(props, 'color'))
-  const name = get(props, 'details.icon', get(props, 'name'))
+class Icon extends React.PureComponent {
+  render() {
+    const iconProps = getUnhandledProps(Icon, this.props)
+    const { color, icon } = this.props
 
-  return (
-    <Icon
-      { ...iconProps }
-      className={cx(props.className, 'genomix', color, name)}
-    />
-  )
+    return (
+      <SemanticIcon
+        {...iconProps}
+        className={cx(this.props.className, 'genomix', color, icon)}
+      />
+    )
+  }
 }
 
 
-icon.propTypes = {
-  details: PropTypes.shape({
-    icon: PropTypes.string,
-    color: PropTypes.string,
-  })
-};
+Icon.propTypes = {
+  icon: PropTypes.string,
+  color: PropTypes.string,
+  className: PropTypes.string,
+}
 
-icon.defaultProps = {
-  details: undefined,
-};
+Icon.defaultProps = {}
 
+Icon.handledProps = ['className', 'icon', 'color']
 
-export default icon;
+export default Icon

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Form } from 'semantic-ui-react'
 import { mount, shallow } from 'enzyme'
 
-import SaveFormModal from './save-form-modal'
+import { SaveFormModal } from 'LibIndex'
 
 
 const form = (open = false, title = 'title', onSubmit = jest.fn()) => {
@@ -58,7 +58,7 @@ describe('Test SaveFormModal', () => {
     instance.forceUpdate()
     wrapper.find('.trigger').simulate('click')
     expect(spy).toHaveBeenCalledTimes(1)
-  });
+  })
 
   it('onSubmit calls close() and props.onSubmit()', () => {
     const onSubmit = jest.fn()
