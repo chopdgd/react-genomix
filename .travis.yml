@@ -3,16 +3,10 @@ language: node_js
 node_js:
  - "node"
 
-before_install: npm install greenkeeper-lockfile@1 --global
-
-before_script: greenkeeper-lockfile-update
-
 install:
-  - npm install codecov --global
-  - npm install
+  - yarn global add codecov
+  - yarn install
 
 script:
- - npm run test
+ - yarn run test --maxWorkers=4
  - codecov
-
-after_script: greenkeeper-lockfile-upload
