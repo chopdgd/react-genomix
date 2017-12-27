@@ -1,33 +1,84 @@
 import React from 'react'
-import { Divider, Grid } from 'semantic-ui-react'
+import { Card, Grid } from 'semantic-ui-react'
 
 import * as GenomiX from 'LibIndex'
 
 
-const Buttons = () => (
-  <Grid centered>
+const items = [
+  {
+    header: 'Icon',
+    description: <GenomiX.Icon name="github" color="action-info" size="large" />,
+  },
+  {
+    header: 'AcceptIcon',
+    description: <GenomiX.AcceptIcon size="large" />,
+  },
+  {
+    header: 'CancelIcon',
+    description: <GenomiX.CancelIcon size="large" />,
+  },
+  {
+    header: 'AddIcon',
+    description: <GenomiX.AddIcon size="large" />,
+  },
+  {
+    header: 'DownloadIcon',
+    description: <GenomiX.DownloadIcon color="dark-blue" size="large" />,
+  },
+  {
+    header: 'ExternalIcon',
+    description: <GenomiX.ExternalIcon size="large" />,
+  },
+  {
+    header: 'FemaleIcon',
+    description: <GenomiX.FemaleIcon size="large" />,
+  },
+  {
+    header: 'InfoIcon',
+    description: <GenomiX.InfoIcon color="light-grey" size="large" />,
+  },
+  {
+    header: 'MaleIcon',
+    description: <GenomiX.MaleIcon size="large" />,
+  },
+  {
+    header: 'ManualIcon',
+    description: <GenomiX.ManualIcon size="large" />,
+  },
+  {
+    header: 'QuestionIcon',
+    description: <GenomiX.QuestionIcon color="dark-grey" size="large" />,
+  },
+  {
+    header: 'SaveIcon',
+    description: <GenomiX.SaveIcon color="action-positive" size="large" />,
+  },
+  {
+    header: 'SearchIcon',
+    description: <GenomiX.SearchIcon color="green" size="large" />,
+  },
+  {
+    header: 'UploadIcon',
+    description: <GenomiX.UploadIcon size="large" />,
+  },
+  {
+    header: 'WarningIcon',
+    description: <GenomiX.WarningIcon size="large" />,
+  },
+]
+
+
+const Icons = () => (
+  <Grid padded centered>
     <Grid.Column width={16} textAlign="center">
-
-      <h1>Icons</h1>
-      <Divider />
-      <GenomiX.Icon color="action-info" />
-      <GenomiX.AcceptIcon />
-      <GenomiX.AddIcon color="action-warning" />
-      <GenomiX.CancelIcon />
-      <GenomiX.DownloadIcon color="dark-blue" />
-      <GenomiX.ExternalIcon />
-      <GenomiX.FemaleIcon />
-      <GenomiX.InfoIcon color="light-grey" />
-      <GenomiX.MaleIcon />
-      <GenomiX.ManualIcon />
-      <GenomiX.QuestionIcon color="dark-grey" />
-      <GenomiX.SaveIcon color="action-positive" />
-      <GenomiX.SearchIcon color="green" />
-      <GenomiX.UploadIcon />
-      <GenomiX.WarningIcon />
-
+      <Card.Group
+        items={items}
+        textAlign="center"
+        itemsPerRow={5}
+        stackable
+      />
     </Grid.Column>
   </Grid>
 )
 
-export default Buttons
+export default Icons

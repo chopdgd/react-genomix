@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Table, Dropdown } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react'
+
+import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import getElementType from 'LibSrc/helpers/getElementType'
+import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class DropdownCell extends React.Component {
+class DropdownCell extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -19,43 +23,31 @@ class DropdownCell extends React.Component {
   }
 
   render() {
-    const { as, name, rowIndex, onChange, options, dropDownProps, ...rest } = this.props
+    const ElementType = getElementType(DropdownCell, this.props)
+    const rest = getUnhandledProps(DropdownCell, this.props)
     const { value } = this.state
+    const { name, options, dropDownProps } = this.props
 
-    if (as === 'td') {
-      return (
-        <Table.Cell {...rest}>
-          <Dropdown
-            name={name}
-            value={value}
-            onChange={this.onChange}
-            options={options}
-            {...dropDownProps}
-          />
-        </Table.Cell>
-      )
-    } else {
-      return (
-        <div>
-          <Dropdown
-            name={name}
-            value={value}
-            onChange={this.onChange}
-            options={options}
-            {...dropDownProps}
-          />
-        </div>
-      )
-    }
+    return (
+      <ElementType {...rest}>
+        <Dropdown
+          name={name}
+          value={value}
+          onChange={this.onChange}
+          options={options}
+          {...dropDownProps}
+        />
+      </ElementType>
+    )
   }
 }
 
 
 DropdownCell.propTypes = {
-  as: PropTypes.oneOf(['td', 'div']),
-  name: PropTypes.string.isRequired,
-  rowIndex: PropTypes.number.isRequired,
+  as: customPropTypes.as,
   onChange: PropTypes.func.isRequired,
+  rowIndex: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
   dropDownProps: PropTypes.object,
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -89,5 +81,14 @@ DropdownCell.defaultProps = {
     search: true,
   },
 }
+
+DropdownCell.handledProps = [
+  'as',
+  'onChange',
+  'rowIndex',
+  'name',
+  'dropDownProps',
+  'options',
+]
 
 export default DropdownCell

@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import DropdownCell from './dropdown-cell'
+import { DropdownCell } from 'LibIndex'
 
 
 describe('Test DropdownCell', () => {
-  it('DropdownCell renders without crashing', () => {
+  it('renders without crashing', () => {
     const div = document.createElement('div')
     const table = (
       <DropdownCell
@@ -19,7 +19,7 @@ describe('Test DropdownCell', () => {
     ReactDOM.render(table, div)
   })
 
-  it('DropdownCell initial props are set correctly', () => {
+  it('initial props are set correctly', () => {
     const component = (
       <DropdownCell
         name="test"
@@ -37,7 +37,7 @@ describe('Test DropdownCell', () => {
       .toEqual([{ key: 'key2', value: 2, text: '2'}])
   })
 
-  it('DropdownCell initial props are set correctly as td', () => {
+  it('initial props are set correctly as td', () => {
     const component = (
       <DropdownCell
         as="td"
@@ -57,7 +57,7 @@ describe('Test DropdownCell', () => {
       .toEqual([{ key: 'key2', value: 2, text: '2'}])
   })
 
-  it('DropdownCell onChange is called correctly', () => {
+  it('onChange is called correctly', () => {
     const onChange = jest.fn()
     const event = { target: { name: "test", value: 2 }}
     const component = (
