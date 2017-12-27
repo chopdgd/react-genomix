@@ -66,6 +66,20 @@ export { default as TextCell } from 'LibSrc/atoms/table-cells/text-cell'
 export { default as TranscriptCell } from 'LibSrc/atoms/table-cells/transcript-cell'
 export { default as TurnAroundTimeProgressCell } from 'LibSrc/atoms/table-cells/turn-around-time-cell'
 
+// Fixed Table Cells
+export { default as CheckboxFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/checkbox-fixed-cell'
+export { default as DateFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/date-fixed-cell'
+export { default as DropdownFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/dropdown-fixed-cell'
+export { default as GeneFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/gene-fixed-cell'
+export { default as InterpretationFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/interpretation-fixed-cell'
+export { default as LinkFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/link-fixed-cell'
+export { default as MolecularConsequenceFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/molecular-consequence-fixed-cell'
+export { default as PublicEvidenceFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/public-resources-evidence-fixed-cell'
+export { default as SexFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/sex-fixed-cell'
+export { default as StatusFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/status-fixed-cell'
+export { default as TextFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/text-fixed-cell'
+export { default as TranscriptFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/transcript-fixed-cell'
+export { default as TurnAroundTimeProgressFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/turn-around-time-fixed-cell'
 
 /* Molecules */
 // Forms
