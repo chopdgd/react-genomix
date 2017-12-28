@@ -15,8 +15,10 @@ import TableCellExamples from './components/TableCellExamples'
 
 // Molecules
 import Forms from './components/Forms'
+import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
 import BigDataTableExample from './components/BigDataTableExample'
+import FixedDataTableExample from './components/FixedDataTableExample'
 
 // Organisms
 import NavbarExample from './components/NavbarExample'
@@ -52,12 +54,20 @@ const panes = [
     render: () => <Tab.Pane><Forms /></Tab.Pane>
   },
   {
+    menuItem: 'LoginForm',
+    render: () => <Tab.Pane><LoginFormExample /></Tab.Pane>
+  },
+  {
     menuItem: 'Modals',
     render: () => <Tab.Pane><Modals /></Tab.Pane>
   },
   {
     menuItem: 'Big Data Table',
     render: () => <Tab.Pane><BigDataTableExample /></Tab.Pane>
+  },
+  {
+    menuItem: 'Fixed Data Table',
+    render: () => <Tab.Pane><FixedDataTableExample /></Tab.Pane>
   },
 ]
 

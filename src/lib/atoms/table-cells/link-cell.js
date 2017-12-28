@@ -39,6 +39,11 @@ LinkCell.defaultProps = {
   linkAs: 'a',
 }
 
-LinkCell.handledProps = ['as', 'rowIndex', 'content', 'linkAs']
+LinkCell.handledProps = [
+  'as',
+  'rowIndex',
+  'content',
+  'linkAs',
+]
 
 export default LinkCell

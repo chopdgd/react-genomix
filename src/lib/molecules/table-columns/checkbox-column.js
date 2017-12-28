@@ -21,13 +21,12 @@ const cellDataGetter = (props) => {
 const cellRenderer = (props) => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
   // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
-  const { cellData, columnData, rowIndex } = props
+  const { columnData, rowIndex } = props
   const { onChange } = columnData
 
   return (
     <CheckboxCell
       onChange={onChange}
-      content={cellData}
       rowIndex={rowIndex}
     />
   )

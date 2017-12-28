@@ -1,6 +1,7 @@
 // Stylesheets
 import 'semantic-ui-css/semantic.min.css'
 import 'react-virtualized/styles.css'
+import 'fixed-data-table-2/dist/fixed-data-table.css'
 import 'Stylesheets/main.scss'
 
 /* Utils */
@@ -65,10 +66,25 @@ export { default as TextCell } from 'LibSrc/atoms/table-cells/text-cell'
 export { default as TranscriptCell } from 'LibSrc/atoms/table-cells/transcript-cell'
 export { default as TurnAroundTimeProgressCell } from 'LibSrc/atoms/table-cells/turn-around-time-cell'
 
+// Fixed Table Cells
+export { default as CheckboxFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/checkbox-fixed-cell'
+export { default as DateFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/date-fixed-cell'
+export { default as DropdownFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/dropdown-fixed-cell'
+export { default as GeneFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/gene-fixed-cell'
+export { default as InterpretationFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/interpretation-fixed-cell'
+export { default as LinkFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/link-fixed-cell'
+export { default as MolecularConsequenceFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/molecular-consequence-fixed-cell'
+export { default as PublicEvidenceFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/public-resources-evidence-fixed-cell'
+export { default as SexFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/sex-fixed-cell'
+export { default as StatusFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/status-fixed-cell'
+export { default as TextFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/text-fixed-cell'
+export { default as TranscriptFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/transcript-fixed-cell'
+export { default as TurnAroundTimeProgressFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/turn-around-time-fixed-cell'
 
 /* Molecules */
 // Forms
 export { default as SaveForm } from 'LibSrc/molecules/forms/save-form'
+export { default as LoginForm } from 'LibSrc/molecules/forms/login-form'
 
 // Modals
 export { default as SaveFormModal } from 'LibSrc/molecules/modals/save-form-modal'
@@ -96,3 +112,4 @@ export { default as TurnAroundTimeProgressColumn } from 'LibSrc/molecules/table-
 
 // Tables
 export { default as BigDataTable } from 'LibSrc/molecules/tables/big-data-table'
+export { default as FixedDataTable } from 'LibSrc/molecules/tables/fixed-data-table'

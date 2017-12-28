@@ -37,7 +37,7 @@ describe('Test CheckboxColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellRenderer({ dataKey, columnData, cellData, rowIndex }))
-      .toEqual(<CheckboxCell as="div" onChange={onChange} content="mike" rowIndex={1} />)
+      .toEqual(<CheckboxCell as="div" onChange={onChange} rowIndex={1} />)
   })
 
   it('headerRenderer returns expected content', () => {

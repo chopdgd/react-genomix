@@ -1,22 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Cell } from 'fixed-data-table-2'
 import { Label } from 'semantic-ui-react'
+import { get } from 'lodash'
 
 import { utils, Link } from 'LibIndex'
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
-import getElementType from 'LibSrc/helpers/getElementType'
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class GeneCell extends React.PureComponent {
+class GeneFixedCell extends React.PureComponent {
   render() {
-    const ElementType = getElementType(GeneCell, this.props)
-    const rest = getUnhandledProps(GeneCell, this.props)
-    const { gene } = this.props
-
+    const { data, rowIndex, columnKey, ...rest } = this.props
+    const gene = get(data[rowIndex], columnKey)
 
     return (
-      <ElementType {...rest}>
+      <Cell {...rest}>
         {gene} &nbsp;&nbsp;
         <Link
           content={<Label basic size="tiny" content="H" color="blue" />}
@@ -30,26 +27,20 @@ class GeneCell extends React.PureComponent {
           content={<Label basic size="tiny" content="P" color="blue" />}
           href={utils.urlBuilders.pubmedSearch(gene)}
         />
-      </ElementType>
+      </Cell>
     )
   }
 }
 
 
-GeneCell.propTypes = {
-  as: customPropTypes.as,
-  gene: PropTypes.string.isRequired,
+GeneFixedCell.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
   rowIndex: PropTypes.number,
+  columnKey: PropTypes.string,
 }
 
-GeneCell.defaultProps = {
-  as: 'div',
+GeneFixedCell.defaultProps = {
+  data: [],
 }
 
-GeneCell.handledProps = [
-  'as',
-  'gene',
-  'rowIndex',
-]
-
-export default GeneCell
+export default GeneFixedCell

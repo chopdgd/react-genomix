@@ -43,6 +43,13 @@ TurnAroundTimeProgressCell.defaultProps = {
   },
 }
 
-TurnAroundTimeProgressCell.handledProps = ['progressProps']
+TurnAroundTimeProgressCell.handledProps = [
+  'as',
+  'target',
+  'start',
+  'signout',
+  'rowIndex',
+  'progressProps',
+]
 
 export default TurnAroundTimeProgressCell

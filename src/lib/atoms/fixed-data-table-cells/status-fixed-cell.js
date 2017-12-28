@@ -1,17 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Cell } from 'fixed-data-table-2'
 import { Icon } from 'semantic-ui-react'
-
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
-import getElementType from 'LibSrc/helpers/getElementType'
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
+import { get } from 'lodash'
 
 
-class StatusCell extends React.PureComponent {
+class StatusFixedCell extends React.PureComponent {
   render() {
-    const ElementType = getElementType(StatusCell, this.props)
-    const rest = getUnhandledProps(StatusCell, this.props)
-    const { status } = this.props
+    const { data, rowIndex, columnKey, ...rest } = this.props
+    const status = get(data[rowIndex], columnKey)
 
     let icon
     switch (status) {
@@ -36,35 +33,22 @@ class StatusCell extends React.PureComponent {
     }
 
     return (
-      <ElementType {...rest}>
+      <Cell {...rest}>
         {icon}
-      </ElementType>
+      </Cell>
     )
   }
 }
 
 
-StatusCell.propTypes = {
-  as: customPropTypes.as,
-  status: PropTypes.oneOf([
-    'pending',
-    'running',
-    'complete',
-    'cancelled',
-    'failed',
-    'unknown',
-  ]).isRequired,
+StatusFixedCell.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
   rowIndex: PropTypes.number,
+  columnKey: PropTypes.string,
 }
 
-StatusCell.defaultProps = {
-  as: 'div'
+StatusFixedCell.defaultProps = {
+  data: [],
 }
 
-StatusCell.handledProps = [
-  'as',
-  'status',
-  'rowIndex',
-]
-
-export default StatusCell
+export default StatusFixedCell
