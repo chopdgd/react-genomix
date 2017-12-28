@@ -48,6 +48,10 @@ export {
 } from 'LibSrc/atoms/icons/GenomiXIcons'
 export { default as Icon } from 'LibSrc/atoms/icons/Icon'
 
+// Media
+export { default as Avatar } from 'LibSrc/atoms/media/avatar'
+export { default as Logo } from 'LibSrc/atoms/media/logo'
+
 // Prgress bars
 export { default as TurnAroundTimeProgress } from 'LibSrc/atoms/progress-bars/turn-around-time-progress'
 
@@ -89,6 +93,11 @@ export { default as LoginForm } from 'LibSrc/molecules/forms/login-form'
 // Modals
 export { default as SaveFormModal } from 'LibSrc/molecules/modals/save-form-modal'
 
+// Menus
+export { default as DropdownMenu } from 'LibSrc/molecules/menus/dropdown-menu'
+export { default as Navbar } from 'LibSrc/molecules/menus/navbar'
+export { default as UserMenu } from 'LibSrc/molecules/menus/user-menu'
+
 // Table Columns
 export { default as CheckboxColumn } from 'LibSrc/molecules/table-columns/checkbox-column'
 export { default as DateColumn } from 'LibSrc/molecules/table-columns/date-column'
@@ -103,7 +112,6 @@ export { default as StatusColumn } from 'LibSrc/molecules/table-columns/status-c
 export { default as TextColumn } from 'LibSrc/molecules/table-columns/text-column'
 export { default as TranscriptColumn } from 'LibSrc/molecules/table-columns/transcript-column'
 export { default as TurnAroundTimeProgressColumn } from 'LibSrc/molecules/table-columns/turn-around-time-column'
-
 
 // Tables
 export { default as BigDataTable } from 'LibSrc/molecules/tables/big-data-table'

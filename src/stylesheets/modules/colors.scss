@@ -1,8 +1,8 @@
 // CHOP Brand guidelines
 // https://coolors.co/005587-ed1f7f-005587-58595b-a7a9ab
 // https://coolors.co/005587-ed1f7f-005587-91a01e-786452
-$brand-light-blue: #41B6E6;
-$brand-dark-blue: #005587;
+$brand-light-blue: #1FB6FF;
+$brand-dark-blue: #009EEB;
 $brand-light-grey: #A7A9AB;
 $brand-dark-grey: #58595B;
 $brand-pink: #ED1F7F;
@@ -27,6 +27,16 @@ $action-error: #FF695E;  // Standard colors (dark/light): 9F3A38/E0B4B4
 
 $th-background: #F9FAFB;
 
+$brand-black: #1F2D3D;
+$brand-steel: #273444;
+$brand-slate: #3C4858;
+$brand-silver: #8492A6;
+
+$brand-light-smoke: #E0E6ED;
+$brand-dark-smoke: #D3DCE6;
+$brand-light-snow: #F9FAFC;
+$brand-dark-snow: #EFF2F7;
+
 
 // GenomiX color theme
 
@@ -40,6 +50,16 @@ $genomix-colors: (
   'green': $brand-green,
   'brown': $brand-brown,
   'white': $brand-white,
+
+  'black': $brand-black,
+  'steel': $brand-steel,
+  'slate': $brand-slate,
+  'silver': $brand-silver,
+
+  'light-smoke': $brand-light-smoke,
+  'dark-smoke': $brand-dark-smoke,
+  'light-snow': $brand-light-snow,
+  'dark-snow': $brand-dark-snow,
 
   // Access via theme
   'base': $brand-white,
