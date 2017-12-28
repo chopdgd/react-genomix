@@ -14,11 +14,11 @@ class LoginFormExample extends React.Component {
 
     return (
       <Container align="center">
-        <LoginForm />
+        <LoginForm handleLogin={(props) => alert(JSON.stringify(props)) }/>
       </Container>
     )
   }
 }
 
 
-export default LoginFormExample;
+export default LoginFormExample
