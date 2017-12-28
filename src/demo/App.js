@@ -15,12 +15,14 @@ import TableCellExamples from './components/TableCellExamples'
 
 // Molecules
 import Forms from './components/Forms'
+import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
 import BigDataTableExample from './components/BigDataTableExample'
 import FixedDataTableExample from './components/FixedDataTableExample'
 
 // Organisms
-import LoginFormExample from './components/LoginFormExample'
+import NavbarExample from './components/NavbarExample'
+
 
 const panes = [
   {
@@ -72,6 +74,7 @@ const panes = [
 
 const App = () => (
   <div>
+    <NavbarExample />
     <Example />
     <SecondExample />
     <Divider />
