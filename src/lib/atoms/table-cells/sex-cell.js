@@ -50,6 +50,11 @@ SexCell.defaultProps = {
   iconProps: {},
 }
 
-SexCell.handledProps = ['iconProps']
+SexCell.handledProps = [
+  'as',
+  'sex',
+  'rowIndex',
+  'iconProps',
+]
 
 export default SexCell
