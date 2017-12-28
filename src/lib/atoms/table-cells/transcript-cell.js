@@ -38,6 +38,10 @@ TranscriptCell.defaultProps = {
   as: 'div',
 }
 
-TranscriptCell.handledProps = ['as', 'transcript', 'rowIndex']
+TranscriptCell.handledProps = [
+  'as',
+  'transcript',
+  'rowIndex',
+]
 
 export default TranscriptCell

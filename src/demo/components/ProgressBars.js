@@ -10,7 +10,7 @@ const items = [
     description: (
       <GenomiX.TurnAroundTimeProgress
         target={40}
-        start="2017=12-11"
+        start="2017-12-11"
         signout="2017-12-17"
     />
     ),

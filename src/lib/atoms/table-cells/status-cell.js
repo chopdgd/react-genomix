@@ -61,6 +61,10 @@ StatusCell.defaultProps = {
   as: 'div'
 }
 
-StatusCell.handledProps = ['as', 'status', 'rowIndex']
+StatusCell.handledProps = [
+  'as',
+  'status',
+  'rowIndex',
+]
 
 export default StatusCell
