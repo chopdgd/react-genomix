@@ -38,6 +38,11 @@ MolecularConsequenceCell.defaultProps = {
   },
 }
 
-MolecularConsequenceCell.handledProps = ['labelProps']
+MolecularConsequenceCell.handledProps = [
+  'as',
+  'consequence',
+  'rowIndex',
+  'labelProps',
+]
 
 export default MolecularConsequenceCell

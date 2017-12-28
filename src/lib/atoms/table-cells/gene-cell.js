@@ -46,6 +46,10 @@ GeneCell.defaultProps = {
   as: 'div',
 }
 
-GeneCell.handledProps = ['as', 'gene', 'rowIndex']
+GeneCell.handledProps = [
+  'as',
+  'gene',
+  'rowIndex',
+]
 
 export default GeneCell

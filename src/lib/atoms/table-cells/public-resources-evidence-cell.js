@@ -91,4 +91,17 @@ PublicEvidenceCell.defaultProps = {
   as: 'div',
 }
 
+PublicEvidenceCell.handledProps = [
+  'as',
+  'chromosome',
+  'position',
+  'reference',
+  'alternate',
+  'cosmicId',
+  'hgmdId',
+  'clinvarId',
+  'gnomadFrequency',
+  'rowIndex',
+]
+
 export default PublicEvidenceCell

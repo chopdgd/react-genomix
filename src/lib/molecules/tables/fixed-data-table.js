@@ -15,11 +15,12 @@ class FixedDataTable extends React.PureComponent {
       loading: props.loading,
       columnWidths: props.columnWidths,
       columnOrder: props.columnOrder,
+      fixedColumns: props.fixedColumns,
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { columnWidths, columnOrder, data, loading } = this.props
+    const { columnWidths, columnOrder, data, fixedColumns, loading } = this.props
 
     if (nextProps.data !== data) {
       const { rows } = this.state
@@ -39,6 +40,10 @@ class FixedDataTable extends React.PureComponent {
 
     if (nextProps.columnOrder !== columnOrder) {
       this.setState({ columnOrder: nextProps.columnOrder })
+    }
+
+    if (nextProps.fixedColumns !== fixedColumns) {
+      this.setState({ fixedColumns: nextProps.fixedColumns })
     }
   }
 
@@ -88,7 +93,7 @@ class FixedDataTable extends React.PureComponent {
       ...rest,
      } = this.props
 
-    const { rows, columnOrder } = this.state
+    const { rows, columnOrder, fixedColumns } = this.state
     const rowsCount = rows.length
 
     // Add adjustable width to Columns
@@ -99,6 +104,7 @@ class FixedDataTable extends React.PureComponent {
         column: React.cloneElement(column, {
           key: column.props.columnKey,
           width: get(this.state, `columnWidths.${column.props.columnKey}`, ''),
+          fixed: fixedColumns.includes(column.props.columnKey),
         })
       }
       columns.push(columnObject)
@@ -146,11 +152,13 @@ FixedDataTable.propTypes = {
   onResizeColumn: PropTypes.func,
   columnOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
   onColumnReorder: PropTypes.func,
+  fixedColumns: PropTypes.arrayOf(PropTypes.string),
 }
 
 FixedDataTable.defaultProps = {
   data: [],
   loading: false,
+  fixedColumns: [],
 }
 
 export default FixedDataTable
