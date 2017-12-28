@@ -4,4 +4,10 @@
 @import "partials/buttons";
 @import "partials/icons";
 @import "partials/tables";
-@import "partials/login-form"
+@import "partials/navbar";
+@import "partials/login-form";
+
+/* global styles */
+body {
+  background: genomix-color(dark-snow);
+}

@@ -1,0 +1,46 @@
+.ui.borderless.menu.navbar {
+  border: none;
+  border-radius: 0;
+}
+
+.menu.transition.visible.NavbarDropdownMenu {
+  margin-top: 20px !important;
+}
+
+.ui.menu .item {
+  color: genomix-color(silver);
+  font: bold;
+}
+
+.ui.menu .item:hover {
+  color: genomix-color(dark-grey);
+}
+
+.ui.menu .active.item {
+  background: none;
+  color: genomix-color(light-blue)
+}
+
+.ui.menu .active.item:hover {
+  background: none;
+  color: genomix-color(dark-blue)
+}
+
+.ui.menu .active.item:hover {
+  background: none;
+}
+
+.ui.link.menu .item:hover,
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover {
+  background: none;
+}
+
+.ui.blue.button.signin {
+  background-color: genomix-color(light-blue)
+}
+
+.ui.blue.button.signin:hover {
+  background-color: genomix-color(dark-blue)
+}
