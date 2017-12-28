@@ -35,6 +35,10 @@ TextCell.defaultProps = {
   as: 'div'
 }
 
-TextCell.handledProps = ['as', 'content', 'rowIndex']
+TextCell.handledProps = [
+  'as',
+  'content',
+  'rowIndex',
+]
 
 export default TextCell
