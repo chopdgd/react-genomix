@@ -1,23 +1,29 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import Avatar from './Avatar'
+import { Avatar } from 'LibIndex'
+
 
 describe('Test Avatar', () => {
-
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(<Avatar />, div)
   })
 
-  it('renders a <Image/> when user is defined', () => {
-    const wrapper = mount(<Avatar user={jest.fn()} />)
+  it('renders correct elements', () => {
+    const wrapper = shallow(<Avatar profileImage="path/to/image" />)
     expect(wrapper.find('Image')).toHaveLength(1)
+    expect(wrapper.find('Icon')).toHaveLength(1)
   })
 
-  it('renders two <Icon/> when user is undefined', () => {
+  it('renders a profile picture if profileImage is defined', () => {
+    const wrapper = mount(<Avatar profileImage="path/to/image" />)
+    expect(wrapper.find('Image').props().src).toEqual('path/to/image')
+  })
+
+  it('renders a faker profile picture if profileImage is not defined', () => {
     const wrapper = mount(<Avatar />)
-    expect(wrapper.find('Icon')).toHaveLength(2)
+    expect(wrapper.find('Image').props().src).toContain('https://s3.amazonaws.com/uifaces/faces/')
   })
 })
