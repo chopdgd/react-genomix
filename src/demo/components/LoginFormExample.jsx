@@ -21,4 +21,4 @@ class LoginFormExample extends React.Component {
 }
 
 
-export default LoginFormExample;
+export default LoginFormExample
