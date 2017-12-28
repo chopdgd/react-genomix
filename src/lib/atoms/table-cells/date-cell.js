@@ -34,6 +34,11 @@ DateCell.defaultProps = {
   as: 'div'
 }
 
-DateCell.handledProps = ['as', 'date', 'format', 'rowIndex']
+DateCell.handledProps = [
+  'as',
+  'date',
+  'format',
+  'rowIndex',
+]
 
 export default DateCell

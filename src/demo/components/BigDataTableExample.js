@@ -36,8 +36,8 @@ const list = Array.from(new Array(30), (x,i) => ({
   hgmd: 'hgmd',
   sex: 'm',
   target: 8,
-  start: '12-18-1987',
-  signout: '12-19-1987',
+  start: '1987-12-18',
+  signout: '1987-12-19',
   status: 'running',
 }))
 

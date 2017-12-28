@@ -36,6 +36,10 @@ CheckboxCell.defaultProps = {
   as: 'div'
 }
 
-CheckboxCell.handledProps = ['as', 'onChange', 'rowIndex']
+CheckboxCell.handledProps = [
+  'as',
+  'onChange',
+  'rowIndex',
+]
 
 export default CheckboxCell
