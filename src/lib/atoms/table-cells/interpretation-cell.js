@@ -46,6 +46,11 @@ InterpretationCell.defaultProps = {
   classification: 'uncertain',
 }
 
-InterpretationCell.handledProps = ['labelProps']
+InterpretationCell.handledProps = [
+  'as',
+  'classification',
+  'rowIndex',
+  'labelProps',
+]
 
 export default InterpretationCell

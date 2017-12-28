@@ -17,6 +17,7 @@ import TableCellExamples from './components/TableCellExamples'
 import Forms from './components/Forms'
 import Modals from './components/Modals'
 import BigDataTableExample from './components/BigDataTableExample'
+import FixedDataTableExample from './components/FixedDataTableExample'
 
 // Organisms
 import LoginFormExample from './components/LoginFormExample'
@@ -61,6 +62,10 @@ const panes = [
   {
     menuItem: 'Big Data Table',
     render: () => <Tab.Pane><BigDataTableExample /></Tab.Pane>
+  },
+  {
+    menuItem: 'Fixed Data Table',
+    render: () => <Tab.Pane><FixedDataTableExample /></Tab.Pane>
   },
 ]
 
