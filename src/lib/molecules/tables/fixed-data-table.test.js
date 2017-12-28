@@ -28,6 +28,7 @@ const TestTable = ({ ...props }) => {
       columnWidths={initialColumnSizes}
       onColumnResize={props.onColumnResize}
       onColumnReorder={props.onColumnReorder}
+      fixedColumns={props.fixedColumns}
     >
       <Column
         header={<Cell>Header</Cell>}
@@ -94,6 +95,14 @@ describe('Test BigDataTable', () => {
     expect(wrapper.instance().state.loading).toEqual(false)
     wrapper.setProps({ loading: true })
     expect(wrapper.instance().state.loading).toEqual(true)
+  })
+
+  it('fixedColumns should change when given new props', () => {
+    const wrapper = shallow(TestTable({ data: list }))
+
+    expect(wrapper.instance().state.fixedColumns).toEqual([])
+    wrapper.setProps({ fixedColumns: ['name'] })
+    expect(wrapper.instance().state.fixedColumns).toEqual(['name'])
   })
 
   it('rows should change when given new props', () => {

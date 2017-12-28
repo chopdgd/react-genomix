@@ -97,6 +97,7 @@ class FixedDataTableExample extends React.PureComponent {
             rowHeight={65}
             columnWidths={columnWidths}
             columnOrder={columnOrder}
+            fixedColumns={['checkbox']}
           >
             <Column
               columnKey="checkbox"
