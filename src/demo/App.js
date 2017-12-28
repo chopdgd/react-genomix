@@ -19,6 +19,8 @@ import Modals from './components/Modals'
 import BigDataTableExample from './components/BigDataTableExample'
 import FixedDataTableExample from './components/FixedDataTableExample'
 
+// Organisms
+import LoginFormExample from './components/LoginFormExample'
 
 const panes = [
   {
@@ -48,6 +50,10 @@ const panes = [
   {
     menuItem: 'Forms',
     render: () => <Tab.Pane><Forms /></Tab.Pane>
+  },
+  {
+    menuItem: 'LoginForm',
+    render: () => <Tab.Pane><LoginFormExample /></Tab.Pane>
   },
   {
     menuItem: 'Modals',

@@ -84,6 +84,7 @@ export { default as TurnAroundTimeProgressFixedCell } from 'LibSrc/atoms/fixed-d
 /* Molecules */
 // Forms
 export { default as SaveForm } from 'LibSrc/molecules/forms/save-form'
+export { default as LoginForm } from 'LibSrc/molecules/forms/login-form'
 
 // Modals
 export { default as SaveFormModal } from 'LibSrc/molecules/modals/save-form-modal'
