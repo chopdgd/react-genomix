@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Message } from 'semantic-ui-react'
 
-import Button from 'LibSrc/atoms/buttons/Button'
+import { Button } from 'LibIndex'
 
 
 class LoginForm extends React.Component {
@@ -15,57 +15,49 @@ class LoginForm extends React.Component {
       loading: props.loading,
       error: props.error,
     }
-
   }
 
   componentWillReceiveProps(nextProps) {
-    const nextState = {};
+    const { loading, error } = this.props
 
-    nextState.loading = nextProps.loading;
-    nextState.error = nextProps.error;
-
-    if (nextProps.error.response === undefined) {
-          nextState.errorMessage = `Server error! Please inform us about this error! Error: ${nextProps.error}`;
-      } else if (nextProps.error !== undefined) {
-        if (nextProps.error.response.status === 400) {
-          nextState.errorMessage = 'Incorrect credentials. Please try again!';
-      } else {
-        nextState.errorMessage = `Uncaught Error: ${nextProps.error}. Please report this to us`;
-      }
+    if (nextProps.loading !== loading) {
+      this.setState({ loading: nextProps.loading })
     }
 
-    this.setState(nextState);
+    if (nextProps.error !== error) {
+      this.setState({ error: nextProps.error })
+    }
   }
 
-  handleChange = (e) => {
+  handleChange = (e, { name, value }) => {
     this.setState({
-      [e.target.id]: e.target.value,
+      [name]: value,
       error: undefined,
-    });
+    })
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    const { username, password } = this.state
+    const { handleLogin } = this.props
 
-    const empty = [null, undefined, ''];
-
-    if (empty.includes(this.state.username) || empty.includes(this.state.password)) {
+    if (!username || !password) {
       this.setState({
-        error: 'username/password are required',
-        errorMessage: 'Username and Password are required!',
-      });
+        error: 'Username and Password are required!',
+      })
     } else {
-      this.setState({ loading: true });
+      handleLogin({
+        username,
+        password
+      })
 
-      this.props.login({
-        username: this.state.username,
-        password: this.state.password,
-      });
+      this.setState({ loading: true })
     }
-
   }
 
   render() {
+    const { loading, error, username, password } = this.state
+
     return(
       <Form
           id="login-form"
@@ -73,52 +65,48 @@ class LoginForm extends React.Component {
           size="large"
           key="big"
           onSubmit={this.handleSubmit}
-          loading={this.state.loading}
+          loading={loading}
         >
-          <Form.Field>
-            <Form.Input
-              className="login-input"
-              id="username"
-              placeholder="Username"
-              icon="user"
-              iconPosition="left"
-              required
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <br />
-          <Form.Field>
-            <Form.Input
-              id="password"
-              placeholder="Password"
-              type="password"
-              required
-              icon="lock"
-              iconPosition="left"
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <br />
-          <div className="login-button-div">
+          <Form.Input
+            id="username"
+            name="username"
+            className="login-input"
+            placeholder="Username"
+            icon="user"
+            iconPosition="left"
+            required
+            onChange={this.handleChange}
+          />
+          <Form.Input
+            id="password"
+            name="password"
+            className="login-input"
+            placeholder="Password"
+            icon="lock"
+            iconPosition="left"
+            required
+            onChange={this.handleChange}
+            type="password"
+          />
 
-          {this.state.error !== undefined
+          {error
             ? <Message negative>
                <Message.Header as="h5">Login Failed</Message.Header>
-               <p>{this.state.errorMessage}</p>
+               <p>{error}</p>
               </Message>
             : ''
           }
 
           <Button
-              className="login-button"
-              text="Sign In"
-              primary
-              fluid
-              size="large"
-              onClick={this.handleSubmit}
-          >Sign In
-          </Button>
-          </div>
+            className="login-button"
+            type="submit"
+            form="login-form"
+            content="Sign In"
+            primary
+            fluid
+            size="large"
+            disabled={!username || !password}
+          />
         </Form>
     )
   }
@@ -126,14 +114,14 @@ class LoginForm extends React.Component {
 
 
 LoginForm.propTypes = {
-  login: PropTypes.func,
+  handleLogin: PropTypes.func.isRequired,
   loading: PropTypes.bool,
-  error: PropTypes.object,
-};
+  error: PropTypes.string,
+}
 
 LoginForm.defaultProps = {
   loading: false,
   error: undefined,
-};
+}
 
-export default LoginForm;
+export default LoginForm
