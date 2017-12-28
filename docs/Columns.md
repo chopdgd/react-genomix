@@ -1,7 +1,7 @@
 Customized Columns
 ------------------
 
-We are using [react-virtualized]() to render tables with large amounts of data.  As part of this, we customized a number of unique columns (some specific for genomics) that we can use right out of the box.  They are listed below:
+We are using [react-virtualized](https://bvaughn.github.io/react-virtualized/) to render tables with large amounts of data.  As part of this, we customized a number of unique columns (some specific for genomics) that we can use right out of the box.  They are listed below:
 
 + [CheckboxColumn](#checkboxcolumn)
 + [DateColumn](#datecolumn)
@@ -19,7 +19,13 @@ We are using [react-virtualized]() to render tables with large amounts of data. 
 
 ## CheckboxColumn
 
-Renders a [CheckboxCell](CheckboxCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  In addition, requires that `columnData` is also passed with a callback `onChange`.
+Renders a [CheckboxCell](CheckboxCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
+
+### Additional Props
+
+| Property | Type | Required? | Default | Description |
+|:---|:---|:---:|:---|:---|
+| columnData | Object | ✓ |  | Object with extra props. Requires onChange (see below) |
 
 #### Example
 
@@ -38,7 +44,13 @@ Renders a [DateCell](DateCell.md). Requires the same props as [react-virtualized
 
 ## DropdownColumn
 
-Renders a [DropdownCell](DropdownCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  In addition, requires that `columnData` is also passed with a callback `onChange`, `options` for the Dropdown, and `dropDownProps` if you want to further customize the Dropdown.
+Renders a [DropdownCell](DropdownCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
+
+### Additional Props
+
+| Property | Type | Required? | Default | Description |
+|:---|:---|:---:|:---|:---|
+| columnData | Object | ✓ |  | Object with extra props. Requires onChange and options (see below) |
 
 #### Example
 
@@ -56,15 +68,21 @@ Renders a [DropdownCell](DropdownCell.md). Requires the same props as [react-vir
 
 ## GeneColumn
 
-Renders a [GeneCell](GeneCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [GeneCell](GeneCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## InterpretationColumn
 
-Renders a [InterpretationCell](InterpretationCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [InterpretationCell](InterpretationCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## LinkColumn
 
-Renders a [InterpretationCell](InterpretationCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  In addition, requires that `columnData` is also passed with `as` to determine how to render the link (See [linkAs](https://github.com/chopdgd/react-genomix/blob/feature-docs/docs/LinkCell.md) for more info) and `urlBuilder` which is a callback to build a URL using cellData.
+Renders a [LinkCell](LinkCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
+
+### Additional Props
+
+| Property | Type | Required? | Default | Description |
+|:---|:---|:---:|:---|:---|
+| columnData | Object | ✓ |  | Object with extra props. Requires as and urlBuilder (see below) |
 
 #### Example
 
@@ -82,11 +100,19 @@ Renders a [InterpretationCell](InterpretationCell.md). Requires the same props a
 
 ## MolecularConsequenceColumn
 
-Renders a [MolecularConsequenceCell](MolecularConsequenceCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [MolecularConsequenceCell](MolecularConsequenceCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## PublicEvidenceColumn
 
-Renders a [PublicEvidenceCell](PublicEvidenceCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  In addition, requires that `columnData` is also passed with the following keys:
+Renders a [PublicEvidenceCell](PublicEvidenceCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  
+
+### Additional Props
+
+| Property | Type | Required? | Default | Description |
+|:---|:---|:---:|:---|:---|
+| columnData | Object | ✓ |  | Object with extra props. Requires chromosomeKey, positionKey, referenceKey, alternateKey  (see below) |
+
+#### Description of columnData keys
 
 + chromosomeKey (key in rowData that contains value for chromosome)
 + positionKey (key in rowData that contains value for position)
@@ -116,23 +142,31 @@ Renders a [PublicEvidenceCell](PublicEvidenceCell.md). Requires the same props a
 
 ## SexColumn
 
-Renders a [SexCell](SexCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [SexCell](SexCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## StatusColumn
 
-Renders a [StatusCell](StatusCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [StatusCell](StatusCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## TextColumn
 
-Renders a [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## TranscriptColumn
 
-Renders a [TranscriptCell](TranscriptCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  Nothing additional.
+Renders a [TranscriptCell](TranscriptCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).
 
 ## TurnAroundTimeProgressColumn
 
-Renders a [TranscriptCell](TranscriptCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  In addition, requires that `columnData` is also passed with the following keys:
+Renders a [TurnAroundTimeProgressCell](TurnAroundTimeProgressCell.md). Requires the same props as [react-virtualized Column](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md).  
+
+### Additional Props
+
+| Property | Type | Required? | Default | Description |
+|:---|:---|:---:|:---|:---|
+| columnData | Object | ✓ |  | Object with extra props. Requires targetKey (see below) |
+
+#### Description of columnData keys
 
 + targetKey (key in rowData that contains value for target days for turn around)
 + startKey (key in rowData that contains value for start date)
