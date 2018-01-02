@@ -73,7 +73,6 @@ export { default as TurnAroundTimeProgressCell } from 'LibSrc/atoms/table-cells/
 // Fixed Table Cells
 export { default as CheckboxFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/checkbox-fixed-cell'
 export { default as DateFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/date-fixed-cell'
-export { default as DropdownFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/dropdown-fixed-cell'
 export { default as GeneFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/gene-fixed-cell'
 export { default as InterpretationFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/interpretation-fixed-cell'
 export { default as LinkFixedCell } from 'LibSrc/atoms/fixed-data-table-cells/link-fixed-cell'
