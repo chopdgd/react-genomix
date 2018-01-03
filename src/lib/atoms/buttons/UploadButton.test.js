@@ -15,7 +15,7 @@ describe('Test UploadButton', () => {
   it('initial props are set correctly', () => {
     const handleResults = jest.fn()
     const wrapper = shallow(<UploadButton handleResults={handleResults} />)
-    expect(wrapper.props().children).toEqual(<Button content="Upload" icon="upload" color="light-blue" />)
+    expect(wrapper.props().children).toEqual(<Button content="Upload" icon="upload" />)
   })
 
   it('props are set correctly', () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Grid } from 'semantic-ui-react'
+import { Container, Segment, List, Header } from 'semantic-ui-react'
 
 import * as GenomiX from 'LibIndex'
 
@@ -7,104 +7,100 @@ const handleResults = (results) => {
   alert(JSON.stringify(results))
 }
 
-const items = [
+const defaultButtons = [
   {
     key: 1,
-    header: 'Button',
-    description: <GenomiX.Button content="Default" />,
+    description: 'Button',
+    header: <GenomiX.Button content="Default" />,
   },
   {
     key: 2,
-    header: 'AddButton',
-    description: <GenomiX.AddButton color="dark-blue" />,
+    description: 'AcceptButton',
+    header: <GenomiX.AcceptButton />,
   },
   {
     key: 3,
-    header: 'AcceptButton',
-    description: <GenomiX.AcceptButton />,
+    description: 'CancelButton',
+    header: <GenomiX.CancelButton />,
   },
   {
     key: 4,
-    header: 'CancelButton',
-    description: <GenomiX.CancelButton />,
+    description: 'DownloadButton',
+    header: <GenomiX.DownloadButton color="black" />,
   },
   {
     key: 5,
-    header: 'DownloadButton',
-    description: <GenomiX.DownloadButton color="action-info" />,
+    description: 'SaveButton',
+    header: <GenomiX.SaveButton />,
   },
   {
     key: 6,
-    header: 'SaveButton',
-    description: <GenomiX.SaveButton />,
+    description: 'SearchButton',
+    header: <GenomiX.SearchButton color="action-warning" />,
   },
   {
     key: 7,
-    header: 'SearchButton',
-    description: <GenomiX.SearchButton color="action-warning" />,
-  },
-  {
-    key: 8,
-    header: 'UploadButton',
-    description: (
+    description: 'UploadButton',
+    header: (
       <GenomiX.UploadButton
-        content={<GenomiX.Button content="Upload" icon="upload" />}
+        content={<GenomiX.Button content="Upload" icon="upload" color="black" />}
         handleResults={handleResults}
       />
     ),
   },
   {
-    key: 9,
-    header: 'ExportButton',
-    description: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" />} />,
+    key: 8,
+    description: 'ExportButton',
+    header: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" color="black" />} />,
   },
-
+]
+const invertedButtons =[
   {
-    key: 10,
-    header: 'Button',
-    description: <GenomiX.Button content="Default" inverted />,
+    key: 1,
+    description: 'Button',
+    header: <GenomiX.Button content="Default" inverted />,
     meta: 'inverted',
   },
   {
-    key: 11,
-    header: 'AddButton',
-    description: <GenomiX.AddButton color="dark-blue" inverted />,
+    key: 2,
+    description: 'AddButton',
+    header: <GenomiX.AddButton color="green" inverted />,
     meta: 'inverted',
   },
   {
-    key: 12,
-    header: 'AcceptButton',
-    description: <GenomiX.AcceptButton inverted />,
+    key: 3,
+    description: 'AcceptButton',
+    header: <GenomiX.AcceptButton inverted />,
     meta: 'inverted',
   },
   {
-    key: 13,
-    header: 'CancelButton',
-    description: <GenomiX.CancelButton inverted />,
+    key: 4,
+    description: 'CancelButton',
+    header: <GenomiX.CancelButton inverted />,
     meta: 'inverted',
   },
   {
-    key: 14,
-    header: 'DownloadButton',
-    description: <GenomiX.DownloadButton color="action-info" inverted />,
+    key: 5,
+    description: 'DownloadButton',
+    header: <GenomiX.DownloadButton color="black" inverted />,
     meta: 'inverted',
   },
   {
-    key: 15,
-    header: 'SaveButton',
-    description: <GenomiX.SaveButton inverted />,
+    key: 6,
+    description: 'SaveButton',
+    header: <GenomiX.SaveButton inverted />,
     meta: 'inverted',
   },
   {
-    key: 16,
-    header: 'SearchButton',
-    description: <GenomiX.SearchButton color="action-warning" inverted />,
+    key: 7,
+    description: 'SearchButton',
+    header: <GenomiX.SearchButton color="action-warning" inverted />,
     meta: 'inverted',
   },
   {
-    key: 17,
-    header: 'UploadButton',
-    description: (
+    key: 8,
+    description: 'UploadButton',
+    header: (
       <GenomiX.UploadButton
         content={<GenomiX.Button content="Upload" icon="upload" inverted />}
         handleResults={handleResults}
@@ -113,24 +109,76 @@ const items = [
     meta: 'inverted',
   },
   {
-    key: 18,
-    header: 'ExportButton',
-    description: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />,
+    key: 9,
+    description: 'ExportButton',
+    header: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />,
     meta: 'inverted',
+  },
+]
+const loanIconButtons = [
+  {
+    key: 1,
+    description: 'loanIconButton add default',
+    header: <GenomiX.LoanIconButton icon="add" color="green" />,
+  },
+  {
+    key: 2,
+    description: 'loanIconButton add inverted',
+    header: <GenomiX.LoanIconButton inverted icon="add" color="green" />,
+  },
+  {
+    key: 3,
+    description: 'loanIconButton delete inverted',
+    header: <GenomiX.LoanIconButton inverted icon="trash" color="action-error" />,
+  },
+  {
+    key: 4,
+    description: 'loanIconButton edit inverted',
+    header: <GenomiX.LoanIconButton inverted icon="edit" color="light-blue" />,
   },
 ]
 
 const Buttons = () => (
-  <Grid padded centered>
-    <Grid.Column width={16} textAlign="center">
-      <Card.Group
-        items={items}
-        textAlign="center"
-        itemsPerRow={5}
-        stackable
-      />
-    </Grid.Column>
-  </Grid>
+  <Container>
+    <Header>Default Buttons</Header>
+
+    <Segment.Group>
+      <Segment>
+        <List
+            items={defaultButtons}
+            horizontal
+          />
+      </Segment>
+      <Segment secondary font="">
+        <p>GenomiX.Button content="Default"</p>
+        <p>GenomiX.AcceptButton</p>
+      </Segment>
+    </Segment.Group>
+    <Header>Inverted Buttons</Header>
+    <Segment.Group>
+      <Segment>
+        <List
+            items={invertedButtons}
+            horizontal
+          />
+      </Segment>
+      <Segment secondary>
+        Button usage instruction goes here
+      </Segment>
+    </Segment.Group>
+    <Header>Loan Icon Buttons</Header>
+    <Segment.Group>
+      <Segment>
+        <List
+            items={loanIconButtons}
+            horizontal
+          />
+      </Segment>
+      <Segment secondary>
+        Button usage instruction goes here
+      </Segment>
+    </Segment.Group>
+  </Container>
 )
 
 export default Buttons

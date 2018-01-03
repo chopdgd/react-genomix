@@ -1,24 +1,23 @@
 @each $name in $button-and-icon-colors {
   @if $name == default {
     .ui.genomix.button {
-      background-color: genomix-color('dark-grey');
+      background-color: genomix-color('light-blue');
       color: genomix-color('white');
     }
 
     .ui.genomix.button:hover {
-      background-color: transparent;
-      box-shadow: 0 0 0 2px genomix-color('dark-grey') inset !important;
-      color: genomix-color('dark-grey');
+      box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important;
     }
 
     .ui.genomix.button.inverted {
       background-color: transparent;
-      box-shadow: 0 0 0 2px genomix-color('dark-grey') inset !important;
-      color: genomix-color('dark-grey');
+      box-shadow: 0 0 0 1px genomix-color('light-smoke') inset !important;
+      color: genomix-color('slate');
     }
 
     .ui.genomix.button.inverted:hover {
-      background-color: genomix-color('dark-grey');
+      background-color: genomix-color('light-blue');
+      box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important;
       color: genomix-color('white');
     }
   } @else {
@@ -28,20 +27,25 @@
     }
 
     .ui.genomix.button.#{$name}:hover {
-      background-color: transparent;
-      color: genomix-color($name);
-      box-shadow: 0 0 0 2px genomix-color($name) inset !important;
+      background-color: genomix-color('dark-'+$name);
+      box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important;
     }
 
     .ui.genomix.inverted.button.#{$name} {
       background-color: transparent;
-      color: genomix-color($name);
-      box-shadow: 0 0 0 2px genomix-color($name) inset !important;
+      color: genomix-color('slate');
+      box-shadow: 0 0 0 1px genomix-color('light-smoke') inset !important;
     }
-
+    .ui.genomix.inverted.button.#{$name} > i.icon {
+      color: genomix-color($name) !important;
+    }
     .ui.genomix.inverted.button.#{$name}:hover {
       background-color: genomix-color($name);
       color: genomix-color('white');
+      box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important;
+    }
+    .ui.genomix.inverted.button.#{$name}:hover > i.icon {
+      color: genomix-color('white') !important;
     }
   }
 }
