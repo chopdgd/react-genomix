@@ -6,7 +6,6 @@ import {
   FixedDataTable,
   CheckboxFixedCell,
   DateFixedCell,
-  DropdownFixedCell,
   GeneFixedCell,
   InterpretationFixedCell,
   LinkFixedCell,
@@ -23,7 +22,6 @@ import {
 const rows = Array.from(new Array(30), (x,i) => ({
   id: i,
   checkbox: true,
-  dropdown: 1,
   interpretation: 'benign',
   link: 'link',
   consequence: 'missense',
@@ -44,7 +42,6 @@ const rows = Array.from(new Array(30), (x,i) => ({
 
 const columnWidths = {
   checkbox: 100,
-  dropdown: 200,
   interpretation: 200,
   link: 200,
   consequence: 200,
@@ -65,7 +62,6 @@ const columnWidths = {
 
 const columnOrder = [
   'checkbox',
-  'dropdown',
   'interpretation',
   'link',
   'consequence',
@@ -118,22 +114,6 @@ class FixedDataTableExample extends React.PureComponent {
               columnKey="start"
               header={<Cell>Date</Cell>}
               cell={<DateFixedCell data={rows} />}
-              width={200}
-              allowCellsRecycling
-              pureRendering
-              isReorderable
-              isResizable
-            />
-            <Column
-              columnKey="dropdown"
-              header={<Cell>Dropdown</Cell>}
-              cell={
-                <DropdownFixedCell
-                  data={rows}
-                  onChange={(props) => alert(JSON.stringify(props))}
-                  options={[{ key: 1, value: 1, text: '1' }]}
-                />
-              }
               width={200}
               allowCellsRecycling
               pureRendering
