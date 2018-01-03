@@ -6,7 +6,7 @@ $brand-dark-blue: #009EEB;
 $brand-light-grey: #A7A9AB;
 $brand-dark-grey: #58595B;
 $brand-pink: #ED1F7F;
-$brand-green: #91A01E;
+$brand-green: #13CE66;
 $brand-brown: #786452;
 $brand-white: #FFFFFF;
 
@@ -19,9 +19,9 @@ $background: #F9F9F9;
 // Action color theme
 
 $action-info: #1C77C3;  // Standard colors (dark/light): 276F86/A9D5DE
-$action-success: #2ECC40;  // Standard colors (dark/light): 2C662D/A3C293
-$action-warning: #FFE100;  // Standard colors (dark/light): 573A08/C9BA9B
-$action-error: #FF695E;  // Standard colors (dark/light): 9F3A38/E0B4B4
+$action-success: #13CE66;  // Standard colors (dark/light): 2C662D/A3C293
+$action-warning: #FFC82C;  // Standard colors (dark/light): 573A08/C9BA9B
+$action-error: #FF4949;  // Standard colors (dark/light): 9F3A38/E0B4B4
 
 // Table colors
 
@@ -93,6 +93,7 @@ $button-and-icon-colors: (
   'dark-blue',
   'light-grey',
   'dark-grey',
+  'black',
   'pink',
   'green',
   'primary',

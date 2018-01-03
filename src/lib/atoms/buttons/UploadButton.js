@@ -68,7 +68,7 @@ UploadButton.propTypes = {
 }
 
 UploadButton.defaultProps = {
-  content: <Button content="Upload" icon="upload" color="light-blue" />,
+  content: <Button content="Upload" icon="upload" />,
   fileTypes: ['.csv', '.txt'],
   multipleFiles: false,
   config: {
