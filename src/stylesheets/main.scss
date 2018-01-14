@@ -1,6 +1,10 @@
-@import "partials/base";
+/* 3rd Party */
+@import '~react-virtualized/styles.css';
+@import '~fixed-data-table-2/dist/fixed-data-table.min.css';
+@import "~semantic-ui-css/semantic.min.css";
 
 /* Partials */
+@import "partials/base";
 @import "partials/buttons";
 @import "partials/icons";
 @import "partials/tables";
