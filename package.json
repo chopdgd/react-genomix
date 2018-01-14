@@ -1,6 +1,6 @@
 {
   "name": "react-genomix",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Core library for Nexus projects using ReactJS",
   "main": "build/index.js",
   "scripts": {
