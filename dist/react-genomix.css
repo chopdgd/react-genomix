@@ -1,0 +1,504 @@
+/* 3rd Party */
+@import url(~react-virtualized/styles.css);
+@import url(~fixed-data-table-2/dist/fixed-data-table.min.css);
+@import url(~semantic-ui-css/semantic.min.css);
+/* Partials */
+.ui.genomix.button {
+  font-family: Verdana, sans-serif; }
+
+.ui.genomix.button {
+  background-color: #58595B;
+  color: #FFFFFF; }
+
+.ui.genomix.button:hover {
+  background-color: transparent;
+  box-shadow: 0 0 0 2px #58595B inset !important;
+  color: #58595B; }
+
+.ui.genomix.button.inverted {
+  background-color: transparent;
+  box-shadow: 0 0 0 2px #58595B inset !important;
+  color: #58595B; }
+
+.ui.genomix.button.inverted:hover {
+  background-color: #58595B;
+  color: #FFFFFF; }
+
+.ui.genomix.button.light-blue {
+  background-color: #1FB6FF;
+  color: #FFFFFF; }
+
+.ui.genomix.button.light-blue:hover {
+  background-color: transparent;
+  color: #1FB6FF;
+  box-shadow: 0 0 0 2px #1FB6FF inset !important; }
+
+.ui.genomix.inverted.button.light-blue {
+  background-color: transparent;
+  color: #1FB6FF;
+  box-shadow: 0 0 0 2px #1FB6FF inset !important; }
+
+.ui.genomix.inverted.button.light-blue:hover {
+  background-color: #1FB6FF;
+  color: #FFFFFF; }
+
+.ui.genomix.button.dark-blue {
+  background-color: #009EEB;
+  color: #FFFFFF; }
+
+.ui.genomix.button.dark-blue:hover {
+  background-color: transparent;
+  color: #009EEB;
+  box-shadow: 0 0 0 2px #009EEB inset !important; }
+
+.ui.genomix.inverted.button.dark-blue {
+  background-color: transparent;
+  color: #009EEB;
+  box-shadow: 0 0 0 2px #009EEB inset !important; }
+
+.ui.genomix.inverted.button.dark-blue:hover {
+  background-color: #009EEB;
+  color: #FFFFFF; }
+
+.ui.genomix.button.light-grey {
+  background-color: #A7A9AB;
+  color: #FFFFFF; }
+
+.ui.genomix.button.light-grey:hover {
+  background-color: transparent;
+  color: #A7A9AB;
+  box-shadow: 0 0 0 2px #A7A9AB inset !important; }
+
+.ui.genomix.inverted.button.light-grey {
+  background-color: transparent;
+  color: #A7A9AB;
+  box-shadow: 0 0 0 2px #A7A9AB inset !important; }
+
+.ui.genomix.inverted.button.light-grey:hover {
+  background-color: #A7A9AB;
+  color: #FFFFFF; }
+
+.ui.genomix.button.dark-grey {
+  background-color: #58595B;
+  color: #FFFFFF; }
+
+.ui.genomix.button.dark-grey:hover {
+  background-color: transparent;
+  color: #58595B;
+  box-shadow: 0 0 0 2px #58595B inset !important; }
+
+.ui.genomix.inverted.button.dark-grey {
+  background-color: transparent;
+  color: #58595B;
+  box-shadow: 0 0 0 2px #58595B inset !important; }
+
+.ui.genomix.inverted.button.dark-grey:hover {
+  background-color: #58595B;
+  color: #FFFFFF; }
+
+.ui.genomix.button.pink {
+  background-color: #ED1F7F;
+  color: #FFFFFF; }
+
+.ui.genomix.button.pink:hover {
+  background-color: transparent;
+  color: #ED1F7F;
+  box-shadow: 0 0 0 2px #ED1F7F inset !important; }
+
+.ui.genomix.inverted.button.pink {
+  background-color: transparent;
+  color: #ED1F7F;
+  box-shadow: 0 0 0 2px #ED1F7F inset !important; }
+
+.ui.genomix.inverted.button.pink:hover {
+  background-color: #ED1F7F;
+  color: #FFFFFF; }
+
+.ui.genomix.button.green {
+  background-color: #91A01E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.green:hover {
+  background-color: transparent;
+  color: #91A01E;
+  box-shadow: 0 0 0 2px #91A01E inset !important; }
+
+.ui.genomix.inverted.button.green {
+  background-color: transparent;
+  color: #91A01E;
+  box-shadow: 0 0 0 2px #91A01E inset !important; }
+
+.ui.genomix.inverted.button.green:hover {
+  background-color: #91A01E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.primary {
+  background-color: #1FB6FF;
+  color: #FFFFFF; }
+
+.ui.genomix.button.primary:hover {
+  background-color: transparent;
+  color: #1FB6FF;
+  box-shadow: 0 0 0 2px #1FB6FF inset !important; }
+
+.ui.genomix.inverted.button.primary {
+  background-color: transparent;
+  color: #1FB6FF;
+  box-shadow: 0 0 0 2px #1FB6FF inset !important; }
+
+.ui.genomix.inverted.button.primary:hover {
+  background-color: #1FB6FF;
+  color: #FFFFFF; }
+
+.ui.genomix.button.secondary {
+  background-color: #009EEB;
+  color: #FFFFFF; }
+
+.ui.genomix.button.secondary:hover {
+  background-color: transparent;
+  color: #009EEB;
+  box-shadow: 0 0 0 2px #009EEB inset !important; }
+
+.ui.genomix.inverted.button.secondary {
+  background-color: transparent;
+  color: #009EEB;
+  box-shadow: 0 0 0 2px #009EEB inset !important; }
+
+.ui.genomix.inverted.button.secondary:hover {
+  background-color: #009EEB;
+  color: #FFFFFF; }
+
+.ui.genomix.button.tertiary {
+  background-color: #91A01E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.tertiary:hover {
+  background-color: transparent;
+  color: #91A01E;
+  box-shadow: 0 0 0 2px #91A01E inset !important; }
+
+.ui.genomix.inverted.button.tertiary {
+  background-color: transparent;
+  color: #91A01E;
+  box-shadow: 0 0 0 2px #91A01E inset !important; }
+
+.ui.genomix.inverted.button.tertiary:hover {
+  background-color: #91A01E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-success {
+  background-color: #2ECC40;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-success:hover {
+  background-color: transparent;
+  color: #2ECC40;
+  box-shadow: 0 0 0 2px #2ECC40 inset !important; }
+
+.ui.genomix.inverted.button.action-success {
+  background-color: transparent;
+  color: #2ECC40;
+  box-shadow: 0 0 0 2px #2ECC40 inset !important; }
+
+.ui.genomix.inverted.button.action-success:hover {
+  background-color: #2ECC40;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-positive {
+  background-color: #2ECC40;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-positive:hover {
+  background-color: transparent;
+  color: #2ECC40;
+  box-shadow: 0 0 0 2px #2ECC40 inset !important; }
+
+.ui.genomix.inverted.button.action-positive {
+  background-color: transparent;
+  color: #2ECC40;
+  box-shadow: 0 0 0 2px #2ECC40 inset !important; }
+
+.ui.genomix.inverted.button.action-positive:hover {
+  background-color: #2ECC40;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-error {
+  background-color: #FF695E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-error:hover {
+  background-color: transparent;
+  color: #FF695E;
+  box-shadow: 0 0 0 2px #FF695E inset !important; }
+
+.ui.genomix.inverted.button.action-error {
+  background-color: transparent;
+  color: #FF695E;
+  box-shadow: 0 0 0 2px #FF695E inset !important; }
+
+.ui.genomix.inverted.button.action-error:hover {
+  background-color: #FF695E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-negative {
+  background-color: #FF695E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-negative:hover {
+  background-color: transparent;
+  color: #FF695E;
+  box-shadow: 0 0 0 2px #FF695E inset !important; }
+
+.ui.genomix.inverted.button.action-negative {
+  background-color: transparent;
+  color: #FF695E;
+  box-shadow: 0 0 0 2px #FF695E inset !important; }
+
+.ui.genomix.inverted.button.action-negative:hover {
+  background-color: #FF695E;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-info {
+  background-color: #1C77C3;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-info:hover {
+  background-color: transparent;
+  color: #1C77C3;
+  box-shadow: 0 0 0 2px #1C77C3 inset !important; }
+
+.ui.genomix.inverted.button.action-info {
+  background-color: transparent;
+  color: #1C77C3;
+  box-shadow: 0 0 0 2px #1C77C3 inset !important; }
+
+.ui.genomix.inverted.button.action-info:hover {
+  background-color: #1C77C3;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-attention {
+  background-color: #1C77C3;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-attention:hover {
+  background-color: transparent;
+  color: #1C77C3;
+  box-shadow: 0 0 0 2px #1C77C3 inset !important; }
+
+.ui.genomix.inverted.button.action-attention {
+  background-color: transparent;
+  color: #1C77C3;
+  box-shadow: 0 0 0 2px #1C77C3 inset !important; }
+
+.ui.genomix.inverted.button.action-attention:hover {
+  background-color: #1C77C3;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-warning {
+  background-color: #FFE100;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-warning:hover {
+  background-color: transparent;
+  color: #FFE100;
+  box-shadow: 0 0 0 2px #FFE100 inset !important; }
+
+.ui.genomix.inverted.button.action-warning {
+  background-color: transparent;
+  color: #FFE100;
+  box-shadow: 0 0 0 2px #FFE100 inset !important; }
+
+.ui.genomix.inverted.button.action-warning:hover {
+  background-color: #FFE100;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-caution {
+  background-color: #FFE100;
+  color: #FFFFFF; }
+
+.ui.genomix.button.action-caution:hover {
+  background-color: transparent;
+  color: #FFE100;
+  box-shadow: 0 0 0 2px #FFE100 inset !important; }
+
+.ui.genomix.inverted.button.action-caution {
+  background-color: transparent;
+  color: #FFE100;
+  box-shadow: 0 0 0 2px #FFE100 inset !important; }
+
+.ui.genomix.inverted.button.action-caution:hover {
+  background-color: #FFE100;
+  color: #FFFFFF; }
+
+i.icon.genomix {
+  color: #58595B !important; }
+
+i.icon.genomix.light-blue {
+  color: #1FB6FF !important; }
+
+i.icon.genomix.dark-blue {
+  color: #009EEB !important; }
+
+i.icon.genomix.light-grey {
+  color: #A7A9AB !important; }
+
+i.icon.genomix.dark-grey {
+  color: #58595B !important; }
+
+i.icon.genomix.pink {
+  color: #ED1F7F !important; }
+
+i.icon.genomix.green {
+  color: #91A01E !important; }
+
+i.icon.genomix.primary {
+  color: #1FB6FF !important; }
+
+i.icon.genomix.secondary {
+  color: #009EEB !important; }
+
+i.icon.genomix.tertiary {
+  color: #91A01E !important; }
+
+i.icon.genomix.action-success {
+  color: #2ECC40 !important; }
+
+i.icon.genomix.action-positive {
+  color: #2ECC40 !important; }
+
+i.icon.genomix.action-error {
+  color: #FF695E !important; }
+
+i.icon.genomix.action-negative {
+  color: #FF695E !important; }
+
+i.icon.genomix.action-info {
+  color: #1C77C3 !important; }
+
+i.icon.genomix.action-attention {
+  color: #1C77C3 !important; }
+
+i.icon.genomix.action-warning {
+  color: #FFE100 !important; }
+
+i.icon.genomix.action-caution {
+  color: #FFE100 !important; }
+
+.genomix.big-data.table {
+  width: 100%;
+  margin-top: 15px; }
+
+.genomix.big-data.table .header.row,
+.genomix.big-data.table .even.row,
+.genomix.big-data.table .odd.row {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-family: Verdana, sans-serif;
+  overflow: visible; }
+
+.genomix.big-data.table .header.row {
+  background-color: #F9FAFB; }
+
+.genomix.big-data.table .odd.row {
+  background-color: #fafafa; }
+
+.genomix.big-data.table .header.col {
+  text-transform: none; }
+
+.genomix.big-data.table .row.left {
+  text-align: left; }
+
+.genomix.big-data.table .row.center {
+  text-align: center; }
+
+.genomix.big-data.table .row.right {
+  text-align: right; }
+
+.genomix.big-data.table .no.rows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #bdbdbd; }
+
+.genomix.big-data.table .dropdown.col[style] {
+  overflow: visible !important; }
+
+.ReactVirtualized__Table__row[style] {
+  overflow: visible !important; }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+i.icon.genomix.spinner {
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+.public_fixedDataTable_header,
+.public_fixedDataTable_scrollbarSpacer,
+.public_fixedDataTable_header .public_fixedDataTableCell_main {
+  background-image: none !important;
+  background-color: #F9FAFB;
+  color: #58595B; }
+
+.fixedDataTableCellLayout_columnReorderContainer {
+  background-color: #F9FAFB; }
+
+.ui.borderless.menu.navbar {
+  border: none;
+  border-radius: 0; }
+
+.menu.transition.visible.NavbarDropdownMenu {
+  margin-top: 20px !important; }
+
+.ui.menu .item {
+  font: bold; }
+
+.ui.menu .item:hover {
+  color: #58595B; }
+
+.ui.menu .active.item {
+  background: none;
+  color: #1FB6FF; }
+
+.ui.menu .active.item:hover {
+  background: none;
+  color: #009EEB; }
+
+.ui.menu .active.item:hover {
+  background: none; }
+
+.ui.link.menu .item:hover,
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover {
+  background: none; }
+
+.ui.blue.button.signin {
+  background-color: #1FB6FF; }
+
+.ui.blue.button.signin:hover {
+  background-color: #009EEB; }
+
+.login-form {
+  width: 400px; }
+
+/* global styles */
+body {
+  background: #EFF2F7; }

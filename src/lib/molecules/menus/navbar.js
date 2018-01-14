@@ -43,7 +43,7 @@ class Navbar extends React.PureComponent {
   }
 
   render () {
-    const { subMenu, userMenu } = this.props
+    const { logo, subMenu, userMenu } = this.props
 
     return (
       <Menu className="navbar" borderless>
@@ -51,7 +51,7 @@ class Navbar extends React.PureComponent {
         {this.renderSubMenu(subMenu)}
 
         <Menu.Item>
-          <Logo />
+          {logo}
         </Menu.Item>
 
         <Menu.Menu position='right'>
@@ -67,12 +67,14 @@ class Navbar extends React.PureComponent {
 Navbar.propTypes = {
   children: PropTypes.any.isRequired,
   activeItem: PropTypes.string,
+  logo: PropTypes.node.isRequired,
   subMenu: PropTypes.node,
   userMenu: PropTypes.node,
 }
 
 Navbar.defaultProps = {
   activeItem: '',
+  logo: <Logo />
 }
 
 export default Navbar

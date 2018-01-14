@@ -57,3 +57,13 @@ Produces production version of library under the `build` folder.
 ## Using in a project
 
 `npm install react-genomix` or `yarn add react-genomix`
+
+Add css to your project.
+
+In index.js:
+
+`import 'react-genomix/dist/react-genomix.min.css'`
+
+In css/scss file:
+
+`@import "~react-genomix/dist/react-genomix.min.css";`
