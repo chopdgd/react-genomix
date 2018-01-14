@@ -4,9 +4,6 @@
 @import url(~semantic-ui-css/semantic.min.css);
 /* Partials */
 .ui.genomix.button {
-  font-family: Verdana, sans-serif; }
-
-.ui.genomix.button {
   background-color: #58595B;
   color: #FFFFFF; }
 
@@ -393,7 +390,6 @@ i.icon.genomix.action-caution {
 .genomix.big-data.table .odd.row {
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  font-family: Verdana, sans-serif;
   overflow: visible; }
 
 .genomix.big-data.table .header.row {
@@ -498,7 +494,3 @@ i.icon.genomix.spinner {
 
 .login-form {
   width: 400px; }
-
-/* global styles */
-body {
-  background: #EFF2F7; }
