@@ -13,3 +13,8 @@
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.1...v0.3.2)
 
 - Removed font completely from css
+
+## [v0.3.3](https://github.com/chopdgd/react-genomix/tree/v0.3.3) (2018-01-13)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.2...v0.3.3)
+
+- Added missing updated minified css files
