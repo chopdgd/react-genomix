@@ -25,8 +25,7 @@ describe('Navbar Tests', () => {
 
   it('should render correct elements', () => {
     expect(wrapper.find('MenuMenu')).toHaveLength(1)
-    expect(wrapper.find('MenuItem')).toHaveLength(2)
-    expect(wrapper.find('Logo')).toHaveLength(1)
+    expect(wrapper.find('MenuItem')).toHaveLength(1)
   })
 
   it('should change activeItem in state when clicked', () => {
@@ -53,10 +52,52 @@ describe('Navbar Tests', () => {
     )
 
     const submenuWrapper = shallow(element)
-    expect(submenuWrapper.find('MenuItem')).toHaveLength(3)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(2)
   })
 
   it('should render subMenu if passed', () => {
+    const userMenu = (
+      <UserMenu
+        className="user-menu"
+        username="doej"
+        email="doej@email.chop.edu"
+        name="Jane Doe"
+      />
+    )
+    const element = (
+      <Navbar
+        subMenu={userMenu}
+      >
+        <MenuItem id="test" name="test" />
+      </Navbar>
+    )
+
+    const submenuWrapper = shallow(element)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(2)
+  })
+
+  it('should render logo if passed', () => {
+    const userMenu = (
+      <UserMenu
+        className="user-menu"
+        username="doej"
+        email="doej@email.chop.edu"
+        name="Jane Doe"
+      />
+    )
+    const element = (
+      <Navbar
+        logo={userMenu}
+      >
+        <MenuItem id="test" name="test" />
+      </Navbar>
+    )
+
+    const submenuWrapper = shallow(element)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(2)
+  })
+
+  it('should render subMenu and userMenu if passed', () => {
     const userMenu = (
       <UserMenu
         className="user-menu"
@@ -75,6 +116,6 @@ describe('Navbar Tests', () => {
     )
 
     const submenuWrapper = shallow(element)
-    expect(submenuWrapper.find('MenuItem')).toHaveLength(4)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(3)
   })
 })
