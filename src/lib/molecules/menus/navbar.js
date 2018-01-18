@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Menu } from 'semantic-ui-react'
 
-import { Logo } from 'LibIndex'
-
 
 class Navbar extends React.PureComponent {
   constructor (props) {
@@ -43,16 +41,13 @@ class Navbar extends React.PureComponent {
   }
 
   render () {
-    const { subMenu, userMenu } = this.props
+    const { logo, subMenu, userMenu } = this.props
 
     return (
       <Menu className="navbar" borderless>
 
+        {this.renderSubMenu(logo)}
         {this.renderSubMenu(subMenu)}
-
-        <Menu.Item>
-          <Logo />
-        </Menu.Item>
 
         <Menu.Menu position='right'>
           {this.renderChildren()}
@@ -67,6 +62,7 @@ class Navbar extends React.PureComponent {
 Navbar.propTypes = {
   children: PropTypes.any.isRequired,
   activeItem: PropTypes.string,
+  logo: PropTypes.node,
   subMenu: PropTypes.node,
   userMenu: PropTypes.node,
 }
