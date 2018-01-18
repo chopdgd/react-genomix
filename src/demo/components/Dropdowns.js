@@ -9,11 +9,13 @@ const items = [
     header: 'Autocomplete Dropdown',
     description: (
       <GenomiX.AutoCompleteDropDown
-        search={true}
-        selection={true}
         endpoint="testAPI?search="
-        onChange={(props) => alert(JSON.stringify(props))}
+        onChange={(e, { name, value }) => alert(JSON.stringify(value))}
         searchAction={(props) => alert(JSON.stringify(props))}
+        options={[
+          {key: '3', value: '3', text: '3'},
+          {key: '4', value: '4', text: '4'},
+        ]}
       />
     ),
     meta: 'endpoint: testAPI?search='

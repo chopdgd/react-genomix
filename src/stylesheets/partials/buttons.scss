@@ -1,7 +1,3 @@
-.ui.genomix.button {
-  font-family: $font-family;
-}
-
 @each $name in $button-and-icon-colors {
   @if $name == default {
     .ui.genomix.button {
