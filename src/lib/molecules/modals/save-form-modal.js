@@ -12,12 +12,15 @@ class SaveFormModal extends React.PureComponent {
 
     this.state = {
       visible: get(props, 'open', false),
-      formValues: get(props, 'defaultValues', {})
     }
   }
 
   onSubmit = (values) => {
-    this.props.onSubmit(values)
+    const { handleSubmit } = this.props
+    if (handleSubmit) {
+      handleSubmit(values)
+    }
+
     this.close()
   }
 
@@ -30,6 +33,8 @@ class SaveFormModal extends React.PureComponent {
   }
 
   render() {
+    const { defaultValues, handleChange } = this.props
+
     const trigger = React.cloneElement(this.props.trigger, {
       onClick: this.open,
     })
@@ -44,7 +49,9 @@ class SaveFormModal extends React.PureComponent {
         <Modal.Content>
           <SaveForm
             id={this.props.formId}
-            onSubmit={this.onSubmit}
+            defaultValues={defaultValues}
+            handleChange={handleChange}
+            handleSubmit={this.onSubmit}
           >
             {this.props.children}
           </SaveForm>
@@ -74,7 +81,8 @@ SaveFormModal.propTypes = {
   formId: PropTypes.string.isRequired,
   trigger: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
   open: PropTypes.bool,
   defaultValues: PropTypes.shape({}),
 }

@@ -1,39 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Form } from 'semantic-ui-react'
-import { get } from 'lodash'
 
 
 class SaveForm extends React.PureComponent {
   constructor(props) {
     super(props)
 
-    this.state = {
-      formValues: get(props, 'defaultValues', {})
-    }
+    this.state = props.defaultValues
   }
 
-  handleChange = (e, { name, value }) => {
+  onChange = (e, { name, value }) => {
+    const { handleChange } = this.props
+    if (handleChange) {
+      handleChange(e, { name, value })
+    }
+
     this.setState({
-      formValues: {
-        ...this.state.formValues,
-        [name]: value
-      }
+      [name]: value
     })
   }
 
   onSubmit = () => {
-    this.props.onSubmit(this.state.formValues)
-    this.setState({
-      formValues: {}
-    })
+    const { handleSubmit } = this.props
+
+    if (handleSubmit) {
+      handleSubmit(this.state)
+    }
   }
 
   render() {
     const formInputs = React.Children.map(this.props.children, (input: React.ReactElement<InputPropsInternal>) =>
       React.cloneElement(input, {
-        value: get(this.state, `formValues.${input.props.name}`, ''),
-        onChange: this.handleChange
+        onChange: this.onChange
       })
     )
 
@@ -57,13 +56,12 @@ class SaveForm extends React.PureComponent {
 
 SaveForm.propTypes = {
   id: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  defaultValues: PropTypes.shape({}),
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
   saveButton: PropTypes.element,
 }
 
 SaveForm.defaultProps = {
-  defaultValues: {},
   saveButton: undefined,
 }
 
