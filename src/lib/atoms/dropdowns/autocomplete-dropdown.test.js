@@ -7,13 +7,9 @@ import { AutoCompleteDropDown } from 'LibIndex'
 
 describe('Test AutoCompleteDropDown', () => {
   const name = 'test'
-  const value = 'testValue'
   const endpoint = 'http://api.test.com/?search='
   const searchQuery = 'searchTerm'
   const mockSearch = `${endpoint}${searchQuery}`
-
-  const onChange = jest.fn()
-  onChange.mockReturnValue({ name , value })
 
   const searchAction = jest.fn()
   searchAction.mockReturnValue(mockSearch)
@@ -22,7 +18,6 @@ describe('Test AutoCompleteDropDown', () => {
     <AutoCompleteDropDown
       name={name}
       endpoint={endpoint}
-      onChange={onChange}
       searchAction={searchAction}
     />
   )
@@ -35,7 +30,6 @@ describe('Test AutoCompleteDropDown', () => {
   it('default props are set correctly', () => {
     const wrapper = shallow(component)
     expect(wrapper.instance().props.endpoint).toEqual(endpoint)
-    expect(wrapper.instance().props.onChange).toEqual(onChange)
     expect(wrapper.instance().props.searchAction).toEqual(searchAction)
     expect(wrapper.instance().props.waitInterval).toEqual(750)
     expect(wrapper.instance().props.loading).toEqual(false)
@@ -46,7 +40,6 @@ describe('Test AutoCompleteDropDown', () => {
     const wrapper = shallow(component)
     expect(wrapper.instance().state.loading).toEqual(false)
     expect(wrapper.instance().state.options).toEqual([])
-    expect(wrapper.instance().state.value).toEqual('')
   })
 
   it('componentWillReceiveProps correctly sets loading correctly', () => {
@@ -84,17 +77,6 @@ describe('Test AutoCompleteDropDown', () => {
 
     wrapper.setProps({ options })
     expect(wrapper.instance().state.options).toEqual(options)
-  })
-
-  it('change in dropdown calls onChange and sets state with value', () => {
-    const wrapper = shallow(component)
-    const instance = wrapper.instance()
-    const setStateSpy = jest.spyOn(instance, 'setState')
-    const data = { name, value }
-    const event = {target: data}
-    wrapper.find('Dropdown').simulate('change', event, data)
-    expect(onChange).toHaveBeenCalledWith(data)
-    expect(setStateSpy).toHaveBeenCalledWith({ value })
   })
 
   it('onSearchChange sets loading = true', () => {
