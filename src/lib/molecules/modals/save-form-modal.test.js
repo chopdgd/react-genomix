@@ -6,19 +6,19 @@ import { mount, shallow } from 'enzyme'
 import { SaveFormModal } from 'LibIndex'
 
 
-const form = (open = false, title = 'title', onSubmit = jest.fn()) => {
+const form = (open = false, title = 'title', handleSubmit = jest.fn(), handleChange = jest.fn()) => {
   return (
     <SaveFormModal
       className="test-modal"
       formId="test"
       title={title}
       trigger={<p className="trigger">trigger</p>}
-      onSubmit={onSubmit}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
       open={open}
       defaultValues={{ test1: 'default' }}
     >
       <Form.Input id="test1" name="test1" />
-      <Form.Input id="test2" name="test2" />
     </SaveFormModal>
   )
 }
@@ -38,12 +38,6 @@ describe('Test SaveFormModal', () => {
     expect(wrapper.find('.test-modal').props().defaultValues).toEqual({ 'test1': 'default' })
   })
 
-  it('SaveFormModal defaultValues state are set correctly', () => {
-    const wrapper = mount(form())
-    expect(wrapper.state().formValues).toEqual({ 'test1': 'default' })
-    expect(wrapper.state().visible).toEqual(false)
-  })
-
   it('SaveFormModal handle onClick of trigger', () => {
     const wrapper = mount(form())
     expect(wrapper.state().visible).toEqual(false)
@@ -60,19 +54,6 @@ describe('Test SaveFormModal', () => {
     expect(spy).toHaveBeenCalledTimes(1)
   })
 
-  it('onSubmit calls close() and props.onSubmit()', () => {
-    const onSubmit = jest.fn()
-    const wrapper = shallow(form(true, 'title', onSubmit))
-    const instance = wrapper.instance()
-    const closeSpy = jest.spyOn(instance, 'close')
-    const setStateSpy = jest.spyOn(instance, 'setState')
-    wrapper.find('SaveForm').simulate('submit')
-    expect(closeSpy).toHaveBeenCalledTimes(1)
-    expect(wrapper.state().visible).toEqual(false)
-    expect(onSubmit).toHaveBeenCalledTimes(1)
-    expect(setStateSpy).toHaveBeenCalledWith({ visible: false })
-  })
-
   it('onClick of CloseButton calls close()', () => {
     const wrapper = shallow(form(true))
     const spy = jest.spyOn(wrapper.instance(), 'setState')
@@ -83,4 +64,40 @@ describe('Test SaveFormModal', () => {
 
   // Currently can't test actions happening in modal
   // See: https://github.com/airbnb/enzyme/blob/master/docs/common-issues.md#testing-third-party-libraries
+
+  // it('onSubmit calls close() and handleSubmit', () => {
+  //   const handleSubmit = jest.fn()
+  //   const wrapper = shallow(form(true, 'title', handleSubmit))
+  //   const instance = wrapper.instance()
+  //   const closeSpy = jest.spyOn(instance, 'close')
+  //   const setStateSpy = jest.spyOn(instance, 'setState')
+  //
+  //   wrapper.find('SaveForm').simulate('submit')
+  //   expect(closeSpy).toHaveBeenCalledTimes(1)
+  //   expect(wrapper.state().visible).toEqual(false)
+  //   expect(handleSubmit).toHaveBeenCalledTimes(1)
+  //   expect(setStateSpy).toHaveBeenCalledWith({ visible: false })
+  // })
+
+  // it('onSubmit does not call handleSubmit if not set', () => {
+  //   const element = (
+  //     <SaveFormModal
+  //       className="test-modal"
+  //       formId="test"
+  //       title="title"
+  //       trigger={<p className="trigger">trigger</p>}
+  //       open
+  //       >
+  //         <Form.Input id="test1" name="test1" />
+  //     </SaveFormModal>
+  //   )
+  //   const wrapper = shallow(element)
+  //   const instance = wrapper.instance()
+  //   const closeSpy = jest.spyOn(instance, 'close')
+  //   const setStateSpy = jest.spyOn(instance, 'setState')
+  //   wrapper.find('SaveForm').simulate('submit')
+  //   expect(closeSpy).toHaveBeenCalledTimes(1)
+  //   expect(wrapper.state().visible).toEqual(false)
+  //   expect(setStateSpy).toHaveBeenCalledWith({ visible: false })
+  // })
 })
