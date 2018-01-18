@@ -18,3 +18,10 @@
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.2...v0.3.3)
 
 - Added missing updated minified css files
+
+## [v0.3.4](https://github.com/chopdgd/react-genomix/tree/v0.3.4) (2018-01-18)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.3...v0.3.4)
+
+- Upgraded dependencies
+- Fixed issues with SaveForm and SaveFormModal dealing with handleChange
+- Fixed issue with AutoCompleteDropdown
