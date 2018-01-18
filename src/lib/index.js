@@ -1,7 +1,4 @@
-// Stylesheets
-import 'semantic-ui-css/semantic.min.css'
-import 'react-virtualized/styles.css'
-import 'fixed-data-table-2/dist/fixed-data-table.css'
+/* Stylesheets */
 import 'Stylesheets/main.scss'
 
 /* Utils */
