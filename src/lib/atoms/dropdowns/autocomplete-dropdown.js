@@ -11,7 +11,6 @@ class AutoCompleteDropDown extends React.PureComponent {
     this.state = {
       options: props.options,
       loading: props.loading,
-      value: '',
     }
   }
 
@@ -20,7 +19,7 @@ class AutoCompleteDropDown extends React.PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { options, loading } = this.props
+    const { loading, options } = this.props
 
     if (nextProps.loading !== loading) {
       this.setState({ loading: nextProps.loading })
@@ -30,13 +29,6 @@ class AutoCompleteDropDown extends React.PureComponent {
       const newOptions = differenceWith(nextProps.options, options, isEqual)
       this.setState({ options: concat(options, newOptions) })
     }
-  }
-
-  onChange = (e, { name, value }) => {
-    const { onChange } = this.props
-
-    onChange({ name, value })
-    this.setState({ value })
   }
 
   onSearchChange = (e, { searchQuery }) => {
@@ -52,7 +44,7 @@ class AutoCompleteDropDown extends React.PureComponent {
   }
 
   render() {
-    const { loading, options, value } = this.state
+    const { loading, options } = this.state
     const dropdownProps = omit(
       this.props,
       ['endpoint', 'searchAction', 'waitInterval']
@@ -61,10 +53,10 @@ class AutoCompleteDropDown extends React.PureComponent {
     return (
       <Dropdown
         {...dropdownProps}
-        value={value}
+        search
+        selection
         options={options}
         loading={loading}
-        onChange={this.onChange}
         onSearchChange={this.onSearchChange}
       />
     )
@@ -73,7 +65,7 @@ class AutoCompleteDropDown extends React.PureComponent {
 
 
 AutoCompleteDropDown.propTypes = {
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   searchAction: PropTypes.func.isRequired,
   endpoint: PropTypes.string.isRequired,
   waitInterval: PropTypes.number,

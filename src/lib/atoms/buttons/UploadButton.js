@@ -6,13 +6,7 @@ import ReactFileReader from 'react-file-reader'
 import { Button } from 'LibIndex'
 
 
-class UploadButton extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {}
-  }
-
+class UploadButton extends React.PureComponent {
   handleFiles = (files) => {
     const { config, handleResults } = this.props
     const reader = new FileReader()
