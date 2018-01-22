@@ -163,7 +163,11 @@ const Buttons = () => (
           />
       </Segment>
       <Segment secondary>
-        Button usage instruction goes here
+        <p>Inverted buttons on non-white background:</p>
+        <List
+            items={invertedButtons}
+            horizontal
+          />
       </Segment>
     </Segment.Group>
     <Header>Loan Icon Buttons</Header>

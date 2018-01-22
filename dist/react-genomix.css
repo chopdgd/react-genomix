@@ -12,7 +12,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.button.inverted {
-  background-color: transparent;
+  background-color: #FFFFFF;
   box-shadow: 0 0 0 1px #E0E6ED inset !important;
   color: #3C4858; }
 
@@ -29,7 +29,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.light-blue {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -52,7 +52,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.dark-blue {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -75,7 +75,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.light-grey {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -98,7 +98,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.dark-grey {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -121,7 +121,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.black {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -144,7 +144,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.pink {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -167,7 +167,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.green {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -190,7 +190,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.primary {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -213,7 +213,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.secondary {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -236,7 +236,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.tertiary {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -259,7 +259,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-success {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -282,7 +282,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-positive {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -305,7 +305,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-error {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -328,7 +328,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-negative {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -351,7 +351,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-info {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -374,7 +374,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-attention {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -397,7 +397,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-warning {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
@@ -420,7 +420,7 @@
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset !important; }
 
 .ui.genomix.inverted.button.action-caution {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #3C4858;
   box-shadow: 0 0 0 1px #E0E6ED inset !important; }
 
