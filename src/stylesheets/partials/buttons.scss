@@ -3,6 +3,7 @@
     .ui.genomix.button {
       background-color: genomix-color('light-blue');
       color: genomix-color('white');
+      font-family: inherit;
     }
 
     .ui.genomix.button:hover {
