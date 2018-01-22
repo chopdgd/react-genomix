@@ -77,6 +77,7 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <br/>
           <Form.Input
             id="password"
             name="password"
@@ -88,10 +89,10 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
             type="password"
           />
-
+          <br/>
           {error
             ? <Message negative>
-               <Message.Header as="h5">Login Failed</Message.Header>
+               <h5>Login Failed</h5>
                <p>{error}</p>
               </Message>
             : ''
