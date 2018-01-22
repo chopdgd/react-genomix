@@ -146,6 +146,7 @@ class FixedDataTableExample extends React.PureComponent {
               cell={
                 <LinkFixedCell
                   data={rows}
+                  idKey="id"
                   urlBuilder={(data) => `https://www.google.com/search?q=${data}`}
                 />
               }
