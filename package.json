@@ -5,10 +5,11 @@
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && yarn run css",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "css": "cd src/stylesheets && ../../node_modules/node-sass/bin/node-sass main.scss main.min.css --output-style compressed && ../../node_modules/node-sass/bin/node-sass main.scss main.css && mv main.min.css ../../dist/react-genomix.min.css && mv main.css ../../dist/react-genomix.css"
   },
   "repository": {
     "type": "git",
