@@ -7,8 +7,8 @@ import { LinkFixedCell } from 'LibIndex'
 
 describe('Test LinkFixedCell', () => {
   const data = [
-    { content: 'benign' },
-    { content: 'pathogenic' },
+    { id: 0, content: 'benign' },
+    { id: 1, content: 'pathogenic' },
   ]
 
   it('renders without crashing', () => {
@@ -52,6 +52,38 @@ describe('Test LinkFixedCell', () => {
     expect(wrapper.props().children.props.as).toEqual('a')
     expect(wrapper.props().children.props.content).toEqual('pathogenic')
     expect(wrapper.props().children.props.href).toEqual('http://www.google.com/pathogenic')
+  })
+
+  it('renders the first record with rowIndex = 0, link with idKey', () => {
+    const element = (
+      <LinkFixedCell
+        data={data}
+        rowIndex={0}
+        idKey="id"
+        columnKey="content"
+        urlBuilder={(data) => `http://www.google.com/${data}`}
+      />
+    )
+    const wrapper = shallow(element)
+    expect(wrapper.props().children.props.as).toEqual('a')
+    expect(wrapper.props().children.props.content).toEqual('benign')
+    expect(wrapper.props().children.props.href).toEqual('http://www.google.com/0')
+  })
+
+  it('renders the second record with rowIndex = 1, link with idKey', () => {
+    const element = (
+      <LinkFixedCell
+        data={data}
+        rowIndex={1}
+        idKey="id"
+        columnKey="content"
+        urlBuilder={(data) => `http://www.google.com/${data}`}
+      />
+    )
+    const wrapper = shallow(element)
+    expect(wrapper.props().children.props.as).toEqual('a')
+    expect(wrapper.props().children.props.content).toEqual('pathogenic')
+    expect(wrapper.props().children.props.href).toEqual('http://www.google.com/1')
   })
 
   it('renders link with to instead of href when not an anchor', () => {
