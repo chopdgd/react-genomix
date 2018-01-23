@@ -102,6 +102,7 @@ class FixedDataTableExample extends React.PureComponent {
                 <CheckboxFixedCell
                   data={rows}
                   onChange={(props) => alert(JSON.stringify(props))}
+                  defaultChecked
                 />
               }
               width={200}
