@@ -115,7 +115,7 @@ const items = [
   {
     key: 18,
     header: 'ExportButton',
-    description: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} />,
+    description: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" inverted />} data={[{ hi: 'Mike' }]} onExport={(data) => data}/>,
     meta: 'inverted',
   },
 ]
