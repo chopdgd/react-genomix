@@ -9,10 +9,8 @@ Uses all the props listed for [Table](http://schrodinger.github.io/fixed-data-ta
 
 | Property | Type | Required? | Default | Description |
 |:---|:---|:---:|:---|:---|
-| data | Array of Objects |  |  | Data to be rendered |
-| loading | Boolean |  | false | If true, will render loading dimmer |
-| columnWidths | Objects | ✓ |  | Keys should be columnKeys and value should be pixels for initial widths |
-| onResizeColumn | Function |  |  | Optional callback that will be called with new column widths |
 | columnOrder | Array of String | ✓ |  | columnKeys in order they should be rendered |
 | onColumnReorder | Function |  |  | Optional callback that will be called with new column order |
+| columnWidths | Objects | ✓ |  | Keys should be columnKeys and value should be pixels for initial widths |
+| onResizeColumn | Function |  |  | Optional callback that will be called with new column widths |
 | fixedColumns | Array of String |  |  | columnKeys that should be fixed during scrolling |

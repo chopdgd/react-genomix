@@ -1,6 +1,3 @@
-/* Stylesheets */
-import 'Stylesheets/main.scss'
-
 /* Utils */
 import * as utils from 'LibSrc/utils'
 export { utils }

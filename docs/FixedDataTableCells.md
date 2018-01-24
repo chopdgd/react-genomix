@@ -97,6 +97,7 @@ Renders a [Cell](http://schrodinger.github.io/fixed-data-table-2/api-cell.html) 
 |:---|:---|:---:|:---|:---|
 | as | Func/String |  | a | How to render the link. |
 | data | Array of Objects |  |  | Data to be rendered |
+| idKey | String |  |  | If you want to pass a different key to the urlBuilder |
 | urlBuilder | Function | ✓ |  | Function to build URL |
 
 #### Example

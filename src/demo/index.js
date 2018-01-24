@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
+import '../stylesheets/main.scss'
+
 
 const theRoot = document.getElementById('root')
 
