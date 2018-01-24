@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Dropdown } from 'semantic-ui-react'
-import { concat, differenceWith, isEqual, omit } from 'lodash'
+import { omit } from 'lodash'
 
 
 class AutoCompleteDropDown extends React.PureComponent {
@@ -9,7 +9,6 @@ class AutoCompleteDropDown extends React.PureComponent {
     super(props)
 
     this.state = {
-      options: props.options,
       loading: props.loading,
     }
   }
@@ -19,15 +18,10 @@ class AutoCompleteDropDown extends React.PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { loading, options } = this.props
+    const { loading } = this.props
 
     if (nextProps.loading !== loading) {
       this.setState({ loading: nextProps.loading })
-    }
-
-    if (nextProps.options !== options) {
-      const newOptions = differenceWith(nextProps.options, options, isEqual)
-      this.setState({ options: concat(options, newOptions) })
     }
   }
 
@@ -38,26 +32,23 @@ class AutoCompleteDropDown extends React.PureComponent {
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => searchAction(searchURL), waitInterval)
 
-    this.setState({
-      loading: true,
-    })
+    this.setState({ loading: true })
   }
 
   render() {
-    const { loading, options } = this.state
     const dropdownProps = omit(
       this.props,
-      ['endpoint', 'searchAction', 'waitInterval']
+      ['endpoint', 'loading', 'searchAction', 'waitInterval']
     )
+    const { loading } = this.state
 
     return (
       <Dropdown
-        {...dropdownProps}
         search
         selection
-        options={options}
-        loading={loading}
         onSearchChange={this.onSearchChange}
+        loading={loading}
+        {...dropdownProps}
       />
     )
   }
@@ -70,33 +61,11 @@ AutoCompleteDropDown.propTypes = {
   endpoint: PropTypes.string.isRequired,
   waitInterval: PropTypes.number,
   loading: PropTypes.bool,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      text: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      content: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.element,
-      ]),
-    }),
-  ),
 }
 
 AutoCompleteDropDown.defaultProps = {
   waitInterval: 750,
   loading: false,
-  options: [],
 }
 
 export default AutoCompleteDropDown
