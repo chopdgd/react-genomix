@@ -19,6 +19,7 @@ describe('Test AutoCompleteDropDown', () => {
       name={name}
       endpoint={endpoint}
       searchAction={searchAction}
+      options={[]}
     />
   )
 
@@ -27,19 +28,9 @@ describe('Test AutoCompleteDropDown', () => {
     ReactDOM.render(component, div)
   })
 
-  it('default props are set correctly', () => {
-    const wrapper = shallow(component)
-    expect(wrapper.instance().props.endpoint).toEqual(endpoint)
-    expect(wrapper.instance().props.searchAction).toEqual(searchAction)
-    expect(wrapper.instance().props.waitInterval).toEqual(750)
-    expect(wrapper.instance().props.loading).toEqual(false)
-    expect(wrapper.instance().props.options).toEqual([])
-  })
-
   it('default state is set correctly', () => {
     const wrapper = shallow(component)
     expect(wrapper.instance().state.loading).toEqual(false)
-    expect(wrapper.instance().state.options).toEqual([])
   })
 
   it('componentWillReceiveProps correctly sets loading correctly', () => {
@@ -54,29 +45,6 @@ describe('Test AutoCompleteDropDown', () => {
 
     wrapper.setProps({ loading: false })
     expect(wrapper.instance().state.loading).toEqual(false)
-  })
-
-  it('componentWillReceiveProps correctly sets options correctly', () => {
-    const wrapper = shallow(component)
-    const options = [{ key: 'key', value: 'value', text: 'text' }]
-
-    expect(wrapper.instance().state.options).toEqual([])
-
-    wrapper.setProps({ options })
-    expect(wrapper.instance().state.options).toEqual(options)
-  })
-
-  it('componentWillReceiveProps correctly adds new options and doesnt duplicate options', () => {
-    const wrapper = shallow(component)
-    const options = [{ key: 'key', value: 'value', text: 'text' }]
-
-    expect(wrapper.instance().state.options).toEqual([])
-
-    wrapper.setProps({ options })
-    expect(wrapper.instance().state.options).toEqual(options)
-
-    wrapper.setProps({ options })
-    expect(wrapper.instance().state.options).toEqual(options)
   })
 
   it('onSearchChange sets loading = true', () => {
