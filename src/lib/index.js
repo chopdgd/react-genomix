@@ -17,6 +17,7 @@ export {
   DownloadButton,
   SaveButton,
   SearchButton,
+  LoanIconButton,
 } from 'LibSrc/atoms/buttons/GenomiXButtons'
 export { default as UploadButton } from 'LibSrc/atoms/buttons/UploadButton'
 

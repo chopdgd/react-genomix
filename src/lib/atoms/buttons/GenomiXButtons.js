@@ -52,3 +52,11 @@ export const SearchButton = ({ ...props }) => (
     {...constants.Search}
   />
 )
+
+export const LoanIconButton = ({ ...props }) => (
+  <Button
+    {...props}
+    content={get(props, 'content')}
+  />
+
+)
