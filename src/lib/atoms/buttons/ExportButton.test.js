@@ -35,7 +35,6 @@ describe('Test ExportButton', () => {
     expect(wrapper.props().content).toEqual('Export Me')
     expect(wrapper.props().filenamePrefix).toEqual('newPrefix')
     expect(wrapper.props().onExport).toEqual(onExport)
-    expect(wrapper.state().data).toEqual([{ "test": 1 }])
   })
 
   it('onExport is called w/ data onClick', () => {
