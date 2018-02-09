@@ -21,6 +21,8 @@ const form = (defaultValues, handleSubmit, handleChange) => {
 }
 
 describe('Test SaveForm', () => {
+  const event = {preventDefault: jest.fn()}
+
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(form(), div)
@@ -46,7 +48,7 @@ describe('Test SaveForm', () => {
   it('onSubmit calls handleSubmit', () => {
     const handleSubmit = jest.fn()
     const wrapper = shallow(form({ 'test1': 'default' }, handleSubmit))
-    wrapper.find('Form').simulate('submit')
+    wrapper.find('Form').simulate('submit', event)
     expect(handleSubmit).toHaveBeenCalledWith({ 'test1': 'default' })
   })
 
@@ -61,7 +63,7 @@ describe('Test SaveForm', () => {
   it('handle handleSubmit when its undefined', () => {
     const wrapper = shallow(form())
     expect(wrapper.instance().state).toEqual({})
-    wrapper.find('Form').simulate('submit')
+    wrapper.find('Form').simulate('submit', event)
     expect(wrapper.instance().state).toEqual({})
   })
 })

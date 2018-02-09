@@ -6,18 +6,16 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class TextCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(TextCell, this.props)
-    const rest = getUnhandledProps(TextCell, this.props)
-    const { content } = this.props
+const TextCell = props => {
+  const ElementType = getElementType(TextCell, props)
+  const rest = getUnhandledProps(TextCell, props)
+  const { content } = props
 
-    return (
-      <ElementType {...rest}>
-        {content}
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      {content}
+    </ElementType>
+  )
 }
 
 
@@ -40,5 +38,6 @@ TextCell.handledProps = [
   'content',
   'rowIndex',
 ]
+
 
 export default TextCell

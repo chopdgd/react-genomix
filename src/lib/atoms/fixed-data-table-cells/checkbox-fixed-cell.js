@@ -5,7 +5,7 @@ import { Checkbox } from 'semantic-ui-react'
 import { get } from 'lodash'
 
 
-class CheckboxFixedCell extends React.PureComponent {
+class CheckboxFixedCell extends React.Component {
   constructor(props) {
     super(props)
 
@@ -44,5 +44,6 @@ CheckboxFixedCell.propTypes = {
 CheckboxFixedCell.defaultProps = {
   data: [],
 }
+
 
 export default CheckboxFixedCell

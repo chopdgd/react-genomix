@@ -7,18 +7,16 @@ import { get } from 'lodash'
 import { utils } from 'LibIndex'
 
 
-class InterpretationFixedCell extends React.PureComponent {
-  render() {
-    const { labelProps, data, rowIndex, columnKey, ...rest } = this.props
-    const classification = get(data[rowIndex], columnKey)
-    const color = utils.getInterpretationColor(classification)
+const InterpretationFixedCell = props => {
+  const { labelProps, data, rowIndex, columnKey, ...rest } = props
+  const classification = get(data[rowIndex], columnKey)
+  const color = utils.getInterpretationColor(classification)
 
-    return (
-      <Cell {...rest}>
-        <Label {...labelProps} color={color} content={classification} />
-      </Cell>
-    )
-  }
+  return (
+    <Cell {...rest}>
+      <Label {...labelProps} color={color} content={classification} />
+    </Cell>
+  )
 }
 
 
@@ -35,5 +33,6 @@ InterpretationFixedCell.defaultProps = {
     basic: true,
   },
 }
+
 
 export default InterpretationFixedCell

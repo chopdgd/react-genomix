@@ -5,19 +5,11 @@ import { Popup, Progress } from 'semantic-ui-react'
 import { utils } from 'LibIndex'
 
 
-class TurnAroundTimeProgress extends React.PureComponent {
-  renderNA = () => {
-    return (
-      <p>
-        Not started!
-      </p>
-    )
-  }
+const TurnAroundTimeProgress = props => {
+  const { target, start, signout, ...rest } = props
+  const { label, color, value } = utils.getTurnAroundTimeDetails(target, start, signout)
 
-  renderProgress = () => {
-    const { target, start, signout, ...rest } = this.props
-    const { label, color, value } = utils.getTurnAroundTimeDetails(target, start, signout)
-
+  if (start) {
     return (
       <Popup
         flowing
@@ -39,16 +31,12 @@ class TurnAroundTimeProgress extends React.PureComponent {
         </Popup.Content>
       </Popup>
     )
-  }
-
-  render() {
-    const { start } = this.props
-
-    if (start) {
-      return this.renderProgress()
-    } else {
-      return this.renderNA()
-    }
+  } else {
+    return (
+      <p>
+        Not started!
+      </p>
+    )
   }
 }
 
@@ -60,5 +48,6 @@ TurnAroundTimeProgress.propTypes = {
 }
 
 TurnAroundTimeProgress.defaultProps = {}
+
 
 export default TurnAroundTimeProgress

@@ -48,7 +48,7 @@ class Modals extends React.PureComponent {
     return (
       <Grid padded centered>
         <Grid.Column width={6}>
-          <GenomiX.SaveFormModal
+          <GenomiX.FormModal
             className="example-modal"
             formId="example"
             trigger={<GenomiX.Button icon="tasks" content="Open"/>}
@@ -76,7 +76,7 @@ class Modals extends React.PureComponent {
               control={Dropdown}
               defaultValue="3"
             />
-          </GenomiX.SaveFormModal>
+          </GenomiX.FormModal>
         </Grid.Column>
       </Grid>
     )

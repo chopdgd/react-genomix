@@ -6,28 +6,25 @@ import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
 import { Avatar } from 'LibIndex'
 
 
-class UserMenu extends React.PureComponent {
-  render () {
-    const { email, linksAs, name, profileImage } = this.props
+const UserMenu = props => {
+  const { email, linksAs, name, profileImage } = props
 
-    return (
-        <Dropdown
-          trigger={<Avatar profileImage={profileImage} />}
-          icon={null}
+  return (
+      <Dropdown
+        trigger={<Avatar profileImage={profileImage} />}
+        icon={null}
+      >
+        <Dropdown.Menu
+          className="NavbarDropdownMenu"
         >
-          <Dropdown.Menu
-            className="NavbarDropdownMenu"
-          >
-            <Dropdown.Item text={name} />
-            <Dropdown.Item text={email} disabled />
-            <Divider />
-            <Dropdown.Item text="Settings" as={linksAs} to="settings" href="settings" />
-            <Dropdown.Item text="Sign Out" as={linksAs} to="logoff" href="logoff" />
-          </Dropdown.Menu>
-        </Dropdown>
-    )
-  }
-
+          <Dropdown.Item text={name} />
+          <Dropdown.Item text={email} disabled />
+          <Divider />
+          <Dropdown.Item text="Settings" as={linksAs} to="settings" href="settings" />
+          <Dropdown.Item text="Sign Out" as={linksAs} to="logoff" href="logoff" />
+        </Dropdown.Menu>
+      </Dropdown>
+  )
 }
 
 
@@ -42,5 +39,6 @@ UserMenu.propTypes = {
 UserMenu.defaultProps = {
   linksAs: 'a',
 }
+
 
 export default UserMenu

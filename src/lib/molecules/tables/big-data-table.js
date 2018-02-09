@@ -6,7 +6,7 @@ import { concat, differenceWith, isEqual } from 'lodash'
 import cx from 'classnames'
 
 
-class BigDataTable extends React.PureComponent {
+class BigDataTable extends React.Component {
   constructor(props, context) {
     super(props)
 
@@ -106,5 +106,6 @@ BigDataTable.defaultProps = {
   rowTextAlign: 'left',
   scrollToIndex: -1,
 }
+
 
 export default BigDataTable

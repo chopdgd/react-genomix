@@ -5,7 +5,7 @@ import { Table } from 'fixed-data-table-2'
 import { get, indexOf, map, sortBy } from 'lodash'
 
 
-class FixedDataTable extends React.PureComponent {
+class FixedDataTable extends React.Component {
   constructor(props) {
     super(props)
 
@@ -119,5 +119,6 @@ FixedDataTable.propTypes = {
 FixedDataTable.defaultProps = {
   fixedColumns: [],
 }
+
 
 export default FixedDataTable

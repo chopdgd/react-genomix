@@ -8,29 +8,27 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class SexCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(SexCell, this.props)
-    const rest = getUnhandledProps(SexCell, this.props)
-    const { sex, iconProps } = this.props
+const SexCell = props => {
+  const ElementType = getElementType(SexCell, props)
+  const rest = getUnhandledProps(SexCell, props)
+  const { sex, iconProps } = props
 
-    // PED file nomenclature for sex. Anything else is unknown
-    // See: https://gatkforums.broadinstitute.org/gatk/discussion/7696/pedigree-ped-files
-    const normalizedSex = toLower(toString(sex))
+  // PED file nomenclature for sex. Anything else is unknown
+  // See: https://gatkforums.broadinstitute.org/gatk/discussion/7696/pedigree-ped-files
+  const normalizedSex = toLower(toString(sex))
 
-    let icon = <QuestionIcon {...iconProps} />
-    if (['m', 'male', '1'].includes(normalizedSex)) {
-      icon = <MaleIcon {...iconProps} />
-    } else if (['f', 'female', '2'].includes(normalizedSex)) {
-      icon = <FemaleIcon {...iconProps} />
-    }
-
-    return (
-      <ElementType {...rest}>
-        {icon}
-      </ElementType>
-    )
+  let icon = <QuestionIcon {...iconProps} />
+  if (['m', 'male', '1'].includes(normalizedSex)) {
+    icon = <MaleIcon {...iconProps} />
+  } else if (['f', 'female', '2'].includes(normalizedSex)) {
+    icon = <FemaleIcon {...iconProps} />
   }
+
+  return (
+    <ElementType {...rest}>
+      {icon}
+    </ElementType>
+  )
 }
 
 
@@ -56,5 +54,6 @@ SexCell.handledProps = [
   'rowIndex',
   'iconProps',
 ]
+
 
 export default SexCell

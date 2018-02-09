@@ -8,7 +8,7 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class PublicEvidenceCell extends React.PureComponent {
+class PublicEvidenceCell extends React.Component {
   renderRating = (database, value, url) => {
     let color = 'grey'
     let message = `Not present in ${database}!`
@@ -103,5 +103,6 @@ PublicEvidenceCell.handledProps = [
   'gnomadFrequency',
   'rowIndex',
 ]
+
 
 export default PublicEvidenceCell

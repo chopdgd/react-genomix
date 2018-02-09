@@ -7,19 +7,17 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class DateCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(DateCell, this.props)
-    const rest = getUnhandledProps(DateCell, this.props)
-    const { date, format } = this.props
-    const normalizedDate = utils.dateFormatter(date, format)
+const DateCell = props => {
+  const ElementType = getElementType(DateCell, props)
+  const rest = getUnhandledProps(DateCell, props)
+  const { date, format } = props
+  const normalizedDate = utils.dateFormatter(date, format)
 
-    return (
-      <ElementType {...rest}>
-        {normalizedDate}
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      {normalizedDate}
+    </ElementType>
+  )
 }
 
 
@@ -40,5 +38,6 @@ DateCell.handledProps = [
   'format',
   'rowIndex',
 ]
+
 
 export default DateCell

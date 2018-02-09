@@ -6,25 +6,23 @@ import { get, toLower, toString } from 'lodash'
 import { MaleIcon, FemaleIcon, QuestionIcon } from 'LibIndex'
 
 
-class SexFixedCell extends React.PureComponent {
-  render() {
-    const { data, rowIndex, columnKey, ...rest } = this.props
-    const sex = get(data[rowIndex], columnKey)
-    const normalizedSex = toLower(toString(sex))
+const SexFixedCell = props => {
+  const { data, rowIndex, columnKey, ...rest } = props
+  const sex = get(data[rowIndex], columnKey)
+  const normalizedSex = toLower(toString(sex))
 
-    let icon = <QuestionIcon />
-    if (['m', 'male', '1'].includes(normalizedSex)) {
-      icon = <MaleIcon />
-    } else if (['f', 'female', '2'].includes(normalizedSex)) {
-      icon = <FemaleIcon />
-    }
-
-    return (
-      <Cell {...rest}>
-        {icon}
-      </Cell>
-    )
+  let icon = <QuestionIcon />
+  if (['m', 'male', '1'].includes(normalizedSex)) {
+    icon = <MaleIcon />
+  } else if (['f', 'female', '2'].includes(normalizedSex)) {
+    icon = <FemaleIcon />
   }
+
+  return (
+    <Cell {...rest}>
+      {icon}
+    </Cell>
+  )
 }
 
 
@@ -37,5 +35,6 @@ SexFixedCell.propTypes = {
 SexFixedCell.defaultProps = {
   data: [],
 }
+
 
 export default SexFixedCell

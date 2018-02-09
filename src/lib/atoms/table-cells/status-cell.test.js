@@ -11,13 +11,6 @@ describe('Test StatusCell', () => {
     ReactDOM.render(<StatusCell status="unknown" />, div)
   })
 
-  it('initial props are set correctly', () => {
-    const wrapper = shallow(<StatusCell status="unknown" />)
-    expect(wrapper.instance().props.as).toEqual('div')
-    expect(wrapper.instance().props.status).toEqual('unknown')
-    expect(wrapper.instance().props.rowIndex).toEqual(undefined)
-  })
-
   it('Pending status renders correct Icon', () => {
     const wrapper = shallow(<StatusCell status="pending" />)
     expect(wrapper.find('Icon').props().name).toEqual('clock')

@@ -7,23 +7,21 @@ import getElementType from '../../helpers/getElementType'
 import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
-class TurnAroundTimeProgressCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(TurnAroundTimeProgressCell, this.props)
-    const rest = getUnhandledProps(TurnAroundTimeProgressCell, this.props)
-    const { target, start, signout, progressProps } = this.props
+const TurnAroundTimeProgressCell = props => {
+  const ElementType = getElementType(TurnAroundTimeProgressCell, props)
+  const rest = getUnhandledProps(TurnAroundTimeProgressCell, props)
+  const { target, start, signout, progressProps } = props
 
-    return (
-      <ElementType {...rest}>
-        <TurnAroundTimeProgress
-          target={target}
-          start={start}
-          signout={signout}
-          {...progressProps}
-        />
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      <TurnAroundTimeProgress
+        target={target}
+        start={start}
+        signout={signout}
+        {...progressProps}
+      />
+    </ElementType>
+  )
 }
 
 
@@ -51,5 +49,6 @@ TurnAroundTimeProgressCell.handledProps = [
   'rowIndex',
   'progressProps',
 ]
+
 
 export default TurnAroundTimeProgressCell

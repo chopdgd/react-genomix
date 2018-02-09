@@ -4,7 +4,7 @@ import { Dropdown } from 'semantic-ui-react'
 import { omit } from 'lodash'
 
 
-class AutoCompleteDropDown extends React.PureComponent {
+class AutoCompleteDropDown extends React.Component {
   constructor(props) {
     super(props)
 
@@ -67,5 +67,6 @@ AutoCompleteDropDown.defaultProps = {
   waitInterval: 750,
   loading: false,
 }
+
 
 export default AutoCompleteDropDown

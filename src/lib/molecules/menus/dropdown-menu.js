@@ -3,21 +3,19 @@ import PropTypes from 'prop-types'
 import { Dropdown, Icon } from 'semantic-ui-react'
 
 
-class DropdownMenu extends React.PureComponent {
-  render() {
-    const { children } = this.props
+const DropdownMenu = props => {
+  const { children } = props
 
-    return (
-      <Dropdown
-        trigger={<Icon name="sidebar" size="large" />}
-        icon={null}
-      >
-        <Dropdown.Menu className="NavbarDropdownMenu">
-          {children}
-        </Dropdown.Menu>
-      </Dropdown>
-    )
-  }
+  return (
+    <Dropdown
+      trigger={<Icon name="sidebar" size="large" />}
+      icon={null}
+    >
+      <Dropdown.Menu className="NavbarDropdownMenu">
+        {children}
+      </Dropdown.Menu>
+    </Dropdown>
+  )
 }
 
 
@@ -29,5 +27,6 @@ DropdownMenu.propTypes = {
 }
 
 DropdownMenu.defaultProps = {}
+
 
 export default DropdownMenu

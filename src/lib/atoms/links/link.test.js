@@ -11,12 +11,6 @@ describe('Test Link', () => {
     ReactDOM.render(<Link as="a" content="google" href="https://www.google.com" />, div)
   })
 
-  it('initial props are set correctly', () => {
-    const wrapper = shallow(<Link />)
-    expect(wrapper.instance().props.as).toEqual('a')
-    expect(wrapper.instance().props.content).toEqual(undefined)
-  })
-
   it('props are spread correctly', () => {
     const href = 'https://www.google.com'
     const content = 'google'

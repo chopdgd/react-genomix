@@ -7,21 +7,19 @@ import { get } from 'lodash'
 import { utils, Link } from 'LibIndex'
 
 
-class TranscriptFixedCell extends React.PureComponent {
-  render() {
-    const { data, rowIndex, columnKey, ...rest } = this.props
-    const transcript = get(data[rowIndex], columnKey)
+const TranscriptFixedCell = props => {
+  const { data, rowIndex, columnKey, ...rest } = props
+  const transcript = get(data[rowIndex], columnKey)
 
-    return (
-      <Cell {...rest}>
-        {transcript} &nbsp;&nbsp;
-        <Link
-          content={<Label basic size="tiny" content="A" color="brown" />}
-          href={utils.urlBuilders.alamutEntry(transcript)}
-        />
-      </Cell>
-    )
-  }
+  return (
+    <Cell {...rest}>
+      {transcript} &nbsp;&nbsp;
+      <Link
+        content={<Label basic size="tiny" content="A" color="brown" />}
+        href={utils.urlBuilders.alamutEntry(transcript)}
+      />
+    </Cell>
+  )
 }
 
 
@@ -34,5 +32,6 @@ TranscriptFixedCell.propTypes = {
 TranscriptFixedCell.defaultProps = {
   data: [],
 }
+
 
 export default TranscriptFixedCell

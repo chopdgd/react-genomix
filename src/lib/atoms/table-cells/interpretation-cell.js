@@ -8,20 +8,18 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class InterpretationCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(InterpretationCell, this.props)
-    const rest = getUnhandledProps(InterpretationCell, this.props)
-    const { classification, labelProps } = this.props
-    const color = utils.getInterpretationColor(classification)
+const InterpretationCell = props => {
+  const ElementType = getElementType(InterpretationCell, props)
+  const rest = getUnhandledProps(InterpretationCell, props)
+  const { classification, labelProps } = props
+  const color = utils.getInterpretationColor(classification)
 
 
-    return (
-      <ElementType {...rest}>
-        <Label {...labelProps} color={color} content={classification} />
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      <Label {...labelProps} color={color} content={classification} />
+    </ElementType>
+  )
 }
 
 
@@ -52,5 +50,6 @@ InterpretationCell.handledProps = [
   'rowIndex',
   'labelProps',
 ]
+
 
 export default InterpretationCell

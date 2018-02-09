@@ -7,40 +7,38 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class StatusCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(StatusCell, this.props)
-    const rest = getUnhandledProps(StatusCell, this.props)
-    const { status } = this.props
+const StatusCell = props => {
+  const ElementType = getElementType(StatusCell, props)
+  const rest = getUnhandledProps(StatusCell, props)
+  const { status } = props
 
-    let icon
-    switch (status) {
-      case 'pending':
-        icon = <Icon color="grey" name="clock" />
-        break
-      case 'running':
-        icon = <Icon className="genomix" color="black" name="spinner" />
-        break
-      case 'complete':
-        icon = <Icon color="green" name="checkmark" />
-        break
-      case 'cancelled':
-        icon = <Icon color="red" name="dont" />
-        break
-      case 'failed':
-        icon = <Icon color="red" name="x" />
-        break
-      default:
-        icon = <Icon color="grey" name="question" />
-        break
-    }
-
-    return (
-      <ElementType {...rest}>
-        {icon}
-      </ElementType>
-    )
+  let icon
+  switch (status) {
+    case 'pending':
+      icon = <Icon color="grey" name="clock" />
+      break
+    case 'running':
+      icon = <Icon className="genomix" color="black" name="spinner" />
+      break
+    case 'complete':
+      icon = <Icon color="green" name="checkmark" />
+      break
+    case 'cancelled':
+      icon = <Icon color="red" name="dont" />
+      break
+    case 'failed':
+      icon = <Icon color="red" name="x" />
+      break
+    default:
+      icon = <Icon color="grey" name="question" />
+      break
   }
+
+  return (
+    <ElementType {...rest}>
+      {icon}
+    </ElementType>
+  )
 }
 
 
@@ -66,5 +64,6 @@ StatusCell.handledProps = [
   'status',
   'rowIndex',
 ]
+
 
 export default StatusCell

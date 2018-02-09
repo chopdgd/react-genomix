@@ -11,14 +11,6 @@ describe('Test SexCell', () => {
     ReactDOM.render(<SexCell />, div)
   })
 
-  it('initial props are set correctly', () => {
-    const wrapper = shallow(<SexCell />)
-    expect(wrapper.instance().props.as).toEqual('div')
-    expect(wrapper.instance().props.sex).toEqual('unknown')
-    expect(wrapper.instance().props.rowIndex).toEqual(undefined)
-    expect(wrapper.instance().props.iconProps).toEqual({})
-  })
-
   it('ensure iconProps are spread to icon', () => {
     const wrapper = shallow(<SexCell as="td" iconProps={{ size: 'large' }} />)
     expect(wrapper.find('QuestionIcon').props()).toEqual({ size: 'large' })

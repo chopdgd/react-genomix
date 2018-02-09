@@ -7,19 +7,17 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class LinkCell extends React.PureComponent {
-  render() {
-    const { as, linkAs, content } = this.props
+const LinkCell = props => {
+  const { as, linkAs, content } = props
 
-    const ElementType = getElementType(LinkCell, { as })
-    const rest = getUnhandledProps(LinkCell, this.props)
+  const ElementType = getElementType(LinkCell, { as })
+  const rest = getUnhandledProps(LinkCell, props)
 
-    return (
-      <ElementType {...rest}>
-        <Link {...rest} as={linkAs} content={content} />
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      <Link {...rest} as={linkAs} content={content} />
+    </ElementType>
+  )
 }
 
 
@@ -45,5 +43,6 @@ LinkCell.handledProps = [
   'content',
   'linkAs',
 ]
+
 
 export default LinkCell
