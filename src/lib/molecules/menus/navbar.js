@@ -17,7 +17,7 @@ const renderSubMenu = element => {
 const Navbar = props => {
   const { activeItem, children, logo, subMenu, userMenu } = props
 
-  const items = React.Children.map(children, (item: React.ReactElement<ItemPropsInternal>) =>
+  const items = React.Children.map(children, item =>
     React.cloneElement(item, {
       active: activeItem === item.props.name,
     })

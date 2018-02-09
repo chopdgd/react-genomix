@@ -67,7 +67,7 @@ class FormModal extends React.PureComponent {
 
         <Modal.Content>
           <SaveForm
-            id={formId}
+            formId={formId}
             defaultValues={defaultValues}
             handleChange={handleChange}
             handleSubmit={this.onSubmit}

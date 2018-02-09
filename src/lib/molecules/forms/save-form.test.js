@@ -9,7 +9,7 @@ import { Button, SaveForm } from 'LibIndex'
 const form = (defaultValues, handleSubmit, handleChange) => {
   return (
     <SaveForm
-      id="test"
+      formId="test"
       defaultValues={defaultValues}
       handleSubmit={handleSubmit}
       handleChange={handleChange}
