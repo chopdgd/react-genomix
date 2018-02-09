@@ -8,32 +8,25 @@ import { Button } from 'LibIndex'
 
 
 class ExportButton extends React.PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      data: get(props, 'data', [])
-    }
-  }
-
   handleReformat = () => {
-    const { onExport } = this.props
-    const { data } = this.state
+    const { data, onExport } = this.props
 
     if (onExport) {
       this.setState({ data: onExport(data) })
+    } else {
+      this.setState({ data })
     }
   }
 
   render() {
-    const { content, data, filenamePrefix, onExport, ...rest } = this.props
+    const { content, data , filenamePrefix, onExport, ...rest } = this.props
     const timestamp = moment().format('YYYY_MM_DD-HH_mm_ss')
 
     return (
       <CSVLink
         filename={`${filenamePrefix}-${timestamp}.csv`}
         target="_blank"
-        data={this.state.data}
+        data={get(this.state, 'data', [])}
         {...rest}
         onClick={this.handleReformat}
       >
