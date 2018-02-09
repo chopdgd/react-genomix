@@ -25,3 +25,11 @@
 - Upgraded dependencies
 - Fixed issues with SaveForm and SaveFormModal dealing with handleChange
 - Fixed issue with AutoCompleteDropdown
+
+## [v0.3.5](https://github.com/chopdgd/react-genomix/tree/v0.3.5) (2018-01-24)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.4...v0.3.5)
+
+- Added `idKey` prop LinkFixedCell to help build URL [#138](https://github.com/chopdgd/react-genomix/issues/138)
+- Fixed issues with FixedDataTable state [#142](https://github.com/chopdgd/react-genomix/issues/142)
+- Fixed issues with AutoCompleteDropdown state [#144](https://github.com/chopdgd/react-genomix/issues/144)
+- Dropped support for package-lock.json

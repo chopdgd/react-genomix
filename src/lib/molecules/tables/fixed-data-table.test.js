@@ -20,14 +20,14 @@ const nextColumnSizes = { name: 150, text: 200 }
 const TestTable = ({ ...props }) => {
   return (
     <FixedDataTable
-      data={props.data}
+      rowsCount={props.data.length}
       maxHeight={500}
       headerHeight={100}
       rowHeight={100}
       columnOrder={initialColumnOrder}
+      onColumnReorder={props.onColumnReorder}
       columnWidths={initialColumnSizes}
       onColumnResize={props.onColumnResize}
-      onColumnReorder={props.onColumnReorder}
       fixedColumns={props.fixedColumns}
     >
       <Column
@@ -53,21 +53,6 @@ describe('Test BigDataTable', () => {
     ReactDOM.render(TestTable({ data: list }), div)
   })
 
-  it('renders Dimmer', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-    expect(wrapper.find('Dimmer')).toHaveLength(1)
-  })
-
-  it('renders Loader', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-    expect(wrapper.find('Loader')).toHaveLength(1)
-  })
-
-  it('renders Dimmable', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-    expect(wrapper.find('DimmerDimmable')).toHaveLength(1)
-  })
-
   it('renders AutoSizer', () => {
     const wrapper = shallow(TestTable({ data: list }))
     expect(wrapper.find('AutoSizer')).toHaveLength(1)
@@ -87,59 +72,6 @@ describe('Test BigDataTable', () => {
     expect(wrapper.instance().state.columnWidths).toEqual(initialColumnSizes)
     wrapper.setProps({ columnWidths: nextColumnSizes })
     expect(wrapper.instance().state.columnWidths).toEqual(nextColumnSizes)
-  })
-
-  it('loading should change when given new props', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-
-    expect(wrapper.instance().state.loading).toEqual(false)
-    wrapper.setProps({ loading: true })
-    expect(wrapper.instance().state.loading).toEqual(true)
-  })
-
-  it('fixedColumns should change when given new props', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-
-    expect(wrapper.instance().state.fixedColumns).toEqual([])
-    wrapper.setProps({ fixedColumns: ['name'] })
-    expect(wrapper.instance().state.fixedColumns).toEqual(['name'])
-  })
-
-  it('rows should change when given new props', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-
-    expect(wrapper.instance().state.rows).toEqual(list)
-    wrapper.setProps({ data: [{ name: 'Mike', text: 'Cool' }] })
-    expect(wrapper.instance().state.rows).toEqual([
-      { name: 'Mike', text: 'text' },
-      { name: 'Mike', text: 'Cool' },
-    ])
-  })
-
-  it('rows should not change when given same props', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-
-    expect(wrapper.instance().state.rows).toEqual(list)
-    wrapper.setProps({ data: [{ name: 'Mike', text: 'text' }] })
-    expect(wrapper.instance().state.rows).toEqual([
-      { name: 'Mike', text: 'text' },
-    ])
-  })
-
-  it('rows should not contain duplicates', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-
-    expect(wrapper.instance().state.rows).toEqual(list)
-    wrapper.setProps({ data: [{ name: 'Mike', text: 'Cool' }] })
-    expect(wrapper.instance().state.rows).toEqual([
-      { name: 'Mike', text: 'text' },
-      { name: 'Mike', text: 'Cool' },
-    ])
-    wrapper.setProps({ data: [{ name: 'Mike', text: 'Cool' }] })
-    expect(wrapper.instance().state.rows).toEqual([
-      { name: 'Mike', text: 'text' },
-      { name: 'Mike', text: 'Cool' },
-    ])
   })
 
   it('columnWidths should change when onColumnResizeEndCallback is fired', () => {

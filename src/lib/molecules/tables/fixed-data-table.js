@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Dimmer, Loader } from 'semantic-ui-react'
 import { AutoSizer } from 'react-virtualized'
 import { Table } from 'fixed-data-table-2'
-import { concat, differenceWith, get, isEqual, indexOf, map, sortBy } from 'lodash'
+import { get, indexOf, map, sortBy } from 'lodash'
 
 
 class FixedDataTable extends React.PureComponent {
@@ -11,28 +10,13 @@ class FixedDataTable extends React.PureComponent {
     super(props)
 
     this.state = {
-      rows: props.data,
-      loading: props.loading,
       columnWidths: props.columnWidths,
       columnOrder: props.columnOrder,
-      fixedColumns: props.fixedColumns,
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { columnWidths, columnOrder, data, fixedColumns, loading } = this.props
-
-    if (nextProps.data !== data) {
-      const { rows } = this.state
-      const newData = differenceWith(nextProps.data, rows, isEqual)
-      if (newData.length > 0) {
-        this.setState({ rows: concat(rows, newData) })
-      }
-    }
-
-    if (nextProps.loading !== loading) {
-      this.setState({ loading: nextProps.loading })
-    }
+    const { columnWidths, columnOrder } = this.props
 
     if (nextProps.columnWidths !== columnWidths) {
       this.setState({ columnWidths: nextProps.columnWidths })
@@ -40,10 +24,6 @@ class FixedDataTable extends React.PureComponent {
 
     if (nextProps.columnOrder !== columnOrder) {
       this.setState({ columnOrder: nextProps.columnOrder })
-    }
-
-    if (nextProps.fixedColumns !== fixedColumns) {
-      this.setState({ fixedColumns: nextProps.fixedColumns })
     }
   }
 
@@ -82,25 +62,20 @@ class FixedDataTable extends React.PureComponent {
 
   render() {
     const {
+      columnOrder,
       columnWidths,
       children,
-      maxHeight,
-      headerHeight,
-      rowHeight,
-      loading,
+      fixedColumns,
       onColumnResize,
       onColumnReorder,
       ...rest,
      } = this.props
 
-    const { rows, columnOrder, fixedColumns } = this.state
-    const rowsCount = rows.length
-
     // Add adjustable width to Columns
     const columns = []
     React.Children.map(children, (column: React.ReactElement<ColumnPropsInternal>) => {
       const columnObject = {
-        order: indexOf(columnOrder, column.props.columnKey),
+        order: indexOf(this.state.columnOrder, column.props.columnKey),
         column: React.cloneElement(column, {
           key: column.props.columnKey,
           width: get(this.state, `columnWidths.${column.props.columnKey}`, ''),
@@ -115,49 +90,33 @@ class FixedDataTable extends React.PureComponent {
     const orderedChildren = map(orderedColumns, (column) => column.column)
 
     return (
-      <Dimmer.Dimmable dimmed={loading}>
-        <Dimmer active={loading} inverted>
-          <Loader>Loading Results</Loader>
-        </Dimmer>
-        <AutoSizer disableHeight>
-          {({ width }) => (
-            <Table
-              className="genomix fixed-data table"
-              maxHeight={maxHeight}
-              width={width}
-              rowsCount={rowsCount}
-              headerHeight={headerHeight}
-              rowHeight={rowHeight}
-              onColumnResizeEndCallback={this.onColumnResizeEndCallback}
-              onColumnReorderEndCallback={this.onColumnReorderEndCallback}
-              isColumnReordering={false}
-              isColumnResizing={false}
-              showScrollbarY={false}
-              {...rest}
-            >
-              {orderedChildren}
-            </Table>
-          )}
-        </AutoSizer>
-      </Dimmer.Dimmable>
+      <AutoSizer disableHeight>
+        {({ width }) => (
+          <Table
+            className="genomix fixed-data table"
+            width={width}
+            onColumnResizeEndCallback={this.onColumnResizeEndCallback}
+            onColumnReorderEndCallback={this.onColumnReorderEndCallback}
+            {...rest}
+          >
+            {orderedChildren}
+          </Table>
+        )}
+      </AutoSizer>
     )
   }
 }
 
 
 FixedDataTable.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
-  loading: PropTypes.bool,
-  columnWidths: PropTypes.object.isRequired,
-  onResizeColumn: PropTypes.func,
   columnOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
   onColumnReorder: PropTypes.func,
+  columnWidths: PropTypes.object.isRequired,
+  onResizeColumn: PropTypes.func,
   fixedColumns: PropTypes.arrayOf(PropTypes.string),
 }
 
 FixedDataTable.defaultProps = {
-  data: [],
-  loading: false,
   fixedColumns: [],
 }
 

@@ -88,12 +88,13 @@ class FixedDataTableExample extends React.PureComponent {
         <Grid.Column width={16} textAlign="center">
           <FixedDataTable
             maxHeight={500}
-            rowsCount={rows.length}
-            headerHeight={65}
-            rowHeight={65}
+            headerHeight={55}
+            rowHeight={40}
             columnWidths={columnWidths}
             columnOrder={columnOrder}
             fixedColumns={['checkbox']}
+            rowsCount={rows.length}
+            showScrollbarY={false}
           >
             <Column
               columnKey="checkbox"
@@ -146,6 +147,7 @@ class FixedDataTableExample extends React.PureComponent {
               cell={
                 <LinkFixedCell
                   data={rows}
+                  idKey="id"
                   urlBuilder={(data) => `https://www.google.com/search?q=${data}`}
                 />
               }
