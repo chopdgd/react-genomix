@@ -28,12 +28,6 @@ describe('Navbar Tests', () => {
     expect(wrapper.find('MenuItem')).toHaveLength(1)
   })
 
-  it('should change activeItem in state when clicked', () => {
-    expect(wrapper.state().activeItem).toEqual('')
-    wrapper.find('MenuItem').find('#test').simulate('click', undefined, { name: 'test' })
-    expect(wrapper.state().activeItem).toEqual('test')
-  })
-
   it('should render userMenu if passed', () => {
     const userMenu = (
       <UserMenu
