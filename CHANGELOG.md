@@ -33,3 +33,13 @@
 - Fixed issues with FixedDataTable state [#142](https://github.com/chopdgd/react-genomix/issues/142)
 - Fixed issues with AutoCompleteDropdown state [#144](https://github.com/chopdgd/react-genomix/issues/144)
 - Dropped support for package-lock.json
+
+## [v0.4.0](https://github.com/chopdgd/react-genomix/tree/v0.4.0) (2018-01-24)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.5...v0.4.0)
+
+- Updated Semantic React UI to 0.78.2
+- Updated many dependencies to the latest versions (Fixed-data-table, etc)
+- Converted all simple components to stateless pure components
+- Removed target as required prop in TurnAroundTimeProgress [#146](https://github.com/chopdgd/react-genomix/issues/146)
+- Fixed issues with ExportButton handling state [#158](https://github.com/chopdgd/react-genomix/issues/158)
+- Fixed issues with NavMenu handling state [#162](https://github.com/chopdgd/react-genomix/issues/162)
