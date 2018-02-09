@@ -21,7 +21,8 @@ class SaveForm extends React.PureComponent {
     })
   }
 
-  onSubmit = () => {
+  onSubmit = e => {
+    e.preventDefault()
     const { handleSubmit } = this.props
 
     if (handleSubmit) {

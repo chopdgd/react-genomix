@@ -84,7 +84,7 @@ export { default as SaveForm } from 'LibSrc/molecules/forms/save-form'
 export { default as LoginForm } from 'LibSrc/molecules/forms/login-form'
 
 // Modals
-export { default as SaveFormModal } from 'LibSrc/molecules/modals/save-form-modal'
+export { default as FormModal } from 'LibSrc/molecules/modals/form-modal'
 
 // Menus
 export { default as DropdownMenu } from 'LibSrc/molecules/menus/dropdown-menu'

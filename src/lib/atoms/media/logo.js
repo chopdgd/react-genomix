@@ -5,19 +5,7 @@ import { Image } from 'semantic-ui-react'
 import logo from 'LibSrc/assets/chopLogo.ico'
 
 
-class Logo extends React.PureComponent {
-  render() {
-    const { width, src, ...rest } = this.props
-
-    return (
-      <Image
-        width={width}
-        src={src}
-        {...rest}
-      />
-    )
-  }
-}
+const Logo = props => <Image {...props} />
 
 
 Logo.propTypes = {
@@ -29,5 +17,6 @@ Logo.defaultProps = {
   width: '120px',
   src: logo,
 }
+
 
 export default Logo

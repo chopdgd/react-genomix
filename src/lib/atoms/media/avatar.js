@@ -4,22 +4,20 @@ import { Image, Icon } from 'semantic-ui-react'
 import faker from 'faker'
 
 
-class Avatar extends React.PureComponent {
-  render() {
-    const { profileImage } = this.props
+const Avatar = props => {
+  const { profileImage } = props
 
-    let src = profileImage
-    if (!src) {
-      src = faker.internet.avatar()
-    }
-
-    return (
-      <div>
-        <Image avatar src={src} />
-        <Icon name="chevron down" size="small"/>
-      </div>
-    )
+  let src = profileImage
+  if (!src) {
+    src = faker.internet.avatar()
   }
+
+  return (
+    <div>
+      <Image avatar src={src} />
+      <Icon name="chevron down" size="small"/>
+    </div>
+  )
 }
 
 
@@ -30,5 +28,6 @@ Avatar.propTypes = {
 Avatar.defaultProps = {
   profileImage: undefined,
 }
+
 
 export default Avatar

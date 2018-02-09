@@ -6,29 +6,28 @@ import { get } from 'lodash'
 import { TurnAroundTimeProgress } from 'LibIndex'
 
 
-class TurnAroundTimeProgressFixedCell extends React.PureComponent {
-  render() {
-    const {
-      data, rowIndex, columnKey,
-      progressProps, targetKey, startKey, signoutKey,
-      ...rest
-    } = this.props
-    const rowData = data[rowIndex]
-    const target = get(rowData, targetKey)
-    const start = get(rowData, startKey)
-    const signout = get(rowData, signoutKey)
+const TurnAroundTimeProgressFixedCell = props => {
+  const {
+    data, rowIndex, columnKey,
+    progressProps, targetKey, startKey, signoutKey,
+    ...rest
+  } = props
 
-    return (
-      <Cell {...rest}>
-        <TurnAroundTimeProgress
-          target={target}
-          start={start}
-          signout={signout}
-          {...progressProps}
-        />
-      </Cell>
-    )
-  }
+  const rowData = data[rowIndex]
+  const target = get(rowData, targetKey)
+  const start = get(rowData, startKey)
+  const signout = get(rowData, signoutKey)
+
+  return (
+    <Cell {...rest}>
+      <TurnAroundTimeProgress
+        target={target}
+        start={start}
+        signout={signout}
+        {...progressProps}
+      />
+    </Cell>
+  )
 }
 
 
@@ -48,5 +47,6 @@ TurnAroundTimeProgressFixedCell.defaultProps = {
     size: 'tiny',
   },
 }
+
 
 export default TurnAroundTimeProgressFixedCell

@@ -6,19 +6,17 @@ import cx from 'classnames'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class Button extends React.PureComponent {
-  render() {
-    const buttonProps = getUnhandledProps(Button, this.props)
-    const { color, icon } = this.props
+const Button = props => {
+  const buttonProps = getUnhandledProps(Button, props)
+  const { className, color, icon } = props
 
-    return (
-      <SemanticButton
-        { ...buttonProps }
-        className={cx(this.props.className, 'genomix', color)}
-        icon={icon}
-      />
-    )
-  }
+  return (
+    <SemanticButton
+      { ...buttonProps }
+      className={cx(className, 'genomix', color)}
+      icon={icon}
+    />
+  )
 }
 
 
@@ -31,5 +29,6 @@ Button.propTypes = {
 Button.defaultProps = {}
 
 Button.handledProps = ['className', 'icon', 'color']
+
 
 export default Button

@@ -7,18 +7,16 @@ import { get } from 'lodash'
 import { utils } from 'LibIndex'
 
 
-class MolecularConsequenceFixedCell extends React.PureComponent {
-  render() {
-    const { labelProps, data, rowIndex, columnKey, ...rest } = this.props
-    const consequence = get(data[rowIndex], columnKey)
-    const color = utils.getMolecularConsequenceColor(consequence)
+const MolecularConsequenceFixedCell = props => {
+  const { labelProps, data, rowIndex, columnKey, ...rest } = props
+  const consequence = get(data[rowIndex], columnKey)
+  const color = utils.getMolecularConsequenceColor(consequence)
 
-    return (
-      <Cell {...rest}>
-        <Label {...labelProps} color={color} content={consequence} />
-      </Cell>
-    )
-  }
+  return (
+    <Cell {...rest}>
+      <Label {...labelProps} color={color} content={consequence} />
+    </Cell>
+  )
 }
 
 
@@ -35,5 +33,6 @@ MolecularConsequenceFixedCell.defaultProps = {
     basic: true,
   },
 }
+
 
 export default MolecularConsequenceFixedCell

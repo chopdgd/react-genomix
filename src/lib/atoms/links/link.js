@@ -6,24 +6,22 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class Link extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(Link, this.props)
-    const rest = getUnhandledProps(Link, this.props)
-    const { content } = this.props
+const Link = props => {
+  const ElementType = getElementType(Link, props)
+  const rest = getUnhandledProps(Link, props)
+  const { content } = props
 
-    const additionalProps = {}
-    if (ElementType === 'a') {
-      additionalProps.target = '_blank'
-      additionalProps.rel = 'noopener noreferrer'
-    }
-
-    return (
-      <ElementType {...rest} {...additionalProps}>
-        {content}
-      </ElementType>
-    )
+  const additionalProps = {}
+  if (ElementType === 'a') {
+    additionalProps.target = '_blank'
+    additionalProps.rel = 'noopener noreferrer'
   }
+
+  return (
+    <ElementType {...rest} {...additionalProps}>
+      {content}
+    </ElementType>
+  )
 }
 
 
@@ -37,5 +35,6 @@ Link.defaultProps = {
 }
 
 Link.handledProps = ['as', 'content']
+
 
 export default Link

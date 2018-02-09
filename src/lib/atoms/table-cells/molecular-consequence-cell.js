@@ -8,19 +8,17 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class MolecularConsequenceCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(MolecularConsequenceCell, this.props)
-    const rest = getUnhandledProps(MolecularConsequenceCell, this.props)
-    const { consequence, labelProps } = this.props
-    const color = utils.getMolecularConsequenceColor(consequence)
+const MolecularConsequenceCell = props => {
+  const ElementType = getElementType(MolecularConsequenceCell, props)
+  const rest = getUnhandledProps(MolecularConsequenceCell, props)
+  const { consequence, labelProps } = props
+  const color = utils.getMolecularConsequenceColor(consequence)
 
-    return (
-      <ElementType {...rest}>
-        <Label {...labelProps} color={color} content={consequence} />
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      <Label {...labelProps} color={color} content={consequence} />
+    </ElementType>
+  )
 }
 
 
@@ -44,5 +42,6 @@ MolecularConsequenceCell.handledProps = [
   'rowIndex',
   'labelProps',
 ]
+
 
 export default MolecularConsequenceCell

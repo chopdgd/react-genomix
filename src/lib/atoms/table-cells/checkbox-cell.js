@@ -7,7 +7,7 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class CheckboxCell extends React.PureComponent {
+class CheckboxCell extends React.Component {
   onChange = (e) => {
     const { onChange, rowIndex } = this.props
     onChange(rowIndex)
@@ -41,5 +41,6 @@ CheckboxCell.handledProps = [
   'onChange',
   'rowIndex',
 ]
+
 
 export default CheckboxCell

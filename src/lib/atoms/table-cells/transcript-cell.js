@@ -8,23 +8,21 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class TranscriptCell extends React.PureComponent {
-  render() {
-    const ElementType = getElementType(TranscriptCell, this.props)
-    const rest = getUnhandledProps(TranscriptCell, this.props)
-    const { transcript } = this.props
+const TranscriptCell = props => {
+  const ElementType = getElementType(TranscriptCell, props)
+  const rest = getUnhandledProps(TranscriptCell, props)
+  const { transcript } = props
 
 
-    return (
-      <ElementType {...rest}>
-        {transcript} &nbsp;&nbsp;
-        <Link
-          content={<Label basic size="tiny" content="A" color="brown" />}
-          href={utils.urlBuilders.alamutEntry(transcript)}
-        />
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType {...rest}>
+      {transcript} &nbsp;&nbsp;
+      <Link
+        content={<Label basic size="tiny" content="A" color="brown" />}
+        href={utils.urlBuilders.alamutEntry(transcript)}
+      />
+    </ElementType>
+  )
 }
 
 
@@ -43,5 +41,6 @@ TranscriptCell.handledProps = [
   'transcript',
   'rowIndex',
 ]
+
 
 export default TranscriptCell

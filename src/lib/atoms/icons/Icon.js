@@ -6,18 +6,16 @@ import cx from 'classnames'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class Icon extends React.PureComponent {
-  render() {
-    const iconProps = getUnhandledProps(Icon, this.props)
-    const { color, icon } = this.props
+const Icon = props => {
+  const iconProps = getUnhandledProps(Icon, props)
+  const { className, color, icon } = props
 
-    return (
-      <SemanticIcon
-        {...iconProps}
-        className={cx(this.props.className, 'genomix', color, icon)}
-      />
-    )
-  }
+  return (
+    <SemanticIcon
+      { ...iconProps }
+      className={cx(className, 'genomix', color, icon)}
+    />
+  )
 }
 
 
@@ -30,5 +28,6 @@ Icon.propTypes = {
 Icon.defaultProps = {}
 
 Icon.handledProps = ['className', 'icon', 'color']
+
 
 export default Icon

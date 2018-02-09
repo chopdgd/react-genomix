@@ -6,7 +6,7 @@ import { get } from 'lodash'
 import { Button, CancelButton, SaveForm } from 'LibIndex'
 
 
-class SaveFormModal extends React.PureComponent {
+class FormModal extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -15,7 +15,7 @@ class SaveFormModal extends React.PureComponent {
     }
   }
 
-  onSubmit = (values) => {
+  onSubmit = values => {
     const { handleSubmit } = this.props
     if (handleSubmit) {
       handleSubmit(values)
@@ -33,43 +33,52 @@ class SaveFormModal extends React.PureComponent {
   }
 
   render() {
-    const { defaultValues, handleChange } = this.props
+    const {
+      cancelButton,
+      children,
+      defaultValues,
+      formId,
+      handleChange,
+      saveButton,
+      title
+    } = this.props
+
+    const { visible } = this.state
 
     const trigger = React.cloneElement(this.props.trigger, {
       onClick: this.open,
     })
 
+    const save = React.cloneElement(saveButton, {
+      type: 'submit',
+      form: formId,
+    })
+
+    const cancel = React.cloneElement(cancelButton, {
+      onClick: this.close,
+    })
+
     return (
       <Modal
         trigger={trigger}
-        open={this.state.visible}
+        open={visible}
       >
-        <Modal.Header>{this.props.title}</Modal.Header>
+        <Modal.Header>{title}</Modal.Header>
 
         <Modal.Content>
           <SaveForm
-            id={this.props.formId}
+            id={formId}
             defaultValues={defaultValues}
             handleChange={handleChange}
             handleSubmit={this.onSubmit}
           >
-            {this.props.children}
+            {children}
           </SaveForm>
         </Modal.Content>
 
         <Modal.Actions>
-          <Button
-            type="submit"
-            form={this.props.formId}
-            content="Save"
-            icon="save"
-            color="action-positive"
-            inverted
-          />
-          <CancelButton
-            onClick={this.close}
-            inverted
-          />
+          {save}
+          {cancel}
         </Modal.Actions>
       </Modal>
     )
@@ -77,7 +86,7 @@ class SaveFormModal extends React.PureComponent {
 }
 
 
-SaveFormModal.propTypes = {
+FormModal.propTypes = {
   formId: PropTypes.string.isRequired,
   trigger: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
@@ -85,11 +94,24 @@ SaveFormModal.propTypes = {
   handleChange: PropTypes.func,
   open: PropTypes.bool,
   defaultValues: PropTypes.shape({}),
+  saveButton: PropTypes.any,
+  cancelButton: PropTypes.any,
 }
 
-SaveFormModal.defaultProps = {
+FormModal.defaultProps = {
   open: false,
   defaultValues: {},
+  saveButton: (
+    <Button
+      type="submit"
+      content="Save"
+      icon="save"
+      color="action-positive"
+      inverted
+    />
+  ),
+  cancelButton: <CancelButton inverted />
 }
 
-export default SaveFormModal
+
+export default FormModal

@@ -6,17 +6,15 @@ import { get } from 'lodash'
 import { utils } from 'LibIndex'
 
 
-class DateFixedCell extends React.PureComponent {
-  render() {
-    const { data, rowIndex, columnKey, ...rest } = this.props
-    const date = get(data[rowIndex], columnKey)
+const DateFixedCell = props => {
+  const { data, rowIndex, columnKey, ...rest } = props
+  const date = get(data[rowIndex], columnKey)
 
-    return (
-      <Cell {...rest}>
-        {utils.dateFormatter(date)}
-      </Cell>
-    )
-  }
+  return (
+    <Cell {...rest}>
+      {utils.dateFormatter(date)}
+    </Cell>
+  )
 }
 
 
@@ -29,5 +27,6 @@ DateFixedCell.propTypes = {
 DateFixedCell.defaultProps = {
   data: [],
 }
+
 
 export default DateFixedCell

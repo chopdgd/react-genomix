@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom'
 import { Form } from 'semantic-ui-react'
 import { mount, shallow } from 'enzyme'
 
-import { SaveFormModal } from 'LibIndex'
+import { FormModal } from 'LibIndex'
 
 
 const form = (open = false, title = 'title', handleSubmit = jest.fn(), handleChange = jest.fn()) => {
   return (
-    <SaveFormModal
+    <FormModal
       className="test-modal"
       formId="test"
       title={title}
@@ -19,17 +19,17 @@ const form = (open = false, title = 'title', handleSubmit = jest.fn(), handleCha
       defaultValues={{ test1: 'default' }}
     >
       <Form.Input id="test1" name="test1" />
-    </SaveFormModal>
+    </FormModal>
   )
 }
 
-describe('Test SaveFormModal', () => {
-  it('SaveFormModal renders without crashing', () => {
+describe('Test FormModal', () => {
+  it('FormModal renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(form(), div)
   })
 
-  it('SaveFormModal initial props are set correctly', () => {
+  it('FormModal initial props are set correctly', () => {
     const wrapper = mount(form(false, 'test', jest.fn()))
     expect(wrapper.find('.test-modal').props().formId).toBe('test')
     expect(wrapper.find('.test-modal').props().trigger).toEqual(<p className="trigger">trigger</p>)
@@ -38,14 +38,14 @@ describe('Test SaveFormModal', () => {
     expect(wrapper.find('.test-modal').props().defaultValues).toEqual({ 'test1': 'default' })
   })
 
-  it('SaveFormModal handle onClick of trigger', () => {
+  it('FormModal handle onClick of trigger', () => {
     const wrapper = mount(form())
     expect(wrapper.state().visible).toEqual(false)
     wrapper.find('.trigger').simulate('click')
     expect(wrapper.state().visible).toEqual(true)
   })
 
-  it('SaveFormModal onClick of trigger calls open()', () => {
+  it('FormModal onClick of trigger calls open()', () => {
     const wrapper = mount(form())
     const instance = wrapper.instance()
     const spy = jest.spyOn(instance, 'open')
@@ -81,7 +81,7 @@ describe('Test SaveFormModal', () => {
 
   // it('onSubmit does not call handleSubmit if not set', () => {
   //   const element = (
-  //     <SaveFormModal
+  //     <FormModal
   //       className="test-modal"
   //       formId="test"
   //       title="title"
@@ -89,7 +89,7 @@ describe('Test SaveFormModal', () => {
   //       open
   //       >
   //         <Form.Input id="test1" name="test1" />
-  //     </SaveFormModal>
+  //     </FormModal>
   //   )
   //   const wrapper = shallow(element)
   //   const instance = wrapper.instance()

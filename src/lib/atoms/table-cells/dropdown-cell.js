@@ -7,7 +7,7 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class DropdownCell extends React.PureComponent {
+class DropdownCell extends React.Component {
   constructor(props) {
     super(props)
 
@@ -90,5 +90,6 @@ DropdownCell.handledProps = [
   'dropDownProps',
   'options',
 ]
+
 
 export default DropdownCell

@@ -5,39 +5,37 @@ import { Icon } from 'semantic-ui-react'
 import { get } from 'lodash'
 
 
-class StatusFixedCell extends React.PureComponent {
-  render() {
-    const { data, rowIndex, columnKey, ...rest } = this.props
-    const status = get(data[rowIndex], columnKey)
+const StatusFixedCell = props => {
+  const { data, rowIndex, columnKey, ...rest } = props
+  const status = get(data[rowIndex], columnKey)
 
-    let icon
-    switch (status) {
-      case 'pending':
-        icon = <Icon color="grey" name="clock" />
-        break
-      case 'running':
-        icon = <Icon className="genomix" color="black" name="spinner" />
-        break
-      case 'complete':
-        icon = <Icon color="green" name="checkmark" />
-        break
-      case 'cancelled':
-        icon = <Icon color="red" name="dont" />
-        break
-      case 'failed':
-        icon = <Icon color="red" name="x" />
-        break
-      default:
-        icon = <Icon color="grey" name="question" />
-        break
-    }
-
-    return (
-      <Cell {...rest}>
-        {icon}
-      </Cell>
-    )
+  let icon
+  switch (status) {
+    case 'pending':
+      icon = <Icon color="grey" name="clock" />
+      break
+    case 'running':
+      icon = <Icon className="genomix" color="black" name="spinner" />
+      break
+    case 'complete':
+      icon = <Icon color="green" name="checkmark" />
+      break
+    case 'cancelled':
+      icon = <Icon color="red" name="dont" />
+      break
+    case 'failed':
+      icon = <Icon color="red" name="x" />
+      break
+    default:
+      icon = <Icon color="grey" name="question" />
+      break
   }
+
+  return (
+    <Cell {...rest}>
+      {icon}
+    </Cell>
+  )
 }
 
 
@@ -50,5 +48,6 @@ StatusFixedCell.propTypes = {
 StatusFixedCell.defaultProps = {
   data: [],
 }
+
 
 export default StatusFixedCell

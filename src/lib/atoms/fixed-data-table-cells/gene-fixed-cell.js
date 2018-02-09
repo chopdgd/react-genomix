@@ -7,29 +7,27 @@ import { get } from 'lodash'
 import { utils, Link } from 'LibIndex'
 
 
-class GeneFixedCell extends React.PureComponent {
-  render() {
-    const { data, rowIndex, columnKey, ...rest } = this.props
-    const gene = get(data[rowIndex], columnKey)
+const GeneFixedCell = props => {
+  const { data, rowIndex, columnKey, ...rest } = props
+  const gene = get(data[rowIndex], columnKey)
 
-    return (
-      <Cell {...rest}>
-        {gene} &nbsp;&nbsp;
-        <Link
-          content={<Label basic size="tiny" content="H" color="blue" />}
-          href={utils.urlBuilders.hgmdGene(gene)}
-        />
-        <Link
-          content={<Label basic size="tiny" content="O" color="green" />}
-          href={utils.urlBuilders.omimSearch(gene)}
-        />
-        <Link
-          content={<Label basic size="tiny" content="P" color="blue" />}
-          href={utils.urlBuilders.pubmedSearch(gene)}
-        />
-      </Cell>
-    )
-  }
+  return (
+    <Cell {...rest}>
+      {gene} &nbsp;&nbsp;
+      <Link
+        content={<Label basic size="tiny" content="H" color="blue" />}
+        href={utils.urlBuilders.hgmdGene(gene)}
+      />
+      <Link
+        content={<Label basic size="tiny" content="O" color="green" />}
+        href={utils.urlBuilders.omimSearch(gene)}
+      />
+      <Link
+        content={<Label basic size="tiny" content="P" color="blue" />}
+        href={utils.urlBuilders.pubmedSearch(gene)}
+      />
+    </Cell>
+  )
 }
 
 
@@ -42,5 +40,6 @@ GeneFixedCell.propTypes = {
 GeneFixedCell.defaultProps = {
   data: [],
 }
+
 
 export default GeneFixedCell
