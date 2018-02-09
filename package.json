@@ -62,7 +62,7 @@
     "object-assign": "4.1.1",
     "papaparse": "4.3.6",
     "postcss-flexbugs-fixes": "3.3.0",
-    "postcss-loader": "2.0.10",
+    "postcss-loader": "2.1.0",
     "promise": "8.0.1",
     "prop-types": "15.6.0",
     "react-dev-utils": "5.0.0",
