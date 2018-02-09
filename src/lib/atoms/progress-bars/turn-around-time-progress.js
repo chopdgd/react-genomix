@@ -54,7 +54,7 @@ class TurnAroundTimeProgress extends React.PureComponent {
 
 
 TurnAroundTimeProgress.propTypes = {
-  target: PropTypes.number.isRequired,
+  target: PropTypes.number,
   start: PropTypes.string,
   signout: PropTypes.string,
 }
