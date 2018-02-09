@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import { map, omit } from 'lodash'
 
 import { Button, ExportButton } from 'LibIndex'
@@ -12,35 +12,10 @@ describe('Test ExportButton', () => {
     ReactDOM.render(<ExportButton />, div)
   })
 
-  it('initial props are set correctly', () => {
-    const wrapper = mount(<ExportButton />)
-    expect(wrapper.props().data).toEqual([])
-    expect(wrapper.props().content).toEqual(<Button content="Export" icon="download" />)
-    expect(wrapper.props().filenamePrefix).toEqual('export')
-    expect(wrapper.props().onExport).toEqual(undefined)
-  })
-
-  it('non default props are set correctly', () => {
-    const onExport = jest.fn()
-    const wrapper = mount(
-      <ExportButton
-        data={[{ test: 1 }]}
-        content="Export Me"
-        filenamePrefix="newPrefix"
-        onExport={onExport}
-      />
-    )
-
-    expect(wrapper.props().data).toEqual([{ test: 1 }])
-    expect(wrapper.props().content).toEqual('Export Me')
-    expect(wrapper.props().filenamePrefix).toEqual('newPrefix')
-    expect(wrapper.props().onExport).toEqual(onExport)
-  })
-
   it('onExport is called w/ data onClick', () => {
     const onExport = jest.fn()
     onExport.mockReturnValueOnce([{ test: 1 }])
-    const wrapper = mount(
+    const wrapper = shallow(
       <ExportButton
         data={[{ test: 1 }]}
         content="Export Me"
@@ -62,7 +37,7 @@ describe('Test ExportButton', () => {
       return elements
     }
 
-    const wrapper = mount(
+    const wrapper = shallow(
       <ExportButton
         data={[{ test: 1, test2: 2 }]}
         content="Export Me"
@@ -76,7 +51,7 @@ describe('Test ExportButton', () => {
   })
 
   it('onExport is called and does not affect data', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <ExportButton
         data={[{ test: 1, test2: 2 }]}
         content="Export Me"
