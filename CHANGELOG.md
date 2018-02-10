@@ -34,7 +34,7 @@
 - Fixed issues with AutoCompleteDropdown state [#144](https://github.com/chopdgd/react-genomix/issues/144)
 - Dropped support for package-lock.json
 
-## [v0.4.0](https://github.com/chopdgd/react-genomix/tree/v0.4.0) (2018-01-24)
+## [v0.4.0](https://github.com/chopdgd/react-genomix/tree/v0.4.0) (2018-02-09)
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.3.5...v0.4.0)
 
 - Updated Semantic React UI to 0.78.2
@@ -43,3 +43,8 @@
 - Removed target as required prop in TurnAroundTimeProgress [#146](https://github.com/chopdgd/react-genomix/issues/146)
 - Fixed issues with ExportButton handling state [#158](https://github.com/chopdgd/react-genomix/issues/158)
 - Fixed issues with NavMenu handling state [#162](https://github.com/chopdgd/react-genomix/issues/162)
+
+## [v0.4.1](https://github.com/chopdgd/react-genomix/tree/v0.4.1) (2018-02-09)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.0...v0.4.1)
+
+- Build may have contained different versions of dependencies. Created a new build
