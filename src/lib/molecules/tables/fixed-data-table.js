@@ -73,7 +73,7 @@ class FixedDataTable extends React.Component {
 
     // Add adjustable width to Columns
     const columns = []
-    React.Children.map(children, (column: React.ReactElement<ColumnPropsInternal>) => {
+    React.Children.map(children, column => {
       const columnObject = {
         order: indexOf(this.state.columnOrder, column.props.columnKey),
         column: React.cloneElement(column, {

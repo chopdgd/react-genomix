@@ -31,22 +31,24 @@ class SaveForm extends React.PureComponent {
   }
 
   render() {
-    const formInputs = React.Children.map(this.props.children, (input: React.ReactElement<InputPropsInternal>) =>
+    const { children, formId, saveButton } = this.props
+
+    const formInputs = React.Children.map(children, input =>
       React.cloneElement(input, {
         onChange: this.onChange
       })
     )
 
     let button
-    if (this.props.saveButton) {
-      button = React.cloneElement(this.props.saveButton, {
+    if (saveButton) {
+      button = React.cloneElement(saveButton, {
         type: 'submit',
-        form: this.props.id,
+        form: formId,
       })
     }
 
     return (
-      <Form id={this.props.id} onSubmit={this.onSubmit}>
+      <Form id={formId} onSubmit={this.onSubmit}>
         {formInputs}
         {button}
       </Form>
@@ -56,7 +58,7 @@ class SaveForm extends React.PureComponent {
 
 
 SaveForm.propTypes = {
-  id: PropTypes.string.isRequired,
+  formId: PropTypes.string.isRequired,
   handleChange: PropTypes.func,
   handleSubmit: PropTypes.func,
   saveButton: PropTypes.element,
