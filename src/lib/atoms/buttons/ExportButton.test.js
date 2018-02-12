@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import { map, omit } from 'lodash'
 
-import { Button, ExportButton } from 'LibIndex'
+import { ExportButton } from 'LibIndex'
 
 
 describe('Test ExportButton', () => {
@@ -24,7 +24,7 @@ describe('Test ExportButton', () => {
       />
     )
 
-    wrapper.find('CSVLink').simulate('click')
+    wrapper.find('CSVLink').props().children.props.onClick()
     expect(onExport).toHaveBeenCalledWith([{ test: 1 }])
   })
 
@@ -46,7 +46,7 @@ describe('Test ExportButton', () => {
       />
     )
 
-    wrapper.find('CSVLink').simulate('click')
+    wrapper.find('CSVLink').props().children.props.onClick()
     expect(wrapper.state().data).toEqual([{ "test": 1 }])
   })
 
@@ -59,7 +59,7 @@ describe('Test ExportButton', () => {
       />
     )
 
-    wrapper.find('CSVLink').simulate('click')
+    wrapper.find('CSVLink').props().children.props.onClick()
     expect(wrapper.state().data).toEqual([{ test: 1, test2: 2 }])
   })
 })
