@@ -19,8 +19,12 @@ class ExportButton extends React.PureComponent {
   }
 
   render() {
-    const { content, data , filenamePrefix, onExport, ...rest } = this.props
+    const { data, filenamePrefix, onExport, ...rest } = this.props
     const timestamp = moment().format('YYYY_MM_DD-HH_mm_ss')
+
+    const content = React.cloneElement(this.props.content, {
+      onClick: this.handleReformat,
+    })
 
     return (
       <CSVLink
@@ -28,7 +32,6 @@ class ExportButton extends React.PureComponent {
         target="_blank"
         data={get(this.state, 'data', [])}
         {...rest}
-        onClick={this.handleReformat}
       >
         {content}
       </CSVLink>
