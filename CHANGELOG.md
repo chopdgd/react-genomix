@@ -49,7 +49,7 @@
 
 - Build may have contained different versions of dependencies. Created a new build
 
-## [v0.4.2](https://github.com/chopdgd/react-genomix/tree/v0.4.2) (2018-02-12)
-[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.1...v0.4.2)
+## [v0.4.3](https://github.com/chopdgd/react-genomix/tree/v0.4.3) (2018-02-12)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.1...v0.4.3)
 
 - Fixed issue with ExportButton.  It was not exporting correctly.
