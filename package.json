@@ -138,6 +138,6 @@
     "react-file-reader": "1.1.4",
     "react-virtualized": "9.17.3",
     "semantic-ui-css": "2.3.0",
-    "semantic-ui-react": "0.78.2"
+    "semantic-ui-react": "0.78.3"
   }
 }
