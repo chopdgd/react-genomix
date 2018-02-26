@@ -1,5 +1,6 @@
 import React from 'react'
-import { Divider, Tab } from 'semantic-ui-react'
+import { Divider, Tab, Sidebar, Menu } from 'semantic-ui-react'
+import './App.scss'
 
 // Demo Components
 import Example from './components/Example'
@@ -72,14 +73,55 @@ const panes = [
 ]
 
 
-const App = () => (
-  <div>
-    <NavbarExample />
-    <Example />
-    <SecondExample />
-    <Divider />
-    <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-  </div>
-)
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      visible: true,
+    }
+  }
+  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+
+  render() {
+    return (
+      <Sidebar.Pushable>
+        <Sidebar
+          className='genomix-sidebar'
+          as={Menu}
+          animation='push'
+          width='thin'
+          vertical
+          visible={this.state.visible}
+          >
+          <br/>
+          <br/>
+          <br/>
+          <Menu.Item>
+            Nexus
+          </Menu.Item>
+          <Menu.Item>
+            Primer Bank
+          </Menu.Item>
+          <Menu.Item>
+            Documentation
+          </Menu.Item>
+          <Menu.Item>
+            Report Issue
+          </Menu.Item>
+        </Sidebar>
+        <Sidebar.Pusher>
+          <div>
+            <NavbarExample navCallback={this.toggleVisibility} />
+            <Example />
+            <SecondExample />
+            <Divider />
+            <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+          </div>
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
+    )
+  }
+}
 
 export default App
