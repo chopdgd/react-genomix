@@ -54,9 +54,14 @@
 
 - Fixed issue with ExportButton.  It was not exporting correctly.
 
-## [v0.4.4](https://github.com/chopdgd/react-genomix/tree/v0.4.4) (2018-02-12)
+## [v0.4.4](https://github.com/chopdgd/react-genomix/tree/v0.4.4) (2018-02-26)
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.3...v0.4.4)
 
 - Add Menu Icon that can be used to pass callback via props [#190](https://github.com/chopdgd/react-genomix/issues/190)
 - Race condition with FixedDataTable not having height/maxHeight as a defaultProp [#183](https://github.com/chopdgd/react-genomix/issues/183)
 - Updated numerous dependencies
+
+## [v0.4.5](https://github.com/chopdgd/react-genomix/tree/v0.4.5) (2018-02-26)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.4...v0.4.5)
+
+- Had to downgrade Semantic UI CSS.  It was causing modals to render incorrectly. [#204](https://github.com/chopdgd/react-genomix/issues/204)
