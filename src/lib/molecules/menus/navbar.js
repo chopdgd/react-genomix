@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Icon } from 'semantic-ui-react'
 
 
 const renderSubMenu = element => {
@@ -15,7 +15,14 @@ const renderSubMenu = element => {
 
 
 const Navbar = props => {
-  const { activeItem, children, logo, subMenu, userMenu } = props
+  const {
+    activeItem,
+    children,
+    logo,
+    subMenu,
+    userMenu,
+    navCallback
+  } = props
 
   const items = React.Children.map(children, item =>
     React.cloneElement(item, {
@@ -25,7 +32,9 @@ const Navbar = props => {
 
   return (
     <Menu className="navbar" borderless>
-
+      <Menu.Item>
+        <Icon name='angle right' size='large' link onClick={navCallback} />
+      </Menu.Item>
       {renderSubMenu(logo)}
       {renderSubMenu(subMenu)}
 
@@ -44,6 +53,7 @@ Navbar.propTypes = {
   logo: PropTypes.node,
   subMenu: PropTypes.node,
   userMenu: PropTypes.node,
+  navCallback: PropTypes.func,
 }
 
 Navbar.defaultProps = {

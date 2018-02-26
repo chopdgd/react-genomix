@@ -25,7 +25,7 @@ describe('Navbar Tests', () => {
 
   it('should render correct elements', () => {
     expect(wrapper.find('MenuMenu')).toHaveLength(1)
-    expect(wrapper.find('MenuItem')).toHaveLength(1)
+    expect(wrapper.find('MenuItem')).toHaveLength(2)
   })
 
   it('should render userMenu if passed', () => {
@@ -46,7 +46,7 @@ describe('Navbar Tests', () => {
     )
 
     const submenuWrapper = shallow(element)
-    expect(submenuWrapper.find('MenuItem')).toHaveLength(2)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(3)
   })
 
   it('should render subMenu if passed', () => {
@@ -67,7 +67,7 @@ describe('Navbar Tests', () => {
     )
 
     const submenuWrapper = shallow(element)
-    expect(submenuWrapper.find('MenuItem')).toHaveLength(2)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(3)
   })
 
   it('should render logo if passed', () => {
@@ -88,7 +88,7 @@ describe('Navbar Tests', () => {
     )
 
     const submenuWrapper = shallow(element)
-    expect(submenuWrapper.find('MenuItem')).toHaveLength(2)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(3)
   })
 
   it('should render subMenu and userMenu if passed', () => {
@@ -110,6 +110,6 @@ describe('Navbar Tests', () => {
     )
 
     const submenuWrapper = shallow(element)
-    expect(submenuWrapper.find('MenuItem')).toHaveLength(3)
+    expect(submenuWrapper.find('MenuItem')).toHaveLength(4)
   })
 })
