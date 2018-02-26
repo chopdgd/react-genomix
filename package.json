@@ -39,7 +39,7 @@
     "chalk": "2.3.1",
     "classnames": "2.2.5",
     "css-loader": "0.28.10",
-    "dotenv": "5.0.0",
+    "dotenv": "5.0.1",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "eslint": "^4.1.1",
