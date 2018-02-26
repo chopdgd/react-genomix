@@ -68,6 +68,7 @@ class FixedDataTable extends React.Component {
       fixedColumns,
       onColumnResize,
       onColumnReorder,
+      maxHeight,
       ...rest,
      } = this.props
 
@@ -97,6 +98,7 @@ class FixedDataTable extends React.Component {
             width={width}
             onColumnResizeEndCallback={this.onColumnResizeEndCallback}
             onColumnReorderEndCallback={this.onColumnReorderEndCallback}
+            maxHeight={maxHeight}
             {...rest}
           >
             {orderedChildren}
@@ -118,6 +120,7 @@ FixedDataTable.propTypes = {
 
 FixedDataTable.defaultProps = {
   fixedColumns: [],
+  maxHeight: 1200,
 }
 
 
