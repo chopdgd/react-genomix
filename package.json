@@ -64,7 +64,7 @@
     "postcss-flexbugs-fixes": "3.3.0",
     "postcss-loader": "2.1.1",
     "promise": "8.0.1",
-    "prop-types": "15.6.0",
+    "prop-types": "15.6.1",
     "react-dev-utils": "5.0.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.20.2",
