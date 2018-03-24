@@ -58,7 +58,7 @@
     "jest": "22.1.4",
     "lodash": "4.17.5",
     "moment": "2.20.1",
-    "node-sass": "4.7.2",
+    "node-sass": "4.8.3",
     "object-assign": "4.1.1",
     "papaparse": "4.3.7",
     "postcss-flexbugs-fixes": "3.3.0",
