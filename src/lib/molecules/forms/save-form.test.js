@@ -36,7 +36,7 @@ describe('Test SaveForm', () => {
   it('onChange calls handleChange', () => {
     const handleChange = jest.fn()
     const wrapper = shallow(form(undefined, jest.fn(), handleChange))
-    expect(wrapper.instance().state).toEqual({})
+    expect(wrapper.instance().state).toEqual(null)
 
     const data = { name: 'test1', value: '7' }
     const event = { target: data }
@@ -62,8 +62,8 @@ describe('Test SaveForm', () => {
 
   it('handle handleSubmit when its undefined', () => {
     const wrapper = shallow(form())
-    expect(wrapper.instance().state).toEqual({})
+    expect(wrapper.instance().state).toEqual(null)
     wrapper.find('Form').simulate('submit', event)
-    expect(wrapper.instance().state).toEqual({})
+    expect(wrapper.instance().state).toEqual(null)
   })
 })

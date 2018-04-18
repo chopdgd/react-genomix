@@ -494,3 +494,6 @@ i.icon.genomix.spinner {
 
 .login-form {
   width: 400px; }
+
+.dimmer.visible.transition {
+  display: flex !important; }
