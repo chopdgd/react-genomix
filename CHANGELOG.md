@@ -65,3 +65,8 @@
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.4...v0.4.5)
 
 - Had to downgrade Semantic UI CSS.  It was causing modals to render incorrectly. [#204](https://github.com/chopdgd/react-genomix/issues/204)
+
+## [v0.4.6](https://github.com/chopdgd/react-genomix/tree/v0.4.6) (2018-03-26)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.5...v0.4.6)
+
+- Updated logout path in Navbar User component [#223](https://github.com/chopdgd/react-genomix/issues/223)
