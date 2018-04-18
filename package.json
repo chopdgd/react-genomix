@@ -131,7 +131,7 @@
     "extends": "react-app"
   },
   "dependencies": {
-    "fixed-data-table-2": "0.8.10",
+    "fixed-data-table-2": "0.8.12",
     "react": "16.2.0",
     "react-csv": "1.0.12",
     "react-dom": "16.2.0",
