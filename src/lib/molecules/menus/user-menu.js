@@ -21,7 +21,7 @@ const UserMenu = props => {
           <Dropdown.Item text={email} disabled />
           <Divider />
           <Dropdown.Item text="Settings" as={linksAs} to="settings" href="settings" />
-          <Dropdown.Item text="Sign Out" as={linksAs} to="logoff" href="logoff" />
+          <Dropdown.Item text="Log Out" as={linksAs} to="/logout" href="/logout" />
         </Dropdown.Menu>
       </Dropdown>
   )
