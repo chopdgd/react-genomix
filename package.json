@@ -1,6 +1,6 @@
 {
   "name": "react-genomix",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Core library for Nexus projects using ReactJS",
   "main": "build/index.js",
   "scripts": {
@@ -38,7 +38,7 @@
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "2.3.1",
     "classnames": "2.2.5",
-    "css-loader": "0.28.10",
+    "css-loader": "0.28.11",
     "dotenv": "5.0.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
@@ -65,9 +65,9 @@
     "postcss-loader": "2.1.1",
     "promise": "8.0.1",
     "prop-types": "15.6.0",
-    "react-dev-utils": "5.0.0",
+    "react-dev-utils": "5.0.1",
     "sass-loader": "6.0.6",
-    "style-loader": "0.20.2",
+    "style-loader": "0.20.3",
     "sw-precache-webpack-plugin": "0.11.5",
     "url-loader": "0.6.2",
     "webpack": "3.10.0",
