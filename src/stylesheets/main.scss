@@ -11,3 +11,8 @@
 @import "partials/fixed-data-tables";
 @import "partials/navbar";
 @import "partials/login-form";
+
+// See: https://github.com/Semantic-Org/Semantic-UI-CSS/issues/47
+.dimmer.visible.transition {
+  display: flex !important;
+}

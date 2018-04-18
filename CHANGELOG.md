@@ -70,3 +70,8 @@
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.5...v0.4.6)
 
 - Updated logout path in Navbar User component [#223](https://github.com/chopdgd/react-genomix/issues/223)
+
+## [v0.4.7](https://github.com/chopdgd/react-genomix/tree/v0.4.7) (2018-04-18)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.6...v0.4.7)
+
+- Upgraded all stable 3rd party libs
