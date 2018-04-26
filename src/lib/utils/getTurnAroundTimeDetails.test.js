@@ -4,21 +4,21 @@ import { utils } from 'LibIndex'
 
 
 describe('getTurnAroundTimeDetails', () => {
-  it('given a target of 5 days and a 1 day TAT, it should be green, display -4', () => {
+  it('given a target of 5 days and a 1 day TAT, it should be green, display -4, and value 5', () => {
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18', '1987-12-19')
-    const expected = { label: -4, color: 'green', value: 1 }
+    const expected = { label: -4, color: 'green', value: 5 }
     expect(observed).toEqual(expected)
   })
 
-  it('given a target of 5 days and signout on same day, it should be green, display -5', () => {
+  it('given a target of 5 days and signout on same day, it should be green, display -5, and value 5', () => {
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18', '1987-12-18')
-    const expected = { label: -5, color: 'green', value: 0 }
+    const expected = { label: -5, color: 'green', value: 5 }
     expect(observed).toEqual(expected)
   })
 
-  it('given a target of 5 days and signout 2 days late, it should be red, display 2', () => {
+  it('given a target of 5 days and signout 2 days late, it should be red, display 2, and value 5', () => {
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18', '1987-12-25')
-    const expected = { label: 2, color: 'red', value: 7 }
+    const expected = { label: 2, color: 'red', value: 5 }
     expect(observed).toEqual(expected)
   })
 

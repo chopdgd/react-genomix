@@ -10,7 +10,7 @@ import getUnhandledProps from '../../helpers/getUnhandledProps'
 const TurnAroundTimeProgressCell = props => {
   const ElementType = getElementType(TurnAroundTimeProgressCell, props)
   const rest = getUnhandledProps(TurnAroundTimeProgressCell, props)
-  const { target, start, signout, progressProps } = props
+  const { target, start, signout, compact, progressProps } = props
 
   return (
     <ElementType {...rest}>
@@ -18,6 +18,7 @@ const TurnAroundTimeProgressCell = props => {
         target={target}
         start={start}
         signout={signout}
+        compact={compact}
         {...progressProps}
       />
     </ElementType>
@@ -27,7 +28,7 @@ const TurnAroundTimeProgressCell = props => {
 
 TurnAroundTimeProgressCell.propTypes = {
   as: customPropTypes.as,
-  target: PropTypes.number.isRequired,
+  target: PropTypes.number,
   start: PropTypes.string,
   signout: PropTypes.string,
   rowIndex: PropTypes.number,
