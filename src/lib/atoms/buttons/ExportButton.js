@@ -29,7 +29,7 @@ class ExportButton extends React.PureComponent {
     return (
       <CSVLink
         filename={`${filenamePrefix}-${timestamp}.csv`}
-        target="_blank"
+        target="" // Bypass AdBlockers
         data={get(this.state, 'data', [])}
         {...rest}
       >
