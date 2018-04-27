@@ -75,3 +75,10 @@
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.6...v0.4.7)
 
 - Upgraded all stable 3rd party libs
+
+## [v0.5.0](https://github.com/chopdgd/react-genomix/tree/v0.5.0) (2018-04-27)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.4.7...v0.5.0)
+
+- Upgraded all stable 3rd party libs
+- Export button was causing a new pop up window with AdBlockers [#236](https://github.com/chopdgd/react-genomix/issues/236)
+- Updated Progress Bars [#254](https://github.com/chopdgd/react-genomix/issues/254) 
