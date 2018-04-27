@@ -22,7 +22,7 @@ const cellRenderer = (props) => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
   // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
   const { columnData, dataKey, rowData, rowIndex } = props
-  const { targetKey, startKey, signoutKey, progressProps } = columnData
+  const { targetKey, startKey, signoutKey, compact, progressProps } = columnData
 
   const start = get(rowData, startKey)
   const signout = get(rowData, signoutKey)
@@ -37,6 +37,7 @@ const cellRenderer = (props) => {
       start={start}
       signout={signout}
       rowIndex={rowIndex}
+      compact={compact}
       progressProps={progressProps}
     />
   )

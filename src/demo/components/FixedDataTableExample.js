@@ -235,6 +235,7 @@ class FixedDataTableExample extends React.PureComponent {
                   targetKey="target"
                   startKey="start"
                   signoutKey="signout"
+                  compact
                 />
               }
               width={200}

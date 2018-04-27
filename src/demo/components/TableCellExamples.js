@@ -128,6 +128,7 @@ class ExampleTableCells extends React.Component {
                   as="td"
                   target={40}
                   start="1987-12-18"
+                  signout="2010-01-01"
                 />
               </Table.Row>
             </Table.Body>

@@ -9,7 +9,7 @@ import { TurnAroundTimeProgress } from 'LibIndex'
 const TurnAroundTimeProgressFixedCell = props => {
   const {
     data, rowIndex, columnKey,
-    progressProps, targetKey, startKey, signoutKey,
+    progressProps, targetKey, startKey, signoutKey, compact,
     ...rest
   } = props
 
@@ -24,6 +24,7 @@ const TurnAroundTimeProgressFixedCell = props => {
         target={target}
         start={start}
         signout={signout}
+        compact={compact}
         {...progressProps}
       />
     </Cell>
