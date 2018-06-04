@@ -60,7 +60,7 @@
     "moment": "2.22.1",
     "node-sass": "4.9.0",
     "object-assign": "4.1.1",
-    "papaparse": "4.4.0",
+    "papaparse": "4.5.0",
     "postcss-flexbugs-fixes": "3.3.0",
     "postcss-loader": "2.1.4",
     "promise": "8.0.1",
