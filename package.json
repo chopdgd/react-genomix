@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "3.4.7",
-    "@storybook/addon-links": "3.4.2",
+    "@storybook/addon-links": "3.4.7",
     "@storybook/react": "3.4.2",
     "autoprefixer": "8.3.0",
     "babel-cli": "6.26.0",
