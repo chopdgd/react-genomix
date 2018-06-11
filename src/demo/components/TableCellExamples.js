@@ -1,5 +1,7 @@
 import React from 'react'
 import { Grid, Table } from 'semantic-ui-react'
+import { concat, without } from 'lodash'
+
 
 import {
   CheckboxCell,
@@ -23,7 +25,8 @@ class ExampleTableCells extends React.Component {
     super(props)
 
     this.state = {
-      value: ''
+      value: '',
+      checked: [],
     }
   }
 
@@ -35,8 +38,22 @@ class ExampleTableCells extends React.Component {
     alert(JSON.stringify(data))
   }
 
+  onCheck = (e, {value}) => {
+    const { checked } = this.state
+
+    if (checked.includes(value)) {
+      this.setState({
+        checked: without(checked, value)
+      })
+    } else {
+      this.setState({
+        checked: concat(checked, value)
+      })
+    }
+  }
+
   render() {
-    const { value } = this.state
+    const { value, checked } = this.state
 
     return (
       <Grid padded centered>
@@ -66,7 +83,9 @@ class ExampleTableCells extends React.Component {
                 <CheckboxCell
                   as="td"
                   rowIndex={1}
-                  onChange={this.onChange}
+                  onChange={this.onCheck}
+                  name="checkbox"
+                  checked={checked}
                 />
                 <DateCell
                   as="td"

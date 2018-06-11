@@ -22,12 +22,13 @@ const cellRenderer = (props) => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
   // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
   const { columnData, rowIndex } = props
-  const { onChange } = columnData
+  const { onChange, checked } = columnData
 
   return (
     <CheckboxCell
       onChange={onChange}
       rowIndex={rowIndex}
+      checked={checked}
     />
   )
 }
@@ -48,6 +49,7 @@ class CheckboxColumn extends Column {
     headerRenderer: PropTypes.func.isRequired,
     columnData: PropTypes.shape({
       onChange: PropTypes.func.isRequired,
+      checked: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])).isRequired,
     }).isRequired,
   }
 
