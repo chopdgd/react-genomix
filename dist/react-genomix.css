@@ -381,6 +381,12 @@ i.icon.genomix.action-warning {
 i.icon.genomix.action-caution {
   color: #FFE100 !important; }
 
+.ui.label.genomix {
+  margin: 5px; }
+
+.ui.label.genomix:hover {
+  transform: skew(-15deg); }
+
 .genomix.big-data.table {
   width: 100%;
   margin-top: 15px; }

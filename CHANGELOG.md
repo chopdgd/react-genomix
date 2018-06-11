@@ -81,4 +81,16 @@
 
 - Upgraded all stable 3rd party libs
 - Export button was causing a new pop up window with AdBlockers [#236](https://github.com/chopdgd/react-genomix/issues/236)
-- Updated Progress Bars [#254](https://github.com/chopdgd/react-genomix/issues/254) 
+- Updated Progress Bars [#254](https://github.com/chopdgd/react-genomix/issues/254)
+
+- Upgraded all stable 3rd party libs
+
+## [v0.6.0](https://github.com/chopdgd/react-genomix/tree/v0.6.0) (2018-06-11)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.5.0...v0.6.0)
+
+- Upgraded all stable 3rd party libs
+
+- Updated genomics urlBuilders [#290](https://github.com/chopdgd/react-genomix/pull/290)
+- Updated Gene Cells to have uniform link outs [#291](https://github.com/chopdgd/react-genomix/pull/291)
+- Resolved [#140](https://github.com/chopdgd/react-genomix/issues/140) and [#184](https://github.com/chopdgd/react-genomix/issues/184) - dealing with state management of Checkbox cells [#292](https://github.com/chopdgd/react-genomix/pull/292)
+- Added ability for ExportButton to have custom onClick methods [#272](https://github.com/chopdgd/react-genomix/pull/272) 
