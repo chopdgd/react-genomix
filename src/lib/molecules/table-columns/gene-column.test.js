@@ -6,7 +6,7 @@ import { GeneCell, GeneColumn } from 'LibIndex'
 
 describe('Test GeneColumn', () => {
   it('cellDataGetter returns expected content', () => {
-    const rowData = { gene: 'PNPLA6' }
+    const rowData = { gene: [{symbol: 'PNPLA6'}] }
     const dataKey = 'gene'
     const element = (
       <GeneColumn
@@ -17,12 +17,12 @@ describe('Test GeneColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellDataGetter({ rowData, dataKey }))
-      .toEqual('PNPLA6')
+      .toEqual([{symbol: 'PNPLA6'}])
   })
 
 
   it('cellRenderer returns expected content', () => {
-    const cellData = 'PNPLA6'
+    const cellData = [{symbol: 'PNPLA6'}]
     const rowIndex = 1
     const element = (
       <GeneColumn
@@ -33,7 +33,7 @@ describe('Test GeneColumn', () => {
     )
     const wrapper = shallow(element)
     expect(wrapper.find('Column').props().cellRenderer({ cellData, rowIndex }))
-      .toEqual(<GeneCell as="div" gene="PNPLA6" rowIndex={1} />)
+      .toEqual(<GeneCell as="div" genes={[{symbol: 'PNPLA6'}]} rowIndex={1} />)
   })
 
   it('headerRenderer returns expected content', () => {

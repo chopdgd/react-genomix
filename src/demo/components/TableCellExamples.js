@@ -85,7 +85,7 @@ class ExampleTableCells extends React.Component {
                 />
                 <GeneCell
                   as="td"
-                  gene="PNPLA6"
+                  genes={[{symbol: 'PNPLA6'}]}
                 />
                 <InterpretationCell
                   as="td"

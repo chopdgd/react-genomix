@@ -42,9 +42,18 @@ export {
 } from 'LibSrc/atoms/icons/GenomiXIcons'
 export { default as Icon } from 'LibSrc/atoms/icons/Icon'
 
+// Labels
+export { default as BasicLabel } from 'LibSrc/atoms/labels/basic-label'
+
+// Lists
+export { default as GeneLinksList } from 'LibSrc/atoms/lists/genes-links-list'
+
 // Media
 export { default as Avatar } from 'LibSrc/atoms/media/avatar'
 export { default as Logo } from 'LibSrc/atoms/media/logo'
+
+// Popups
+export { default as GeneResourcesPopup } from 'LibSrc/atoms/popups/genes-resources-popup'
 
 // Prgress bars
 export { default as TurnAroundTimeProgress } from 'LibSrc/atoms/progress-bars/turn-around-time-progress'
