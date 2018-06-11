@@ -5,44 +5,34 @@ import { Checkbox } from 'semantic-ui-react'
 import { get } from 'lodash'
 
 
-class CheckboxFixedCell extends React.Component {
-  constructor(props) {
-    super(props)
+const CheckboxFixedCell = props => {
+  const { data, rowIndex, columnKey, onChange, checked, ...rest } = props
+  const record = get(data[rowIndex], columnKey)
 
-    const { data, rowIndex, columnKey } = props
-    const checked = get(data[rowIndex], columnKey)
-    this.state = { checked }
-  }
-
-  onChange = (e) => {
-    const { onChange, data, rowIndex, columnKey } = this.props
-    const checked = get(data[rowIndex], columnKey)
-    onChange(rowIndex)
-    this.setState({ checked })
-  }
-
-  render() {
-    const { onChange, data, rowIndex, columnKey, ...rest } = this.props
-    const { checked } = this.state
-
-    return (
-      <Cell {...rest}>
-        <Checkbox defaultChecked={checked} onChange={this.onChange} />
-      </Cell>
-    )
-  }
+  return (
+    <Cell {...rest}>
+      <Checkbox
+        name={columnKey}
+        value={record}
+        checked={checked.includes(record)}
+        onChange={onChange}
+      />
+    </Cell>
+  )
 }
 
 
 CheckboxFixedCell.propTypes = {
-  onChange: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(PropTypes.object),
   rowIndex: PropTypes.number,
   columnKey: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  checked: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
 }
 
 CheckboxFixedCell.defaultProps = {
   data: [],
+  checked: [],
 }
 
 

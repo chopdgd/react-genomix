@@ -1,6 +1,7 @@
 import React from 'react'
 import { Cell, Column } from 'fixed-data-table-2'
 import { Grid } from 'semantic-ui-react'
+import { concat, without } from 'lodash'
 
 import {
   FixedDataTable,
@@ -21,7 +22,7 @@ import {
 
 const rows = Array.from(new Array(30), (x,i) => ({
   id: i,
-  checkbox: true,
+  checkbox: i,
   interpretation: 'benign',
   link: 'link',
   consequence: 'missense',
@@ -82,7 +83,25 @@ const columnOrder = [
 
 
 class FixedDataTableExample extends React.PureComponent {
+  state = { checked: [] }
+
+  onCheck = (e, {value}) => {
+    const { checked } = this.state
+
+    if (checked.includes(value)) {
+      this.setState({
+        checked: without(checked, value)
+      })
+    } else {
+      this.setState({
+        checked: concat(checked, value)
+      })
+    }
+  }
+
   render() {
+    const { checked } = this.state
+
     return (
       <Grid padded centered>
         <Grid.Column width={16} textAlign="center">
@@ -102,7 +121,8 @@ class FixedDataTableExample extends React.PureComponent {
               cell={
                 <CheckboxFixedCell
                   data={rows}
-                  onChange={(props) => alert(JSON.stringify(props))}
+                  onChange={this.onCheck}
+                  checked={checked}
                 />
               }
               width={200}

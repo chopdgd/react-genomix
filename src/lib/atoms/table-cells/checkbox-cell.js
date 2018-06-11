@@ -7,39 +7,39 @@ import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 
 
-class CheckboxCell extends React.Component {
-  onChange = (e) => {
-    const { onChange, rowIndex } = this.props
-    onChange(rowIndex)
-  }
+const CheckboxCell = props => {
+  const ElementType = getElementType(CheckboxCell, props)
+  const rest = getUnhandledProps(CheckboxCell, props)
 
-  render() {
-    const ElementType = getElementType(CheckboxCell, this.props)
-    const rest = getUnhandledProps(CheckboxCell, this.props)
-
-    return (
-      <ElementType {...rest}>
-        <Checkbox onChange={this.onChange} />
-      </ElementType>
-    )
-  }
+  return (
+    <ElementType key={props.rowIndex} {...rest}>
+      <Checkbox
+        name={props.name}
+        value={props.rowIndex}
+        checked={props.checked.includes(props.rowIndex)}
+        onChange={props.onChange}
+      />
+    </ElementType>
+  )
 }
 
 
 CheckboxCell.propTypes = {
   as: customPropTypes.as,
   onChange: PropTypes.func.isRequired,
-  rowIndex: PropTypes.number.isRequired,
+  checked: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
 }
 
 CheckboxCell.defaultProps = {
-  as: 'div'
+  as: 'div',
+  checked: [],
 }
 
 CheckboxCell.handledProps = [
   'as',
   'onChange',
   'rowIndex',
+  'checked',
 ]
 
 

@@ -7,9 +7,11 @@ import { CheckboxFixedCell } from 'LibIndex'
 
 describe('Test CheckboxFixedCell', () => {
   const data = [
-    { checkbox: false },
-    { checkbox: true },
+    { checkbox: 1 },
+    { checkbox: 2 },
   ]
+
+  const checked = [1]
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
@@ -19,6 +21,7 @@ describe('Test CheckboxFixedCell', () => {
         rowIndex={1}
         columnKey="checkbox"
         onChange={jest.fn()}
+        checked={checked}
       />
     )
     ReactDOM.render(element, div)
@@ -31,10 +34,11 @@ describe('Test CheckboxFixedCell', () => {
         rowIndex={0}
         columnKey="checkbox"
         onChange={jest.fn()}
+        checked={checked}
       />
     )
     const wrapper = shallow(element)
-    expect(wrapper.find('Checkbox').props().defaultChecked).toEqual(false)
+    expect(wrapper.find('Checkbox').props().checked).toEqual(true)
   })
 
   it('renders the second record date with rowIndex = 1', () => {
@@ -44,10 +48,11 @@ describe('Test CheckboxFixedCell', () => {
         rowIndex={1}
         columnKey="checkbox"
         onChange={jest.fn()}
+        checked={checked}
       />
     )
     const wrapper = shallow(element)
-    expect(wrapper.find('Checkbox').props().defaultChecked).toEqual(true)
+    expect(wrapper.find('Checkbox').props().checked).toEqual(false)
   })
 
   it('when checkbox changes, value is retrieved from data', () => {
@@ -58,12 +63,11 @@ describe('Test CheckboxFixedCell', () => {
         rowIndex={0}
         columnKey="checkbox"
         onChange={onChange}
+        checked={checked}
       />
     )
     const wrapper = shallow(element)
-    expect(wrapper.instance().state.checked).toEqual(false)
-    wrapper.find('Checkbox').simulate('change')
-    expect(onChange).toHaveBeenCalledWith(0)
-    expect(wrapper.instance().state.checked).toEqual(false)
+    const observerd = wrapper.find('Checkbox').props().onChange
+    expect(observerd).toEqual(onChange)
   })
 })

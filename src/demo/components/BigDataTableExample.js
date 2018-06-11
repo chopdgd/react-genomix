@@ -62,7 +62,7 @@ const ExampleInfiniteTable = () => (
           label="Checkbox"
           dataKey="checkbox"
           width={100}
-          columnData={{ onChange: (props) => alert(JSON.stringify(props)) }}
+          columnData={{ onChange: () => alert('clicked'), checked: [] }}
         />
         <DropdownColumn
           label="Dropdown"
