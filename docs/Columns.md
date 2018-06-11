@@ -25,7 +25,7 @@ Renders a [CheckboxCell](CheckboxCell.md). Requires the same props as [react-vir
 
 | Property | Type | Required? | Default | Description |
 |:---|:---|:---:|:---|:---|
-| columnData | Object | ✓ |  | Object with extra props. Requires onChange (see below) |
+| columnData | Object | ✓ |  | Object with extra props. Requires onChange and checked (see below) |
 
 #### Example
 
@@ -34,7 +34,7 @@ Renders a [CheckboxCell](CheckboxCell.md). Requires the same props as [react-vir
     label="Checkbox"
     dataKey="checkbox"
     width={100}
-    columnData={{ onChange: (props) => alert(JSON.stringify(props)) }}
+    columnData={{ onChange: (props) => alert(JSON.stringify(props)), checked: [] }}
   />
 ```
 
