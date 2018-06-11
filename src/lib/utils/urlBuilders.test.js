@@ -90,7 +90,7 @@ describe('Test URL Builders', () => {
 
   it('Build URL to ClinVar Entry', () => {
     const observed = utils.urlBuilders.clinvarEntry('id1')
-    const expected = `${urls.CLINVAR_URL}/id1`
+    const expected = `${urls.CLINVAR_URL}/variation/id1`
     expect(observed).toEqual(expected)
   })
 
@@ -152,6 +152,12 @@ describe('Test URL Builders', () => {
     expect(observed).toEqual(expected)
   })
 
+  it('Build URL to a locus in DGV', () => {
+    const observed = utils.urlBuilders.dgvRegionSearch(chr, pos, pos)
+    const expected = `${urls.DGV_URL}/gb2/gbrowse/dgv2_hg19/?name=chr${chr}:${pos}-${pos};search=Search`
+    expect(observed).toEqual(expected)
+  })
+
   it('Build URL to GeneCards entry', () => {
     const observed = utils.urlBuilders.geneCardsEntry(gene)
     const expected = `${urls.GENE_CARDS_URL}/cgi-bin/carddisp.pl?gene=MFN2`
@@ -170,9 +176,39 @@ describe('Test URL Builders', () => {
     expect(observed).toEqual(expected)
   })
 
+  it('Build URL to Gene Reviews entry', () => {
+    const observed = utils.urlBuilders.geneReviewsEntry(gene)
+    const expected = `${urls.GENEREVIEWS_URL}/?term=MFN2`
+    expect(observed).toEqual(expected)
+  })
+
+  it('Build URL to GTEx entry', () => {
+    const observed = utils.urlBuilders.gtexEntry(gene)
+    const expected = `${urls.GTEX_URL}/home/gene/MFN2`
+    expect(observed).toEqual(expected)
+  })
+
+  it('Build URL to ExAC Gene entry', () => {
+    const observed = utils.urlBuilders.exacGeneEntry(gene)
+    const expected = `${urls.EXAC_URL}/gene/MFN2`
+    expect(observed).toEqual(expected)
+  })
+
+  it('Build URL to ExAC Gene entry', () => {
+    const observed = utils.urlBuilders.gnomadGeneEntry(gene)
+    const expected = `${urls.GNOMAD_URL}/gene/MFN2`
+    expect(observed).toEqual(expected)
+  })
+
   it('Build URL to a variant in DECIPHER', () => {
     const observed = utils.urlBuilders.decipherVariant(chr, pos, pos)
     const expected = `${urls.DECIPHER_URL}/search?q=1:10-10#consented-patients/results`
+    expect(observed).toEqual(expected)
+  })
+
+  it('Build URL to a region in DECIPHER', () => {
+    const observed = utils.urlBuilders.decipherRegionSearch(chr, pos, pos)
+    const expected = `${urls.DECIPHER_URL}/search?q=chr${chr}:${pos}-${pos}#consented-patients/results`
     expect(observed).toEqual(expected)
   })
 

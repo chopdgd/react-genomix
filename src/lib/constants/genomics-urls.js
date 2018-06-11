@@ -9,7 +9,7 @@ export const NCBI_ESEARCH_ENDPOINT = `${NCBI_EUTILS_ENDPOINT}/esearch.fcgi`
 export const NCBI_URL = 'https://www.ncbi.nlm.nih.gov'
 export const PUBMED_URL = `${NCBI_URL}/pubmed`
 export const NCBI_VARIATION_URL = `${NCBI_URL}/variation/view`
-export const CLINVAR_URL = `${NCBI_URL}/clinvar`
+export const CLINVAR_URL = 'https://preview.ncbi.nlm.nih.gov/clinvar'
 
 
 // Genomic Resources
@@ -19,12 +19,15 @@ export const ENSEMBL_GRCH38_URL = 'http://grch38.ensembl.org'
 export const EXAC_URL = 'http://exac.broadinstitute.org'
 export const GNOMAD_URL = 'http://gnomad.broadinstitute.org'
 export const UCSC_URL = 'https://genome.ucsc.edu'
+export const DGV_URL = 'http://dgv.tcag.ca'
 
 
 // Gene Resources
 export const GENE_CARDS_URL = 'http://www.genecards.org'
 export const GHR_URL = 'https://ghr.nlm.nih.gov'  // Genetics Home Reference
 export const HGNC_URL = 'https://www.genenames.org'
+export const GENEREVIEWS_URL = 'https://www.ncbi.nlm.nih.gov/books/NBK1116'
+export const GTEX_URL = 'https://www.gtexportal.org'
 
 // Clinical Resources
 export const DECIPHER_URL = 'https://decipher.sanger.ac.uk'
