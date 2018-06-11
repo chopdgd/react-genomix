@@ -24,7 +24,7 @@ export const variationViewer = ( chr, start, end, assembly = 'GCF_000001405.25')
 
 export const clinvarSearch = term => `${urls.CLINVAR_URL}/?term=${term}`
 
-export const clinvarEntry = id => `${urls.CLINVAR_URL}/${id}`
+export const clinvarEntry = id => `${urls.CLINVAR_URL}/variation/${id}`
 
 
 // Genomic URLs
@@ -58,6 +58,10 @@ export const gnomadVariant = ( chr, pos, ref, alt ) =>
 export const ucscLocus = ( chr, start, end, genome = 'hg19' ) =>
   `${urls.UCSC_URL}/cgi-bin/hgTracks?db=${genome}&position=chr${chr}:${start}-${end}`
 
+export const dgvRegionSearch = (chr, start, end) => (
+  `${urls.DGV_URL}/gb2/gbrowse/dgv2_hg19/?name=chr${chr}:${start}-${end};search=Search`
+)
+
 
 // Gene Resources
 export const geneCardsEntry = gene => `${urls.GENE_CARDS_URL}/cgi-bin/carddisp.pl?gene=${gene}`
@@ -66,10 +70,22 @@ export const ghrEntry = gene => `${urls.GHR_URL}/gene/${gene}`
 
 export const hgncEntry = gene => `${urls.HGNC_URL}/cgi-bin/search?search_type=all&search=${gene}`
 
+export const geneReviewsEntry = gene => `${urls.GENEREVIEWS_URL}/?term=${gene}`
+
+export const gtexEntry = gene => `${urls.GTEX_URL}/home/gene/${gene}`
+
+export const exacGeneEntry = gene => `${urls.EXAC_URL}/gene/${gene}`
+
+export const gnomadGeneEntry = gene => `${urls.GNOMAD_URL}/gene/${gene}`
+
 
 // Clinical Resources
 export const decipherVariant = ( chr, start, end ) =>
   `${urls.DECIPHER_URL}/search?q=${chr}:${start}-${end}#consented-patients/results`
+
+export const decipherRegionSearch = (chr, start, end) => (
+  `${urls.DECIPHER_URL}/search?q=chr${chr}:${start}-${end}#consented-patients/results`
+)
 
 export const hgmdVariant = cdna => `${urls.HGMD_URL}/hgmd/pro/mut.php?acc=${cdna}`
 

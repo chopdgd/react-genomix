@@ -131,7 +131,7 @@ describe('Test PublicEvidenceCell', () => {
       <div>
         <p>Present in ClinVar!</p>
         <a
-          href="https://www.ncbi.nlm.nih.gov/clinvar/clinvarId"
+          href="https://preview.ncbi.nlm.nih.gov/clinvar/variation/clinvarId"
           rel="noopener noreferrer"
           target="_blank"
         >
