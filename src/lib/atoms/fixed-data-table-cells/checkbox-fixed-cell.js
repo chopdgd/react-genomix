@@ -2,32 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Cell } from 'fixed-data-table-2'
 import { Checkbox } from 'semantic-ui-react'
-import { get } from 'lodash'
 
 
 class CheckboxFixedCell extends React.Component {
   constructor(props) {
     super(props)
 
-    const { data, rowIndex, columnKey } = props
-    const checked = get(data[rowIndex], columnKey)
-    this.state = { checked }
+    this.state = {
+      defaultChecked: props.defaultChecked,
+      checked: props.defaultChecked,
+    }
   }
 
   onChange = (e) => {
-    const { onChange, data, rowIndex, columnKey } = this.props
-    const checked = get(data[rowIndex], columnKey)
+    const { onChange, rowIndex } = this.props
+    const { checked } = this.state
+
     onChange(rowIndex)
-    this.setState({ checked })
+    this.setState({
+      checked: !checked
+    })
   }
 
   render() {
-    const { onChange, data, rowIndex, columnKey, ...rest } = this.props
-    const { checked } = this.state
+    const { onChange, data, rowIndex, columnKey, defaultChecked, ...rest } = this.props
 
     return (
       <Cell {...rest}>
-        <Checkbox defaultChecked={checked} onChange={this.onChange} />
+        <Checkbox defaultChecked={defaultChecked} onChange={this.onChange} />
       </Cell>
     )
   }
@@ -39,10 +41,12 @@ CheckboxFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   rowIndex: PropTypes.number,
   columnKey: PropTypes.string,
+  defaultChecked: PropTypes.bool,
 }
 
 CheckboxFixedCell.defaultProps = {
   data: [],
+  defaultChecked: false,
 }
 
 
