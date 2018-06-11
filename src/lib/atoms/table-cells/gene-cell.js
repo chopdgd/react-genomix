@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Label } from 'semantic-ui-react'
+import { get, map } from 'lodash'
 
-import { utils, Link } from 'LibIndex'
+import { GeneResourcesPopup } from 'LibIndex'
 import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
 import getElementType from 'LibSrc/helpers/getElementType'
 import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
@@ -11,22 +11,20 @@ import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
 const GeneCell = props => {
   const ElementType = getElementType(GeneCell, props)
   const rest = getUnhandledProps(GeneCell, props)
-  const { gene } = props
+  const { genes } = props
+
+  let content = `${genes.length} genes`
+  if (genes.length <= 3) content = map(genes, gene => get(gene, 'symbol')).join()
+
 
   return (
     <ElementType {...rest}>
-      {gene} &nbsp;&nbsp;
-      <Link
-        content={<Label basic size="tiny" content="H" color="blue" />}
-        href={utils.urlBuilders.hgmdGene(gene)}
-      />
-      <Link
-        content={<Label basic size="tiny" content="O" color="green" />}
-        href={utils.urlBuilders.omimSearch(gene)}
-      />
-      <Link
-        content={<Label basic size="tiny" content="P" color="blue" />}
-        href={utils.urlBuilders.pubmedSearch(gene)}
+      <GeneResourcesPopup
+        trigger={<p>{content}</p>}
+        genes={genes}
+        hoverable
+        wide="very"
+        position="bottom left"
       />
     </ElementType>
   )
@@ -35,17 +33,21 @@ const GeneCell = props => {
 
 GeneCell.propTypes = {
   as: customPropTypes.as,
-  gene: PropTypes.string.isRequired,
+  genes: PropTypes.arrayOf(PropTypes.shape({
+    symbol: PropTypes.string,
+    ensemblId: PropTypes.string,
+  })),
   rowIndex: PropTypes.number,
 }
 
 GeneCell.defaultProps = {
   as: 'div',
+  genes: [],
 }
 
 GeneCell.handledProps = [
   'as',
-  'gene',
+  'genes',
   'rowIndex',
 ]
 

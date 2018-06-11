@@ -25,7 +25,7 @@ const cellRenderer = (props) => {
 
   return (
     <GeneCell
-      gene={cellData}
+      genes={cellData}
       rowIndex={rowIndex}
     />
   )

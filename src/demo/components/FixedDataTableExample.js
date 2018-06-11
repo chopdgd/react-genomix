@@ -27,7 +27,7 @@ const rows = Array.from(new Array(30), (x,i) => ({
   consequence: 'missense',
   text: 'Text',
   transcript: 'NM_000010.1',
-  gene: 'PNPLA6',
+  gene: [{symbol: 'PNPLA6'}],
   chromosome: '1',
   position: 10,
   reference: 'A',
