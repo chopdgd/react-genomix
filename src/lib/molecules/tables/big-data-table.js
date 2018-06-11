@@ -7,28 +7,25 @@ import cx from 'classnames'
 
 
 class BigDataTable extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    const { data, loading } = props
+    const { rows } = state
+
+    const difference = differenceWith(data, rows, isEqual)
+
+    if (loading !== state.loading || difference.length > 0) {
+      return { loading, rows: concat(rows, difference) }
+    }
+
+    return null
+  }
+
   constructor(props, context) {
     super(props)
 
     this.state = {
       rows: props.data,
       loading: props.loading,
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { data, loading } = this.props
-
-    if (nextProps.data !== data) {
-      const { rows } = this.state
-      const newData = differenceWith(nextProps.data, rows, isEqual)
-      if (newData.length > 0) {
-        this.setState({ rows: concat(rows, newData) })
-      }
-    }
-
-    if (nextProps.loading !== loading) {
-      this.setState({ loading: nextProps.loading })
     }
   }
 

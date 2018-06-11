@@ -6,6 +6,16 @@ import { Button } from 'LibIndex'
 
 
 class LoginForm extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    const { loading, error } = props
+
+    if (loading !== state.loading || error !== state.error) {
+      return { loading, error }
+    }
+
+    return null
+  }
+
   constructor(props) {
     super(props)
 
@@ -14,18 +24,6 @@ class LoginForm extends React.Component {
       password: '',
       loading: props.loading,
       error: props.error,
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { loading, error } = this.props
-
-    if (nextProps.loading !== loading) {
-      this.setState({ loading: nextProps.loading })
-    }
-
-    if (nextProps.error !== error) {
-      this.setState({ error: nextProps.error })
     }
   }
 
