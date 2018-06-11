@@ -6,24 +6,22 @@ import { get, indexOf, map, sortBy } from 'lodash'
 
 
 class FixedDataTable extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    const { columnWidths, columnOrder } = props
+
+    if (columnWidths !== state.columnWidths || columnOrder !== state.columnOrder) {
+      return { columnWidths, columnOrder }
+    }
+
+    return null
+  }
+
   constructor(props) {
     super(props)
 
     this.state = {
       columnWidths: props.columnWidths,
       columnOrder: props.columnOrder,
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { columnWidths, columnOrder } = this.props
-
-    if (nextProps.columnWidths !== columnWidths) {
-      this.setState({ columnWidths: nextProps.columnWidths })
-    }
-
-    if (nextProps.columnOrder !== columnOrder) {
-      this.setState({ columnOrder: nextProps.columnOrder })
     }
   }
 

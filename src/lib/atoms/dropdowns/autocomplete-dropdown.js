@@ -5,6 +5,16 @@ import { omit } from 'lodash'
 
 
 class AutoCompleteDropDown extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    const { loading } = props
+
+    if (loading !== state.loading) {
+      return { loading }
+    }
+
+    return null
+  }
+
   constructor(props) {
     super(props)
 
@@ -13,16 +23,8 @@ class AutoCompleteDropDown extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.timeout = null
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { loading } = this.props
-
-    if (nextProps.loading !== loading) {
-      this.setState({ loading: nextProps.loading })
-    }
   }
 
   onSearchChange = (e, { searchQuery }) => {
