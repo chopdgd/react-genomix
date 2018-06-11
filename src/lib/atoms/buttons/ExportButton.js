@@ -7,14 +7,18 @@ import { get } from 'lodash'
 import { Button } from 'LibIndex'
 
 
-class ExportButton extends React.PureComponent {
-  handleReformat = () => {
-    const { data, onExport } = this.props
+class ExportButton extends React.Component {
+  handleReformat = (e, props) => {
+    const { data, onExport, onClick } = this.props
 
     if (onExport) {
       this.setState({ data: onExport(data) })
     } else {
       this.setState({ data })
+    }
+
+    if (onClick) {
+      onClick(e, props)
     }
   }
 
@@ -48,6 +52,7 @@ ExportButton.propTypes = {
   ]),
   filenamePrefix: PropTypes.string,
   onExport: PropTypes.func,
+  onClick: PropTypes.func,
 }
 
 ExportButton.defaultProps = {

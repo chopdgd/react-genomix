@@ -62,4 +62,18 @@ describe('Test ExportButton', () => {
     wrapper.find('CSVLink').props().children.props.onClick()
     expect(wrapper.state().data).toEqual([{ test: 1, test2: 2 }])
   })
+
+  it('onClick is passed and called', () => {
+    const onClick = jest.fn()
+    const wrapper = shallow(
+      <ExportButton
+        data={[{ test: 1, test2: 2 }]}
+        filenamePrefix="newPrefix"
+        onClick={onClick}
+      />
+    )
+
+    wrapper.find('Button').simulate('click', {'hi': 1}, 'Mike')
+    expect(onClick).toHaveBeenCalledWith({"hi": 1}, 'Mike')
+  })
 })
