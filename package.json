@@ -132,9 +132,9 @@
   },
   "dependencies": {
     "fixed-data-table-2": "0.8.13",
-    "react": "16.4.0",
+    "react": "16.4.1",
     "react-csv": "1.0.14",
-    "react-dom": "16.4.0",
+    "react-dom": "16.4.1",
     "react-file-reader": "1.1.4",
     "react-virtualized": "9.19.1",
     "semantic-ui-css": "2.3.1",
