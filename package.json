@@ -137,7 +137,7 @@
     "react-dom": "16.4.0",
     "react-file-reader": "1.1.4",
     "react-virtualized": "9.19.1",
-    "semantic-ui-css": "2.3.1",
+    "semantic-ui-css": "2.3.2",
     "semantic-ui-react": "0.81.1"
   }
 }
