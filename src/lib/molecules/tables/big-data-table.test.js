@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Column } from 'react-virtualized'
 import { mount } from 'enzyme'
 
-import { BigDataTable } from 'LibIndex'
+import { BigDataTable } from '../../index'
 
 
 const list = Array.from(new Array(1), (x,i) => ({

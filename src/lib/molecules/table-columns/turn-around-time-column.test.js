@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { TurnAroundTimeProgressCell, TurnAroundTimeProgressColumn } from 'LibIndex'
+import { TurnAroundTimeProgressCell, TurnAroundTimeProgressColumn } from '../../index'
 
 
 describe('Test TurnAroundTimeProgressColumn', () => {

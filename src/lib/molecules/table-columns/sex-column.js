@@ -1,9 +1,10 @@
+/* eslint react/forbid-foreign-prop-types: 0 */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Column } from 'react-virtualized'
 import { get } from 'lodash'
 
-import { SexCell } from 'LibIndex'
+import { SexCell } from '../../index'
 
 
 // See: https://github.com/bvaughn/react-virtualized/pull/748

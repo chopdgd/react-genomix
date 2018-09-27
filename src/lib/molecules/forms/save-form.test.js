@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Form } from 'semantic-ui-react'
 import { shallow } from 'enzyme'
 
-import { Button, SaveForm } from 'LibIndex'
+import { Button, SaveForm } from '../../index'
 
 
 const form = (defaultValues, handleSubmit, handleChange) => {

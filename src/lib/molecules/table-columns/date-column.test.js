@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { DateCell, DateColumn } from 'LibIndex'
+import { DateCell, DateColumn } from '../../index'
 
 
 describe('Test DateColumn', () => {

@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Icon } from 'semantic-ui-react'
 
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
-import getElementType from 'LibSrc/helpers/getElementType'
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
+import * as customPropTypes from '../../helpers/customPropTypes'
+import getElementType from '../../helpers/getElementType'
+import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
 const StatusCell = props => {

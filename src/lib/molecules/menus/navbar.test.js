@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { MenuItem } from 'semantic-ui-react'
 import { shallow } from 'enzyme'
 
-import { Navbar, UserMenu } from 'LibIndex'
+import { Navbar, UserMenu } from '../../index'
 
 
 describe('Navbar Tests', () => {

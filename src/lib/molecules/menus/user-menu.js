@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Dropdown, Divider } from 'semantic-ui-react'
 
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
-import { Avatar } from 'LibIndex'
+import * as customPropTypes from '../../helpers/customPropTypes'
+import { Avatar } from '../../index'
 
 
 const UserMenu = props => {

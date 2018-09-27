@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Button as SemanticButton } from 'semantic-ui-react'
 import cx from 'classnames'
 
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
+import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
 const Button = props => {

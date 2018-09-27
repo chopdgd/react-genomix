@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { List } from 'semantic-ui-react'
 import { get, map } from 'lodash'
 
-import { utils, BasicLabel, Link } from 'LibIndex'
+import { utils, BasicLabel, Link } from '../../index'
 
 
 const GeneLinksList = ({ genes, ...rest }) => (

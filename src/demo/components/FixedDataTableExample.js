@@ -17,7 +17,7 @@ import {
   TextFixedCell,
   TranscriptFixedCell,
   TurnAroundTimeProgressFixedCell,
-} from 'LibIndex'
+} from 'lib'
 
 
 const rows = Array.from(new Array(30), (x,i) => ({

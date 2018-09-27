@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Label } from 'semantic-ui-react'
 
-import { utils } from 'LibIndex'
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
-import getElementType from 'LibSrc/helpers/getElementType'
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
+import { utils } from '../../index'
+import * as customPropTypes from '../../helpers/customPropTypes'
+import getElementType from '../../helpers/getElementType'
+import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
 const InterpretationCell = props => {

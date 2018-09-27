@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { TurnAroundTimeProgressFixedCell } from 'LibIndex'
+import { TurnAroundTimeProgressFixedCell } from '../../index'
 
 
 describe('Test TurnAroundTimeProgressFixedCell', () => {

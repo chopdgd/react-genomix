@@ -4,7 +4,7 @@ import { Cell } from 'fixed-data-table-2'
 import { Label } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { utils } from 'LibIndex'
+import { utils } from '../../index'
 
 
 const MolecularConsequenceFixedCell = props => {

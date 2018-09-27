@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Icon as SemanticIcon } from 'semantic-ui-react'
 import cx from 'classnames'
 
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
+import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
 const Icon = props => {

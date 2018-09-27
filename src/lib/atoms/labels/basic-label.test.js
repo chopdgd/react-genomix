@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { BasicLabel } from 'LibIndex'
+import { BasicLabel } from '../../index'
 
 
 describe('Test Basic Label', () => {

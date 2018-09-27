@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { PublicEvidenceCell, PublicEvidenceColumn } from 'LibIndex'
+import { PublicEvidenceCell, PublicEvidenceColumn } from '../../index'
 
 
 describe('Test PublicEvidenceColumn', () => {

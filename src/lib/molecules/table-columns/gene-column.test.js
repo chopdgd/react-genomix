@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { GeneCell, GeneColumn } from 'LibIndex'
+import { GeneCell, GeneColumn } from '../../index'
 
 
 describe('Test GeneColumn', () => {

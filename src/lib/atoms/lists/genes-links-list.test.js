@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { GeneLinksList } from 'LibIndex'
+import { GeneLinksList } from '../../index'
 
 
 describe('Test Genes Links List', () => {

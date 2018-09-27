@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { DropdownItem } from 'semantic-ui-react'
 import { shallow } from 'enzyme'
 
-import { DropdownMenu } from 'LibIndex'
+import { DropdownMenu } from '../../index'
 
 
 describe('Test DropdownMenu', () => {

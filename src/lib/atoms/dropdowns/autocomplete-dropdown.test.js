@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { AutoCompleteDropDown } from 'LibIndex'
+import { AutoCompleteDropDown } from '../../index'
 
 
 describe('Test AutoCompleteDropDown', () => {

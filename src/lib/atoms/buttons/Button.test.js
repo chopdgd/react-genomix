@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { Button } from 'LibIndex'
+import { Button } from '../../index'
 
 
 describe('Test Button', () => {

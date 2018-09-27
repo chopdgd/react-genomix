@@ -1,0 +1,1 @@
+import React from"react";import{Image,Icon}from"semantic-ui-react";import faker from"faker";var Avatar=function(a){var b=a.profileImage,c=b;return c||(c=faker.internet.avatar()),React.createElement("div",null,React.createElement(Image,{avatar:!0,src:c}),React.createElement(Icon,{name:"chevron down",size:"small"}))};Avatar.defaultProps={profileImage:void 0};export default Avatar;

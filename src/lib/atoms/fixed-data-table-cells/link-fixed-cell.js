@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Cell } from 'fixed-data-table-2'
 import { get } from 'lodash'
 
-import { Link } from 'LibIndex'
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
+import { Link } from '../../index'
+import * as customPropTypes from '../../helpers/customPropTypes'
 
 
 const LinkFixedCell = props => {

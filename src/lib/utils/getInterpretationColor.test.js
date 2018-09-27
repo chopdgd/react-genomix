@@ -1,4 +1,4 @@
-import { utils } from 'LibIndex'
+import { utils } from '../index'
 
 
 describe('Test Interpretation Color', () => {

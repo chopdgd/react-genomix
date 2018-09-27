@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Cell, Column } from 'fixed-data-table-2'
 import { shallow } from 'enzyme'
 
-import { FixedDataTable, TextFixedCell } from 'LibIndex'
+import { FixedDataTable, TextFixedCell } from '../../index'
 
 
 const list = Array.from(new Array(1), (x,i) => ({
@@ -78,9 +78,11 @@ describe('Test BigDataTable', () => {
     const onColumnResize = jest.fn()
     const wrapper = shallow(TestTable({ data: list, onColumnResize }))
     const instance = wrapper.instance()
-    expect(instance.state.columnWidths).toEqual({name: 50, text: 100})
+    const setStateSpy = jest.spyOn(instance, 'setState')
+
+    expect(wrapper.state().columnWidths).toEqual({name: 50, text: 100})
     instance.onColumnResizeEndCallback(10, 'name')
-    expect(instance.state.columnWidths).toEqual({name: 10, text: 100})
+    expect(setStateSpy).toHaveBeenCalledWith({"columnWidths": {"name": 10, "text": 100}})
     expect(onColumnResize).toHaveBeenCalledTimes(1)
   })
 
@@ -88,25 +90,22 @@ describe('Test BigDataTable', () => {
     const onColumnReorder = jest.fn()
     const wrapper = shallow(TestTable({ data: list, onColumnReorder }))
     const instance = wrapper.instance()
-    expect(instance.state.columnOrder).toEqual(initialColumnOrder)
+    const setStateSpy = jest.spyOn(instance, 'setState')
+
     instance.onColumnReorderEndCallback({ reorderColumn: 'name' })
-    expect(instance.state.columnOrder).toEqual(nextColumnOrder)
-    expect(onColumnReorder).toHaveBeenCalledTimes(1)
+    expect(setStateSpy).toHaveBeenCalledWith({"columnOrder": ['text', 'name']})
+    instance.onColumnReorderEndCallback({ reorderColumn: 'text' })
+    expect(setStateSpy).toHaveBeenCalledWith({"columnOrder": ['text', 'name']})
+    expect(onColumnReorder).toHaveBeenCalledTimes(2)
   })
 
   it('columnOrder should not change when onColumnReorderEndCallback is fired with columnAfter', () => {
     const wrapper = shallow(TestTable({ data: list }))
     const instance = wrapper.instance()
-    expect(instance.state.columnOrder).toEqual(initialColumnOrder)
-    instance.onColumnReorderEndCallback({ reorderColumn: 'name',  columnAfter: 'text' })
-    expect(instance.state.columnOrder).toEqual(initialColumnOrder)
-  })
+    const setStateSpy = jest.spyOn(instance, 'setState')
 
-  it('onColumnResize is not fired since it is undefined', () => {
-    const wrapper = shallow(TestTable({ data: list }))
-    const instance = wrapper.instance()
-    expect(instance.state.columnWidths).toEqual({name: 50, text: 100})
-    instance.onColumnResizeEndCallback(10, 'name')
-    expect(instance.state.columnWidths).toEqual({name: 10, text: 100})
+    expect(wrapper.state().columnOrder).toEqual(initialColumnOrder)
+    instance.onColumnReorderEndCallback({ reorderColumn: 'name',  columnAfter: 'text' })
+    expect(setStateSpy).toHaveBeenCalledWith({"columnOrder": initialColumnOrder})
   })
 })

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Cell } from 'fixed-data-table-2'
 import { get } from 'lodash'
 
-import { TurnAroundTimeProgress } from 'LibIndex'
+import { TurnAroundTimeProgress } from '../../index'
 
 
 const TurnAroundTimeProgressFixedCell = props => {

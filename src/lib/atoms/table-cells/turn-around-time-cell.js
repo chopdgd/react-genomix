@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { TurnAroundTimeProgress } from 'LibIndex'
+import { TurnAroundTimeProgress } from '../../index'
 import * as customPropTypes from '../../helpers/customPropTypes'
 import getElementType from '../../helpers/getElementType'
 import getUnhandledProps from '../../helpers/getUnhandledProps'

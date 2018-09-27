@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { MolecularConsequenceCell } from 'LibIndex'
+import { MolecularConsequenceCell } from '../../index'
 
 
 describe('Test MolecularConsequenceCell', () => {

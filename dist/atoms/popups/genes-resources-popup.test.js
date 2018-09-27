@@ -1,0 +1,1 @@
+import React from"react";import ReactDOM from"react-dom";import{GeneResourcesPopup}from"../../index";describe("Test Gene Resources Popup",function(){it("renders without crashing",function(){var a=document.createElement("div");ReactDOM.render(React.createElement(GeneResourcesPopup,{trigger:React.createElement("p",null,"Gene"),genes:[{symbol:"Gene"}]}),a)})});
