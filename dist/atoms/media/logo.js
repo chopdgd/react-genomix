@@ -1,0 +1,1 @@
+import React from"react";import{Image}from"semantic-ui-react";import logo from"../../assets/chopLogo.ico";var Logo=function(a){return React.createElement(Image,a)};Logo.defaultProps={width:"120px",src:logo};export default Logo;

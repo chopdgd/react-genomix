@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import { Icon } from 'semantic-ui-react'
 
-import { PublicEvidenceFixedCell } from 'LibIndex'
+import { PublicEvidenceFixedCell } from '../../index'
 
 
 describe('Test PublicEvidenceFixedCell', () => {

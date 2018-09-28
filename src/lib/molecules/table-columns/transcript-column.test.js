@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { TranscriptCell, TranscriptColumn } from 'LibIndex'
+import { TranscriptCell, TranscriptColumn } from '../../index'
 
 
 describe('Test TranscriptColumn', () => {

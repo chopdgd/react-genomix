@@ -4,7 +4,7 @@ import { Cell } from 'fixed-data-table-2'
 import { Button, Popup, Icon } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { utils } from 'LibIndex'
+import { utils } from '../../index'
 
 
 class PublicEvidenceFixedCell extends React.PureComponent {

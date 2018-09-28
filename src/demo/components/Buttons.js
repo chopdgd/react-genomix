@@ -1,11 +1,8 @@
 import React from 'react'
 import { Card, Grid } from 'semantic-ui-react'
 
-import * as GenomiX from 'LibIndex'
+import * as GenomiX from 'lib'
 
-const handleResults = (results) => {
-  alert(JSON.stringify(results))
-}
 
 const items = [
   {
@@ -42,16 +39,6 @@ const items = [
     key: 7,
     header: 'SearchButton',
     description: <GenomiX.SearchButton color="action-warning" />,
-  },
-  {
-    key: 8,
-    header: 'UploadButton',
-    description: (
-      <GenomiX.UploadButton
-        content={<GenomiX.Button content="Upload" icon="upload" />}
-        handleResults={handleResults}
-      />
-    ),
   },
   {
     key: 9,
@@ -99,17 +86,6 @@ const items = [
     key: 16,
     header: 'SearchButton',
     description: <GenomiX.SearchButton color="action-warning" inverted />,
-    meta: 'inverted',
-  },
-  {
-    key: 17,
-    header: 'UploadButton',
-    description: (
-      <GenomiX.UploadButton
-        content={<GenomiX.Button content="Upload" icon="upload" inverted />}
-        handleResults={handleResults}
-      />
-    ),
     meta: 'inverted',
   },
   {

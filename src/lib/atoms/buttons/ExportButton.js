@@ -4,7 +4,7 @@ import { CSVLink } from 'react-csv'
 import moment from 'moment'
 import { get } from 'lodash'
 
-import { Button } from 'LibIndex'
+import { Button } from '../../index'
 
 
 class ExportButton extends React.Component {

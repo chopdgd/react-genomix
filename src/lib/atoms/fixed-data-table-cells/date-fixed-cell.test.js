@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { DateFixedCell } from 'LibIndex'
+import { DateFixedCell } from '../../index'
 
 
 describe('Test DateFixedCell', () => {

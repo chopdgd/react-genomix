@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { TurnAroundTimeProgressCell } from 'LibIndex'
+import { TurnAroundTimeProgressCell } from '../../index'
 
 
 describe('Test TurnAroundTimeProgressCell', () => {

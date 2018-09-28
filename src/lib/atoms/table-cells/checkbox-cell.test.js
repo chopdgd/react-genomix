@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { CheckboxCell } from 'LibIndex'
+import { CheckboxCell } from '../../index'
 
 
 describe('Test CheckboxCell', () => {

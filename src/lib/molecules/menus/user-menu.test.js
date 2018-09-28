@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { mount, shallow } from 'enzyme'
 
-import { UserMenu } from 'LibIndex'
+import { UserMenu } from '../../index'
 
 describe('Test UserMenu', () => {
   const element = (

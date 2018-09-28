@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Icon } from 'LibIndex'
-import * as constants from 'LibSrc/constants/icons'
+import { Icon } from '../../index'
+import * as constants from '../../constants/icons'
 
 
 export const AcceptIcon = ({ ...props }) => (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Cell } from 'fixed-data-table-2'
 import { get, map } from 'lodash'
 
-import { GeneResourcesPopup } from 'LibIndex'
+import { GeneResourcesPopup } from '../../index'
 
 
 const GeneFixedCell = props => {

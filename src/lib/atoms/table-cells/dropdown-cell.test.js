@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { DropdownCell } from 'LibIndex'
+import { DropdownCell } from '../../index'
 
 
 describe('Test DropdownCell', () => {

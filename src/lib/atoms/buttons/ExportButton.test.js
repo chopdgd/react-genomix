@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import { map, omit } from 'lodash'
 
-import { ExportButton } from 'LibIndex'
+import { ExportButton } from '../../index'
 
 
 describe('Test ExportButton', () => {

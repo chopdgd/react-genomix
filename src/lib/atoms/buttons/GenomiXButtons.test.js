@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import * as GenomiX from 'LibIndex'
+import * as GenomiX from '../../index'
 
 
 describe('Test AcceptButton', () => {

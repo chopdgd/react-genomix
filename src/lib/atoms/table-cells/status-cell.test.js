@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { StatusCell } from 'LibIndex'
+import { StatusCell } from '../../index'
 
 
 describe('Test StatusCell', () => {

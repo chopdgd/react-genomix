@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { toLower, toString } from 'lodash'
 
-import { MaleIcon, FemaleIcon, QuestionIcon } from 'LibIndex'
-import * as customPropTypes from 'LibSrc/helpers/customPropTypes'
-import getElementType from 'LibSrc/helpers/getElementType'
-import getUnhandledProps from 'LibSrc/helpers/getUnhandledProps'
+import { MaleIcon, FemaleIcon, QuestionIcon } from '../../index'
+import * as customPropTypes from '../../helpers/customPropTypes'
+import getElementType from '../../helpers/getElementType'
+import getUnhandledProps from '../../helpers/getUnhandledProps'
 
 
 const SexCell = props => {

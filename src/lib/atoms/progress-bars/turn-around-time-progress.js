@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Popup, Progress, Label, Icon, Button } from 'semantic-ui-react'
 
-import { utils } from 'LibIndex'
+import { utils } from '../../index'
 
 
 const TurnAroundTimeProgress = props => {

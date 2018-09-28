@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { SexFixedCell } from 'LibIndex'
+import { SexFixedCell } from '../../index'
 
 
 describe('Test SexFixedCell', () => {

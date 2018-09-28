@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { CheckboxCell, CheckboxColumn } from 'LibIndex'
+import { CheckboxCell, CheckboxColumn } from '../../index'
 
 
 describe('Test CheckboxColumn', () => {

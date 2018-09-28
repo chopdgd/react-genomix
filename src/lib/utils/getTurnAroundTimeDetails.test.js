@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import { utils } from 'LibIndex'
+import { utils } from '../index'
 
 
 describe('getTurnAroundTimeDetails', () => {
@@ -24,7 +24,7 @@ describe('getTurnAroundTimeDetails', () => {
 
   it('if it no signout date, but now() = start date with a target of 5 days, it should display -5 and be green', () => {
     const now = moment('1987-12-18')
-    Date.now = jest.genMockFunction().mockReturnValue(now)
+    Date.now = jest.fn(() => now)
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18')
     const expected = { label: -5, color: 'green', value: 0 }
     expect(observed).toEqual(expected)
@@ -32,7 +32,7 @@ describe('getTurnAroundTimeDetails', () => {
 
   it('if it no signout date, but now() = 2 days passed target, it should display 2 and be red', () => {
     const now = moment('1987-12-25')
-    Date.now = jest.genMockFunction().mockReturnValue(now)
+    Date.now = jest.fn(() => now)
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18')
     const expected = { label: 2, color: 'red', value: 7 }
     expect(observed).toEqual(expected)
@@ -40,7 +40,7 @@ describe('getTurnAroundTimeDetails', () => {
 
   it('if it no signout date, but now() = 2 days before target, it should display -2 and be yellow', () => {
     const now = moment('1987-12-21')
-    Date.now = jest.genMockFunction().mockReturnValue(now)
+    Date.now = jest.fn(() => now)
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18')
     const expected = { label: -2, color: 'yellow', value: 3 }
     expect(observed).toEqual(expected)

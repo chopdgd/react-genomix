@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Cell } from 'fixed-data-table-2'
 import { get, toLower, toString } from 'lodash'
 
-import { MaleIcon, FemaleIcon, QuestionIcon } from 'LibIndex'
+import { MaleIcon, FemaleIcon, QuestionIcon } from '../../index'
 
 
 const SexFixedCell = props => {

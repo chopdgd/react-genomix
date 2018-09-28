@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Message } from 'semantic-ui-react'
 
-import { Button } from 'LibIndex'
+import { Button } from '../../index'
 
 
 class LoginForm extends React.Component {

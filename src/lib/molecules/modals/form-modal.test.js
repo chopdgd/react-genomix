@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Form } from 'semantic-ui-react'
 import { mount, shallow } from 'enzyme'
 
-import { FormModal } from 'LibIndex'
+import { FormModal } from '../../index'
 
 
 const form = (open = false, title = 'title', handleSubmit = jest.fn(), handleChange = jest.fn()) => {
@@ -63,7 +63,7 @@ describe('Test FormModal', () => {
   })
 
   // Currently can't test actions happening in modal
-  // See: https://github.com/airbnb/enzyme/blob/master/docs/common-issues.md#testing-third-party-libraries
+  // See: https://github.com/airbnb/enzyme/blob/master/docs/common-issues.md#testing-third-party-lib
 
   // it('onSubmit calls close() and handleSubmit', () => {
   //   const handleSubmit = jest.fn()

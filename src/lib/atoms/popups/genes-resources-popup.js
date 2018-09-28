@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Popup } from 'semantic-ui-react'
 
-import { GeneLinksList } from 'LibIndex'
+import { GeneLinksList } from '../../index'
 
 
 const GeneResourcesPopup = ({ trigger, genes, ...rest }) => (

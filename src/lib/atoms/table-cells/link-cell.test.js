@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { LinkCell } from 'LibIndex'
+import { LinkCell } from '../../index'
 
 
 describe('Test LinkCell', () => {

@@ -4,7 +4,7 @@ import { Cell } from 'fixed-data-table-2'
 import { Label } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { utils, Link } from 'LibIndex'
+import { utils, Link } from '../../index'
 
 
 const TranscriptFixedCell = props => {

@@ -1,5 +1,5 @@
 import * as urls from '../constants/genomics-urls'
-import { utils } from 'LibIndex'
+import { utils } from '../index'
 
 
 describe('Test URL Builders', () => {

@@ -1,9 +1,10 @@
+/* eslint react/forbid-foreign-prop-types: 0 */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Column } from 'react-virtualized'
 import { get } from 'lodash'
 
-import { DropdownCell } from 'LibIndex'
+import { DropdownCell } from '../../index'
 
 
 // See: https://github.com/bvaughn/react-virtualized/pull/748

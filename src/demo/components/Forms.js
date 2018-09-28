@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Grid } from 'semantic-ui-react'
 
-import * as GenomiX from 'LibIndex'
+import * as GenomiX from 'lib'
 
 
 class Dropdown extends React.PureComponent {

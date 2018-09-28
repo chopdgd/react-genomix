@@ -1,8 +1,8 @@
 import React from 'react'
 import { get } from 'lodash'
 
-import { Button } from 'LibIndex'
-import * as constants from 'LibSrc/constants/icons'
+import { Button } from '../../index'
+import * as constants from '../../constants/icons'
 
 
 export const AcceptButton = ({ ...props }) => (

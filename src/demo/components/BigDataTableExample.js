@@ -16,7 +16,7 @@ import {
   TextColumn,
   TranscriptColumn,
   TurnAroundTimeProgressColumn,
-} from 'LibIndex'
+} from 'lib'
 
 
 const list = Array.from(new Array(30), (x,i) => ({

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { GeneResourcesPopup } from 'LibIndex'
+import { GeneResourcesPopup } from '../../index'
 
 
 describe('Test Gene Resources Popup', () => {

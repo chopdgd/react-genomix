@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Grid } from 'semantic-ui-react'
 
-import * as GenomiX from 'LibIndex'
+import * as GenomiX from 'lib'
 
 
 const items = [

@@ -1,6 +1,6 @@
 import { padStart, startsWith, toLower, trimStart } from 'lodash'
 
-import * as urls from 'LibSrc/constants/genomics-urls'
+import * as urls from '../constants/genomics-urls'
 
 
 // NCBI APIs

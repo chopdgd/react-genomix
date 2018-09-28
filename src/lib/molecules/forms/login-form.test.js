@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { LoginForm } from 'LibIndex'
+import { LoginForm } from '../../index'
 
 
 describe('LoginForm Tests',() => {
@@ -19,10 +19,12 @@ describe('LoginForm Tests',() => {
 
   it('should throw error if username and password are empty',() => {
     const wrapper = shallow(element)
+    const instance = wrapper.instance()
+    const setStateSpy = jest.spyOn(instance, 'setState')
+
     expect(wrapper.state().error).not.toBeDefined()
-    wrapper.find('Form').simulate('submit', event)
-    expect(wrapper.state().error).toBeDefined()
-    expect(wrapper.state().error).toEqual('Username and Password are required!')
+    instance.handleSubmit(event)
+    expect(setStateSpy).toHaveBeenCalledWith({error: 'Username and Password are required!'})
   })
 
   it('should pass username and password to handleLogin function',() => {
@@ -33,15 +35,6 @@ describe('LoginForm Tests',() => {
     expect(handleLogin.mock.calls).toEqual([[{username: 'a', password: 'b'}]])
     expect(handleLogin).toHaveBeenCalledTimes(1)
     expect(handleLogin).toHaveBeenCalledWith({username: 'a', password: 'b'})
-  })
-
-  it('should hide error onChange',() => {
-    const wrapper = shallow(element)
-    expect(wrapper.state().error).toBeUndefined()
-    wrapper.find('Form').simulate('submit', event)
-    expect(wrapper.state().error).toBeDefined()
-    wrapper.find('FormInput').find('#username').simulate('change', event, { name: 'username', value: 'a'})
-    expect(wrapper.state().error).toBeUndefined()
   })
 
   it('handleChange should update state',() => {
