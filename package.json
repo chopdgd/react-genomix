@@ -15,7 +15,7 @@
     "build-css": "cd src/stylesheets && node-sass-chokidar main.scss -o ./ --output-style compressed && mv main.css ../../dist/react-genomix.min.css"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
+    "@babel/cli": "7.1.2",
     "babel-preset-minify": "0.5.0",
     "enzyme": "3.6.0",
     "enzyme-adapter-react-16": "1.5.0",
