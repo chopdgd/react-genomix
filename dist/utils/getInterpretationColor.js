@@ -1,1 +1,3 @@
-var getInterpretationColor=function(a){switch(!0){case a.includes("pathogenic"):return"red";case a.includes("benign"):return"green";default:return"black";}};export default getInterpretationColor;
+import{toLower}from"lodash";var getInterpretationColor=function(a){switch(a=toLower(a),!0){// Constitutional/Germline Classifications
+case a.includes("pathogenic"):return"red";case["uncertain significance","vus"].includes(a):return"blue";case a.includes("benign"):return"green";// Somatic Classifications
+case["tier 1 - a","tier 1 - b","tier 2"].includes(a):return"red";case a.includes("tier 3"):return"blue";case a.includes("tier 4"):return"green";default:return"black";}};export default getInterpretationColor;
