@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.7.1](https://github.com/chopdgd/react-genomix/tree/v0.7.1) (2018-10-08)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.0...v0.7.1)
+
+- Updated to react-scripts 2.0.4 - was causing some import issues in apps with higher versions of react-scripts
+- Updated 3rd party libs
+
 ## [v0.7.0](https://github.com/chopdgd/react-genomix/tree/v0.7.0) (2018-09-28)
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.6.0...v0.7.0)
 
