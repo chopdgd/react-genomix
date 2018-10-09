@@ -1,1 +1,0 @@
-import PropTypes from"prop-types";export var as=function(){return PropTypes.oneOfType([PropTypes.string,PropTypes.func]).apply(void 0,arguments)};

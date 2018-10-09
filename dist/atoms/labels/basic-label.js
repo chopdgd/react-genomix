@@ -1,1 +1,0 @@
-import React from"react";import{Label}from"semantic-ui-react";var BasicLabel=function(a){return React.createElement(Label,Object.assign({basic:!0,className:"genomix"},a))};export default BasicLabel;

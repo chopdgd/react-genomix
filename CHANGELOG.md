@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.7.3](https://github.com/chopdgd/react-genomix/tree/v0.7.3) (2018-10-09)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.2...v0.7.3)
+
+- Fixed issue with dependencies not being installed
+- Added dist to package.json to ensure css is installed from yarn/npm
+
 ## [v0.7.2](https://github.com/chopdgd/react-genomix/tree/v0.7.2) (2018-10-09)
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.1...v0.7.2)
 

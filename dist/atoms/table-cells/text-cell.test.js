@@ -1,1 +1,0 @@
-import React from"react";import ReactDOM from"react-dom";import{TextCell}from"../../index";describe("Test TextCell",function(){it("renders without crashing",function(){var a=document.createElement("div");ReactDOM.render(React.createElement(TextCell,{rowIndex:1,content:"hi"}),a)})});

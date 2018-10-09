@@ -1,3 +1,0 @@
-var getMolecularConsequenceColor=function(a){// NOTE: Using Ensembl VEP rankings
-// See: https://useast.ensembl.org/info/genome/variation/predicted_data.html
-switch(!0){case a.includes("frameshift"):return"red";case a.includes("stop")||a.includes("start"):return"red";case a.includes("missense"):return"orange";case a.includes("splice"):return"blue";case a.includes("insert")||a.includes("deletion"):return"black";default:return"grey";}};export default getMolecularConsequenceColor;
