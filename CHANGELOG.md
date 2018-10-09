@@ -1,5 +1,10 @@
 # Change Log
 
+## [v0.7.2](https://github.com/chopdgd/react-genomix/tree/v0.7.2) (2018-10-09)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.1...v0.7.2)
+
+- Moved from create-react-app to nwb to manage the component library
+
 ## [v0.7.1](https://github.com/chopdgd/react-genomix/tree/v0.7.1) (2018-10-08)
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.0...v0.7.1)
 
