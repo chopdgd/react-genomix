@@ -1,4 +1,0 @@
-import React from"react";import getUnhandledProps from"./getUnhandledProps";import{shallow}from"enzyme";// We spread the unhandled props onto the rendered result.
-// Then, we can test the props of the rendered result.
-// This is the intended usage of the util.
-function TestComponent(a){return React.createElement("div",getUnhandledProps(TestComponent,a))}describe("getUnhandledProps",function(){it("removes the proprietary childKey prop",function(){var a=shallow(React.createElement(TestComponent,{childKey:1}));expect(a.props()).toEqual({})}),it("leaves props that are not defined in handledProps",function(){var a=shallow(React.createElement(TestComponent,{"data-leave-this":"it is unhandled"}));expect(a.props()).toEqual({"data-leave-this":"it is unhandled"})}),it("removes props defined in handledProps",function(){TestComponent.handledProps=["data-remove-me"];var a=shallow(React.createElement(TestComponent,{"data-remove-me":1}));expect(a.props()).toEqual({})})});

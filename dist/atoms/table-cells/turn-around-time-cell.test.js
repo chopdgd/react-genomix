@@ -1,1 +1,0 @@
-import React from"react";import ReactDOM from"react-dom";import{TurnAroundTimeProgressCell}from"../../index";describe("Test TurnAroundTimeProgressCell",function(){it("renders without crashing",function(){var a=document.createElement("div");ReactDOM.render(React.createElement(TurnAroundTimeProgressCell,{target:40}),a)})});

@@ -1,1 +1,0 @@
-import React from"react";import{Dropdown,Icon}from"semantic-ui-react";var DropdownMenu=function(a){var b=a.children;return React.createElement(Dropdown,{trigger:React.createElement(Icon,{name:"sidebar",size:"large"}),icon:null},React.createElement(Dropdown.Menu,{className:"NavbarDropdownMenu"},b))};DropdownMenu.defaultProps={};export default DropdownMenu;

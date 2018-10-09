@@ -1,9 +1,0 @@
-// NCBI APIs
-export var NCBI_EUTILS_ENDPOINT="https://eutils.ncbi.nlm.nih.gov/entrez/eutils";export var NCBI_EFETCH_ENDPOINT="".concat("https://eutils.ncbi.nlm.nih.gov/entrez/eutils","/efetch.fcgi");export var NCBI_ESUMMARY_ENDPOINT="".concat("https://eutils.ncbi.nlm.nih.gov/entrez/eutils","/esummary.fcgi");export var NCBI_ESEARCH_ENDPOINT="".concat("https://eutils.ncbi.nlm.nih.gov/entrez/eutils","/esearch.fcgi");// NCBI URLs
-export var NCBI_URL="https://www.ncbi.nlm.nih.gov";export var PUBMED_URL="".concat("https://www.ncbi.nlm.nih.gov","/pubmed");export var NCBI_VARIATION_URL="".concat("https://www.ncbi.nlm.nih.gov","/variation/view");export var CLINVAR_URL="https://preview.ncbi.nlm.nih.gov/clinvar";// Genomic Resources
-export var COSMIC_URL="http://cancer.sanger.ac.uk/cosmic";export var ENSEMBL_GRCH37_URL="http://grch37.ensembl.org";export var ENSEMBL_GRCH38_URL="http://grch38.ensembl.org";export var EXAC_URL="http://exac.broadinstitute.org";export var GNOMAD_URL="http://gnomad.broadinstitute.org";export var UCSC_URL="https://genome.ucsc.edu";export var DGV_URL="http://dgv.tcag.ca";// Gene Resources
-export var GENE_CARDS_URL="http://www.genecards.org";export var GHR_URL="https://ghr.nlm.nih.gov";// Genetics Home Reference
-export var HGNC_URL="https://www.genenames.org";export var GENEREVIEWS_URL="https://www.ncbi.nlm.nih.gov/books/NBK1116";export var GTEX_URL="https://www.gtexportal.org";// Clinical Resources
-export var DECIPHER_URL="https://decipher.sanger.ac.uk";export var HGMD_URL="https://portal.biobase-international.com";export var OMIM_URL="https://www.omim.org";// Phenotype Resources
-export var HPO_URL="http://compbio.charite.de";export var ORPHANET_URL="http://www.orpha.net";// Internal Resources
-export var ALAMUT_URL="http://localhost:10000";
