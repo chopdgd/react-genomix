@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Grid } from 'semantic-ui-react'
 
-import * as GenomiX from 'lib'
+import * as GenomiX from '../../../src'
 
 
 class Dropdown extends React.PureComponent {
@@ -25,7 +25,7 @@ class Dropdown extends React.PureComponent {
 }
 
 
-class Forms extends React.PureComponent {
+class Modals extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -36,6 +36,10 @@ class Forms extends React.PureComponent {
     }
   }
 
+  handleChange = (e, { name, value }) => {
+    console.log(value)
+  }
+
   handleSubmit = data => {
     console.log(data)
   }
@@ -44,10 +48,13 @@ class Forms extends React.PureComponent {
     return (
       <Grid padded centered>
         <Grid.Column width={6}>
-          <GenomiX.SaveForm
-            id="example-form"
+          <GenomiX.FormModal
+            className="example-modal"
+            formId="example"
+            trigger={<GenomiX.Button icon="tasks" content="Open"/>}
+            title="Example Modal"
+            handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
-            saveButton={<GenomiX.Button icon="save" content="Save"/>}
             defaultValues={this.state}
           >
             <Form.Input
@@ -69,12 +76,11 @@ class Forms extends React.PureComponent {
               control={Dropdown}
               defaultValue="3"
             />
-          </GenomiX.SaveForm>
+          </GenomiX.FormModal>
         </Grid.Column>
       </Grid>
     )
   }
 }
 
-
-export default Forms
+export default Modals

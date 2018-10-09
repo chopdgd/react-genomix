@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Grid } from 'semantic-ui-react'
 import { map } from 'lodash'
 import moment from 'moment'
-import * as GenomiX from 'lib'
+import * as GenomiX from '../../../src'
 
 const data = [
   {

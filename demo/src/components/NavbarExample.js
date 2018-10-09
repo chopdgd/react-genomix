@@ -1,7 +1,7 @@
 import React from 'react'
 import { MenuItem } from 'semantic-ui-react'
 
-import { Navbar, UserMenu } from 'lib'
+import { Navbar, UserMenu } from '../../../src'
 
 
 const userMenu = (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
 
-import { LoginForm } from 'lib'
+import { LoginForm } from '../../../src'
 
 class LoginFormExample extends React.Component {
   constructor(props) {
