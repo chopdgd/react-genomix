@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
+import {render} from 'react-dom'
 import { Divider, Tab, Sidebar, Menu } from 'semantic-ui-react'
-import './index.scss'
+
+import '../../dist/react-genomix.min.css'
+import './index.css'
 
 // Demo Components
 import Example from './components/Example'
@@ -73,14 +76,9 @@ const panes = [
 ]
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
+class Demo extends Component {
+  state = {visible: true}
 
-    this.state = {
-      visible: true,
-    }
-  }
   toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
   render() {
@@ -124,4 +122,5 @@ class App extends React.Component {
   }
 }
 
-export default App
+
+render(<Demo/>, document.querySelector('#demo'))

@@ -1,5 +1,6 @@
 import React from 'react'
-import './SecondExample.scss'
+import './SecondExample.css'
+
 
 const SecondExample = () => (
   <div className="SecondExample">
@@ -24,5 +25,6 @@ const SecondExample = () => (
     </a>
   </div>
 )
+
 
 export default SecondExample

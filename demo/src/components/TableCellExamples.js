@@ -17,7 +17,7 @@ import {
   TextCell,
   TranscriptCell,
   TurnAroundTimeProgressCell,
-} from 'lib'
+} from '../../../src'
 
 
 class ExampleTableCells extends React.Component {
