@@ -29,7 +29,7 @@
     "react-csv": "1.0.15-RC2",
     "react-virtualized": "9.21.0",
     "semantic-ui-css": "2.4.0",
-    "semantic-ui-react": "0.82.5"
+    "semantic-ui-react": "0.83.0"
   },
   "peerDependencies": {
     "react": "16.x"
