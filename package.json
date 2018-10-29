@@ -1,6 +1,6 @@
 {
   "name": "react-genomix",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "GenomiX React components",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -26,7 +26,9 @@
     "fixed-data-table-2": "1.0.0-beta.5",
     "immutability-helper": "2.8.1",
     "moment": "2.22.2",
+    "react": "16.6.0",
     "react-csv": "1.0.18",
+    "react-dom": "16.6.0",
     "react-virtualized": "9.21.0",
     "semantic-ui-css": "2.4.1",
     "semantic-ui-react": "0.83.0"
@@ -53,11 +55,7 @@
     "jest-resolve": "23.6.0",
     "node-sass-chokidar": "1.3.4",
     "nwb": "0.23.x",
-    "react": "^16.5.2",
-    "react-app-polyfill": "^0.1.3",
-    "react-dom": "^16.5.2",
-    "semantic-ui-css": "2.4.0",
-    "semantic-ui-react": "0.82.5"
+    "react-app-polyfill": "^0.1.3"
   },
   "jest": {
     "collectCoverageFrom": [
