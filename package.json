@@ -24,7 +24,7 @@
   "dependencies": {
     "faker": "4.1.0",
     "fixed-data-table-2": "1.0.0-beta.5",
-    "immutability-helper": "2.8.1",
+    "immutability-helper": "2.9.0",
     "moment": "2.22.2",
     "react-csv": "1.0.18",
     "react-virtualized": "9.21.0",
