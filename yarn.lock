@@ -4722,10 +4722,10 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-fixed-data-table-2@1.0.0-beta.5:
-  version "1.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-1.0.0-beta.5.tgz#3a049d7160089d3f252c33d74c811e71ac6321c7"
-  integrity sha512-x7M9RUfywLq5Am7XC/1mQh4mu++VELDQ4TT3LJJTYfBSSoU5IuazNVNu5qBm5m/5sQa4D2JQi3ZZ8Tuvr/42+w==
+fixed-data-table-2@1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-1.0.0-beta.6.tgz#781353753c447499df3addc5728b86877c20ba01"
+  integrity sha512-+xt8TYLE1uX/j/RgzSQ1wvdxOEpfsB39ZaTFGzOyPezPbx2MW/uhMWxqG0gnZqXF5e/twKN4HKe68toyivi9jg==
   dependencies:
     lodash "^4.17.4"
     prop-types "^15.5.8"
