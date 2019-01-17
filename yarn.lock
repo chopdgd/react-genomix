@@ -4722,10 +4722,10 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-fixed-data-table-2@1.0.0-beta.5:
-  version "1.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-1.0.0-beta.5.tgz#3a049d7160089d3f252c33d74c811e71ac6321c7"
-  integrity sha512-x7M9RUfywLq5Am7XC/1mQh4mu++VELDQ4TT3LJJTYfBSSoU5IuazNVNu5qBm5m/5sQa4D2JQi3ZZ8Tuvr/42+w==
+fixed-data-table-2@1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-1.0.0-beta.6.tgz#781353753c447499df3addc5728b86877c20ba01"
+  integrity sha512-+xt8TYLE1uX/j/RgzSQ1wvdxOEpfsB39ZaTFGzOyPezPbx2MW/uhMWxqG0gnZqXF5e/twKN4HKe68toyivi9jg==
   dependencies:
     lodash "^4.17.4"
     prop-types "^15.5.8"
@@ -8828,10 +8828,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app-polyfill@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-0.1.3.tgz#e57bb50f3751dac0e6b3ac27673812c68c679a1d"
-  integrity sha512-Fl5Pic4F15G05qX7RmUqPZr1MtyFKJKSlRwMhel4kvDLrk/KcQ9QbpvyMTzv/0NN5957XFQ7r1BNHWi7qN59Pw==
+react-app-polyfill@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-0.2.0.tgz#60eaf037223b2f3a5671f45e5ac3b418f0b48ad2"
+  integrity sha512-uBfocjRsBNqhTaEywUZ2buzhHbor2jBbnhZY8VUZ7VZ3PXucIPZrPDAAmbclELhvl+x08PbynAGQfMYcBmqZ2w==
   dependencies:
     core-js "2.5.7"
     object-assign "4.1.1"
