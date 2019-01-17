@@ -43,7 +43,12 @@ const items = [
   {
     key: 9,
     header: 'ExportButton',
-    description: <GenomiX.ExportButton content={<GenomiX.Button content="Export" icon="download" />} />,
+    description: (
+      <GenomiX.ExportButton
+        data={[{hi: 'Mike'}]}
+        content={<GenomiX.Button content="Export" icon="download" />}
+      />
+    ),
   },
 
   {
@@ -90,12 +95,12 @@ const items = [
   },
   {
     key: 18,
-    header: 'ExportButton',
+    header: 'ExportButton with onExport()',
     description: (
       <GenomiX.ExportButton
         content={<GenomiX.Button content="Export" icon="download" inverted />}
         data={[{ hi: 'Mike' }]}
-        onExport={(data) => data}
+        onExport={(data) => data.concat([{ hi: 'Mori'}])}
       />
     ),
     meta: 'inverted',
