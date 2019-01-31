@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "faker": "4.1.0",
-    "fixed-data-table-2": "1.0.0-beta.10",
+    "fixed-data-table-2": "0.8.16",
     "immutability-helper": "2.9.0",
     "moment": "2.22.2",
     "react-csv": "1.0.19",
