@@ -1,5 +1,10 @@
 # Change Log
 
+## [v0.7.6](https://github.com/chopdgd/react-genomix/tree/v0.7.7) (2019-01-31)
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.6...v0.7.7)
+
+- Fixed issue with fixed-data-table-2 version.  Was using unstable pre-release.  Changed back to latest stable.
+
 ## [v0.7.6](https://github.com/chopdgd/react-genomix/tree/v0.7.6) (2019-01-17)
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.5...v0.7.6)
 
