@@ -43,7 +43,7 @@
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
     "enzyme": "3.8.0",
-    "enzyme-adapter-react-16": "1.7.1",
+    "enzyme-adapter-react-16": "1.9.0",
     "eslint": "^4.1.1",
     "eslint-config-react-app": "^3.0.3",
     "eslint-plugin-flowtype": "^3.1.4",
