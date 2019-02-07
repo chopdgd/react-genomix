@@ -9260,10 +9260,10 @@ react-app-polyfill@^0.2.0:
     raf "3.4.0"
     whatwg-fetch "3.0.0"
 
-react-csv@1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/react-csv/-/react-csv-1.0.19.tgz#3230dba7877cabaae454425c43e7e2ad90990482"
-  integrity sha512-97TiBtFW0jctu5dmOsPK9BJaWtwF79vaamF3Ld8Iza1lk9s0lMi47FSfMzX9/tWcNhOmmxrXXy1nJLXPEGqh5g==
+react-csv@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-csv/-/react-csv-1.1.1.tgz#718dadd2607a1795bfc8dbd32ca282a043739634"
+  integrity sha512-eQSrkEfzPN+1IeXT58kJaDNmpFr3RhdjfE09jTrw+jdTEp0g0Ig9NOI+TpvMBbCukE1HQhOf4dyrLDRFKgZzbA==
 
 react-deep-force-update@^1.0.0:
   version "1.1.2"
