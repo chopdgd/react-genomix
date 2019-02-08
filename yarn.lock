@@ -4941,10 +4941,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-fixed-data-table-2@0.8.16:
-  version "0.8.16"
-  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-0.8.16.tgz#da9239626e875faf8fb185dc48fc5ef5fade4865"
-  integrity sha512-GbHj+nyAUEOd5qudXBbbUtJPgQDgvykqSDaJSMQ4boC/z1ZA2d/XUj0I+xK2ha4j64kbjTjXNzZEGtFMb5wO/g==
+fixed-data-table-2@0.8.17:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-0.8.17.tgz#dd387fb9d56c70d9232d03754e78b498c7e6a1b5"
+  integrity sha512-tzGiISvq5gc1Yqw+6RbK1qZdMQY0L5YkQd0XgS3QdhxSxhCztEA+edyB/QkrvtzXXMhu5uF7A93TnSibaoVa2g==
   dependencies:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
