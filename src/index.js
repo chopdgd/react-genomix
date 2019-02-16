@@ -5,11 +5,11 @@ export { utils }
 
 /* Atoms */
 // Link
-export { default as Link } from './atoms/links/link'
+export { default as Link } from './links/link'
 
 // Buttons
-export { default as Button } from './atoms/buttons/Button'
-export { default as ExportButton } from './atoms/buttons/ExportButton'
+export { default as Button } from './buttons/Button'
+export { default as ExportButton } from './buttons/ExportButton'
 export {
   AcceptButton,
   AddButton,
@@ -17,10 +17,10 @@ export {
   DownloadButton,
   SaveButton,
   SearchButton,
-} from './atoms/buttons/GenomiXButtons'
+} from './buttons/GenomiXButtons'
 
 // Dropdowns
-export { default as AutoCompleteDropDown } from './atoms/dropdowns/autocomplete-dropdown'
+export { default as AutoCompleteDropDown } from './dropdowns/autocomplete-dropdown'
 
 // Icons
 export {
@@ -38,81 +38,81 @@ export {
   SearchIcon,
   UploadIcon,
   WarningIcon,
-} from './atoms/icons/GenomiXIcons'
-export { default as Icon } from './atoms/icons/Icon'
+} from './icons/GenomiXIcons'
+export { default as Icon } from './icons/Icon'
 
 // Labels
-export { default as BasicLabel } from './atoms/labels/basic-label'
+export { default as BasicLabel } from './labels/basic-label'
 
 // Lists
-export { default as GeneLinksList } from './atoms/lists/genes-links-list'
+export { default as GeneLinksList } from './lists/genes-links-list'
 
 // Media
-export { default as Avatar } from './atoms/media/avatar'
+export { default as Avatar } from './media/avatar'
 
 // Popups
-export { default as GeneResourcesPopup } from './atoms/popups/genes-resources-popup'
+export { default as GeneResourcesPopup } from './popups/genes-resources-popup'
 
 // Prgress bars
-export { default as TurnAroundTimeProgress } from './atoms/progress-bars/turn-around-time-progress'
+export { default as TurnAroundTimeProgress } from './progress-bars/turn-around-time-progress'
 
 // Table Cells
-export { default as CheckboxCell } from './atoms/table-cells/checkbox-cell'
-export { default as DateCell } from './atoms/table-cells/date-cell'
-export { default as DropdownCell } from './atoms/table-cells/dropdown-cell'
-export { default as GeneCell } from './atoms/table-cells/gene-cell'
-export { default as InterpretationCell } from './atoms/table-cells/interpretation-cell'
-export { default as LinkCell } from './atoms/table-cells/link-cell'
-export { default as MolecularConsequenceCell } from './atoms/table-cells/molecular-consequence-cell'
-export { default as PublicEvidenceCell } from './atoms/table-cells/public-resources-evidence-cell'
-export { default as SexCell } from './atoms/table-cells/sex-cell'
-export { default as StatusCell } from './atoms/table-cells/status-cell'
-export { default as TextCell } from './atoms/table-cells/text-cell'
-export { default as TranscriptCell } from './atoms/table-cells/transcript-cell'
-export { default as TurnAroundTimeProgressCell } from './atoms/table-cells/turn-around-time-cell'
+export { default as CheckboxCell } from './table-cells/checkbox-cell'
+export { default as DateCell } from './table-cells/date-cell'
+export { default as DropdownCell } from './table-cells/dropdown-cell'
+export { default as GeneCell } from './table-cells/gene-cell'
+export { default as InterpretationCell } from './table-cells/interpretation-cell'
+export { default as LinkCell } from './table-cells/link-cell'
+export { default as MolecularConsequenceCell } from './table-cells/molecular-consequence-cell'
+export { default as PublicEvidenceCell } from './table-cells/public-resources-evidence-cell'
+export { default as SexCell } from './table-cells/sex-cell'
+export { default as StatusCell } from './table-cells/status-cell'
+export { default as TextCell } from './table-cells/text-cell'
+export { default as TranscriptCell } from './table-cells/transcript-cell'
+export { default as TurnAroundTimeProgressCell } from './table-cells/turn-around-time-cell'
 
 // Fixed Table Cells
-export { default as CheckboxFixedCell } from './atoms/fixed-data-table-cells/checkbox-fixed-cell'
-export { default as DateFixedCell } from './atoms/fixed-data-table-cells/date-fixed-cell'
-export { default as GeneFixedCell } from './atoms/fixed-data-table-cells/gene-fixed-cell'
-export { default as InterpretationFixedCell } from './atoms/fixed-data-table-cells/interpretation-fixed-cell'
-export { default as LinkFixedCell } from './atoms/fixed-data-table-cells/link-fixed-cell'
-export { default as MolecularConsequenceFixedCell } from './atoms/fixed-data-table-cells/molecular-consequence-fixed-cell'
-export { default as PublicEvidenceFixedCell } from './atoms/fixed-data-table-cells/public-resources-evidence-fixed-cell'
-export { default as SexFixedCell } from './atoms/fixed-data-table-cells/sex-fixed-cell'
-export { default as StatusFixedCell } from './atoms/fixed-data-table-cells/status-fixed-cell'
-export { default as TextFixedCell } from './atoms/fixed-data-table-cells/text-fixed-cell'
-export { default as TranscriptFixedCell } from './atoms/fixed-data-table-cells/transcript-fixed-cell'
-export { default as TurnAroundTimeProgressFixedCell } from './atoms/fixed-data-table-cells/turn-around-time-fixed-cell'
+export { default as CheckboxFixedCell } from './fixed-data-table-cells/checkbox-fixed-cell'
+export { default as DateFixedCell } from './fixed-data-table-cells/date-fixed-cell'
+export { default as GeneFixedCell } from './fixed-data-table-cells/gene-fixed-cell'
+export { default as InterpretationFixedCell } from './fixed-data-table-cells/interpretation-fixed-cell'
+export { default as LinkFixedCell } from './fixed-data-table-cells/link-fixed-cell'
+export { default as MolecularConsequenceFixedCell } from './fixed-data-table-cells/molecular-consequence-fixed-cell'
+export { default as PublicEvidenceFixedCell } from './fixed-data-table-cells/public-resources-evidence-fixed-cell'
+export { default as SexFixedCell } from './fixed-data-table-cells/sex-fixed-cell'
+export { default as StatusFixedCell } from './fixed-data-table-cells/status-fixed-cell'
+export { default as TextFixedCell } from './fixed-data-table-cells/text-fixed-cell'
+export { default as TranscriptFixedCell } from './fixed-data-table-cells/transcript-fixed-cell'
+export { default as TurnAroundTimeProgressFixedCell } from './fixed-data-table-cells/turn-around-time-fixed-cell'
 
 /* Molecules */
 // Forms
-export { default as SaveForm } from './molecules/forms/save-form'
-export { default as LoginForm } from './molecules/forms/login-form'
+export { default as SaveForm } from './forms/save-form'
+export { default as LoginForm } from './forms/login-form'
 
 // Modals
-export { default as FormModal } from './molecules/modals/form-modal'
+export { default as FormModal } from './modals/form-modal'
 
 // Menus
-export { default as DropdownMenu } from './molecules/menus/dropdown-menu'
-export { default as Navbar } from './molecules/menus/navbar'
-export { default as UserMenu } from './molecules/menus/user-menu'
+export { default as DropdownMenu } from './menus/dropdown-menu'
+export { default as Navbar } from './menus/navbar'
+export { default as UserMenu } from './menus/user-menu'
 
 // Table Columns
-export { default as CheckboxColumn } from './molecules/table-columns/checkbox-column'
-export { default as DateColumn } from './molecules/table-columns/date-column'
-export { default as DropdownColumn } from './molecules/table-columns/dropdown-column'
-export { default as GeneColumn } from './molecules/table-columns/gene-column'
-export { default as InterpretationColumn } from './molecules/table-columns/interpretation-column'
-export { default as LinkColumn } from './molecules/table-columns/link-column'
-export { default as MolecularConsequenceColumn } from './molecules/table-columns/molecular-consequence-column'
-export { default as PublicEvidenceColumn } from './molecules/table-columns/public-resources-evidence-column'
-export { default as SexColumn } from './molecules/table-columns/sex-column'
-export { default as StatusColumn } from './molecules/table-columns/status-column'
-export { default as TextColumn } from './molecules/table-columns/text-column'
-export { default as TranscriptColumn } from './molecules/table-columns/transcript-column'
-export { default as TurnAroundTimeProgressColumn } from './molecules/table-columns/turn-around-time-column'
+export { default as CheckboxColumn } from './table-columns/checkbox-column'
+export { default as DateColumn } from './table-columns/date-column'
+export { default as DropdownColumn } from './table-columns/dropdown-column'
+export { default as GeneColumn } from './table-columns/gene-column'
+export { default as InterpretationColumn } from './table-columns/interpretation-column'
+export { default as LinkColumn } from './table-columns/link-column'
+export { default as MolecularConsequenceColumn } from './table-columns/molecular-consequence-column'
+export { default as PublicEvidenceColumn } from './table-columns/public-resources-evidence-column'
+export { default as SexColumn } from './table-columns/sex-column'
+export { default as StatusColumn } from './table-columns/status-column'
+export { default as TextColumn } from './table-columns/text-column'
+export { default as TranscriptColumn } from './table-columns/transcript-column'
+export { default as TurnAroundTimeProgressColumn } from './table-columns/turn-around-time-column'
 
 // Tables
-export { default as BigDataTable } from './molecules/tables/big-data-table'
-export { default as FixedDataTable } from './molecules/tables/fixed-data-table'
+export { default as BigDataTable } from './tables/big-data-table'
+export { default as FixedDataTable } from './tables/fixed-data-table'
