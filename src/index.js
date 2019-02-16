@@ -116,3 +116,7 @@ export { default as TurnAroundTimeProgressColumn } from './table-columns/turn-ar
 // Tables
 export { default as BigDataTable } from './tables/big-data-table'
 export { default as FixedDataTable } from './tables/fixed-data-table'
+
+
+// Custom hooks
+export { default as useLocalStorage } from './hooks/use-local-storage'
