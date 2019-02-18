@@ -5,19 +5,12 @@ import cx from 'classnames'
 
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const Icon = props => {
   const iconProps = getUnhandledProps(Icon, props)
   const { className, color, icon } = props
 
-  return (
-    <SemanticIcon
-      { ...iconProps }
-      className={cx(className, 'genomix', color, icon)}
-    />
-  )
+  return <SemanticIcon {...iconProps} className={cx(className, 'genomix', color, icon)} />
 }
-
 
 Icon.propTypes = {
   icon: PropTypes.string,
@@ -28,6 +21,5 @@ Icon.propTypes = {
 Icon.defaultProps = {}
 
 Icon.handledProps = ['className', 'icon', 'color']
-
 
 export default Icon

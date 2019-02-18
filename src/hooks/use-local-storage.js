@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 
-
 const useLocalStorage = (key, defaultValue = {}) => {
   if (window.localStorage.getItem(key) === null) {
     window.localStorage.setItem(key, JSON.stringify(defaultValue))
@@ -28,6 +27,5 @@ const useLocalStorage = (key, defaultValue = {}) => {
 
   return [state, setState]
 }
-
 
 export default useLocalStorage

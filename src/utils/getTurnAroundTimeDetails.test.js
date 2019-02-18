@@ -2,7 +2,6 @@ import moment from 'moment'
 
 import { utils } from '../index'
 
-
 describe('getTurnAroundTimeDetails', () => {
   it('given a target of 5 days and a 1 day TAT, it should be green, display -4, and value 5', () => {
     const observed = utils.getTurnAroundTimeDetails(5, '1987-12-18', '1987-12-19')
@@ -45,5 +44,4 @@ describe('getTurnAroundTimeDetails', () => {
     const expected = { label: -2, color: 'yellow', value: 3 }
     expect(observed).toEqual(expected)
   })
-
 })

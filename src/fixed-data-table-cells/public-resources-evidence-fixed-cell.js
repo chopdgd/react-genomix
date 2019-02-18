@@ -6,7 +6,6 @@ import { get } from 'lodash'
 
 import { utils } from '../index'
 
-
 class PublicEvidenceFixedCell extends React.PureComponent {
   renderRating = (database, value, url) => {
     let color = 'grey'
@@ -26,20 +25,22 @@ class PublicEvidenceFixedCell extends React.PureComponent {
       )
     }
 
-    return (
-      <Popup
-        trigger={<Icon color={color} name="star" />}
-        content={content}
-        hoverable
-      />
-    )
+    return <Popup trigger={<Icon color={color} name="star" />} content={content} hoverable />
   }
 
   render() {
     const {
-      data, rowIndex, columnKey,
-      chromosomeKey, positionKey, referenceKey, alternateKey,
-      cosmicKey, hgmdKey, clinvarKey, gnomadKey,
+      data,
+      rowIndex,
+      columnKey,
+      chromosomeKey,
+      positionKey,
+      referenceKey,
+      alternateKey,
+      cosmicKey,
+      hgmdKey,
+      clinvarKey,
+      gnomadKey,
       ...rest
     } = this.props
     const rowData = data[rowIndex]
@@ -83,7 +84,6 @@ class PublicEvidenceFixedCell extends React.PureComponent {
     )
   }
 }
-
 
 PublicEvidenceFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),

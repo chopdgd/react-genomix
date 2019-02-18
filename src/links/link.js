@@ -5,7 +5,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const Link = props => {
   const ElementType = getElementType(Link, props)
   const rest = getUnhandledProps(Link, props)
@@ -24,7 +23,6 @@ const Link = props => {
   )
 }
 
-
 Link.propTypes = {
   as: customPropTypes.as,
   content: PropTypes.any,
@@ -35,6 +33,5 @@ Link.defaultProps = {
 }
 
 Link.handledProps = ['as', 'content']
-
 
 export default Link

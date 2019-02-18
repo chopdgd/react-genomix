@@ -14,13 +14,17 @@ Core library for Nexus projects using ReactJS
 
 Clone repo
 
-````
+```
 git clone https://github.com/chopdgd/react-genomix.git
-````
+```
 
 Install dependencies
 
 `npm install` or `yarn install`
+
+Setup pre-commit hook for prettier
+
+`make setup-githooks`
 
 Start development server
 
@@ -38,7 +42,7 @@ Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 
 ### Library files
 
-All library files are located inside `src/lib`  
+All library files are located inside `src/lib`
 
 ### Demo app
 

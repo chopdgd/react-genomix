@@ -3,6 +3,8 @@ Dear Maintainers,
 Please accept this PR that addresses the following issues:
 + *(replace with a link to GitHub issue)*
 
+Running Prettier is required!  Once you finish making your changes, please run `yarn prettier <path to files>` before submitting your pull request!
+
 Testing Done:
 + Unittests are required, if you do not include new unit tests please specify why you think this is not required. We like to improve our coverage so a non existing test is even a better reason to include one.
 

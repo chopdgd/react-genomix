@@ -16,8 +16,8 @@ describe('getUnhandledProps', () => {
   })
 
   it('leaves props that are not defined in handledProps', () => {
-    const wrapper = shallow(<TestComponent data-leave-this='it is unhandled' />)
-    expect(wrapper.props()).toEqual({"data-leave-this": "it is unhandled"})
+    const wrapper = shallow(<TestComponent data-leave-this="it is unhandled" />)
+    expect(wrapper.props()).toEqual({ 'data-leave-this': 'it is unhandled' })
   })
 
   it('removes props defined in handledProps', () => {

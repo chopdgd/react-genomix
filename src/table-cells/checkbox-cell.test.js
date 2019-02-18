@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { CheckboxCell } from '../index'
 
-
 describe('Test CheckboxCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

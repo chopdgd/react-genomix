@@ -5,7 +5,6 @@ import { AutoSizer, Table } from 'react-virtualized'
 import { concat, differenceWith, isEqual } from 'lodash'
 import cx from 'classnames'
 
-
 class BigDataTable extends React.Component {
   static getDerivedStateFromProps(props, state) {
     const { data, loading } = props
@@ -29,17 +28,15 @@ class BigDataTable extends React.Component {
     }
   }
 
-  noRowsRenderer = () => (
-    <h1 className="no rows">No rows!</h1>
-  )
+  noRowsRenderer = () => <h1 className="no rows">No rows!</h1>
 
   rowClassName = ({ index }) => {
     const { headerTextAlign, rowTextAlign } = this.props
 
     if (index < 0) {
-      return cx("header row", headerTextAlign)
+      return cx('header row', headerTextAlign)
     } else {
-      return index % 2 === 0 ? cx("even row", rowTextAlign)  : cx("odd row", rowTextAlign)
+      return index % 2 === 0 ? cx('even row', rowTextAlign) : cx('odd row', rowTextAlign)
     }
   }
 
@@ -76,12 +73,8 @@ class BigDataTable extends React.Component {
   }
 }
 
-
 BigDataTable.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element)
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   loading: PropTypes.bool,
   height: PropTypes.number.isRequired,
@@ -90,7 +83,6 @@ BigDataTable.propTypes = {
   rowHeight: PropTypes.number.isRequired,
   rowTextAlign: PropTypes.oneOf(['left', 'center', 'right']),
   scrollToIndex: PropTypes.number,
-
 }
 
 BigDataTable.defaultProps = {
@@ -103,6 +95,5 @@ BigDataTable.defaultProps = {
   rowTextAlign: 'left',
   scrollToIndex: -1,
 }
-
 
 export default BigDataTable

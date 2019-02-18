@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { AutoCompleteDropDown } from '../index'
 
-
 describe('Test AutoCompleteDropDown', () => {
   const name = 'test'
   const endpoint = 'http://api.test.com/?search='
@@ -14,14 +13,7 @@ describe('Test AutoCompleteDropDown', () => {
   const searchAction = jest.fn()
   searchAction.mockReturnValue(mockSearch)
 
-  const component = (
-    <AutoCompleteDropDown
-      name={name}
-      endpoint={endpoint}
-      searchAction={searchAction}
-      options={[]}
-    />
-  )
+  const component = <AutoCompleteDropDown name={name} endpoint={endpoint} searchAction={searchAction} options={[]} />
 
   it('renders without crashing', () => {
     const div = document.createElement('div')

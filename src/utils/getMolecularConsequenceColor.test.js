@@ -1,6 +1,5 @@
 import { utils } from '../index'
 
-
 describe('Test Molecular Consequence Color', () => {
   it('frameshift should be red', () => {
     expect(utils.getMolecularConsequenceColor(' frameshift ')).toEqual('red')
@@ -29,5 +28,4 @@ describe('Test Molecular Consequence Color', () => {
   it('everything else should be grey', () => {
     expect(utils.getMolecularConsequenceColor('UTR')).toEqual('grey')
   })
-
 })

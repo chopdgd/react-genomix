@@ -5,7 +5,6 @@ import moment from 'moment'
 
 import { Button } from '../index'
 
-
 const ExportButton = ({ data, filenamePrefix, content, ...rest }) => {
   const timestamp = moment().format('YYYY_MM_DD-HH_mm_ss')
 
@@ -21,14 +20,10 @@ const ExportButton = ({ data, filenamePrefix, content, ...rest }) => {
   )
 }
 
-
 ExportButton.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape),
   filenamePrefix: PropTypes.string,
-  content: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-  ]),
+  content: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 }
 
 ExportButton.defaultProps = {
@@ -36,6 +31,5 @@ ExportButton.defaultProps = {
   content: <Button content="Export" icon="download" />,
   filenamePrefix: 'export',
 }
-
 
 export default ExportButton

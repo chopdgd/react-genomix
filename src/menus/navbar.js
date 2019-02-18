@@ -2,27 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Icon } from 'semantic-ui-react'
 
-
 const renderSubMenu = element => {
   if (element) {
-    return (
-      <Menu.Item>
-        {element}
-      </Menu.Item>
-    )
+    return <Menu.Item>{element}</Menu.Item>
   }
 }
 
-
 const Navbar = props => {
-  const {
-    activeItem,
-    children,
-    logo,
-    subMenu,
-    userMenu,
-    navCallback
-  } = props
+  const { activeItem, children, logo, subMenu, userMenu, navCallback } = props
 
   const items = React.Children.map(children, item =>
     React.cloneElement(item, {
@@ -33,16 +20,15 @@ const Navbar = props => {
   return (
     <Menu className="navbar" borderless>
       <Menu.Item>
-        <Icon name='angle right' size='large' link onClick={navCallback} />
+        <Icon name="angle right" size="large" link onClick={navCallback} />
       </Menu.Item>
       {renderSubMenu(logo)}
       {renderSubMenu(subMenu)}
 
-      <Menu.Menu position='right'>
+      <Menu.Menu position="right">
         {items}
         {renderSubMenu(userMenu)}
       </Menu.Menu>
-
     </Menu>
   )
 }
@@ -59,6 +45,5 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   activeItem: '',
 }
-
 
 export default Navbar

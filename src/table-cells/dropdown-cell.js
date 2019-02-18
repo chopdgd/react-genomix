@@ -6,13 +6,12 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 class DropdownCell extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      value: ''
+      value: '',
     }
   }
 
@@ -30,18 +29,11 @@ class DropdownCell extends React.Component {
 
     return (
       <ElementType {...rest}>
-        <Dropdown
-          name={name}
-          value={value}
-          onChange={this.onChange}
-          options={options}
-          {...dropDownProps}
-        />
+        <Dropdown name={name} value={value} onChange={this.onChange} options={options} {...dropDownProps} />
       </ElementType>
     )
   }
 }
-
 
 DropdownCell.propTypes = {
   as: customPropTypes.as,
@@ -51,23 +43,10 @@ DropdownCell.propTypes = {
   dropDownProps: PropTypes.object,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      key: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      text: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      content: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.element,
-      ]),
+      key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      content: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.element]),
     })
   ).isRequired,
 }
@@ -82,14 +61,6 @@ DropdownCell.defaultProps = {
   },
 }
 
-DropdownCell.handledProps = [
-  'as',
-  'onChange',
-  'rowIndex',
-  'name',
-  'dropDownProps',
-  'options',
-]
-
+DropdownCell.handledProps = ['as', 'onChange', 'rowIndex', 'name', 'dropDownProps', 'options']
 
 export default DropdownCell

@@ -5,7 +5,6 @@ import { shallow } from 'enzyme'
 
 import { DropdownMenu } from '../index'
 
-
 describe('Test DropdownMenu', () => {
   const element = (
     <DropdownMenu>

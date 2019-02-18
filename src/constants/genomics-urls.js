@@ -4,13 +4,11 @@ export const NCBI_EFETCH_ENDPOINT = `${NCBI_EUTILS_ENDPOINT}/efetch.fcgi`
 export const NCBI_ESUMMARY_ENDPOINT = `${NCBI_EUTILS_ENDPOINT}/esummary.fcgi`
 export const NCBI_ESEARCH_ENDPOINT = `${NCBI_EUTILS_ENDPOINT}/esearch.fcgi`
 
-
 // NCBI URLs
 export const NCBI_URL = 'https://www.ncbi.nlm.nih.gov'
 export const PUBMED_URL = `${NCBI_URL}/pubmed`
 export const NCBI_VARIATION_URL = `${NCBI_URL}/variation/view`
 export const CLINVAR_URL = 'https://preview.ncbi.nlm.nih.gov/clinvar'
-
 
 // Genomic Resources
 export const COSMIC_URL = 'http://cancer.sanger.ac.uk/cosmic'
@@ -21,10 +19,9 @@ export const GNOMAD_URL = 'http://gnomad.broadinstitute.org'
 export const UCSC_URL = 'https://genome.ucsc.edu'
 export const DGV_URL = 'http://dgv.tcag.ca'
 
-
 // Gene Resources
 export const GENE_CARDS_URL = 'http://www.genecards.org'
-export const GHR_URL = 'https://ghr.nlm.nih.gov'  // Genetics Home Reference
+export const GHR_URL = 'https://ghr.nlm.nih.gov' // Genetics Home Reference
 export const HGNC_URL = 'https://www.genenames.org'
 export const GENEREVIEWS_URL = 'https://www.ncbi.nlm.nih.gov/books/NBK1116'
 export const GTEX_URL = 'https://www.gtexportal.org'
@@ -34,11 +31,9 @@ export const DECIPHER_URL = 'https://decipher.sanger.ac.uk'
 export const HGMD_URL = 'https://portal.biobase-international.com'
 export const OMIM_URL = 'https://www.omim.org'
 
-
 // Phenotype Resources
 export const HPO_URL = 'http://compbio.charite.de'
 export const ORPHANET_URL = 'http://www.orpha.net'
-
 
 // Internal Resources
 export const ALAMUT_URL = 'http://localhost:10000'

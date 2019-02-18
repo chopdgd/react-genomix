@@ -5,20 +5,12 @@ import cx from 'classnames'
 
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const Button = props => {
   const buttonProps = getUnhandledProps(Button, props)
   const { className, color, icon } = props
 
-  return (
-    <SemanticButton
-      { ...buttonProps }
-      className={cx(className, 'genomix', color)}
-      icon={icon}
-    />
-  )
+  return <SemanticButton {...buttonProps} className={cx(className, 'genomix', color)} icon={icon} />
 }
-
 
 Button.propTypes = {
   icon: PropTypes.string,
@@ -29,6 +21,5 @@ Button.propTypes = {
 Button.defaultProps = {}
 
 Button.handledProps = ['className', 'icon', 'color']
-
 
 export default Button

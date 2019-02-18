@@ -5,7 +5,6 @@ import { get, map } from 'lodash'
 
 import { utils, BasicLabel, Link } from '../index'
 
-
 const GeneLinksList = ({ genes, ...rest }) => (
   <List {...rest}>
     {map(genes, gene => {
@@ -16,25 +15,16 @@ const GeneLinksList = ({ genes, ...rest }) => (
         <List.Item key={symbol}>
           <List.Content>
             {symbol}
-            <Link
-              href={utils.urlBuilders.omimSearch(symbol)}
-              content={<BasicLabel color="green" content="OMIM" />}
-            />
+            <Link href={utils.urlBuilders.omimSearch(symbol)} content={<BasicLabel color="green" content="OMIM" />} />
 
-            <Link
-              href={utils.urlBuilders.hgmdGene(symbol)}
-              content={<BasicLabel color="blue" content="HGMD" />}
-            />
+            <Link href={utils.urlBuilders.hgmdGene(symbol)} content={<BasicLabel color="blue" content="HGMD" />} />
 
             <Link
               href={utils.urlBuilders.geneReviewsEntry(symbol)}
               content={<BasicLabel color="blue" content="GeneReviews" />}
             />
 
-            <Link
-              href={utils.urlBuilders.gtexEntry(symbol)}
-              content={<BasicLabel color="red" content="GTEx" />}
-            />
+            <Link href={utils.urlBuilders.gtexEntry(symbol)} content={<BasicLabel color="red" content="GTEx" />} />
 
             {ensembl && (
               <Link
@@ -49,7 +39,6 @@ const GeneLinksList = ({ genes, ...rest }) => (
                 content={<BasicLabel color="black" content="gnomAD" />}
               />
             )}
-
           </List.Content>
         </List.Item>
       )
@@ -57,13 +46,13 @@ const GeneLinksList = ({ genes, ...rest }) => (
   </List>
 )
 
-
 GeneLinksList.propTypes = {
-  genes: PropTypes.arrayOf(PropTypes.shape({
-    symbol: PropTypes.string,
-    ensemblId: PropTypes.string,
-  }))
+  genes: PropTypes.arrayOf(
+    PropTypes.shape({
+      symbol: PropTypes.string,
+      ensemblId: PropTypes.string,
+    })
+  ),
 }
-
 
 export default GeneLinksList

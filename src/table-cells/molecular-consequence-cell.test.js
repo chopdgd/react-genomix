@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { MolecularConsequenceCell } from '../index'
 
-
 describe('Test MolecularConsequenceCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
@@ -12,7 +11,14 @@ describe('Test MolecularConsequenceCell', () => {
   })
 
   it('ensure labelProps are spread to label', () => {
-    const wrapper = shallow(<MolecularConsequenceCell consequence="missense" labelProps={{ size: 'large', basic: true }} />)
-    expect(wrapper.find('Label').props()).toEqual({"basic": true, "color": "orange", "content": "missense", "size": "large"})
+    const wrapper = shallow(
+      <MolecularConsequenceCell consequence="missense" labelProps={{ size: 'large', basic: true }} />
+    )
+    expect(wrapper.find('Label').props()).toEqual({
+      basic: true,
+      color: 'orange',
+      content: 'missense',
+      size: 'large',
+    })
   })
 })

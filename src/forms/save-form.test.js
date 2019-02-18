@@ -5,7 +5,6 @@ import { shallow } from 'enzyme'
 
 import { Button, SaveForm } from '../index'
 
-
 const form = (defaultValues, handleSubmit, handleChange) => {
   return (
     <SaveForm
@@ -21,7 +20,7 @@ const form = (defaultValues, handleSubmit, handleChange) => {
 }
 
 describe('Test SaveForm', () => {
-  const event = {preventDefault: jest.fn()}
+  const event = { preventDefault: jest.fn() }
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
@@ -29,7 +28,7 @@ describe('Test SaveForm', () => {
   })
 
   it('defaultValues are set correctly', () => {
-    const wrapper = shallow(form({'test1': 'default'}))
+    const wrapper = shallow(form({ test1: 'default' }))
     expect(wrapper.state().test1).toEqual('default')
   })
 
@@ -41,15 +40,15 @@ describe('Test SaveForm', () => {
     const data = { name: 'test1', value: '7' }
     const event = { target: data }
     wrapper.find('FormInput').simulate('change', event, data)
-    expect(wrapper.instance().state).toEqual({'test1': '7'})
+    expect(wrapper.instance().state).toEqual({ test1: '7' })
     expect(handleChange).toHaveBeenCalledTimes(1)
   })
 
   it('onSubmit calls handleSubmit', () => {
     const handleSubmit = jest.fn()
-    const wrapper = shallow(form({ 'test1': 'default' }, handleSubmit))
+    const wrapper = shallow(form({ test1: 'default' }, handleSubmit))
     wrapper.find('Form').simulate('submit', event)
-    expect(handleSubmit).toHaveBeenCalledWith({ 'test1': 'default' })
+    expect(handleSubmit).toHaveBeenCalledWith({ test1: 'default' })
   })
 
   it('handle handleChange when its undefined', () => {

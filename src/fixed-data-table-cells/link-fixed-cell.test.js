@@ -4,23 +4,12 @@ import { shallow } from 'enzyme'
 
 import { LinkFixedCell } from '../index'
 
-
 describe('Test LinkFixedCell', () => {
-  const data = [
-    { id: 0, content: 'benign' },
-    { id: 1, content: 'pathogenic' },
-  ]
+  const data = [{ id: 0, content: 'benign' }, { id: 1, content: 'pathogenic' }]
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    const element = (
-      <LinkFixedCell
-        data={data}
-        rowIndex={1}
-        columnKey="content"
-        urlBuilder={jest.fn()}
-      />
-    )
+    const element = <LinkFixedCell data={data} rowIndex={1} columnKey="content" urlBuilder={jest.fn()} />
     ReactDOM.render(element, div)
   })
 
@@ -30,7 +19,7 @@ describe('Test LinkFixedCell', () => {
         data={data}
         rowIndex={0}
         columnKey="content"
-        urlBuilder={(data) => `http://www.google.com/${data}`}
+        urlBuilder={data => `http://www.google.com/${data}`}
       />
     )
     const wrapper = shallow(element)
@@ -45,7 +34,7 @@ describe('Test LinkFixedCell', () => {
         data={data}
         rowIndex={1}
         columnKey="content"
-        urlBuilder={(data) => `http://www.google.com/${data}`}
+        urlBuilder={data => `http://www.google.com/${data}`}
       />
     )
     const wrapper = shallow(element)
@@ -61,7 +50,7 @@ describe('Test LinkFixedCell', () => {
         rowIndex={0}
         idKey="id"
         columnKey="content"
-        urlBuilder={(data) => `http://www.google.com/${data}`}
+        urlBuilder={data => `http://www.google.com/${data}`}
       />
     )
     const wrapper = shallow(element)
@@ -77,7 +66,7 @@ describe('Test LinkFixedCell', () => {
         rowIndex={1}
         idKey="id"
         columnKey="content"
-        urlBuilder={(data) => `http://www.google.com/${data}`}
+        urlBuilder={data => `http://www.google.com/${data}`}
       />
     )
     const wrapper = shallow(element)
@@ -93,7 +82,7 @@ describe('Test LinkFixedCell', () => {
         rowIndex={1}
         columnKey="content"
         as="div"
-        urlBuilder={(data) => `http://www.google.com/${data}`}
+        urlBuilder={data => `http://www.google.com/${data}`}
       />
     )
     const wrapper = shallow(element)

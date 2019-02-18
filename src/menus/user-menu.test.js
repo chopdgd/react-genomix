@@ -5,14 +5,7 @@ import { mount, shallow } from 'enzyme'
 import { UserMenu } from '../index'
 
 describe('Test UserMenu', () => {
-  const element = (
-    <UserMenu
-      className="user-menu"
-      username="doej"
-      email="doej@email.chop.edu"
-      name="Jane Doe"
-    />
-  )
+  const element = <UserMenu className="user-menu" username="doej" email="doej@email.chop.edu" name="Jane Doe" />
 
   it('renders without crashing', () => {
     const div = document.createElement('div')

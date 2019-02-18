@@ -5,7 +5,6 @@ import { Icon } from 'semantic-ui-react'
 
 import { PublicEvidenceFixedCell } from '../index'
 
-
 describe('Test PublicEvidenceFixedCell', () => {
   const data = [
     {
@@ -18,7 +17,7 @@ describe('Test PublicEvidenceFixedCell', () => {
       hgmd: 'CM1',
       clinvar: 1111,
       gnomad: 0.05,
-    }
+    },
   ]
 
   it('renders without crashing', () => {

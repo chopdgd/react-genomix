@@ -6,7 +6,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const LinkCell = props => {
   const { as, linkAs, content } = props
 
@@ -20,15 +19,10 @@ const LinkCell = props => {
   )
 }
 
-
 LinkCell.propTypes = {
   as: customPropTypes.as,
   rowIndex: PropTypes.number,
-  content: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-  ]).isRequired,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.element]).isRequired,
   linkAs: customPropTypes.as,
 }
 
@@ -37,12 +31,6 @@ LinkCell.defaultProps = {
   linkAs: 'a',
 }
 
-LinkCell.handledProps = [
-  'as',
-  'rowIndex',
-  'content',
-  'linkAs',
-]
-
+LinkCell.handledProps = ['as', 'rowIndex', 'content', 'linkAs']
 
 export default LinkCell

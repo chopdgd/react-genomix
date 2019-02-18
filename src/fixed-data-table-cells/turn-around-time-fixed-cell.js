@@ -5,13 +5,8 @@ import { get } from 'lodash'
 
 import { TurnAroundTimeProgress } from '../index'
 
-
 const TurnAroundTimeProgressFixedCell = props => {
-  const {
-    data, rowIndex, columnKey,
-    progressProps, targetKey, startKey, signoutKey, compact,
-    ...rest
-  } = props
+  const { data, rowIndex, columnKey, progressProps, targetKey, startKey, signoutKey, compact, ...rest } = props
 
   const rowData = data[rowIndex]
   const target = get(rowData, targetKey)
@@ -20,17 +15,10 @@ const TurnAroundTimeProgressFixedCell = props => {
 
   return (
     <Cell {...rest}>
-      <TurnAroundTimeProgress
-        target={target}
-        start={start}
-        signout={signout}
-        compact={compact}
-        {...progressProps}
-      />
+      <TurnAroundTimeProgress target={target} start={start} signout={signout} compact={compact} {...progressProps} />
     </Cell>
   )
 }
-
 
 TurnAroundTimeProgressFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -48,6 +36,5 @@ TurnAroundTimeProgressFixedCell.defaultProps = {
     size: 'tiny',
   },
 }
-
 
 export default TurnAroundTimeProgressFixedCell

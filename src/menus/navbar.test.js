@@ -5,7 +5,6 @@ import { shallow } from 'enzyme'
 
 import { Navbar, UserMenu } from '../index'
 
-
 describe('Navbar Tests', () => {
   const element = (
     <Navbar>
@@ -29,18 +28,9 @@ describe('Navbar Tests', () => {
   })
 
   it('should render userMenu if passed', () => {
-    const userMenu = (
-      <UserMenu
-        className="user-menu"
-        username="doej"
-        email="doej@email.chop.edu"
-        name="Jane Doe"
-      />
-    )
+    const userMenu = <UserMenu className="user-menu" username="doej" email="doej@email.chop.edu" name="Jane Doe" />
     const element = (
-      <Navbar
-        userMenu={userMenu}
-      >
+      <Navbar userMenu={userMenu}>
         <MenuItem id="test" name="test" />
       </Navbar>
     )
@@ -50,18 +40,9 @@ describe('Navbar Tests', () => {
   })
 
   it('should render subMenu if passed', () => {
-    const userMenu = (
-      <UserMenu
-        className="user-menu"
-        username="doej"
-        email="doej@email.chop.edu"
-        name="Jane Doe"
-      />
-    )
+    const userMenu = <UserMenu className="user-menu" username="doej" email="doej@email.chop.edu" name="Jane Doe" />
     const element = (
-      <Navbar
-        subMenu={userMenu}
-      >
+      <Navbar subMenu={userMenu}>
         <MenuItem id="test" name="test" />
       </Navbar>
     )
@@ -71,18 +52,9 @@ describe('Navbar Tests', () => {
   })
 
   it('should render logo if passed', () => {
-    const userMenu = (
-      <UserMenu
-        className="user-menu"
-        username="doej"
-        email="doej@email.chop.edu"
-        name="Jane Doe"
-      />
-    )
+    const userMenu = <UserMenu className="user-menu" username="doej" email="doej@email.chop.edu" name="Jane Doe" />
     const element = (
-      <Navbar
-        logo={userMenu}
-      >
+      <Navbar logo={userMenu}>
         <MenuItem id="test" name="test" />
       </Navbar>
     )
@@ -92,19 +64,9 @@ describe('Navbar Tests', () => {
   })
 
   it('should render subMenu and userMenu if passed', () => {
-    const userMenu = (
-      <UserMenu
-        className="user-menu"
-        username="doej"
-        email="doej@email.chop.edu"
-        name="Jane Doe"
-      />
-    )
+    const userMenu = <UserMenu className="user-menu" username="doej" email="doej@email.chop.edu" name="Jane Doe" />
     const element = (
-      <Navbar
-        userMenu={userMenu}
-        subMenu={userMenu}
-      >
+      <Navbar userMenu={userMenu} subMenu={userMenu}>
         <MenuItem id="test" name="test" />
       </Navbar>
     )

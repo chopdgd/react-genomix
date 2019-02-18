@@ -1,12 +1,9 @@
 import { toLower } from 'lodash'
 
-
 const getInterpretationColor = value => {
-
   const classification = toLower(value)
 
   switch (true) {
-
     // Constitutional/Germline Classifications
     case classification.includes('pathogenic'):
       return 'red'

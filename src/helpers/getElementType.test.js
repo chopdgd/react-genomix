@@ -1,7 +1,6 @@
 import React from 'react'
 import getElementType from './getElementType'
 
-
 describe('getElementType', () => {
   it('returns defaultProps.as if props.as not defined', () => {
     class TestComponent extends React.Component {}

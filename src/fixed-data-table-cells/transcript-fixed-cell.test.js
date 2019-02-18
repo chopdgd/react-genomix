@@ -4,32 +4,17 @@ import { shallow } from 'enzyme'
 
 import { TranscriptFixedCell } from '../index'
 
-
 describe('Test TranscriptFixedCell', () => {
-  const data = [
-    { transcript: 'transcript' },
-  ]
+  const data = [{ transcript: 'transcript' }]
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    const element = (
-      <TranscriptFixedCell
-        data={data}
-        rowIndex={0}
-        columnKey="transcript"
-      />
-    )
+    const element = <TranscriptFixedCell data={data} rowIndex={0} columnKey="transcript" />
     ReactDOM.render(element, div)
   })
 
   it('renders the first record with rowIndex = 0', () => {
-    const element = (
-      <TranscriptFixedCell
-        data={data}
-        rowIndex={0}
-        columnKey="transcript"
-      />
-    )
+    const element = <TranscriptFixedCell data={data} rowIndex={0} columnKey="transcript" />
     const wrapper = shallow(element)
     expect(wrapper.props().children).toHaveLength(3)
     expect(wrapper.props().children[0]).toEqual('transcript')

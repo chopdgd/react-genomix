@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 
 import { TextCell } from '../index'
 
-
 describe('Test TextCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

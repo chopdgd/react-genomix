@@ -1,7 +1,6 @@
 import * as urls from '../constants/genomics-urls'
 import { utils } from '../index'
 
-
 describe('Test URL Builders', () => {
   const chr = '1'
   const pos = 10

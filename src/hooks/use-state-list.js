@@ -1,21 +1,19 @@
 import { useState } from 'react'
 import { concat, without } from 'lodash'
 
-
 const useStateList = (values = []) => {
-	const [list, setState] = useState(values)
+  const [list, setState] = useState(values)
 
-	const setList = value => {
+  const setList = value => {
     setState(prevState => {
-			if (prevState.includes(value)) return without(prevState, value)
+      if (prevState.includes(value)) return without(prevState, value)
       else return concat(prevState, [value])
-		})
+    })
   }
 
-	const resetValues = (values = []) => useState(values)
+  const resetValues = (values = []) => useState(values)
 
-	return [list, setList, resetValues]
+  return [list, setList, resetValues]
 }
-
 
 export default useStateList

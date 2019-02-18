@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Dropdown } from 'semantic-ui-react'
 import { omit } from 'lodash'
 
-
 class AutoCompleteDropDown extends React.Component {
   static getDerivedStateFromProps(props, state) {
     const { loading } = props
@@ -38,24 +37,12 @@ class AutoCompleteDropDown extends React.Component {
   }
 
   render() {
-    const dropdownProps = omit(
-      this.props,
-      ['endpoint', 'loading', 'searchAction', 'waitInterval']
-    )
+    const dropdownProps = omit(this.props, ['endpoint', 'loading', 'searchAction', 'waitInterval'])
     const { loading } = this.state
 
-    return (
-      <Dropdown
-        search
-        selection
-        onSearchChange={this.onSearchChange}
-        loading={loading}
-        {...dropdownProps}
-      />
-    )
+    return <Dropdown search selection onSearchChange={this.onSearchChange} loading={loading} {...dropdownProps} />
   }
 }
-
 
 AutoCompleteDropDown.propTypes = {
   onChange: PropTypes.func,
@@ -69,6 +56,5 @@ AutoCompleteDropDown.defaultProps = {
   waitInterval: 750,
   loading: false,
 }
-
 
 export default AutoCompleteDropDown

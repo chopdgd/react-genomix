@@ -7,7 +7,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 class PublicEvidenceCell extends React.Component {
   renderRating = (database, value, url) => {
     let color = 'grey'
@@ -27,13 +26,7 @@ class PublicEvidenceCell extends React.Component {
       )
     }
 
-    return (
-      <Popup
-        trigger={<Icon color={color} name="star" />}
-        content={content}
-        hoverable
-      />
-    )
+    return <Popup trigger={<Icon color={color} name="star" />} content={content} hoverable />
   }
 
   render() {
@@ -73,7 +66,6 @@ class PublicEvidenceCell extends React.Component {
   }
 }
 
-
 PublicEvidenceCell.propTypes = {
   as: customPropTypes.as,
   chromosome: PropTypes.string.isRequired,
@@ -103,6 +95,5 @@ PublicEvidenceCell.handledProps = [
   'gnomadFrequency',
   'rowIndex',
 ]
-
 
 export default PublicEvidenceCell

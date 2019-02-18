@@ -4,7 +4,6 @@ import { Form, Message } from 'semantic-ui-react'
 
 import { Button } from '../index'
 
-
 class LoginForm extends React.Component {
   static getDerivedStateFromProps(props, state) {
     const { loading, error } = props
@@ -34,7 +33,7 @@ class LoginForm extends React.Component {
     })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault()
     const { username, password } = this.state
     const { handleLogin } = this.props
@@ -46,7 +45,7 @@ class LoginForm extends React.Component {
     } else {
       handleLogin({
         username,
-        password
+        password,
       })
 
       this.setState({ loading: true })
@@ -56,60 +55,60 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error, username, password } = this.state
 
-    return(
+    return (
       <Form
-          id="login-form"
-          className="login-form"
+        id="login-form"
+        className="login-form"
+        size="large"
+        key="big"
+        onSubmit={this.handleSubmit}
+        loading={loading}
+      >
+        <Form.Input
+          id="username"
+          name="username"
+          className="login-input"
+          placeholder="Username"
+          icon="user"
+          iconPosition="left"
+          required
+          onChange={this.handleChange}
+        />
+        <Form.Input
+          id="password"
+          name="password"
+          className="login-input"
+          placeholder="Password"
+          icon="lock"
+          iconPosition="left"
+          required
+          onChange={this.handleChange}
+          type="password"
+        />
+
+        {error ? (
+          <Message negative>
+            <Message.Header as="h5">Login Failed</Message.Header>
+            <p>{error}</p>
+          </Message>
+        ) : (
+          ''
+        )}
+
+        <Button
+          className="login-button"
+          type="submit"
+          form="login-form"
+          content="Sign In"
+          primary
+          fluid
           size="large"
-          key="big"
-          onSubmit={this.handleSubmit}
-          loading={loading}
-        >
-          <Form.Input
-            id="username"
-            name="username"
-            className="login-input"
-            placeholder="Username"
-            icon="user"
-            iconPosition="left"
-            required
-            onChange={this.handleChange}
-          />
-          <Form.Input
-            id="password"
-            name="password"
-            className="login-input"
-            placeholder="Password"
-            icon="lock"
-            iconPosition="left"
-            required
-            onChange={this.handleChange}
-            type="password"
-          />
-
-          {error
-            ? <Message negative>
-               <Message.Header as="h5">Login Failed</Message.Header>
-               <p>{error}</p>
-              </Message>
-            : ''
-          }
-
-          <Button
-            className="login-button"
-            type="submit"
-            form="login-form"
-            content="Sign In"
-            primary
-            fluid
-            size="large"
-            disabled={!username || !password}
-          />
-        </Form>
+          disabled={!username || !password}
+        />
+      </Form>
     )
   }
 }
-
 
 LoginForm.propTypes = {
   handleLogin: PropTypes.func.isRequired,
@@ -121,6 +120,5 @@ LoginForm.defaultProps = {
   loading: false,
   error: undefined,
 }
-
 
 export default LoginForm

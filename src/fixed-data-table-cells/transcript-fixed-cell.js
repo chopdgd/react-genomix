@@ -6,7 +6,6 @@ import { get } from 'lodash'
 
 import { utils, Link } from '../index'
 
-
 const TranscriptFixedCell = props => {
   const { data, rowIndex, columnKey, ...rest } = props
   const transcript = get(data[rowIndex], columnKey)
@@ -22,7 +21,6 @@ const TranscriptFixedCell = props => {
   )
 }
 
-
 TranscriptFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   rowIndex: PropTypes.number,
@@ -32,6 +30,5 @@ TranscriptFixedCell.propTypes = {
 TranscriptFixedCell.defaultProps = {
   data: [],
 }
-
 
 export default TranscriptFixedCell

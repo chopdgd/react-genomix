@@ -5,18 +5,12 @@ import { get } from 'lodash'
 
 import { utils } from '../index'
 
-
 const DateFixedCell = props => {
   const { data, rowIndex, columnKey, ...rest } = props
   const date = get(data[rowIndex], columnKey)
 
-  return (
-    <Cell {...rest}>
-      {utils.dateFormatter(date)}
-    </Cell>
-  )
+  return <Cell {...rest}>{utils.dateFormatter(date)}</Cell>
 }
-
 
 DateFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -27,6 +21,5 @@ DateFixedCell.propTypes = {
 DateFixedCell.defaultProps = {
   data: [],
 }
-
 
 export default DateFixedCell

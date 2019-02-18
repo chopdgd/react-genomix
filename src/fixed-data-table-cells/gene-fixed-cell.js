@@ -5,7 +5,6 @@ import { get, map } from 'lodash'
 
 import { GeneResourcesPopup } from '../index'
 
-
 const GeneFixedCell = props => {
   const { data, rowIndex, columnKey, ...rest } = props
   const genes = get(data[rowIndex], columnKey)
@@ -15,17 +14,10 @@ const GeneFixedCell = props => {
 
   return (
     <Cell {...rest}>
-      <GeneResourcesPopup
-        trigger={<p>{content}</p>}
-        hoverable
-        wide="very"
-        position="bottom left"
-        genes={genes}
-      />
+      <GeneResourcesPopup trigger={<p>{content}</p>} hoverable wide="very" position="bottom left" genes={genes} />
     </Cell>
   )
 }
-
 
 GeneFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -36,6 +28,5 @@ GeneFixedCell.propTypes = {
 GeneFixedCell.defaultProps = {
   data: [],
 }
-
 
 export default GeneFixedCell

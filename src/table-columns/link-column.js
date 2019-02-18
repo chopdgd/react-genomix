@@ -6,20 +6,19 @@ import { get } from 'lodash'
 
 import { LinkCell } from '../index'
 
-
 // See: https://github.com/bvaughn/react-virtualized/pull/748
 // Note: Facebook argues against inheritance https://reactjs.org/docs/composition-vs-inheritance.html
 // But Table won't accept anything other than type of Column
 // Submitted an issue shown here: https://github.com/bvaughn/react-virtualized/issues/898
 
-const cellDataGetter = (props) => {
+const cellDataGetter = props => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#celldatagetter
   // props: { columnData, dataKey, rowData }
   const { rowData, dataKey } = props
   return get(rowData, dataKey, 'N/A')
 }
 
-const cellRenderer = (props) => {
+const cellRenderer = props => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
   // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
   const { cellData, columnData, rowIndex } = props
@@ -32,23 +31,15 @@ const cellRenderer = (props) => {
     additionalProps.to = urlBuilder(cellData)
   }
 
-  return (
-    <LinkCell
-      linkAs={as}
-      content={cellData}
-      rowIndex={rowIndex}
-      {...additionalProps}
-    />
-  )
+  return <LinkCell linkAs={as} content={cellData} rowIndex={rowIndex} {...additionalProps} />
 }
 
-const headerRenderer = (props) => {
+const headerRenderer = props => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#headerrenderer
   // props: { columnData, dataKey, disableSort, label, sortBy, sortDirection, }
   const { label } = props
   return <p>{label}</p>
 }
-
 
 class LinkColumn extends Column {
   static propTypes = {
@@ -57,10 +48,7 @@ class LinkColumn extends Column {
     cellRenderer: PropTypes.func.isRequired,
     headerRenderer: PropTypes.func.isRequired,
     columnData: PropTypes.shape({
-      as: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.func,
-      ]),
+      as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
       urlBuilder: PropTypes.func.isRequired,
     }),
   }
@@ -72,13 +60,12 @@ class LinkColumn extends Column {
     headerRenderer: headerRenderer,
     columnData: {
       as: 'a',
-    }
+    },
   }
 
   render() {
     return <Column {...this.props} />
   }
 }
-
 
 export default LinkColumn
