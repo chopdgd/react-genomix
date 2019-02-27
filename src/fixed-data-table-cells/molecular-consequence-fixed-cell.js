@@ -6,7 +6,6 @@ import { get } from 'lodash'
 
 import { utils } from '../index'
 
-
 const MolecularConsequenceFixedCell = props => {
   const { labelProps, data, rowIndex, columnKey, ...rest } = props
   const consequence = get(data[rowIndex], columnKey)
@@ -18,7 +17,6 @@ const MolecularConsequenceFixedCell = props => {
     </Cell>
   )
 }
-
 
 MolecularConsequenceFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -33,6 +31,5 @@ MolecularConsequenceFixedCell.defaultProps = {
     basic: true,
   },
 }
-
 
 export default MolecularConsequenceFixedCell

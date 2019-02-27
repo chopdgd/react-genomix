@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { BasicLabel } from '../index'
 
-
 describe('Test Basic Label', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

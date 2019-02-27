@@ -6,7 +6,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const CheckboxCell = props => {
   const ElementType = getElementType(CheckboxCell, props)
   const rest = getUnhandledProps(CheckboxCell, props)
@@ -23,11 +22,10 @@ const CheckboxCell = props => {
   )
 }
 
-
 CheckboxCell.propTypes = {
   as: customPropTypes.as,
   onChange: PropTypes.func.isRequired,
-  checked: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  checked: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 }
 
 CheckboxCell.defaultProps = {
@@ -35,12 +33,6 @@ CheckboxCell.defaultProps = {
   checked: [],
 }
 
-CheckboxCell.handledProps = [
-  'as',
-  'onChange',
-  'rowIndex',
-  'checked',
-]
-
+CheckboxCell.handledProps = ['as', 'onChange', 'rowIndex', 'checked']
 
 export default CheckboxCell

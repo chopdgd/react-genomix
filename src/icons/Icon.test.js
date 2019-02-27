@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { Icon } from '../index'
 
-
 describe('Test Icon', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

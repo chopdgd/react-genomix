@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { Link } from '../index'
 
-
 describe('Test Link', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

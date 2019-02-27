@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { Button } from '../index'
 
-
 describe('Test Button', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

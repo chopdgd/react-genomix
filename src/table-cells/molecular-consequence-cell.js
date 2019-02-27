@@ -7,7 +7,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const MolecularConsequenceCell = props => {
   const ElementType = getElementType(MolecularConsequenceCell, props)
   const rest = getUnhandledProps(MolecularConsequenceCell, props)
@@ -20,7 +19,6 @@ const MolecularConsequenceCell = props => {
     </ElementType>
   )
 }
-
 
 MolecularConsequenceCell.propTypes = {
   as: customPropTypes.as,
@@ -36,12 +34,6 @@ MolecularConsequenceCell.defaultProps = {
   },
 }
 
-MolecularConsequenceCell.handledProps = [
-  'as',
-  'consequence',
-  'rowIndex',
-  'labelProps',
-]
-
+MolecularConsequenceCell.handledProps = ['as', 'consequence', 'rowIndex', 'labelProps']
 
 export default MolecularConsequenceCell

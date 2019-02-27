@@ -6,41 +6,33 @@ import { get } from 'lodash'
 
 import { MolecularConsequenceCell } from '../index'
 
-
 // See: https://github.com/bvaughn/react-virtualized/pull/748
 // Note: Facebook argues against inheritance https://reactjs.org/docs/composition-vs-inheritance.html
 // But Table won't accept anything other than type of Column
 // Submitted an issue shown here: https://github.com/bvaughn/react-virtualized/issues/898
 
-const cellDataGetter = (props) => {
+const cellDataGetter = props => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#celldatagetter
   // props: { columnData, dataKey, rowData }
   const { rowData, dataKey } = props
   return get(rowData, dataKey, 'N/A')
 }
 
-const cellRenderer = (props) => {
+const cellRenderer = props => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#cellrenderer
   // props: { cellData, columnData, columnIndex, dataKey, isScrolling, rowData, rowIndex }
   const { cellData, rowIndex, columnData } = props
   const labelProps = get(columnData, 'labelProps')
 
-  return (
-    <MolecularConsequenceCell
-      consequence={cellData}
-      rowIndex={rowIndex}
-      labelProps={labelProps}
-    />
-  )
+  return <MolecularConsequenceCell consequence={cellData} rowIndex={rowIndex} labelProps={labelProps} />
 }
 
-const headerRenderer = (props) => {
+const headerRenderer = props => {
   // See: https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md#headerrenderer
   // props: { columnData, dataKey, disableSort, label, sortBy, sortDirection, }
   const { label } = props
   return <p>{label}</p>
 }
-
 
 class MolecularConsequenceColumn extends Column {
   static propTypes = {
@@ -61,6 +53,5 @@ class MolecularConsequenceColumn extends Column {
     return <Column {...this.props} />
   }
 }
-
 
 export default MolecularConsequenceColumn

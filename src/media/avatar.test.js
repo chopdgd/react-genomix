@@ -4,7 +4,6 @@ import { mount, shallow } from 'enzyme'
 
 import { Avatar } from '../index'
 
-
 describe('Test Avatar', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

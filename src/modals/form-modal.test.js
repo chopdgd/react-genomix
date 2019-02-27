@@ -5,7 +5,6 @@ import { mount, shallow } from 'enzyme'
 
 import { FormModal } from '../index'
 
-
 const form = (open = false, title = 'title', handleSubmit = jest.fn(), handleChange = jest.fn()) => {
   return (
     <FormModal
@@ -35,7 +34,7 @@ describe('Test FormModal', () => {
     expect(wrapper.find('.test-modal').props().trigger).toEqual(<p className="trigger">trigger</p>)
     expect(wrapper.find('.test-modal').props().title).toBe('test')
     expect(wrapper.find('.test-modal').props().open).toBe(false)
-    expect(wrapper.find('.test-modal').props().defaultValues).toEqual({ 'test1': 'default' })
+    expect(wrapper.find('.test-modal').props().defaultValues).toEqual({ test1: 'default' })
   })
 
   it('FormModal handle onClick of trigger', () => {

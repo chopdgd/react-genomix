@@ -4,7 +4,6 @@ import { Cell } from 'fixed-data-table-2'
 import { Icon } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-
 const StatusFixedCell = props => {
   const { data, rowIndex, columnKey, ...rest } = props
   const status = get(data[rowIndex], columnKey)
@@ -31,13 +30,8 @@ const StatusFixedCell = props => {
       break
   }
 
-  return (
-    <Cell {...rest}>
-      {icon}
-    </Cell>
-  )
+  return <Cell {...rest}>{icon}</Cell>
 }
-
 
 StatusFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -48,6 +42,5 @@ StatusFixedCell.propTypes = {
 StatusFixedCell.defaultProps = {
   data: [],
 }
-
 
 export default StatusFixedCell

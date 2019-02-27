@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { TurnAroundTimeProgressFixedCell } from '../index'
 
-
 describe('Test TurnAroundTimeProgressFixedCell', () => {
   const data = [
     {
@@ -12,7 +11,7 @@ describe('Test TurnAroundTimeProgressFixedCell', () => {
       target: 40,
       start: '1987-12-18',
       signout: '1988-08-04',
-    }
+    },
   ]
 
   it('renders without crashing', () => {

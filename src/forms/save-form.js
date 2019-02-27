@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form } from 'semantic-ui-react'
 
-
 class SaveForm extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -17,7 +16,7 @@ class SaveForm extends React.PureComponent {
     }
 
     this.setState({
-      [name]: value
+      [name]: value,
     })
   }
 
@@ -35,7 +34,7 @@ class SaveForm extends React.PureComponent {
 
     const formInputs = React.Children.map(children, input =>
       React.cloneElement(input, {
-        onChange: this.onChange
+        onChange: this.onChange,
       })
     )
 
@@ -55,7 +54,6 @@ class SaveForm extends React.PureComponent {
     )
   }
 }
-
 
 SaveForm.propTypes = {
   formId: PropTypes.string.isRequired,

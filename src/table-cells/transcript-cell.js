@@ -7,12 +7,10 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const TranscriptCell = props => {
   const ElementType = getElementType(TranscriptCell, props)
   const rest = getUnhandledProps(TranscriptCell, props)
   const { transcript } = props
-
 
   return (
     <ElementType {...rest}>
@@ -25,7 +23,6 @@ const TranscriptCell = props => {
   )
 }
 
-
 TranscriptCell.propTypes = {
   as: customPropTypes.as,
   transcript: PropTypes.string.isRequired,
@@ -36,11 +33,6 @@ TranscriptCell.defaultProps = {
   as: 'div',
 }
 
-TranscriptCell.handledProps = [
-  'as',
-  'transcript',
-  'rowIndex',
-]
-
+TranscriptCell.handledProps = ['as', 'transcript', 'rowIndex']
 
 export default TranscriptCell

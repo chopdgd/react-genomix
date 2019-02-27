@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import * as GenomiX from '../index'
 
-
 describe('Test AcceptIcon', () => {
   it('AcceptIcon renders without crashing', () => {
     const div = document.createElement('div')

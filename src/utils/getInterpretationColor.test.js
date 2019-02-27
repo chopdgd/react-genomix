@@ -1,6 +1,5 @@
 import { utils } from '../index'
 
-
 describe('Test Interpretation Color', () => {
   it('pathogenic should be red', () => {
     expect(utils.getInterpretationColor('likely pathogenic')).toEqual('red')
@@ -21,7 +20,6 @@ describe('Test Interpretation Color', () => {
     expect(utils.getInterpretationColor('Tier 1 - A')).toEqual('red')
     expect(utils.getInterpretationColor('Tier 2')).toEqual('red')
   })
-
 
   it('Tier 3 should be blue', () => {
     expect(utils.getInterpretationColor('Tier 3')).toEqual('blue')

@@ -6,7 +6,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const StatusCell = props => {
   const ElementType = getElementType(StatusCell, props)
   const rest = getUnhandledProps(StatusCell, props)
@@ -34,36 +33,19 @@ const StatusCell = props => {
       break
   }
 
-  return (
-    <ElementType {...rest}>
-      {icon}
-    </ElementType>
-  )
+  return <ElementType {...rest}>{icon}</ElementType>
 }
-
 
 StatusCell.propTypes = {
   as: customPropTypes.as,
-  status: PropTypes.oneOf([
-    'pending',
-    'running',
-    'complete',
-    'cancelled',
-    'failed',
-    'unknown',
-  ]).isRequired,
+  status: PropTypes.oneOf(['pending', 'running', 'complete', 'cancelled', 'failed', 'unknown']).isRequired,
   rowIndex: PropTypes.number,
 }
 
 StatusCell.defaultProps = {
-  as: 'div'
+  as: 'div',
 }
 
-StatusCell.handledProps = [
-  'as',
-  'status',
-  'rowIndex',
-]
-
+StatusCell.handledProps = ['as', 'status', 'rowIndex']
 
 export default StatusCell

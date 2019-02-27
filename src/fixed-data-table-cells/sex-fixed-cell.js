@@ -5,7 +5,6 @@ import { get, toLower, toString } from 'lodash'
 
 import { MaleIcon, FemaleIcon, QuestionIcon } from '../index'
 
-
 const SexFixedCell = props => {
   const { data, rowIndex, columnKey, ...rest } = props
   const sex = get(data[rowIndex], columnKey)
@@ -18,13 +17,8 @@ const SexFixedCell = props => {
     icon = <FemaleIcon />
   }
 
-  return (
-    <Cell {...rest}>
-      {icon}
-    </Cell>
-  )
+  return <Cell {...rest}>{icon}</Cell>
 }
-
 
 SexFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -35,6 +29,5 @@ SexFixedCell.propTypes = {
 SexFixedCell.defaultProps = {
   data: [],
 }
-
 
 export default SexFixedCell

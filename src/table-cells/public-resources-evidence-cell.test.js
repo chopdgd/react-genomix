@@ -5,30 +5,15 @@ import { shallow } from 'enzyme'
 
 import { PublicEvidenceCell } from '../index'
 
-
 describe('Test PublicEvidenceCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-      />
-    )
+    const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" />
     ReactDOM.render(element, div)
   })
 
   it('initial props are set correctly', () => {
-    const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-      />
-    )
+    const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" />
     const wrapper = shallow(element)
     expect(wrapper.instance().props.as).toEqual('div')
     expect(wrapper.instance().props.chromosome).toEqual('1')
@@ -43,28 +28,13 @@ describe('Test PublicEvidenceCell', () => {
   })
 
   it('renders 4 Popups', () => {
-    const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-      />
-    )
+    const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" />
     const wrapper = shallow(element)
     expect(wrapper.find('Popup')).toHaveLength(4)
   })
 
   it('renders COSMIC popup', () => {
-    const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-         cosmicId="cosmicId"
-      />
-    )
+    const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" cosmicId="cosmicId" />
     const wrapper = shallow(element)
 
     expect(wrapper.props().children[0].props.content).toEqual(
@@ -85,15 +55,7 @@ describe('Test PublicEvidenceCell', () => {
   })
 
   it('renders HGMD popup', () => {
-    const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-         hgmdId="hgmdId"
-      />
-    )
+    const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" hgmdId="hgmdId" />
     const wrapper = shallow(element)
 
     expect(wrapper.props().children[0].props.content).toEqual(<p>Not present in COSMIC!</p>)
@@ -115,13 +77,7 @@ describe('Test PublicEvidenceCell', () => {
 
   it('renders ClinVar popup', () => {
     const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-         clinvarId="clinvarId"
-      />
+      <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" clinvarId="clinvarId" />
     )
     const wrapper = shallow(element)
 
@@ -144,13 +100,7 @@ describe('Test PublicEvidenceCell', () => {
 
   it('renders gnomAD popup', () => {
     const element = (
-      <PublicEvidenceCell
-         chromosome="1"
-         position={10}
-         reference="A"
-         alternate="T"
-         gnomadFrequency={0.1}
-      />
+      <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" gnomadFrequency={0.1} />
     )
     const wrapper = shallow(element)
 
@@ -160,11 +110,7 @@ describe('Test PublicEvidenceCell', () => {
     expect(wrapper.props().children[3].props.content).toEqual(
       <div>
         <p>Present in gnomAD!</p>
-        <a
-          href="http://gnomad.broadinstitute.org/variant/1-10-A-T"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
+        <a href="http://gnomad.broadinstitute.org/variant/1-10-A-T" rel="noopener noreferrer" target="_blank">
           <Button as="button" content="Go to gnomAD" fluid={true} />
         </a>
       </div>

@@ -1,5 +1,4 @@
-import { utils }  from '../index'
-
+import { utils } from '../index'
 
 describe('Test dateFormatter', () => {
   it('should return date fromatted like 1987-12-18 by default', () => {

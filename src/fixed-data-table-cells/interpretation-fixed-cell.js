@@ -6,7 +6,6 @@ import { get } from 'lodash'
 
 import { utils } from '../index'
 
-
 const InterpretationFixedCell = props => {
   const { labelProps, data, rowIndex, columnKey, ...rest } = props
   const classification = get(data[rowIndex], columnKey)
@@ -18,7 +17,6 @@ const InterpretationFixedCell = props => {
     </Cell>
   )
 }
-
 
 InterpretationFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -33,6 +31,5 @@ InterpretationFixedCell.defaultProps = {
     basic: true,
   },
 }
-
 
 export default InterpretationFixedCell

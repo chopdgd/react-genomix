@@ -5,6 +5,7 @@
 ## Installation
 
 - Running `npm install` in the component's root directory will install everything you need for development.
+- Running `make setup-githooks` in the components root directory will setup git hooks for prettier
 
 ## Demo Development Server
 

@@ -7,13 +7,11 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const InterpretationCell = props => {
   const ElementType = getElementType(InterpretationCell, props)
   const rest = getUnhandledProps(InterpretationCell, props)
   const { classification, labelProps } = props
   const color = utils.getInterpretationColor(classification)
-
 
   return (
     <ElementType {...rest}>
@@ -22,16 +20,9 @@ const InterpretationCell = props => {
   )
 }
 
-
 InterpretationCell.propTypes = {
   as: customPropTypes.as,
-  classification: PropTypes.oneOf([
-    'pathogenic',
-    'likely pathogenic',
-    'uncertain',
-    'likely benign',
-    'benign',
-  ]),
+  classification: PropTypes.oneOf(['pathogenic', 'likely pathogenic', 'uncertain', 'likely benign', 'benign']),
   rowIndex: PropTypes.number,
   labelProps: PropTypes.object,
 }
@@ -44,12 +35,6 @@ InterpretationCell.defaultProps = {
   classification: 'uncertain',
 }
 
-InterpretationCell.handledProps = [
-  'as',
-  'classification',
-  'rowIndex',
-  'labelProps',
-]
-
+InterpretationCell.handledProps = ['as', 'classification', 'rowIndex', 'labelProps']
 
 export default InterpretationCell

@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { StatusCell } from '../index'
 
-
 describe('Test StatusCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

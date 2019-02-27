@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 
 import { DateCell } from '../index'
 
-
 describe('Test DateCell', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')

@@ -5,25 +5,18 @@ import { mount } from 'enzyme'
 
 import { BigDataTable } from '../index'
 
-
-const list = Array.from(new Array(1), (x,i) => ({
+const list = Array.from(new Array(1), (x, i) => ({
   name: 'Mike',
-  description: 'Cool'
+  description: 'Cool',
 }))
 
 const TestTable = ({ ...props }) => {
   return (
     <BigDataTable data={props.data}>
-      <Column
-        label="Name"
-        dataKey="name"
-        height={500}
-        width={100}
-      />
+      <Column label="Name" dataKey="name" height={500} width={100} />
     </BigDataTable>
   )
 }
-
 
 describe('Test BigDataTable', () => {
   it('BigDataTable renders without crashing', () => {
@@ -92,7 +85,9 @@ describe('Test BigDataTable', () => {
     const wrapper = mount(TestTable({ data: list }))
 
     expect(wrapper.state().rows).toEqual([{ name: 'Mike', description: 'Cool' }])
-    wrapper.setProps({ data: [{ name: 'Mike', description: 'Cool' }, { name: 'Mike2', description: 'Cool' }] })
+    wrapper.setProps({
+      data: [{ name: 'Mike', description: 'Cool' }, { name: 'Mike2', description: 'Cool' }],
+    })
     expect(wrapper.state().rows).toEqual([
       { name: 'Mike', description: 'Cool' },
       { name: 'Mike2', description: 'Cool' },

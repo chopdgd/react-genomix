@@ -5,14 +5,13 @@ import { shallow } from 'enzyme'
 
 import { FixedDataTable, TextFixedCell } from '../index'
 
-
-const list = Array.from(new Array(1), (x,i) => ({
+const list = Array.from(new Array(1), (x, i) => ({
   name: 'Mike',
   text: 'text',
 }))
 
-const initialColumnOrder = [ 'name', 'text' ]
-const nextColumnOrder = [ 'text', 'name' ]
+const initialColumnOrder = ['name', 'text']
+const nextColumnOrder = ['text', 'name']
 
 const initialColumnSizes = { name: 50, text: 100 }
 const nextColumnSizes = { name: 150, text: 200 }
@@ -30,22 +29,11 @@ const TestTable = ({ ...props }) => {
       onColumnResize={props.onColumnResize}
       fixedColumns={props.fixedColumns}
     >
-      <Column
-        header={<Cell>Header</Cell>}
-        cell={<TextFixedCell data={props.data} />}
-        columnKey="name"
-        width={100}
-      />
-      <Column
-        header={<Cell>Header</Cell>}
-        cell={<TextFixedCell data={props.data} />}
-        columnKey="text"
-        width={100}
-      />
+      <Column header={<Cell>Header</Cell>} cell={<TextFixedCell data={props.data} />} columnKey="name" width={100} />
+      <Column header={<Cell>Header</Cell>} cell={<TextFixedCell data={props.data} />} columnKey="text" width={100} />
     </FixedDataTable>
   )
 }
-
 
 describe('Test BigDataTable', () => {
   it('renders without crashing', () => {
@@ -80,9 +68,9 @@ describe('Test BigDataTable', () => {
     const instance = wrapper.instance()
     const setStateSpy = jest.spyOn(instance, 'setState')
 
-    expect(wrapper.state().columnWidths).toEqual({name: 50, text: 100})
+    expect(wrapper.state().columnWidths).toEqual({ name: 50, text: 100 })
     instance.onColumnResizeEndCallback(10, 'name')
-    expect(setStateSpy).toHaveBeenCalledWith({"columnWidths": {"name": 10, "text": 100}})
+    expect(setStateSpy).toHaveBeenCalledWith({ columnWidths: { name: 10, text: 100 } })
     expect(onColumnResize).toHaveBeenCalledTimes(1)
   })
 
@@ -93,9 +81,9 @@ describe('Test BigDataTable', () => {
     const setStateSpy = jest.spyOn(instance, 'setState')
 
     instance.onColumnReorderEndCallback({ reorderColumn: 'name' })
-    expect(setStateSpy).toHaveBeenCalledWith({"columnOrder": ['text', 'name']})
+    expect(setStateSpy).toHaveBeenCalledWith({ columnOrder: ['text', 'name'] })
     instance.onColumnReorderEndCallback({ reorderColumn: 'text' })
-    expect(setStateSpy).toHaveBeenCalledWith({"columnOrder": ['text', 'name']})
+    expect(setStateSpy).toHaveBeenCalledWith({ columnOrder: ['text', 'name'] })
     expect(onColumnReorder).toHaveBeenCalledTimes(2)
   })
 
@@ -105,7 +93,7 @@ describe('Test BigDataTable', () => {
     const setStateSpy = jest.spyOn(instance, 'setState')
 
     expect(wrapper.state().columnOrder).toEqual(initialColumnOrder)
-    instance.onColumnReorderEndCallback({ reorderColumn: 'name',  columnAfter: 'text' })
-    expect(setStateSpy).toHaveBeenCalledWith({"columnOrder": initialColumnOrder})
+    instance.onColumnReorderEndCallback({ reorderColumn: 'name', columnAfter: 'text' })
+    expect(setStateSpy).toHaveBeenCalledWith({ columnOrder: initialColumnOrder })
   })
 })

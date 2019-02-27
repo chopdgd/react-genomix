@@ -5,7 +5,6 @@ import { get } from 'lodash'
 
 import { Button, CancelButton, SaveForm } from '../index'
 
-
 class FormModal extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -33,15 +32,7 @@ class FormModal extends React.PureComponent {
   }
 
   render() {
-    const {
-      cancelButton,
-      children,
-      defaultValues,
-      formId,
-      handleChange,
-      saveButton,
-      title
-    } = this.props
+    const { cancelButton, children, defaultValues, formId, handleChange, saveButton, title } = this.props
 
     const { visible } = this.state
 
@@ -59,10 +50,7 @@ class FormModal extends React.PureComponent {
     })
 
     return (
-      <Modal
-        trigger={trigger}
-        open={visible}
-      >
+      <Modal trigger={trigger} open={visible}>
         <Modal.Header>{title}</Modal.Header>
 
         <Modal.Content>
@@ -85,7 +73,6 @@ class FormModal extends React.PureComponent {
   }
 }
 
-
 FormModal.propTypes = {
   formId: PropTypes.string.isRequired,
   trigger: PropTypes.element.isRequired,
@@ -101,17 +88,8 @@ FormModal.propTypes = {
 FormModal.defaultProps = {
   open: false,
   defaultValues: {},
-  saveButton: (
-    <Button
-      type="submit"
-      content="Save"
-      icon="save"
-      color="action-positive"
-      inverted
-    />
-  ),
-  cancelButton: <CancelButton inverted />
+  saveButton: <Button type="submit" content="Save" icon="save" color="action-positive" inverted />,
+  cancelButton: <CancelButton inverted />,
 }
-
 
 export default FormModal

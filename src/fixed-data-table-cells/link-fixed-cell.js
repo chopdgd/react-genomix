@@ -6,7 +6,6 @@ import { get } from 'lodash'
 import { Link } from '../index'
 import * as customPropTypes from '../helpers/customPropTypes'
 
-
 const LinkFixedCell = props => {
   const { as, urlBuilder, data, rowIndex, columnKey, idKey, ...rest } = props
   const content = get(data[rowIndex], columnKey)
@@ -15,7 +14,7 @@ const LinkFixedCell = props => {
   // Build url depending if id is passed or search term
   let url = urlBuilder(content)
   if (id !== undefined) {
-      url = urlBuilder(id)
+    url = urlBuilder(id)
   }
 
   let link = <Link as={as} content={content} href={url} />
@@ -23,13 +22,8 @@ const LinkFixedCell = props => {
     link = <Link as={as} content={content} to={url} />
   }
 
-  return (
-    <Cell {...rest}>
-      {link}
-    </Cell>
-  )
+  return <Cell {...rest}>{link}</Cell>
 }
-
 
 LinkFixedCell.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
@@ -44,6 +38,5 @@ LinkFixedCell.defaultProps = {
   data: [],
   as: 'a',
 }
-
 
 export default LinkFixedCell

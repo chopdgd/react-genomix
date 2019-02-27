@@ -7,7 +7,6 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-
 const SexCell = props => {
   const ElementType = getElementType(SexCell, props)
   const rest = getUnhandledProps(SexCell, props)
@@ -24,20 +23,12 @@ const SexCell = props => {
     icon = <FemaleIcon {...iconProps} />
   }
 
-  return (
-    <ElementType {...rest}>
-      {icon}
-    </ElementType>
-  )
+  return <ElementType {...rest}>{icon}</ElementType>
 }
-
 
 SexCell.propTypes = {
   as: customPropTypes.as,
-  sex: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  sex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   rowIndex: PropTypes.number,
   iconProps: PropTypes.object,
 }
@@ -48,12 +39,6 @@ SexCell.defaultProps = {
   iconProps: {},
 }
 
-SexCell.handledProps = [
-  'as',
-  'sex',
-  'rowIndex',
-  'iconProps',
-]
-
+SexCell.handledProps = ['as', 'sex', 'rowIndex', 'iconProps']
 
 export default SexCell

@@ -1,9 +1,6 @@
-/* Utils */
 import * as utils from './utils'
 export { utils }
 
-
-/* Atoms */
 // Link
 export { default as Link } from './links/link'
 
@@ -85,7 +82,6 @@ export { default as TextFixedCell } from './fixed-data-table-cells/text-fixed-ce
 export { default as TranscriptFixedCell } from './fixed-data-table-cells/transcript-fixed-cell'
 export { default as TurnAroundTimeProgressFixedCell } from './fixed-data-table-cells/turn-around-time-fixed-cell'
 
-/* Molecules */
 // Forms
 export { default as SaveForm } from './forms/save-form'
 export { default as LoginForm } from './forms/login-form'
@@ -116,7 +112,6 @@ export { default as TurnAroundTimeProgressColumn } from './table-columns/turn-ar
 // Tables
 export { default as BigDataTable } from './tables/big-data-table'
 export { default as FixedDataTable } from './tables/fixed-data-table'
-
 
 // Custom hooks
 export { default as useLocalStorage } from './hooks/use-local-storage'

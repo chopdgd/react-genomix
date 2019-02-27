@@ -1,6 +1,5 @@
 import moment from 'moment'
 
-
 const getTurnAroundTimeDetails = (target, start, signout) => {
   const now = moment(Date.now())
   const startMoment = moment(start)
@@ -15,18 +14,18 @@ const getTurnAroundTimeDetails = (target, start, signout) => {
     daysPassed = signoutMoment.diff(startMoment, 'days')
     label = targetMoment.diff(signoutMoment, 'days') * -1
 
-    if (daysPassed>target) {
-      color="red"
+    if (daysPassed > target) {
+      color = 'red'
     } else {
-      color="green"
+      color = 'green'
     }
 
-  // If not, we have to calculate from now
+    // If not, we have to calculate from now
   } else {
     daysPassed = now.diff(startMoment, 'days')
     label = targetMoment.diff(now, 'days') * -1
 
-    const percent = daysPassed/target
+    const percent = daysPassed / target
     // Label is the time to signout date
     // If the target signout date is 12/19/1987 and today is 12/18/1987, we would display -1
     // We count negative towards the expected date, and incrementally up past signout
@@ -41,9 +40,8 @@ const getTurnAroundTimeDetails = (target, start, signout) => {
   return {
     label,
     color,
-    value: signout? target: daysPassed,
+    value: signout ? target : daysPassed,
   }
 }
-
 
 export default getTurnAroundTimeDetails
