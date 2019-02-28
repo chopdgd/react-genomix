@@ -829,9 +829,9 @@
     prop-types "^15.6.2"
 
 "@types/node@*":
-  version "11.9.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.5.tgz#011eece9d3f839a806b63973e228f85967b79ed3"
-  integrity sha512-vVjM0SVzgaOUpflq4GYBvCpozes8OgIIS5gVXVka+OfK3hvnkC1i93U8WiY2OtNE4XUWyyy/86Kf6e0IHTQw1Q==
+  version "11.9.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.6.tgz#c632bbcc780a1349673a6e2e9b9dfa8c369d3c74"
+  integrity sha512-4hS2K4gwo9/aXIcoYxCtHpdgd8XUeDmo1siRCAH3RziXB65JlPqUFMtfy9VPj+og7dp3w1TFjGwYga4e0m9GwA==
 
 "@types/node@^8.0.7":
   version "8.10.40"
@@ -4873,10 +4873,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-fixed-data-table-2@0.8.19:
-  version "0.8.19"
-  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-0.8.19.tgz#7ca6116482724721cab272a559bda5b21b8c9886"
-  integrity sha512-Di1GPp5HHs/jAt+wIaXw+hpjJg0rQGdY3zS7ViGyPOAWSD4qOBk75MD+dGO2Y333Pr7kQmI8x6gyhE29tyWPyA==
+fixed-data-table-2@0.8.20:
+  version "0.8.20"
+  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-0.8.20.tgz#5fd36235c4cc479ca7dc6dc3927e673f2017a205"
+  integrity sha512-vuPS8ZfGMl9En/C9VIjcZFt1DclrXlWKlxFBvxM5oXNtNwlmfYs/qsCINN6Hyl3v77LV8XdgKcraAOVQxkY0Cw==
   dependencies:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
@@ -8514,9 +8514,9 @@ pac-resolver@^3.0.0:
     thunkify "^2.1.2"
 
 pako@~1.0.5:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.8.tgz#6844890aab9c635af868ad5fecc62e8acbba3ea4"
-  integrity sha512-6i0HVbUfcKaTv+EG8ZTr75az7GFXcLYk9UyLEg7Notv/Ma+z/UG3TCoz6GiNeOrn1E/e63I0X/Hpw18jHOTUnA==
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
+  integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
 parallel-transform@^1.1.0:
   version "1.1.0"
@@ -9337,9 +9337,9 @@ readable-stream@1.1.x, "readable-stream@1.x >=1.1.9":
     string_decoder "~0.10.x"
 
 readable-stream@3, readable-stream@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.1.1.tgz#ed6bbc6c5ba58b090039ff18ce670515795aeb06"
-  integrity sha512-DkN66hPyqDhnIQ6Jcsvx9bFjhw214O4poMBcIMgPVpQvNy9a0e0Uhg5SqySyDKAmUlwt8LonTBz1ezOnM8pUdA==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.2.0.tgz#de17f229864c120a9f56945756e4f32c4045245d"
+  integrity sha512-RV20kLjdmpZuTF1INEb9IA3L68Nmi+Ri7ppZqo78wj//Pn62fCoJyV9zalccNzDD/OuJpMG4f+pfMl8+L6QdGw==
   dependencies:
     inherits "^2.0.3"
     string_decoder "^1.1.1"
