@@ -1,88 +1,65 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Cell } from 'fixed-data-table-2'
-import { Button, Popup, Icon } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { utils } from '../index'
+import { RatingPopup, utils } from '../index'
 
-class PublicEvidenceFixedCell extends React.PureComponent {
-  renderRating = (database, value, url) => {
-    let color = 'grey'
-    let message = `Not present in ${database}!`
-    let content = <p>{message}</p>
+const PublicEvidenceFixedCell = props => {
+  const {
+    data,
+    rowIndex,
+    columnKey,
+    chromosomeKey,
+    positionKey,
+    referenceKey,
+    alternateKey,
+    cosmicKey,
+    hgmdKey,
+    clinvarKey,
+    gnomadKey,
+    ...rest
+  } = props
 
-    if (value) {
-      color = 'yellow'
-      message = `Present in ${database}!`
-      content = (
-        <div>
-          <p>{message}</p>
-          <a target="_blank" rel="noopener noreferrer" href={url}>
-            <Button fluid content={`Go to ${database}`} />
-          </a>
-        </div>
-      )
-    }
+  const rowData = data[rowIndex]
 
-    return <Popup trigger={<Icon color={color} name="star" />} content={content} hoverable />
+  const chromosome = get(rowData, chromosomeKey)
+  const position = get(rowData, positionKey)
+  const reference = get(rowData, referenceKey)
+  const alternate = get(rowData, alternateKey)
+  const cosmicId = get(rowData, cosmicKey)
+  const hgmdId = get(rowData, hgmdKey)
+  const clinvarId = get(rowData, clinvarKey)
+  const gnomadFrequency = get(rowData, gnomadKey)
+
+  let cosmicURL
+  if (cosmicId) {
+    cosmicURL = utils.urlBuilders.cosmicEntry(cosmicId)
   }
 
-  render() {
-    const {
-      data,
-      rowIndex,
-      columnKey,
-      chromosomeKey,
-      positionKey,
-      referenceKey,
-      alternateKey,
-      cosmicKey,
-      hgmdKey,
-      clinvarKey,
-      gnomadKey,
-      ...rest
-    } = this.props
-    const rowData = data[rowIndex]
-
-    const chromosome = get(rowData, chromosomeKey)
-    const position = get(rowData, positionKey)
-    const reference = get(rowData, referenceKey)
-    const alternate = get(rowData, alternateKey)
-    const cosmicId = get(rowData, cosmicKey)
-    const hgmdId = get(rowData, hgmdKey)
-    const clinvarId = get(rowData, clinvarKey)
-    const gnomadFrequency = get(rowData, gnomadKey)
-
-    let cosmicURL
-    if (cosmicId) {
-      cosmicURL = utils.urlBuilders.cosmicEntry(cosmicId)
-    }
-
-    let hgmdURL
-    if (hgmdId) {
-      hgmdURL = utils.urlBuilders.hgmdVariant(hgmdId)
-    }
-
-    let clinvarURL
-    if (clinvarId) {
-      clinvarURL = utils.urlBuilders.clinvarEntry(clinvarId)
-    }
-
-    let gnomadURL
-    if (gnomadFrequency) {
-      gnomadURL = utils.urlBuilders.gnomadVariant(chromosome, position, reference, alternate)
-    }
-
-    return (
-      <Cell {...rest}>
-        {this.renderRating('COSMIC', cosmicId, cosmicURL)}
-        {this.renderRating('HGMD', hgmdId, hgmdURL)}
-        {this.renderRating('ClinVar', clinvarId, clinvarURL)}
-        {this.renderRating('gnomAD', gnomadFrequency, gnomadURL)}
-      </Cell>
-    )
+  let hgmdURL
+  if (hgmdId) {
+    hgmdURL = utils.urlBuilders.hgmdVariant(hgmdId)
   }
+
+  let clinvarURL
+  if (clinvarId) {
+    clinvarURL = utils.urlBuilders.clinvarEntry(clinvarId)
+  }
+
+  let gnomadURL
+  if (gnomadFrequency) {
+    gnomadURL = utils.urlBuilders.gnomadVariant(chromosome, position, reference, alternate)
+  }
+
+  return (
+    <Cell {...rest}>
+      <RatingPopup database="COSMIC" value={cosmicId} url={cosmicURL} />
+      <RatingPopup database="HGMD" value={hgmdId} url={hgmdURL} />
+      <RatingPopup database="ClinVar" value={clinvarId} url={clinvarURL} />
+      <RatingPopup database="gnomAD" value={gnomadFrequency} url={gnomadURL} />
+    </Cell>
+  )
 }
 
 PublicEvidenceFixedCell.propTypes = {

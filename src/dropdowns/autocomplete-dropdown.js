@@ -1,53 +1,25 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Dropdown } from 'semantic-ui-react'
-import { omit } from 'lodash'
 
-class AutoCompleteDropDown extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    const { loading } = props
+const AutoCompleteDropDown = ({ endpoint, searchAction, waitInterval, loading, ...props }) => {
+  const [state, setState] = useState(false)
+  const countRef = useRef(null)
+  countRef.current = null
 
-    if (loading !== state.loading) {
-      return { loading }
-    }
+  useEffect(() => setState(loading), [loading])
 
-    return null
+  const onSearchChange = (e, { searchQuery }) => {
+    clearTimeout(countRef.current)
+    countRef.current = setTimeout(() => searchAction(searchQuery), waitInterval)
+    setState(true)
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      loading: props.loading,
-    }
-  }
-
-  componentDidMount() {
-    this.timeout = null
-  }
-
-  onSearchChange = (e, { searchQuery }) => {
-    const { endpoint, searchAction, waitInterval } = this.props
-
-    const searchURL = `${endpoint}${searchQuery}`
-    clearTimeout(this.timeout)
-    this.timeout = setTimeout(() => searchAction(searchURL), waitInterval)
-
-    this.setState({ loading: true })
-  }
-
-  render() {
-    const dropdownProps = omit(this.props, ['endpoint', 'loading', 'searchAction', 'waitInterval'])
-    const { loading } = this.state
-
-    return <Dropdown search selection onSearchChange={this.onSearchChange} loading={loading} {...dropdownProps} />
-  }
+  return <Dropdown search selection onSearchChange={onSearchChange} loading={state} {...props} />
 }
 
 AutoCompleteDropDown.propTypes = {
-  onChange: PropTypes.func,
   searchAction: PropTypes.func.isRequired,
-  endpoint: PropTypes.string.isRequired,
   waitInterval: PropTypes.number,
   loading: PropTypes.bool,
 }
