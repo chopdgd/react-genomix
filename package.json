@@ -12,7 +12,7 @@
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component && yarn build-css",
+    "build": "yarn build-css && nwb build-react-component",
     "build-css": "cd src/stylesheets && node-sass-chokidar main.scss -o ./ --output-style compressed && mv main.css ../../dist/react-genomix.min.css",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
@@ -27,7 +27,6 @@
     "immutability-helper": "2.9.0",
     "moment": "2.22.2",
     "react-csv": "1.1.1",
-    "react-virtualized": "9.21.0",
     "semantic-ui-css": "2.4.1",
     "semantic-ui-react": "0.85.0"
   },

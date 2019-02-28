@@ -11,7 +11,7 @@ const useStateList = (values = []) => {
     })
   }
 
-  const resetValues = (values = []) => useState(values)
+  const resetValues = (values = []) => setState(values)
 
   return [list, setList, resetValues]
 }

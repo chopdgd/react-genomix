@@ -1,103 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { AutoSizer } from 'react-virtualized'
 import { Table } from 'fixed-data-table-2'
 import { get, indexOf, map, sortBy } from 'lodash'
-import update from 'immutability-helper'
 
-class FixedDataTable extends React.Component {
-  constructor(props) {
-    super(props)
+import { hooks } from '../index'
 
-    this.state = {
-      columnWidths: props.columnWidths,
-      columnOrder: props.columnOrder,
-    }
-  }
+const FixedDataTable = props => {
+  const {
+    columnWidths: defaultWidths,
+    columnOrder: defaultOrder,
+    onColumnReorder,
+    onColumnResize,
+    children,
+    fixedColumns,
+    widthOffset,
+    heightOffset,
+    ...rest
+  } = props
 
-  static getDerivedStateFromProps(props, state) {
-    const { columnWidths, columnOrder } = props
+  const [columnWidths, setColumnWidths] = useState(defaultWidths)
+  const [columnOrder, setColumnOrder] = useState(defaultOrder)
 
-    if (columnWidths !== state.columnWidths || columnOrder !== state.columnOrder) {
-      return { columnWidths, columnOrder }
-    }
-
-    return null
-  }
-
-  onColumnResizeEndCallback = (newColumnWidth, columnKey) => {
-    const { columnWidths } = this.state
-    const newColumnWidths = update(columnWidths, { [columnKey]: { $set: newColumnWidth } })
-    this.setState({ columnWidths: newColumnWidths })
-
-    const { onColumnResize } = this.props
-    if (onColumnResize) onColumnResize(newColumnWidths)
+  const onColumnResizeEndCallback = (newColumnWidth, columnKey) => {
+    const newWidths = { ...columnWidths, [columnKey]: newColumnWidth }
+    setColumnWidths(newWidths)
+    if (onColumnResize) onColumnResize(newWidths)
   }
 
   // SEE: https://github.com/schrodinger/fixed-data-table-2/blob/master/examples/ReorderExample.js#L57-L76
-  onColumnReorderEndCallback = event => {
-    const columnOrder = this.state.columnOrder.filter(columnKey => columnKey !== event.reorderColumn)
+  const onColumnReorderEndCallback = event => {
+    const order = columnOrder.filter(columnKey => columnKey !== event.reorderColumn)
 
     if (event.columnAfter) {
-      const index = columnOrder.indexOf(event.columnAfter)
-      columnOrder.splice(index, 0, event.reorderColumn)
+      const index = order.indexOf(event.columnAfter)
+      order.splice(index, 0, event.reorderColumn)
     } else {
-      columnOrder.push(event.reorderColumn)
+      order.push(event.reorderColumn)
     }
 
-    this.setState({ columnOrder })
-
-    const { onColumnReorder } = this.props
+    setColumnOrder(order)
     if (onColumnReorder) onColumnReorder(columnOrder)
   }
 
-  render() {
-    const {
-      columnOrder,
-      columnWidths,
-      children,
-      fixedColumns,
-      onColumnResize,
-      onColumnReorder,
-      maxHeight,
-      ...rest
-    } = this.props
+  // Add adjustable width to Columns
+  const columns = []
+  React.Children.map(children, column => {
+    const columnObject = {
+      order: indexOf(columnOrder, column.props.columnKey),
+      column: React.cloneElement(column, {
+        key: column.props.columnKey,
+        width: get(columnWidths, `${column.props.columnKey}`, ''),
+        fixed: fixedColumns.includes(column.props.columnKey),
+      }),
+    }
+    columns.push(columnObject)
+  })
 
-    // Add adjustable width to Columns
-    const columns = []
-    React.Children.map(children, column => {
-      const columnObject = {
-        order: indexOf(this.state.columnOrder, column.props.columnKey),
-        column: React.cloneElement(column, {
-          key: column.props.columnKey,
-          width: get(this.state, `columnWidths.${column.props.columnKey}`, ''),
-          fixed: fixedColumns.includes(column.props.columnKey),
-        }),
-      }
-      columns.push(columnObject)
-    })
+  // Render columns in adjusted order
+  const orderedColumns = sortBy(columns, ['order'])
+  const orderedChildren = map(orderedColumns, column => column.column)
 
-    // Render columns in adjusted order
-    const orderedColumns = sortBy(columns, ['order'])
-    const orderedChildren = map(orderedColumns, column => column.column)
+  const { innerHeight: height, innerWidth: width } = hooks.useWindowSize()
 
-    return (
-      <AutoSizer disableHeight>
-        {({ width }) => (
-          <Table
-            className="genomix fixed-data table"
-            width={width}
-            onColumnResizeEndCallback={this.onColumnResizeEndCallback}
-            onColumnReorderEndCallback={this.onColumnReorderEndCallback}
-            maxHeight={maxHeight}
-            {...rest}
-          >
-            {orderedChildren}
-          </Table>
-        )}
-      </AutoSizer>
-    )
-  }
+  return (
+    <Table
+      {...rest}
+      className="genomix fixed-data table"
+      width={width - widthOffset}
+      onColumnResizeEndCallback={onColumnResizeEndCallback}
+      onColumnReorderEndCallback={onColumnReorderEndCallback}
+      height={height - heightOffset}
+    >
+      {orderedChildren}
+    </Table>
+  )
 }
 
 FixedDataTable.propTypes = {
@@ -106,11 +82,14 @@ FixedDataTable.propTypes = {
   columnWidths: PropTypes.object.isRequired,
   onResizeColumn: PropTypes.func,
   fixedColumns: PropTypes.arrayOf(PropTypes.string),
+  widthOffset: PropTypes.number,
+  heightOffset: PropTypes.number,
 }
 
 FixedDataTable.defaultProps = {
   fixedColumns: [],
-  maxHeight: 1200,
+  widthOffset: 200,
+  heightOffset: 200,
 }
 
 export default FixedDataTable

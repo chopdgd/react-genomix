@@ -3,7 +3,6 @@ import { Card, Grid } from 'semantic-ui-react'
 
 import * as GenomiX from '../../../src'
 
-
 const items = [
   {
     key: 1,
@@ -44,10 +43,7 @@ const items = [
     key: 9,
     header: 'ExportButton',
     description: (
-      <GenomiX.ExportButton
-        data={[{hi: 'Mike'}]}
-        content={<GenomiX.Button content="Export" icon="download" />}
-      />
+      <GenomiX.ExportButton data={[{ hi: 'Mike' }]} content={<GenomiX.Button content="Export" icon="download" />} />
     ),
   },
 
@@ -93,29 +89,12 @@ const items = [
     description: <GenomiX.SearchButton color="action-warning" inverted />,
     meta: 'inverted',
   },
-  {
-    key: 18,
-    header: 'ExportButton with onExport()',
-    description: (
-      <GenomiX.ExportButton
-        content={<GenomiX.Button content="Export" icon="download" inverted />}
-        data={[{ hi: 'Mike' }]}
-        onExport={(data) => data.concat([{ hi: 'Mori'}])}
-      />
-    ),
-    meta: 'inverted',
-  },
 ]
 
 const Buttons = () => (
   <Grid padded centered>
     <Grid.Column width={16} textAlign="center">
-      <Card.Group
-        items={items}
-        textAlign="center"
-        itemsPerRow={5}
-        stackable
-      />
+      <Card.Group items={items} textAlign="center" itemsPerRow={5} stackable />
     </Grid.Column>
   </Grid>
 )

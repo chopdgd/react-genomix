@@ -1,113 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Message } from 'semantic-ui-react'
 
 import { Button } from '../index'
 
-class LoginForm extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    const { loading, error } = props
+const LoginForm = ({ handleLogin, ...props }) => {
+  const defaultValues = { username: '', password: '', loading: props.loading, error: props.error }
+  const [state, setState] = useState(defaultValues)
 
-    if (loading !== state.loading || error !== state.error) {
-      return { loading, error }
-    }
-
-    return null
+  const handleChange = (e, { name, value }) => {
+    setState({ ...state, [name]: value, error: undefined })
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      username: '',
-      password: '',
-      loading: props.loading,
-      error: props.error,
-    }
-  }
-
-  handleChange = (e, { name, value }) => {
-    this.setState({
-      [name]: value,
-      error: undefined,
-    })
-  }
-
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    const { username, password } = this.state
-    const { handleLogin } = this.props
+    const { username, password } = state
 
     if (!username || !password) {
-      this.setState({
-        error: 'Username and Password are required!',
-      })
+      setState({ ...state, error: 'Username and Password are required!' })
     } else {
-      handleLogin({
-        username,
-        password,
-      })
-
-      this.setState({ loading: true })
+      handleLogin({ username, password })
+      setState({ ...state, loading: true })
     }
   }
 
-  render() {
-    const { loading, error, username, password } = this.state
+  const { username, password, error, loading } = state
 
-    return (
-      <Form
-        id="login-form"
-        className="login-form"
+  return (
+    <Form id="login-form" className="login-form" size="large" key="big" onSubmit={handleSubmit} loading={loading}>
+      <Form.Input
+        id="username"
+        name="username"
+        className="login-input"
+        placeholder="Username"
+        icon="user"
+        iconPosition="left"
+        required
+        onChange={handleChange}
+      />
+      <Form.Input
+        id="password"
+        name="password"
+        className="login-input"
+        placeholder="Password"
+        icon="lock"
+        iconPosition="left"
+        required
+        onChange={handleChange}
+        type="password"
+      />
+
+      {error ? (
+        <Message negative>
+          <Message.Header as="h5">Login Failed</Message.Header>
+          <p>{error}</p>
+        </Message>
+      ) : (
+        ''
+      )}
+
+      <Button
+        className="login-button"
+        type="submit"
+        form="login-form"
+        content="Sign In"
+        primary
+        fluid
         size="large"
-        key="big"
-        onSubmit={this.handleSubmit}
-        loading={loading}
-      >
-        <Form.Input
-          id="username"
-          name="username"
-          className="login-input"
-          placeholder="Username"
-          icon="user"
-          iconPosition="left"
-          required
-          onChange={this.handleChange}
-        />
-        <Form.Input
-          id="password"
-          name="password"
-          className="login-input"
-          placeholder="Password"
-          icon="lock"
-          iconPosition="left"
-          required
-          onChange={this.handleChange}
-          type="password"
-        />
-
-        {error ? (
-          <Message negative>
-            <Message.Header as="h5">Login Failed</Message.Header>
-            <p>{error}</p>
-          </Message>
-        ) : (
-          ''
-        )}
-
-        <Button
-          className="login-button"
-          type="submit"
-          form="login-form"
-          content="Sign In"
-          primary
-          fluid
-          size="large"
-          disabled={!username || !password}
-        />
-      </Form>
-    )
-  }
+        disabled={!username || !password}
+      />
+    </Form>
+  )
 }
 
 LoginForm.propTypes = {

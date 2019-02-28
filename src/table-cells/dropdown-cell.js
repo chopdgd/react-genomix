@@ -6,33 +6,20 @@ import * as customPropTypes from '../helpers/customPropTypes'
 import getElementType from '../helpers/getElementType'
 import getUnhandledProps from '../helpers/getUnhandledProps'
 
-class DropdownCell extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      value: '',
-    }
-  }
-
-  onChange = (e, { name, value }) => {
-    const { onChange, rowIndex } = this.props
-    onChange({ column: name, row: rowIndex, value: value })
-    this.setState({ value })
-  }
-
-  render() {
-    const ElementType = getElementType(DropdownCell, this.props)
-    const rest = getUnhandledProps(DropdownCell, this.props)
-    const { value } = this.state
-    const { name, options, dropDownProps } = this.props
-
-    return (
-      <ElementType {...rest}>
-        <Dropdown name={name} value={value} onChange={this.onChange} options={options} {...dropDownProps} />
-      </ElementType>
-    )
-  }
+const DropdownCell = props => {
+  const ElementType = getElementType(DropdownCell, props)
+  const rest = getUnhandledProps(DropdownCell, props)
+  const { dropDownProps, name, onChange, options, rowIndex } = props
+  return (
+    <ElementType {...rest}>
+      <Dropdown
+        name={name}
+        onChange={(e, { name, value }) => onChange({ column: name, row: rowIndex, value: value })}
+        options={options}
+        {...dropDownProps}
+      />
+    </ElementType>
+  )
 }
 
 DropdownCell.propTypes = {

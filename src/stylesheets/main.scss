@@ -1,17 +1,16 @@
 /* 3rd Party */
-@import '~react-virtualized/styles.css';
 @import '~fixed-data-table-2/dist/fixed-data-table.min.css';
-@import "~semantic-ui-css/semantic.min.css";
+@import '~semantic-ui-css/semantic.min.css';
 
 /* Partials */
-@import "partials/base";
-@import "partials/buttons";
-@import "partials/icons";
-@import "partials/labels";
-@import "partials/tables";
-@import "partials/fixed-data-tables";
-@import "partials/navbar";
-@import "partials/login-form";
+@import 'partials/base';
+@import 'partials/buttons';
+@import 'partials/icons';
+@import 'partials/labels';
+@import 'partials/tables';
+@import 'partials/fixed-data-tables';
+@import 'partials/navbar';
+@import 'partials/login-form';
 
 // See: https://github.com/Semantic-Org/Semantic-UI-CSS/issues/47
 .dimmer.visible.transition {

@@ -1,5 +1,7 @@
+import * as hooks from './hooks'
 import * as utils from './utils'
-export { utils }
+
+export { hooks, utils }
 
 // Link
 export { default as Link } from './links/link'
@@ -49,6 +51,7 @@ export { default as Avatar } from './media/avatar'
 
 // Popups
 export { default as GeneResourcesPopup } from './popups/genes-resources-popup'
+export { default as RatingPopup } from './popups/rating-popup'
 
 // Prgress bars
 export { default as TurnAroundTimeProgress } from './progress-bars/turn-around-time-progress'
@@ -94,23 +97,7 @@ export { default as DropdownMenu } from './menus/dropdown-menu'
 export { default as Navbar } from './menus/navbar'
 export { default as UserMenu } from './menus/user-menu'
 
-// Table Columns
-export { default as CheckboxColumn } from './table-columns/checkbox-column'
-export { default as DateColumn } from './table-columns/date-column'
-export { default as DropdownColumn } from './table-columns/dropdown-column'
-export { default as GeneColumn } from './table-columns/gene-column'
-export { default as InterpretationColumn } from './table-columns/interpretation-column'
-export { default as LinkColumn } from './table-columns/link-column'
-export { default as MolecularConsequenceColumn } from './table-columns/molecular-consequence-column'
-export { default as PublicEvidenceColumn } from './table-columns/public-resources-evidence-column'
-export { default as SexColumn } from './table-columns/sex-column'
-export { default as StatusColumn } from './table-columns/status-column'
-export { default as TextColumn } from './table-columns/text-column'
-export { default as TranscriptColumn } from './table-columns/transcript-column'
-export { default as TurnAroundTimeProgressColumn } from './table-columns/turn-around-time-column'
-
 // Tables
-export { default as BigDataTable } from './tables/big-data-table'
 export { default as FixedDataTable } from './tables/fixed-data-table'
 
 // Custom hooks

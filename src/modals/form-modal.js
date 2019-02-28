@@ -1,76 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Modal } from 'semantic-ui-react'
-import { get } from 'lodash'
 
 import { Button, CancelButton, SaveForm } from '../index'
 
-class FormModal extends React.PureComponent {
-  constructor(props) {
-    super(props)
+const FormModal = ({ open, handleSubmit, ...props }) => {
+  const { cancelButton, children, defaultValues, formId, handleChange, saveButton, title } = props
+  const [visible, setVisible] = useState(open)
 
-    this.state = {
-      visible: get(props, 'open', false),
-    }
+  const onSubmit = values => {
+    if (handleSubmit) handleSubmit(values)
+    setVisible(false)
   }
 
-  onSubmit = values => {
-    const { handleSubmit } = this.props
-    if (handleSubmit) {
-      handleSubmit(values)
-    }
+  const trigger = React.cloneElement(props.trigger, {
+    onClick: () => setVisible(true),
+  })
 
-    this.close()
-  }
+  const save = React.cloneElement(saveButton, {
+    type: 'submit',
+    form: formId,
+  })
 
-  open = () => {
-    this.setState({ visible: true })
-  }
+  const cancel = React.cloneElement(cancelButton, {
+    onClick: () => setVisible(false),
+  })
 
-  close = () => {
-    this.setState({ visible: false })
-  }
+  return (
+    <Modal trigger={trigger} open={visible}>
+      <Modal.Header>{title}</Modal.Header>
 
-  render() {
-    const { cancelButton, children, defaultValues, formId, handleChange, saveButton, title } = this.props
+      <Modal.Content>
+        <SaveForm formId={formId} defaultValues={defaultValues} handleChange={handleChange} handleSubmit={onSubmit}>
+          {children}
+        </SaveForm>
+      </Modal.Content>
 
-    const { visible } = this.state
-
-    const trigger = React.cloneElement(this.props.trigger, {
-      onClick: this.open,
-    })
-
-    const save = React.cloneElement(saveButton, {
-      type: 'submit',
-      form: formId,
-    })
-
-    const cancel = React.cloneElement(cancelButton, {
-      onClick: this.close,
-    })
-
-    return (
-      <Modal trigger={trigger} open={visible}>
-        <Modal.Header>{title}</Modal.Header>
-
-        <Modal.Content>
-          <SaveForm
-            formId={formId}
-            defaultValues={defaultValues}
-            handleChange={handleChange}
-            handleSubmit={this.onSubmit}
-          >
-            {children}
-          </SaveForm>
-        </Modal.Content>
-
-        <Modal.Actions>
-          {save}
-          {cancel}
-        </Modal.Actions>
-      </Modal>
-    )
-  }
+      <Modal.Actions>
+        {save}
+        {cancel}
+      </Modal.Actions>
+    </Modal>
+  )
 }
 
 FormModal.propTypes = {

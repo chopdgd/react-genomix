@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Button } from 'semantic-ui-react'
 import { shallow } from 'enzyme'
 
 import { PublicEvidenceCell } from '../index'
@@ -12,67 +11,24 @@ describe('Test PublicEvidenceCell', () => {
     ReactDOM.render(element, div)
   })
 
-  it('initial props are set correctly', () => {
-    const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" />
-    const wrapper = shallow(element)
-    expect(wrapper.instance().props.as).toEqual('div')
-    expect(wrapper.instance().props.chromosome).toEqual('1')
-    expect(wrapper.instance().props.position).toEqual(10)
-    expect(wrapper.instance().props.reference).toEqual('A')
-    expect(wrapper.instance().props.alternate).toEqual('T')
-    expect(wrapper.instance().props.cosmicId).toEqual(undefined)
-    expect(wrapper.instance().props.hgmdId).toEqual(undefined)
-    expect(wrapper.instance().props.clinvarId).toEqual(undefined)
-    expect(wrapper.instance().props.gnomadFrequency).toEqual(undefined)
-    expect(wrapper.instance().props.rowIndex).toEqual(undefined)
-  })
-
   it('renders 4 Popups', () => {
     const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" />
     const wrapper = shallow(element)
-    expect(wrapper.find('Popup')).toHaveLength(4)
+    expect(wrapper.find('RatingPopup')).toHaveLength(4)
   })
 
   it('renders COSMIC popup', () => {
     const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" cosmicId="cosmicId" />
     const wrapper = shallow(element)
-
-    expect(wrapper.props().children[0].props.content).toEqual(
-      <div>
-        <p>Present in COSMIC!</p>
-        <a
-          href="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=cosmicId"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Button as="button" content="Go to COSMIC" fluid={true} />
-        </a>
-      </div>
-    )
-    expect(wrapper.props().children[1].props.content).toEqual(<p>Not present in HGMD!</p>)
-    expect(wrapper.props().children[2].props.content).toEqual(<p>Not present in ClinVar!</p>)
-    expect(wrapper.props().children[3].props.content).toEqual(<p>Not present in gnomAD!</p>)
+    const popup = wrapper.find('RatingPopup').at(0)
+    expect(popup.props().url).toEqual('http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=cosmicId')
   })
 
   it('renders HGMD popup', () => {
     const element = <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" hgmdId="hgmdId" />
     const wrapper = shallow(element)
-
-    expect(wrapper.props().children[0].props.content).toEqual(<p>Not present in COSMIC!</p>)
-    expect(wrapper.props().children[1].props.content).toEqual(
-      <div>
-        <p>Present in HGMD!</p>
-        <a
-          href="https://portal.biobase-international.com/hgmd/pro/mut.php?acc=hgmdId"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Button as="button" content="Go to HGMD" fluid={true} />
-        </a>
-      </div>
-    )
-    expect(wrapper.props().children[2].props.content).toEqual(<p>Not present in ClinVar!</p>)
-    expect(wrapper.props().children[3].props.content).toEqual(<p>Not present in gnomAD!</p>)
+    const popup = wrapper.find('RatingPopup').at(1)
+    expect(popup.props().url).toEqual('https://portal.biobase-international.com/hgmd/pro/mut.php?acc=hgmdId')
   })
 
   it('renders ClinVar popup', () => {
@@ -80,22 +36,8 @@ describe('Test PublicEvidenceCell', () => {
       <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" clinvarId="clinvarId" />
     )
     const wrapper = shallow(element)
-
-    expect(wrapper.props().children[0].props.content).toEqual(<p>Not present in COSMIC!</p>)
-    expect(wrapper.props().children[1].props.content).toEqual(<p>Not present in HGMD!</p>)
-    expect(wrapper.props().children[2].props.content).toEqual(
-      <div>
-        <p>Present in ClinVar!</p>
-        <a
-          href="https://preview.ncbi.nlm.nih.gov/clinvar/variation/clinvarId"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Button as="button" content="Go to ClinVar" fluid={true} />
-        </a>
-      </div>
-    )
-    expect(wrapper.props().children[3].props.content).toEqual(<p>Not present in gnomAD!</p>)
+    const popup = wrapper.find('RatingPopup').at(2)
+    expect(popup.props().url).toEqual('https://preview.ncbi.nlm.nih.gov/clinvar/variation/clinvarId')
   })
 
   it('renders gnomAD popup', () => {
@@ -103,17 +45,7 @@ describe('Test PublicEvidenceCell', () => {
       <PublicEvidenceCell chromosome="1" position={10} reference="A" alternate="T" gnomadFrequency={0.1} />
     )
     const wrapper = shallow(element)
-
-    expect(wrapper.props().children[0].props.content).toEqual(<p>Not present in COSMIC!</p>)
-    expect(wrapper.props().children[1].props.content).toEqual(<p>Not present in HGMD!</p>)
-    expect(wrapper.props().children[2].props.content).toEqual(<p>Not present in ClinVar!</p>)
-    expect(wrapper.props().children[3].props.content).toEqual(
-      <div>
-        <p>Present in gnomAD!</p>
-        <a href="http://gnomad.broadinstitute.org/variant/1-10-A-T" rel="noopener noreferrer" target="_blank">
-          <Button as="button" content="Go to gnomAD" fluid={true} />
-        </a>
-      </div>
-    )
+    const popup = wrapper.find('RatingPopup').at(3)
+    expect(popup.props().url).toEqual('http://gnomad.broadinstitute.org/variant/1-10-A-T')
   })
 })

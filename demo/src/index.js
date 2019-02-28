@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 import { Divider, Tab, Sidebar, Menu } from 'semantic-ui-react'
 
 import '../../dist/react-genomix.min.css'
@@ -23,93 +23,111 @@ import TableCellExamples from './components/TableCellExamples'
 import Forms from './components/Forms'
 import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
-import BigDataTableExample from './components/BigDataTableExample'
 import FixedDataTableExample from './components/FixedDataTableExample'
 
 // Organisms
 import NavbarExample from './components/NavbarExample'
 
-
 const panes = [
   {
     menuItem: 'Buttons',
-    render: () => <Tab.Pane><Buttons /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <Buttons />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Dropdowns',
-    render: () => <Tab.Pane><Dropdowns /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <Dropdowns />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Icons',
-    render: () => <Tab.Pane><Icons /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <Icons />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Links',
-    render: () => <Tab.Pane><Links /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <Links />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Progress Bars',
-    render: () => <Tab.Pane><ProgressBars /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <ProgressBars />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Table Cells',
-    render: () => <Tab.Pane><TableCellExamples /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <TableCellExamples />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Forms',
-    render: () => <Tab.Pane><Forms /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <Forms />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'LoginForm',
-    render: () => <Tab.Pane><LoginFormExample /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <LoginFormExample />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Modals',
-    render: () => <Tab.Pane><Modals /></Tab.Pane>
-  },
-  {
-    menuItem: 'Big Data Table',
-    render: () => <Tab.Pane><BigDataTableExample /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <Modals />
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Fixed Data Table',
-    render: () => <Tab.Pane><FixedDataTableExample /></Tab.Pane>
+    render: () => (
+      <Tab.Pane>
+        <FixedDataTableExample />
+      </Tab.Pane>
+    ),
   },
 ]
 
-
 const Demo = () => {
-  const [state, setState] = GenomiX.useLocalStorage('sidebar', {visible: true})
+  const [state, setState] = GenomiX.useLocalStorage('sidebar', { visible: true })
 
   return (
     <Sidebar.Pushable>
-      <Sidebar
-        className='genomix-sidebar'
-        as={Menu}
-        animation='push'
-        width='thin'
-        vertical
-        visible={state.visible}
-        >
-        <br/>
-        <br/>
-        <br/>
-        <Menu.Item>
-          Nexus
-        </Menu.Item>
-        <Menu.Item>
-          Primer Bank
-        </Menu.Item>
-        <Menu.Item>
-          Documentation
-        </Menu.Item>
-        <Menu.Item>
-          Report Issue
-        </Menu.Item>
+      <Sidebar className="genomix-sidebar" as={Menu} animation="push" width="thin" vertical visible={state.visible}>
+        <br />
+        <br />
+        <br />
+        <Menu.Item>Nexus</Menu.Item>
+        <Menu.Item>Primer Bank</Menu.Item>
+        <Menu.Item>Documentation</Menu.Item>
+        <Menu.Item>Report Issue</Menu.Item>
       </Sidebar>
       <Sidebar.Pusher>
         <div>
-          <NavbarExample navCallback={() => setState({...state, visible: !state.visible})} />
+          <NavbarExample navCallback={() => setState({ ...state, visible: !state.visible })} />
           <Example />
           <SecondExample />
           <Divider />
@@ -120,5 +138,4 @@ const Demo = () => {
   )
 }
 
-
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'))
