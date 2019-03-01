@@ -69,7 +69,7 @@ const FixedDataTable = props => {
       width={width - widthOffset}
       onColumnResizeEndCallback={onColumnResizeEndCallback}
       onColumnReorderEndCallback={onColumnReorderEndCallback}
-      height={height - heightOffset}
+      maxHeight={height - heightOffset}
     >
       {orderedChildren}
     </Table>

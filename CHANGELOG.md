@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.8.1](https://github.com/chopdgd/react-genomix/tree/v0.8.1) (2019-02-28)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.0...v0.8.1)
+
+- FixedDataTable was using height instead of maxHeight. Now using maxHeight to make it responsive.
+
 ## [v0.8.0](https://github.com/chopdgd/react-genomix/tree/v0.8.0) (2019-02-28)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.7.7...v0.8.0)
