@@ -1,6 +1,6 @@
 import React from 'react'
 import { Cell, Column } from 'fixed-data-table-2'
-import { Grid } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
 import {
   hooks,
@@ -84,162 +84,156 @@ const FixedDataTableExample = () => {
   const [checked, setChecked] = hooks.useStateList([])
 
   return (
-    <Grid padded centered>
-      <Grid.Column width={16} textAlign="center">
-        <FixedDataTable
-          widthOffset={60}
-          heightOffset={400}
-          headerHeight={55}
-          rowHeight={40}
-          columnWidths={columnWidths}
-          columnOrder={columnOrder}
-          isColumnResizing={false}
-          fixedColumns={['checkbox']}
-          rowsCount={rows.length}
-          showScrollbarY={false}
-        >
-          <Column
-            columnKey="checkbox"
-            header={<Cell>Checkbox</Cell>}
-            cell={<CheckboxFixedCell data={rows} onChange={(e, { value }) => setChecked(value)} checked={checked} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="start"
-            header={<Cell>Date</Cell>}
-            cell={<DateFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="gene"
-            header={<Cell>Gene</Cell>}
-            cell={<GeneFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="interpretation"
-            header={<Cell>Interpretation</Cell>}
-            cell={<InterpretationFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="link"
-            header={<Cell>Link</Cell>}
-            cell={
-              <LinkFixedCell data={rows} idKey="id" urlBuilder={data => `https://www.google.com/search?q=${data}`} />
-            }
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="consequence"
-            header={<Cell>Consequence</Cell>}
-            cell={<MolecularConsequenceFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="hgmd"
-            header={<Cell>Evidence</Cell>}
-            cell={
-              <PublicEvidenceFixedCell
-                data={rows}
-                chromosomeKey="chromosome"
-                positionKey="position"
-                referenceKey="reference"
-                alternateKey="alternate"
-                hgmdKey="hgmd"
-              />
-            }
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="sex"
-            header={<Cell>Sex</Cell>}
-            cell={<SexFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="status"
-            header={<Cell>Status</Cell>}
-            cell={<StatusFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="text"
-            header={<Cell>Text</Cell>}
-            cell={<TextFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="transcript"
-            header={<Cell>Transcript</Cell>}
-            cell={<TranscriptFixedCell data={rows} />}
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-          <Column
-            columnKey="target"
-            header={<Cell>TAT</Cell>}
-            cell={
-              <TurnAroundTimeProgressFixedCell
-                data={rows}
-                targetKey="target"
-                startKey="start"
-                signoutKey="signout"
-                compact
-              />
-            }
-            width={200}
-            allowCellsRecycling
-            pureRendering
-            isReorderable
-            isResizable
-          />
-        </FixedDataTable>
-      </Grid.Column>
-    </Grid>
+    <Segment basic size="mini" style={{ padding: 0, width: '100%', height: '500px' }} textAlign="center">
+      <FixedDataTable
+        headerHeight={55}
+        rowHeight={40}
+        columnWidths={columnWidths}
+        columnOrder={columnOrder}
+        isColumnResizing={false}
+        fixedColumns={['checkbox']}
+        rowsCount={rows.length}
+        showScrollbarY={false}
+      >
+        <Column
+          columnKey="checkbox"
+          header={<Cell>Checkbox</Cell>}
+          cell={<CheckboxFixedCell data={rows} onChange={(e, { value }) => setChecked(value)} checked={checked} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="start"
+          header={<Cell>Date</Cell>}
+          cell={<DateFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="gene"
+          header={<Cell>Gene</Cell>}
+          cell={<GeneFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="interpretation"
+          header={<Cell>Interpretation</Cell>}
+          cell={<InterpretationFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="link"
+          header={<Cell>Link</Cell>}
+          cell={<LinkFixedCell data={rows} idKey="id" urlBuilder={data => `https://www.google.com/search?q=${data}`} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="consequence"
+          header={<Cell>Consequence</Cell>}
+          cell={<MolecularConsequenceFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="hgmd"
+          header={<Cell>Evidence</Cell>}
+          cell={
+            <PublicEvidenceFixedCell
+              data={rows}
+              chromosomeKey="chromosome"
+              positionKey="position"
+              referenceKey="reference"
+              alternateKey="alternate"
+              hgmdKey="hgmd"
+            />
+          }
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="sex"
+          header={<Cell>Sex</Cell>}
+          cell={<SexFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="status"
+          header={<Cell>Status</Cell>}
+          cell={<StatusFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="text"
+          header={<Cell>Text</Cell>}
+          cell={<TextFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="transcript"
+          header={<Cell>Transcript</Cell>}
+          cell={<TranscriptFixedCell data={rows} />}
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+        <Column
+          columnKey="target"
+          header={<Cell>TAT</Cell>}
+          cell={
+            <TurnAroundTimeProgressFixedCell
+              data={rows}
+              targetKey="target"
+              startKey="start"
+              signoutKey="signout"
+              compact
+            />
+          }
+          width={200}
+          allowCellsRecycling
+          pureRendering
+          isReorderable
+          isResizable
+        />
+      </FixedDataTable>
+    </Segment>
   )
 }
 

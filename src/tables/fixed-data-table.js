@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Table } from 'fixed-data-table-2'
 import { get, indexOf, map, sortBy } from 'lodash'
-
-import { hooks } from '../index'
+import AutoSizer from 'react-virtualized-auto-sizer'
 
 const FixedDataTable = props => {
   const {
@@ -13,8 +12,6 @@ const FixedDataTable = props => {
     onColumnResize,
     children,
     fixedColumns,
-    widthOffset,
-    heightOffset,
     ...rest
   } = props
 
@@ -60,19 +57,23 @@ const FixedDataTable = props => {
   const orderedColumns = sortBy(columns, ['order'])
   const orderedChildren = map(orderedColumns, column => column.column)
 
-  const { innerHeight: height, innerWidth: width } = hooks.useWindowSize()
-
+  // NOTE: AutoSizer needs to have a parent component specify the height and width
+  // NOTE: See https://github.com/bvaughn/react-virtualized/blob/master/docs/usingAutoSizer.md
   return (
-    <Table
-      {...rest}
-      className="genomix fixed-data table"
-      width={width - widthOffset}
-      onColumnResizeEndCallback={onColumnResizeEndCallback}
-      onColumnReorderEndCallback={onColumnReorderEndCallback}
-      maxHeight={height - heightOffset}
-    >
-      {orderedChildren}
-    </Table>
+    <AutoSizer>
+      {({ height, width }) => (
+        <Table
+          {...rest}
+          className="genomix fixed-data table"
+          width={width}
+          onColumnResizeEndCallback={onColumnResizeEndCallback}
+          onColumnReorderEndCallback={onColumnReorderEndCallback}
+          maxHeight={height}
+        >
+          {orderedChildren}
+        </Table>
+      )}
+    </AutoSizer>
   )
 }
 
@@ -82,14 +83,10 @@ FixedDataTable.propTypes = {
   columnWidths: PropTypes.object.isRequired,
   onResizeColumn: PropTypes.func,
   fixedColumns: PropTypes.arrayOf(PropTypes.string),
-  widthOffset: PropTypes.number,
-  heightOffset: PropTypes.number,
 }
 
 FixedDataTable.defaultProps = {
   fixedColumns: [],
-  widthOffset: 200,
-  heightOffset: 200,
 }
 
 export default FixedDataTable
