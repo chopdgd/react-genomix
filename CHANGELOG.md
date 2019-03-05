@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.8.2](https://github.com/chopdgd/react-genomix/tree/v0.8.2) (2019-03-05)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.1...v0.8.2)
+
+- Updated FixedDataTable to use AutoSizer from react-virtualized to make table responsive to parent container
+
 ## [v0.8.1](https://github.com/chopdgd/react-genomix/tree/v0.8.1) (2019-02-28)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.0...v0.8.1)
