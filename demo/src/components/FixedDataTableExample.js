@@ -82,12 +82,14 @@ const columnOrder = [
 
 const FixedDataTableExample = () => {
   const [checked, setChecked] = hooks.useStateList([])
+  const { innerHeight: height } = hooks.useWindowSize()
 
   return (
-    <Segment basic size="mini" style={{ padding: 0, width: '100%', height: '500px' }} textAlign="center">
+    <Segment basic size="mini" style={{ padding: 0, width: '100%' }} textAlign="center">
       <FixedDataTable
         headerHeight={55}
         rowHeight={40}
+        maxHeight={height - 400}
         columnWidths={columnWidths}
         columnOrder={columnOrder}
         isColumnResizing={false}
