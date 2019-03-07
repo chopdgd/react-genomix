@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.8.3](https://github.com/chopdgd/react-genomix/tree/v0.8.3) (2019-03-06)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.2...v0.8.3)
+
+- Updated FixedDataTable to disable height from AutoSizer. Instead allow user to specify maxHeight. See demo how to make it responsive using hooks.useWindowSize.
+
 ## [v0.8.2](https://github.com/chopdgd/react-genomix/tree/v0.8.2) (2019-03-05)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.1...v0.8.2)
