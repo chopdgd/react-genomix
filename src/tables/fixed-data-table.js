@@ -12,6 +12,7 @@ const FixedDataTable = props => {
     onColumnResize,
     children,
     fixedColumns,
+    maxHeight,
     ...rest
   } = props
 
@@ -60,15 +61,15 @@ const FixedDataTable = props => {
   // NOTE: AutoSizer needs to have a parent component specify the height and width
   // NOTE: See https://github.com/bvaughn/react-virtualized/blob/master/docs/usingAutoSizer.md
   return (
-    <AutoSizer>
-      {({ height, width }) => (
+    <AutoSizer disableHeight>
+      {({ width }) => (
         <Table
           {...rest}
           className="genomix fixed-data table"
           width={width}
           onColumnResizeEndCallback={onColumnResizeEndCallback}
           onColumnReorderEndCallback={onColumnReorderEndCallback}
-          maxHeight={height}
+          maxHeight={maxHeight}
         >
           {orderedChildren}
         </Table>
@@ -78,14 +79,17 @@ const FixedDataTable = props => {
 }
 
 FixedDataTable.propTypes = {
+  columnWidths: PropTypes.object.isRequired,
   columnOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
   onColumnReorder: PropTypes.func,
-  columnWidths: PropTypes.object.isRequired,
-  onResizeColumn: PropTypes.func,
+  onColumnResize: PropTypes.func,
+  children: PropTypes.any,
+  maxHeight: PropTypes.number,
   fixedColumns: PropTypes.arrayOf(PropTypes.string),
 }
 
 FixedDataTable.defaultProps = {
+  maxHeight: 400,
   fixedColumns: [],
 }
 
