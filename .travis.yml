@@ -1,7 +1,8 @@
 language: node_js
 
 node_js:
- - "11"
+  # See: https://github.com/facebook/jest/issues/8069#issuecomment-470307590
+  - '11.10.1'
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -12,5 +13,5 @@ install:
   - yarn install
 
 script:
- - yarn run test --maxWorkers=4
- - codecov
+  - yarn run test --maxWorkers=4
+  - codecov
