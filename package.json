@@ -57,7 +57,7 @@
     "nwb": "0.23.x",
     "prettier": "1.16.4",
     "react": "^16.8.0",
-    "react-app-polyfill": "0.2.0",
+    "react-app-polyfill": "0.2.2",
     "react-dom": "^16.8.0"
   },
   "jest": {
