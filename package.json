@@ -44,7 +44,7 @@
     "dotenv-expand": "4.2.0",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
-    "eslint": "5.15.1",
+    "eslint": "5.16.0",
     "eslint-config-react-app": "3.0.3",
     "eslint-plugin-flowtype": "3.1.4",
     "eslint-plugin-import": "2.6.0",
