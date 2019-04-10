@@ -41,7 +41,7 @@
     "babel-jest": "23.6.0",
     "babel-preset-react-app": "7.0.2",
     "dotenv": "6.2.0",
-    "dotenv-expand": "4.2.0",
+    "dotenv-expand": "5.1.0",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.12.1",
     "eslint": "5.16.0",
