@@ -5118,10 +5118,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-fixed-data-table-2@0.8.21:
-  version "0.8.21"
-  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-0.8.21.tgz#cf3f62d203b3b8f6ad5ee38a504464e27f4b1514"
-  integrity sha512-9slQIAc52L+G3BLlEOsGNWayKJoS4Rehy1rOe/NA3TklTWSE6dcoZ0ucbwFXPSzh8M9wWXgeddNue/Dk6P5fJg==
+fixed-data-table-2@0.8.22:
+  version "0.8.22"
+  resolved "https://registry.yarnpkg.com/fixed-data-table-2/-/fixed-data-table-2-0.8.22.tgz#f30877aa350f751f1a91ba04c7fecff23746d883"
+  integrity sha512-qzYmzfQJkGl0gn7joaluLeNX52mFgNyZ7dd3nwOABns2ByHMCgElI9xkVeTL6/qbMHhWC7Q/GJwH3n7bZaiWRg==
   dependencies:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
