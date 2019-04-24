@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.8.4](https://github.com/chopdgd/react-genomix/tree/v0.8.5) (2019-04-24)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.4...v0.8.5)
+
+- Updated all dependencies
+
 ## [v0.8.4](https://github.com/chopdgd/react-genomix/tree/v0.8.4) (2019-04-10)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.3...v0.8.4)
