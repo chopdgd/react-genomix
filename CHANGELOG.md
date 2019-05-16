@@ -1,6 +1,13 @@
 # Change Log
 
-## [v0.8.4](https://github.com/chopdgd/react-genomix/tree/v0.8.5) (2019-04-24)
+## [v0.9.0](https://github.com/chopdgd/react-genomix/tree/v0.9.0) (2019-05-16)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.5...v0.9.0)
+
+- Updated all dependencies
+- Added a custom hook to use setInterval
+
+## [v0.8.5](https://github.com/chopdgd/react-genomix/tree/v0.8.5) (2019-04-24)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.4...v0.8.5)
 

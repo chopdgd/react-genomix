@@ -112,7 +112,7 @@ const panes = [
 ]
 
 const Demo = () => {
-  const [state, setState] = GenomiX.useLocalStorage('sidebar', { visible: true })
+  const [state, setState] = GenomiX.hooks.useLocalStorage('sidebar', { visible: true })
 
   return (
     <Sidebar.Pushable>
