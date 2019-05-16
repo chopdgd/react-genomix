@@ -99,6 +99,3 @@ export { default as UserMenu } from './menus/user-menu'
 
 // Tables
 export { default as FixedDataTable } from './tables/fixed-data-table'
-
-// Custom hooks
-export { default as useLocalStorage } from './hooks/use-local-storage'
