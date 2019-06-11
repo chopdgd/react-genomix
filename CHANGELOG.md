@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.9.1](https://github.com/chopdgd/react-genomix/tree/v0.9.1) (2019-06-11)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.9.0...v0.9.1)
+
+- Updated all dependencies
+- Adjusted useLocalStorage to be able to handle different data types
+
 ## [v0.9.0](https://github.com/chopdgd/react-genomix/tree/v0.9.0) (2019-05-16)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.8.5...v0.9.0)
