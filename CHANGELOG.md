@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.10.0](https://github.com/chopdgd/react-genomix/tree/v0.10.0) (2019-06-14)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.9.1...v0.10.0)
+
+- Added component InfiniteScrollTable - virtualized table that allows for infinite scrolling with network requests.
+
 ## [v0.9.1](https://github.com/chopdgd/react-genomix/tree/v0.9.1) (2019-06-11)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.9.0...v0.9.1)
