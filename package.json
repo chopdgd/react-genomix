@@ -1,6 +1,6 @@
 {
   "name": "react-genomix",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "GenomiX React components",
   "main": "lib/index.js",
   "module": "es/index.js",

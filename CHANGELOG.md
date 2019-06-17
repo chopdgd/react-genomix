@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.10.1](https://github.com/chopdgd/react-genomix/tree/v0.10.1) (2019-06-17)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.10.0...v0.10.1)
+
+- onScrollEnd was being called without the props from fixed-data-table
+- Added better docs for InfiniteScrollTable
+
 ## [v0.10.0](https://github.com/chopdgd/react-genomix/tree/v0.10.0) (2019-06-14)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.9.1...v0.10.0)

@@ -8,8 +8,9 @@ const InfiniteScrollTable = ({
   hasNextPage = false,
   loading = false,
   rows = [],
+  pixelsRefetch = 100,
   children,
-  yOffset,
+  yOffset = 0,
   onFetch,
   onScrollEnd,
   segment = { size: 'mini', style: { padding: 0, width: '100%' }, textAlign: 'center' },
@@ -25,8 +26,8 @@ const InfiniteScrollTable = ({
         onScrollEnd={(x, y, row) => {
           const heightLeft = (rows.length - row) * 40
           const difference = heightLeft - maxHeight
-          if (difference < 100 && hasNextPage && onFetch) onFetch()
-          if (onScrollEnd) onScrollEnd()
+          if (difference < pixelsRefetch && hasNextPage && onFetch) onFetch()
+          if (onScrollEnd) onScrollEnd(x, y, row)
         }}
         {...rest}
       >
@@ -40,6 +41,7 @@ InfiniteScrollTable.propTypes = {
   hasNextPage: PropTypes.bool,
   loading: PropTypes.bool,
   rows: PropTypes.array,
+  pixelsRefetch: PropTypes.number,
   children: PropTypes.node,
   yOffset: PropTypes.number,
   onFetch: PropTypes.func,
