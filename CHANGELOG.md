@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.10.3](https://github.com/chopdgd/react-genomix/tree/v0.10.3) (2019-06-24)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.10.2...v0.10.3)
+
+- Updated CheckboxFixedCell to pass back record in case it is needed.
+
+## [v0.10.2](https://github.com/chopdgd/react-genomix/tree/v0.10.2) (2019-06-24)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.10.1...v0.10.2)
+
+- updated useLocalStorage to ensure it updates state if localStorage updates
+
 ## [v0.10.1](https://github.com/chopdgd/react-genomix/tree/v0.10.1) (2019-06-17)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.10.0...v0.10.1)
