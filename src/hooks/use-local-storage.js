@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const setItem = (key, value) => {
   if (!['string'].includes(typeof value)) {
-    window.localStorage.setItem(key, JSON.stringify(value))
+    localStorage.setItem(key, JSON.stringify(value))
   } else {
-    window.localStorage.setItem(key, value)
+    localStorage.setItem(key, value)
   }
 }
 
 const getItem = key => {
-  const item = window.localStorage.getItem(key)
+  const item = localStorage.getItem(key)
   try {
     return JSON.parse(item)
   } catch (error) {
@@ -17,7 +17,7 @@ const getItem = key => {
   }
 }
 
-const useLocalStorage = (key, defaultValue) => {
+export const useLocalStorage = (key, defaultValue) => {
   const [state, setState] = useState(() => {
     const item = getItem(key)
     if (item) {
@@ -37,6 +37,37 @@ const useLocalStorage = (key, defaultValue) => {
       setItem(key, value)
     }
   }
+
+  const localStorageChanged = e => {
+    if (e.key === key) {
+      let value
+      try {
+        value = JSON.parse(e.newValue)
+      } catch (e) {
+        value = e.newValue
+      }
+
+      let newValue
+      if (typeof value === 'object' && typeof state === 'object') {
+        newValue = { ...state, ...value }
+      } else {
+        newValue = value
+      }
+      setState(newValue)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('storage', localStorageChanged)
+
+    return () => {
+      window.removeEventListener('storage', localStorageChanged)
+    }
+  })
+
+  useEffect(() => {
+    setState(getItem(key))
+  }, [key])
 
   return [state, setValue]
 }
