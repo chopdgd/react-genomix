@@ -25,6 +25,7 @@ import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
 import FixedDataTableExample from './components/FixedDataTableExample'
 import InfiniteScrollTableExample from './components/InfiniteScrollTableExample'
+// import BasicTableExample from './components/BasicTableExample'
 
 // Organisms
 import NavbarExample from './components/NavbarExample'
@@ -118,6 +119,14 @@ const panes = [
       </Tab.Pane>
     ),
   },
+  // {
+  //   menuItem: 'Basic Table',
+  //   render: () => (
+  //     <Tab.Pane>
+  //       <BasicTableExample />
+  //     </Tab.Pane>
+  //   ),
+  // },
 ]
 
 const Demo = () => {

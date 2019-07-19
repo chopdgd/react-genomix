@@ -100,3 +100,4 @@ export { default as UserMenu } from './menus/user-menu'
 // Tables
 export { default as FixedDataTable } from './tables/fixed-data-table'
 export { default as InfiniteScrollTable } from './tables/infinite-scroll-table'
+export { default as BasicTable } from './tables/basic-table'
