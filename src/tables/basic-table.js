@@ -5,37 +5,51 @@ import BaseTable, { AutoResizer } from 'react-base-table'
 import 'react-base-table/styles.css'
 
 const LabelOverlay = props => {
-  return <Label content="Loading..." size="small" color="orange" />
+  return <Label content="Loading..." color="blue" />
 }
 
-const BasicTable = ({
-  children,
-  rows = [],
-  maxHeight = 500,
-  loading = false,
-  segment = { basic: true, size: 'mini', textAlign: 'center', style: { padding: 0, width: '100%', height: maxHeight } },
-  ...rest
-}) => (
-  <Segment {...segment}>
-    <AutoResizer>
-      {({ width, height }) => (
-        <BaseTable
-          data={rows}
-          width={width}
-          height={height}
-          maxHeight={maxHeight}
-          overlayRenderer={loading && LabelOverlay}
-          {...rest}
-        >
-          {children}
-        </BaseTable>
-      )}
-    </AutoResizer>
-  </Segment>
-)
+const BasicTable = props => {
+  const {
+    children,
+    rows = [],
+    maxHeight = 500,
+    loading = false,
+    segment = {
+      basic: true,
+      size: 'mini',
+      textAlign: 'center',
+      style: { padding: 0, width: '100%', height: maxHeight },
+    },
+    ...rest
+  } = props
+
+  return (
+    <Segment {...segment}>
+      <AutoResizer>
+        {({ width, height }) => (
+          <BaseTable
+            className="genomix basic data table"
+            data={rows}
+            width={width}
+            height={height}
+            maxHeight={maxHeight}
+            overlayRenderer={loading && LabelOverlay}
+            {...rest}
+          >
+            {children}
+          </BaseTable>
+        )}
+      </AutoResizer>
+    </Segment>
+  )
+}
 
 BasicTable.propTypes = {
-  rows: PropTypes.array(),
+  children: PropTypes.any,
+  maxHeight: PropTypes.number,
+  loading: PropTypes.bool,
+  segment: PropTypes.object,
+  rows: PropTypes.array,
 }
 
 export default BasicTable

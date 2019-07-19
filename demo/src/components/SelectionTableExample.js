@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Column } from 'react-base-table'
 import { Icon, Popup } from 'semantic-ui-react'
-import { hooks, BasicTable } from '../../../src'
+import { hooks, SelectionTable } from '../../../src'
+import { map } from 'lodash'
 
 const rows = Array.from(new Array(300), (x, i) => ({
   id: i,
@@ -14,8 +15,10 @@ const IconCell = props => {
   return <Popup content={cellData} trigger={<Icon name="info circle" />} />
 }
 
-const BasicTableExample = () => {
+const SelectionTableExample = () => {
   const [loading, setLoading] = useState(true)
+  const [allChecked, setAllChecked] = useState(false)
+  const [selectedRows, setSelectedRows, resetSelectedRows] = hooks.useStateList([])
   const { innerHeight: height } = hooks.useWindowSize()
 
   setTimeout(function() {
@@ -28,16 +31,29 @@ const BasicTableExample = () => {
     icon: 300,
   }
 
+  const onSelectAll = rows => {
+    if (!allChecked) {
+      resetSelectedRows(map(rows, row => row.id))
+    } else {
+      resetSelectedRows([])
+    }
+    setAllChecked(!allChecked)
+  }
+  console.log(selectedRows)
   return (
-    <BasicTable
+    <SelectionTable
       columnWidths={columnWidths}
       loading={loading}
       data={rows}
       headerHeight={55}
       rowHeight={40}
       maxHeight={height - 400}
+      allChecked={allChecked}
+      selectedRows={selectedRows}
+      onSelect={setSelectedRows}
+      onSelectAll={onSelectAll}
+      enableSelectAll={false}
     >
-      <Column title="id" key="id" dataKey="id" flexGrow={1} width={300} frozen="left" resizable />
       <Column title="text" key="text" dataKey="text" flexGrow={1} width={300} resizable />
       <Column
         title="icon"
@@ -49,8 +65,8 @@ const BasicTableExample = () => {
         frozen="right"
         resizable
       />
-    </BasicTable>
+    </SelectionTable>
   )
 }
 
-export default BasicTableExample
+export default SelectionTableExample
