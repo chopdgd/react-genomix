@@ -32,14 +32,4 @@ describe('Test CheckboxFixedCell', () => {
     const wrapper = shallow(element)
     expect(wrapper.find('Checkbox').props().checked).toEqual(false)
   })
-
-  it('when checkbox changes, value is retrieved from data', () => {
-    const onChange = jest.fn()
-    const element = (
-      <CheckboxFixedCell data={data} rowIndex={0} columnKey="checkbox" onChange={onChange} checked={checked} />
-    )
-    const wrapper = shallow(element)
-    const observerd = wrapper.find('Checkbox').props().onChange
-    expect(observerd).toEqual(onChange)
-  })
 })
