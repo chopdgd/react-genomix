@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.11.0](https://github.com/chopdgd/react-genomix/tree/v0.11.0) (2019-07-22)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.10.3...v0.11.0)
+
+- Added react-base-table as an additional option
+
 ## [v0.10.3](https://github.com/chopdgd/react-genomix/tree/v0.10.3) (2019-06-24)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.10.2...v0.10.3)
