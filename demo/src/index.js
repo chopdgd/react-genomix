@@ -25,6 +25,8 @@ import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
 import FixedDataTableExample from './components/FixedDataTableExample'
 import InfiniteScrollTableExample from './components/InfiniteScrollTableExample'
+import BasicTableExample from './components/BasicTableExample'
+import SelectionTableExample from './components/SelectionTableExample'
 
 // Organisms
 import NavbarExample from './components/NavbarExample'
@@ -115,6 +117,22 @@ const panes = [
     render: () => (
       <Tab.Pane>
         <InfiniteScrollTableExample />
+      </Tab.Pane>
+    ),
+  },
+  {
+    menuItem: 'Basic Table',
+    render: () => (
+      <Tab.Pane>
+        <BasicTableExample />
+      </Tab.Pane>
+    ),
+  },
+  {
+    menuItem: 'Selection Table',
+    render: () => (
+      <Tab.Pane>
+        <SelectionTableExample />
       </Tab.Pane>
     ),
   },
