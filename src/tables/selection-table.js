@@ -29,7 +29,7 @@ const SelectionTable = ({
   rows = [],
   selectedRows = [],
   allChecked = false,
-  checkBoxKey = "id",
+  checkBoxKey = 'id',
   onSelect,
   onSelectAll,
   ...rest
