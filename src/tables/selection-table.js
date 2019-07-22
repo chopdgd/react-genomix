@@ -24,34 +24,40 @@ const CheckboxHeaderCell = props => {
   )
 }
 
-const SelectionTable = props => {
-  const { children, rows = [], selectedRows = [], allChecked = false, onSelect, onSelectAll, ...rest } = props
-
-  return (
-    <BasicTable data={rows} {...rest}>
-      <Column
-        key="id"
-        dataKey="id"
-        flexGrow={0}
-        width={100}
-        frozen="left"
-        cellRenderer={CheckboxCell}
-        headerRenderer={CheckboxHeaderCell}
-        onSelect={onSelect}
-        onSelectAll={onSelectAll}
-        selectedRows={selectedRows}
-        allChecked={allChecked}
-      />
-      {children}
-    </BasicTable>
-  )
-}
+const SelectionTable = ({
+  children,
+  rows = [],
+  selectedRows = [],
+  allChecked = false,
+  checkBoxKey = "id",
+  onSelect,
+  onSelectAll,
+  ...rest
+}) => (
+  <BasicTable data={rows} {...rest}>
+    <Column
+      key={checkBoxKey}
+      dataKey={checkBoxKey}
+      flexGrow={0}
+      width={100}
+      frozen="left"
+      cellRenderer={CheckboxCell}
+      headerRenderer={CheckboxHeaderCell}
+      onSelect={onSelect}
+      onSelectAll={onSelectAll}
+      selectedRows={selectedRows}
+      allChecked={allChecked}
+    />
+    {children}
+  </BasicTable>
+)
 
 SelectionTable.propTypes = {
   children: PropTypes.any,
   rows: PropTypes.array,
   selectedRows: PropTypes.array,
   allChecked: PropTypes.bool,
+  checkBoxKey: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
   onSelectAll: PropTypes.func.isRequired,
 }
