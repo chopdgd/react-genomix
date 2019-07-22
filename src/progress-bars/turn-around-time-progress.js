@@ -31,9 +31,9 @@ const TurnAroundTimeProgress = props => {
         <Popup.Content>
           <strong>Target:</strong> {target} days
           <br />
-          <strong>Started:</strong> {utils.dateFormatter(start)}
+          <strong>Started:</strong> {utils.dateFormatter(start, 'YYYY-MM,DD')}
           <br />
-          <strong>Signed out:</strong> {signout ? utils.dateFormatter(signout) : 'N/A'}
+          <strong>Signed out:</strong> {signout ? utils.dateFormatter(signout, 'YYYY-MM-DD') : 'N/A'}
         </Popup.Content>
       </Popup>
     )
