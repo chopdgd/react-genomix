@@ -13,13 +13,13 @@ const CheckboxCell = props => {
 
 const CheckboxHeaderCell = props => {
   const { container, column } = props
-  const { selectedRows, allChecked, onSelectAll } = column
+  const { selectedRows, onSelectAll } = column
   const data = get(container, '_data', [])
   return (
     <Checkbox
-      checked={allChecked}
-      indeterminate={allChecked && selectedRows.length !== data.length}
-      onChange={() => onSelectAll(data)}
+      checked={selectedRows.length === data.length}
+      indeterminate={selectedRows.length > 0 && selectedRows.length !== data.length}
+      onChange={onSelectAll}
     />
   )
 }
@@ -28,7 +28,6 @@ const SelectionTable = ({
   children,
   rows = [],
   selectedRows = [],
-  allChecked = false,
   checkBoxKey = 'id',
   onSelect,
   onSelectAll,
@@ -46,7 +45,6 @@ const SelectionTable = ({
       onSelect={onSelect}
       onSelectAll={onSelectAll}
       selectedRows={selectedRows}
-      allChecked={allChecked}
     />
     {children}
   </BasicTable>
@@ -56,7 +54,6 @@ SelectionTable.propTypes = {
   children: PropTypes.any,
   rows: PropTypes.array,
   selectedRows: PropTypes.array,
-  allChecked: PropTypes.bool,
   checkBoxKey: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
   onSelectAll: PropTypes.func.isRequired,

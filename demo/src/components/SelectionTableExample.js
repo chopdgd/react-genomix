@@ -17,7 +17,6 @@ const IconCell = props => {
 
 const SelectionTableExample = () => {
   const [loading, setLoading] = useState(true)
-  const [allChecked, setAllChecked] = useState(false)
   const [selectedRows, setSelectedRows, resetSelectedRows] = hooks.useStateList([])
   const { innerHeight: height } = hooks.useWindowSize()
 
@@ -31,15 +30,14 @@ const SelectionTableExample = () => {
     icon: 300,
   }
 
-  const onSelectAll = rows => {
-    if (!allChecked) {
-      resetSelectedRows(map(rows, row => row.id))
+  const onSelectAll = (event, data) => {
+    if (data.checked) {
+      resetSelectedRows(map(rows, obj => obj.id))
     } else {
       resetSelectedRows([])
     }
-    setAllChecked(!allChecked)
   }
-  console.log(selectedRows)
+
   return (
     <SelectionTable
       columnWidths={columnWidths}
@@ -48,7 +46,6 @@ const SelectionTableExample = () => {
       headerHeight={55}
       rowHeight={40}
       maxHeight={height - 400}
-      allChecked={allChecked}
       selectedRows={selectedRows}
       onSelect={setSelectedRows}
       onSelectAll={onSelectAll}
