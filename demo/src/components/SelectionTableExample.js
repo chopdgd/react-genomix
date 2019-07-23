@@ -29,10 +29,13 @@ const SelectionTableExample = () => {
     text: 300,
     icon: 300,
   }
+  const handleSelect = (event, data) => {
+    setSelectedRows(data.id)
+  }
 
-  const onSelectAll = (event, data) => {
+  const handleSelectAll = (event, data) => {
     if (data.checked) {
-      resetSelectedRows(map(rows, obj => obj.id))
+      resetSelectedRows(map(rows, obj => obj))
     } else {
       resetSelectedRows([])
     }
@@ -42,14 +45,12 @@ const SelectionTableExample = () => {
     <SelectionTable
       columnWidths={columnWidths}
       loading={loading}
-      data={rows}
+      rows={rows}
       headerHeight={55}
       rowHeight={40}
       maxHeight={height - 400}
-      selectedRows={selectedRows}
-      onSelect={setSelectedRows}
-      onSelectAll={onSelectAll}
-      enableSelectAll={false}
+      onSelect={handleSelect}
+      onSelectAll={handleSelectAll}
     >
       <Column title="text" key="text" dataKey="text" flexGrow={1} width={300} resizable />
       <Column
