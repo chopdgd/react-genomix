@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Column } from 'react-base-table'
-import { BasicTable, hooks } from '../../src'
+import BasicTable from './basic-table'
+import { useStateList } from '../hooks'
 import { Checkbox } from 'semantic-ui-react'
 import { get, map } from 'lodash'
 
 const SelectionTable = ({ children, rows = [], checkBoxKey = 'id', onSelect, onSelectAll, ...rest }) => {
-  const [selectedRows, setSelectedRows, resetSelectedRows] = hooks.useStateList([])
+  const [selectedRows, setSelectedRows, resetSelectedRows] = useStateList([])
 
   const handleSelectAll = (event, data) => {
     if (data.checked) {
