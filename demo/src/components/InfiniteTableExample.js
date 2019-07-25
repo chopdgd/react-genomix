@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Column } from 'react-base-table'
 import { Icon, Popup } from 'semantic-ui-react'
-import { hooks, SelectionTable } from '../../../src'
-import { map } from 'lodash'
+import { hooks, BasicTable } from '../../../src'
 
-const rows = Array.from(new Array(300), (x, i) => ({
+const PAGE_SIZE = 100
+
+const rows = Array.from(new Array(1000), (x, i) => ({
   id: i,
   text: `text ${i}`,
   icon: `icon ${i}`,
@@ -15,10 +16,16 @@ const IconCell = props => {
   return <Popup content={cellData} trigger={<Icon name="info circle" />} />
 }
 
-const SelectionTableExample = () => {
+const InfiniteTableExample = () => {
   const [loading, setLoading] = useState(true)
-  const [selectedRows, setSelectedRows, resetSelectedRows] = hooks.useStateList([])
   const { innerHeight: height } = hooks.useWindowSize()
+  const [offset, setOffset] = useState(0)
+  const [data, setData] = useState(rows.slice(0, offset + PAGE_SIZE))
+
+  const loadData = () => {
+    setOffset(offset + PAGE_SIZE)
+    setData(rows.slice(0, offset + PAGE_SIZE))
+  }
 
   setTimeout(function() {
     setLoading(false)
@@ -29,29 +36,19 @@ const SelectionTableExample = () => {
     text: 300,
     icon: 300,
   }
-  const handleSelect = (event, data) => {
-    setSelectedRows(data.id)
-  }
-
-  const handleSelectAll = (event, data) => {
-    if (data.checked) {
-      resetSelectedRows(map(rows, obj => obj))
-    } else {
-      resetSelectedRows([])
-    }
-  }
 
   return (
-    <SelectionTable
+    <BasicTable
       columnWidths={columnWidths}
       loading={loading}
-      rows={rows}
+      data={data}
       headerHeight={55}
       rowHeight={40}
       maxHeight={height - 400}
-      onSelect={handleSelect}
-      onSelectAll={handleSelectAll}
+      onEndReachedThreshold={300}
+      onEndReached={loadData}
     >
+      <Column title="id" key="id" dataKey="id" flexGrow={1} width={300} frozen="left" resizable />
       <Column title="text" key="text" dataKey="text" flexGrow={1} width={300} resizable />
       <Column
         title="icon"
@@ -63,8 +60,8 @@ const SelectionTableExample = () => {
         frozen="right"
         resizable
       />
-    </SelectionTable>
+    </BasicTable>
   )
 }
 
-export default SelectionTableExample
+export default InfiniteTableExample
