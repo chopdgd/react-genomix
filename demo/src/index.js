@@ -27,6 +27,7 @@ import FixedDataTableExample from './components/FixedDataTableExample'
 import InfiniteScrollTableExample from './components/InfiniteScrollTableExample'
 import BasicTableExample from './components/BasicTableExample'
 import SelectionTableExample from './components/SelectionTableExample'
+import InfiniteTableExample from './components/InfiniteTableExample'
 
 // Organisms
 import NavbarExample from './components/NavbarExample'
@@ -133,6 +134,14 @@ const panes = [
     render: () => (
       <Tab.Pane>
         <SelectionTableExample />
+      </Tab.Pane>
+    ),
+  },
+  {
+    menuItem: 'Infinite Table',
+    render: () => (
+      <Tab.Pane>
+        <InfiniteTableExample />
       </Tab.Pane>
     ),
   },

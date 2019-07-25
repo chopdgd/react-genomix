@@ -4,10 +4,6 @@ import { Segment, Label } from 'semantic-ui-react'
 import BaseTable, { AutoResizer } from 'react-base-table'
 import 'react-base-table/styles.css'
 
-const LabelOverlay = () => {
-  return <Label content="Loading..." color="blue" />
-}
-
 const BasicTable = props => {
   const {
     children,
@@ -23,6 +19,11 @@ const BasicTable = props => {
     ...rest
   } = props
 
+  const renderLabelOverlay = () => {
+    if (loading) return <Label content="Loading..." color="blue" />
+    return null
+  }
+
   return (
     <Segment {...segment}>
       <AutoResizer>
@@ -33,7 +34,7 @@ const BasicTable = props => {
             width={width}
             height={height}
             maxHeight={maxHeight}
-            overlayRenderer={loading ? LabelOverlay : null}
+            overlayRenderer={renderLabelOverlay}
             {...rest}
           >
             {children}
