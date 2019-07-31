@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Column } from 'react-base-table'
-import { concat, map } from 'lodash'
+import { get, concat, map } from 'lodash'
 
 import {
   BigIntCellRenderer,
@@ -64,13 +64,14 @@ const coreProps = {
 const ExampleTable = () => {
   const [rows, setRows, resetRows] = useStateList(generateRows())
   const [state, setState, resetState] = useStateList([])
-  const [allSelected, setAllSelected] = useState(false)
   const [loading, setLoading] = useState(false)
   const onSelect = (e, { cellData }) => setState(cellData)
-  const onSelectAll = () => {
-    if (allSelected) resetState([])
-    else resetState(map(rows, row => row.id))
-    setAllSelected(!allSelected)
+  const onSelectAll = (event, data, rows) => {
+    if (data.checked) {
+      resetState(map(rows, obj => obj.id))
+    } else {
+      resetState([])
+    }
   }
 
   const onEndReached = () => {
@@ -104,7 +105,6 @@ const ExampleTable = () => {
         dataKey="checkbox"
         {...coreProps}
         selectedRows={state}
-        allSelected={allSelected}
         onSelect={onSelect}
         onSelectAll={onSelectAll}
         cellRenderer={CheckboxCellRenderer}
@@ -152,7 +152,7 @@ const ExampleTable = () => {
         dataKey="link"
         {...coreProps}
         cellRenderer={LinkCellRenderer}
-        urlBuilder={x => `https://google.com?q=${x}`}
+        urlBuilder={rowData => `https://google.com?q=${get(rowData, 'link')}`}
         headerRenderer={() => 'link'}
       />
       <Column key="id" dataKey="id" {...coreProps} cellRenderer={LocusCellRenderer} headerRenderer={() => 'locus'} />

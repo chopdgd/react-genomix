@@ -1,24 +1,25 @@
 import React from 'react'
-import { Checkbox, Icon } from 'semantic-ui-react'
+import { Checkbox } from 'semantic-ui-react'
 import { get } from 'lodash'
 
 export const CheckboxCell = ({ cellData, rowData, column, ...rest }) => {
   const onSelect = get(column, 'onSelect')
   const onSelectAll = get(column, 'onSelectAll')
-  const allSelected = get(column, 'allSelected', false)
   const props = get(column, 'props')
   const selectedRows = get(column, 'selectedRows', [])
   const header = 'headerIndex' in rest
+  const container = get(rest, 'container')
+  const rows = get(container, '_data', [])
 
   if (header) {
-    let props = { name: 'x', color: 'red' }
-    if (allSelected) props = { name: 'checkmark', color: 'green' }
     return (
-      <Icon
-        {...props}
-        onClick={() => {
-          if (onSelectAll) onSelectAll()
+      <Checkbox
+        checked={selectedRows.length >= rows.length}
+        indeterminate={selectedRows.length > 0 && selectedRows.length !== rows.length}
+        onChange={(e, data) => {
+          if (onSelectAll) onSelectAll(e, data, rows)
         }}
+        {...props}
       />
     )
   }

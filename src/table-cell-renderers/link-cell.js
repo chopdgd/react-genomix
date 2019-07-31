@@ -1,11 +1,10 @@
 import React from 'react'
-import { get } from 'lodash'
 
 import { ExternalLink } from '../links/external-link'
 
-export const LinkCell = ({ cellData, column }) => {
-  const urlBuilder = get(column, 'urlBuilder', () => cellData)
-  return <ExternalLink href={urlBuilder(cellData)}>{cellData}</ExternalLink>
+export const LinkCell = ({ cellData, rowData, column }) => {
+  const { urlBuilder } = column
+  return <ExternalLink href={urlBuilder(rowData)}>{cellData}</ExternalLink>
 }
 
 export default LinkCell

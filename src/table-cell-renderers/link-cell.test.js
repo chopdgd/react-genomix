@@ -5,7 +5,8 @@ import { shallow } from 'enzyme'
 import { LinkCell } from './link-cell'
 
 describe('LinkCell List', () => {
-  const node = <LinkCell cellData={10000000} />
+  const urlBuilder = jest.fn()
+  const node = <LinkCell column={{ urlBuilder }} cellData={10000000} />
 
   it('renders without crashing', () => {
     const div = document.createElement('div')

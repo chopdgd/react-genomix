@@ -10,13 +10,13 @@ describe('CheckboxCell List', () => {
     ReactDOM.render(<CheckboxCell cellData={10000000} rest={{ headerIndex: 0 }} />, div)
   })
 
-  it('This is a header renders Icon', () => {
+  it('This is a header renders Checkbox', () => {
     const onSelect = jest.fn()
     const onSelectAll = jest.fn()
     const node = <CheckboxCell column={{ onSelect, onSelectAll }} cellData={1} headerIndex={0} />
     const wrapper = shallow(node)
-    expect(wrapper.find('Icon')).toHaveLength(1)
-    wrapper.find('Icon').simulate('click', {})
+    expect(wrapper.find('Checkbox')).toHaveLength(1)
+    wrapper.find('Checkbox').simulate('change', {}, {})
     expect(onSelectAll).toHaveBeenCalledTimes(1)
     expect(onSelect).toHaveBeenCalledTimes(0)
   })
