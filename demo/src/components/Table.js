@@ -91,6 +91,7 @@ const ExampleTable = () => {
         dataKey="checkbox"
         {...coreProps}
         selectedRows={state}
+        allSelected={allSelected}
         onSelect={onSelect}
         onSelectAll={onSelectAll}
         cellRenderer={CheckboxCellRenderer}
