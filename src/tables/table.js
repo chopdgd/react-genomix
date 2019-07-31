@@ -27,9 +27,8 @@ const Table = ({
     if (onFetch) {
       if (!isLoading) {
         onFetch()
-        setLoading(false)
+        setLoading(true)
       }
-      setLoading(true)
     }
   }
 
