@@ -5,6 +5,7 @@ export { hooks, utils }
 
 // Link
 export { default as Link } from './links/link'
+export { default as ExternalLink } from './links/external-link'
 
 // Buttons
 export { default as Button } from './buttons/Button'
@@ -85,6 +86,23 @@ export { default as TextFixedCell } from './fixed-data-table-cells/text-fixed-ce
 export { default as TranscriptFixedCell } from './fixed-data-table-cells/transcript-fixed-cell'
 export { default as TurnAroundTimeProgressFixedCell } from './fixed-data-table-cells/turn-around-time-fixed-cell'
 
+// Table cell renderers
+export { default as BigIntCellRenderer } from './cell-renderers/bigint-cell'
+export { default as BooleanCellRenderer } from './cell-renderers/boolean-cell'
+export { default as CheckboxCellRenderer } from './cell-renderers/checkbox-cell'
+export { default as ClassificationCellRenderer } from './cell-renderers/classification-cell'
+export { default as ConsequenceCellRenderer } from './cell-renderers/consequence-cell'
+export { default as DateCellRenderer } from './cell-renderers/date-cell'
+export { default as FloatCellRenderer } from './cell-renderers/float-cell'
+export { default as GeneCellRenderer } from './cell-renderers/gene-cell'
+export { default as TranscriptCellRenderer } from './cell-renderers/hgvs-cdna-cell'
+export { default as InterpretationCellRenderer } from './cell-renderers/interpretation-cell'
+export { default as LinkCellRenderer } from './cell-renderers/link-cell'
+export { default as LocusCellRenderer } from './cell-renderers/locus-cell'
+export { default as MomentCellRenderer } from './cell-renderers/moment-cell'
+export { default as SexCellRenderer } from './cell-renderers/sex-cell'
+export { default as StatusCellRenderer } from './cell-renderers/status-cell'
+
 // Forms
 export { default as SaveForm } from './forms/save-form'
 export { default as LoginForm } from './forms/login-form'
@@ -102,3 +120,4 @@ export { default as FixedDataTable } from './tables/fixed-data-table'
 export { default as InfiniteScrollTable } from './tables/infinite-scroll-table'
 export { default as BasicTable } from './tables/basic-table'
 export { default as SelectionTable } from './tables/selection-table'
+export { default as Table } from './tables/table'

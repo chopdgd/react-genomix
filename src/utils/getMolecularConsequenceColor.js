@@ -1,6 +1,9 @@
-const getMolecularConsequenceColor = consequence => {
+import { toLower } from 'lodash'
+
+const getMolecularConsequenceColor = value => {
   // NOTE: Using Ensembl VEP rankings
   // See: https://useast.ensembl.org/info/genome/variation/predicted_data.html
+  const consequence = toLower(value)
 
   switch (true) {
     case consequence.includes('frameshift'):
@@ -8,13 +11,13 @@ const getMolecularConsequenceColor = consequence => {
     case consequence.includes('stop') || consequence.includes('start'):
       return 'red'
     case consequence.includes('missense'):
-      return 'orange'
-    case consequence.includes('splice'):
       return 'blue'
+    case consequence.includes('splice'):
+      return 'red'
     case consequence.includes('insert') || consequence.includes('deletion'):
-      return 'black'
+      return 'blue'
     default:
-      return 'grey'
+      return 'black'
   }
 }
 

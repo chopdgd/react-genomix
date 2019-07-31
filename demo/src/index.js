@@ -32,6 +32,8 @@ import InfiniteTableExample from './components/InfiniteTableExample'
 // Organisms
 import NavbarExample from './components/NavbarExample'
 
+import Table from './components/Table'
+
 const panes = [
   {
     menuItem: 'Buttons',
@@ -142,6 +144,14 @@ const panes = [
     render: () => (
       <Tab.Pane>
         <InfiniteTableExample />
+      </Tab.Pane>
+    ),
+  },
+  {
+    menuItem: 'Test Table',
+    render: () => (
+      <Tab.Pane>
+        <Table />
       </Tab.Pane>
     ),
   },

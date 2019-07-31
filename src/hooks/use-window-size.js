@@ -7,7 +7,7 @@ export const getWindowSize = () => ({
   outerWidth: window.outerWidth,
 })
 
-const useWindowSize = () => {
+export const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize())
 
   function handleResize() {
