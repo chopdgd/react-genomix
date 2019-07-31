@@ -2,18 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { BigIntCell } from './bigint-cell'
+import { HGVScDNACell } from './hgvs-cdna-cell'
 
-describe('BigIntCell List', () => {
-  const node = <BigIntCell cellData={10000000} />
-
+describe('HGVScDNACell List', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(node, div)
+    ReactDOM.render(<HGVScDNACell cellData="MFN2" />, div)
   })
 
-  it('Test if Content has gene symbol', () => {
+  it('HGVScDNACell Popup renders trigger for 1 gene', () => {
+    const node = <HGVScDNACell cellData="MFN2" />
     const wrapper = shallow(node)
-    expect(wrapper.debug()).toEqual('10,000,000')
+    expect(wrapper.find('ExternalLink').props().children).toEqual('MFN2')
   })
 })

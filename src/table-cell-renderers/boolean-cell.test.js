@@ -2,18 +2,60 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { BigIntCell } from './bigint-cell'
+import { BooleanCell } from './boolean-cell'
 
-describe('BigIntCell List', () => {
-  const node = <BigIntCell cellData={10000000} />
-
+describe('BooleanCell List', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(node, div)
+    ReactDOM.render(<BooleanCell cellData={true} />, div)
   })
 
-  it('Test if Content has gene symbol', () => {
+  it('test value of true', () => {
+    const node = <BooleanCell cellData={true} />
     const wrapper = shallow(node)
-    expect(wrapper.debug()).toEqual('10,000,000')
+    expect(wrapper.props().color).toEqual('green')
+    expect(wrapper.props().name).toEqual('checkmark')
+  })
+
+  it('test value of yes', () => {
+    const node = <BooleanCell cellData="yes" />
+    const wrapper = shallow(node)
+    expect(wrapper.props().color).toEqual('green')
+    expect(wrapper.props().name).toEqual('checkmark')
+  })
+
+  it('test value of y', () => {
+    const node = <BooleanCell cellData="y" />
+    const wrapper = shallow(node)
+    expect(wrapper.props().color).toEqual('green')
+    expect(wrapper.props().name).toEqual('checkmark')
+  })
+
+  it('test value of false', () => {
+    const node = <BooleanCell cellData={false} />
+    const wrapper = shallow(node)
+    expect(wrapper.props().color).toEqual('red')
+    expect(wrapper.props().name).toEqual('x')
+  })
+
+  it('test value of no', () => {
+    const node = <BooleanCell cellData="no" />
+    const wrapper = shallow(node)
+    expect(wrapper.props().color).toEqual('red')
+    expect(wrapper.props().name).toEqual('x')
+  })
+
+  it('test value of n', () => {
+    const node = <BooleanCell cellData="n" />
+    const wrapper = shallow(node)
+    expect(wrapper.props().color).toEqual('red')
+    expect(wrapper.props().name).toEqual('x')
+  })
+
+  it('test value of n', () => {
+    const node = <BooleanCell cellData="xafd" />
+    const wrapper = shallow(node)
+    expect(wrapper.props().color).toEqual('black')
+    expect(wrapper.props().name).toEqual('question circle outline')
   })
 })

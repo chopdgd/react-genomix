@@ -12,7 +12,7 @@ describe('BigIntCell List', () => {
     ReactDOM.render(node, div)
   })
 
-  it('Test if Content has gene symbol', () => {
+  it('renders bigint with commas', () => {
     const wrapper = shallow(node)
     expect(wrapper.debug()).toEqual('10,000,000')
   })

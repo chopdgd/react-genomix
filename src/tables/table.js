@@ -22,7 +22,7 @@ export const LoadingFooterRenderer = () => {
   )
 }
 
-const Table = ({
+export const Table = ({
   data = [],
   widths = {},
   height = 200,

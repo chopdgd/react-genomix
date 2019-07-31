@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Column } from 'react-base-table'
 
-import { SelectionTable } from '../index'
+import { Table } from './table'
 
 const list = Array.from(new Array(1), (x, i) => ({
   id: i,
@@ -11,10 +11,10 @@ const list = Array.from(new Array(1), (x, i) => ({
 }))
 
 const TestTable = props => (
-  <SelectionTable {...props} maxHeight={500} headerHeight={100} rowHeight={100}>
+  <Table {...props} maxHeight={500} headerHeight={100} rowHeight={100}>
     <Column title="name" key="name" dataKey="name" flexGrow={1} width={300} />
     <Column title="text" key="text" dataKey="text" flexGrow={1} width={300} />
-  </SelectionTable>
+  </Table>
 )
 
 describe('Test BasicTable', () => {
