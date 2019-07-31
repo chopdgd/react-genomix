@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Column } from 'react-base-table'
-import { map } from 'lodash'
+import { concat, map } from 'lodash'
 
 import {
   BigIntCellRenderer,
@@ -23,27 +23,28 @@ import {
 
 import useStateList from '../../../src/hooks/use-state-list'
 
-const rows = Array.from(new Array(300), (x, i) => ({
-  id: i,
-  bigint: 100000000000,
-  boolean: false,
-  checkbox: i,
-  classification: 'Likely Pathogenic',
-  consequence: 'splice acceptor',
-  date: '2019-07-28T19:07:42.889394+00:00',
-  float: 0.0000783821,
-  gene: 'MFN2',
-  cdna: 'NM_000001.:c.78A>T',
-  interpretation: 'Likely Diagnostic',
-  link: 'hurricanes football',
-  chromosome: '1',
-  start: 10000000,
-  end: 15000000,
-  moment: '2019-07-28T19:07:42.889394+00:00',
-  sex: 'female',
-  status: 'running',
-  icon: `icon ${i}`,
-}))
+const generateRows = () =>
+  Array.from(new Array(300), (x, i) => ({
+    id: i,
+    bigint: 100000000000,
+    boolean: false,
+    checkbox: i,
+    classification: 'Likely Pathogenic',
+    consequence: 'splice acceptor',
+    date: '2019-07-28T19:07:42.889394+00:00',
+    float: 0.0000783821,
+    gene: 'MFN2',
+    cdna: 'NM_000001.:c.78A>T',
+    interpretation: 'Likely Diagnostic',
+    link: 'hurricanes football',
+    chromosome: '1',
+    start: 10000000,
+    end: 15000000,
+    moment: '2019-07-28T19:07:42.889394+00:00',
+    sex: 'female',
+    status: 'running',
+    icon: `icon ${i}`,
+  }))
 
 const defaultWidths = {
   id: 200,
@@ -61,8 +62,10 @@ const coreProps = {
 }
 
 const ExampleTable = () => {
+  const [rows, setRows, resetRows] = useStateList(generateRows())
   const [state, setState, resetState] = useStateList([])
   const [allSelected, setAllSelected] = useState(false)
+  const [loading, setLoading] = useState(false)
   const onSelect = (e, { cellData }) => setState(cellData)
   const onSelectAll = () => {
     if (allSelected) resetState([])
@@ -70,8 +73,18 @@ const ExampleTable = () => {
     setAllSelected(!allSelected)
   }
 
+  const onEndReached = () => {
+    const newRows = generateRows()
+    const setRows = () => {
+      resetRows(concat(rows, newRows))
+      setLoading(false)
+    }
+    setLoading(true)
+    setTimeout(setRows, 5000)
+  }
+
   return (
-    <Table data={rows} responsive widths={defaultWidths}>
+    <Table data={rows} responsive widths={defaultWidths} loading={loading} onFetch={onEndReached}>
       <Column
         key="bigint"
         dataKey="bigint"

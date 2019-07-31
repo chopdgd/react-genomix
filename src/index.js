@@ -102,6 +102,7 @@ export { default as LocusCellRenderer } from './cell-renderers/locus-cell'
 export { default as MomentCellRenderer } from './cell-renderers/moment-cell'
 export { default as SexCellRenderer } from './cell-renderers/sex-cell'
 export { default as StatusCellRenderer } from './cell-renderers/status-cell'
+export { default as LoadingFooterRenderer } from './cell-renderers/loading-footer-renderer'
 
 // Forms
 export { default as SaveForm } from './forms/save-form'
