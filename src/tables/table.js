@@ -1,16 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import BaseTable from 'react-base-table'
 import AutoSizer from 'react-virtualized-auto-sizer'
+import { Dimmer, Header, Loader, Segment } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { LoadingFooterRenderer } from '../../src/index'
 import { useLocalStorage } from '../hooks/use-local-storage'
+
+export const NoDataRenderer = () => {
+  return (
+    <Segment textAlign="center">
+      <Header content="No Data!" />
+    </Segment>
+  )
+}
+
+export const LoadingFooterRenderer = () => {
+  return (
+    <Dimmer inverted active>
+      <Loader size="tiny">Loading more...</Loader>
+    </Dimmer>
+  )
+}
 
 const Table = ({
   data = [],
   widths = {},
   height = 200,
   width = 500,
+  noDataHeight = 100,
+  footerHeight = 50,
   responsive = false,
   loading = false,
   onFetch,
@@ -35,9 +53,10 @@ const Table = ({
   const props = {
     fixed: true,
     data,
-    height,
-    footerHeight: isLoading ? 50 : 0,
+    height: data.length === 0 ? noDataHeight : height,
+    footerHeight: isLoading ? footerHeight : 0,
     footerRenderer: LoadingFooterRenderer,
+    emptyRenderer: NoDataRenderer,
     onColumnResize: ({ column, width }) => setState({ [column.key]: width }),
     onEndReached,
   }
