@@ -1,7 +1,7 @@
-import { utils } from '../../src/index'
+import { dateFormatter } from '../utils'
 
 export const DateCell = ({ cellData, column }) => {
-  let value = utils.dateFormatter(cellData)
+  let value = dateFormatter(cellData)
   if (value === 'Invalid date') value = cellData
   return value
 }

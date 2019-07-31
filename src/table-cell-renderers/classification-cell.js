@@ -2,7 +2,7 @@ import React from 'react'
 import { Label } from 'semantic-ui-react'
 import { get } from 'lodash'
 
-import { getClassificationColor } from '../../src/utils'
+import { getClassificationColor } from '../utils'
 
 export const ClassificationCell = ({ cellData, column }) => {
   const labelProps = get(column, 'props')

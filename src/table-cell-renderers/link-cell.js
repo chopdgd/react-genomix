@@ -1,7 +1,7 @@
 import React from 'react'
 import { get } from 'lodash'
 
-import { ExternalLink } from '../../src/index'
+import { ExternalLink } from '../links/external-link'
 
 export const LinkCell = ({ cellData, column }) => {
   const urlBuilder = get(column, 'urlBuilder', () => cellData)
