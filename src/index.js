@@ -73,6 +73,7 @@ export { default as LocusCellRenderer } from './table-cell-renderers/locus-cell'
 export { default as MomentCellRenderer } from './table-cell-renderers/moment-cell'
 export { default as SexCellRenderer } from './table-cell-renderers/sex-cell'
 export { default as StatusCellRenderer } from './table-cell-renderers/status-cell'
+export { default as TurnAroundTimeCellRenderer } from './table-cell-renderers/turn-around-time-cell'
 
 // Forms
 export { default as SaveForm } from './forms/save-form'

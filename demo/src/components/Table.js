@@ -18,6 +18,7 @@ import {
   MomentCellRenderer,
   SexCellRenderer,
   StatusCellRenderer,
+  TurnAroundTimeCellRenderer,
   Table,
 } from '../../../src/index'
 
@@ -44,6 +45,9 @@ const generateRows = () =>
     sex: 'female',
     status: 'running',
     icon: `icon ${i}`,
+    startDate: '2019-07-28T19:07:42.889394+00:00',
+    signoutDate: '2019-08-28T19:07:42.889394+00:00',
+    target: 100,
   }))
 
 const defaultWidths = {
@@ -85,7 +89,7 @@ const ExampleTable = () => {
   }
 
   return (
-    <Table data={rows} responsive widths={defaultWidths} loading={loading} onFetch={onEndReached}>
+    <Table id="example" data={rows} responsive widths={defaultWidths} loading={loading} onFetch={onEndReached}>
       <Column
         key="bigint"
         dataKey="bigint"
@@ -170,6 +174,18 @@ const ExampleTable = () => {
         {...coreProps}
         cellRenderer={StatusCellRenderer}
         headerRenderer={() => 'status'}
+      />
+      <Column
+        key="tat"
+        dataGetter={({ rowData }) => ({
+          target: rowData.target,
+          start: rowData.startDate,
+          signout: rowData.signoutDate,
+        })}
+        props={{ compact: true }}
+        {...coreProps}
+        cellRenderer={TurnAroundTimeCellRenderer}
+        headerRenderer={() => 'tat'}
       />
     </Table>
   )
