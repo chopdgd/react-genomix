@@ -14,7 +14,7 @@ export const CheckboxCell = ({ cellData, rowData, column, ...rest }) => {
   if (header) {
     return (
       <Checkbox
-        checked={selectedRows.length >= rows.length}
+        checked={selectedRows.length >= rows.length && rows.length > 0}
         indeterminate={selectedRows.length > 0 && selectedRows.length !== rows.length}
         onChange={(e, data) => {
           if (onSelectAll) onSelectAll(e, data, rows)
