@@ -4,8 +4,7 @@ import { Popup, Progress, Label, Icon, Button } from 'semantic-ui-react'
 
 import { utils } from '../index'
 
-const TurnAroundTimeProgress = props => {
-  const { target, start, signout, compact, ...rest } = props
+export const TurnAroundTimeProgress = ({ target, start, signout, compact = false, ...rest }) => {
   const { label, color, value, completed } = utils.getTurnAroundTimeDetails(target, start, signout)
 
   if (start) {
@@ -47,10 +46,6 @@ TurnAroundTimeProgress.propTypes = {
   start: PropTypes.string,
   signout: PropTypes.string,
   compact: PropTypes.bool,
-}
-
-TurnAroundTimeProgress.defaultProps = {
-  compact: false,
 }
 
 export default TurnAroundTimeProgress

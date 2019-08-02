@@ -13,19 +13,19 @@ describe('Test Molecular Consequence Color', () => {
   })
 
   it('missense should be orange', () => {
-    expect(utils.getMolecularConsequenceColor('missense')).toEqual('orange')
+    expect(utils.getMolecularConsequenceColor('missense')).toEqual('blue')
   })
 
   it('splice should be blue', () => {
-    expect(utils.getMolecularConsequenceColor('splice_acceptor')).toEqual('blue')
+    expect(utils.getMolecularConsequenceColor('splice_acceptor')).toEqual('red')
   })
 
   it('insertion/deletion should be black', () => {
-    expect(utils.getMolecularConsequenceColor('inframe insertion')).toEqual('black')
-    expect(utils.getMolecularConsequenceColor('inframe deletion')).toEqual('black')
+    expect(utils.getMolecularConsequenceColor('inframe insertion')).toEqual('blue')
+    expect(utils.getMolecularConsequenceColor('inframe deletion')).toEqual('blue')
   })
 
   it('everything else should be grey', () => {
-    expect(utils.getMolecularConsequenceColor('UTR')).toEqual('grey')
+    expect(utils.getMolecularConsequenceColor('UTR')).toEqual('black')
   })
 })
