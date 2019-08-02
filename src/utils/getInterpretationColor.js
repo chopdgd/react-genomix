@@ -1,23 +1,14 @@
 import { toLower } from 'lodash'
 
 const getInterpretationColor = value => {
-  const classification = toLower(value)
+  const interpretation = toLower(value)
 
   switch (true) {
-    // Constitutional/Germline Classifications
-    case classification.includes('pathogenic'):
+    case interpretation.includes('diagnostic'):
       return 'red'
-    case ['uncertain significance', 'vus'].includes(classification):
+    case interpretation.includes('incidental'):
       return 'blue'
-    case classification.includes('benign'):
-      return 'green'
-
-    // Somatic Classifications
-    case ['tier 1 - a', 'tier 1 - b', 'tier 2'].includes(classification):
-      return 'red'
-    case classification.includes('tier 3'):
-      return 'blue'
-    case classification.includes('tier 4'):
+    case interpretation.includes('negative'):
       return 'green'
     default:
       return 'black'

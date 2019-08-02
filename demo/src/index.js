@@ -10,27 +10,16 @@ import * as GenomiX from '../../src'
 // Demo Components
 import Example from './components/Example'
 import SecondExample from './components/SecondExample'
-
-// Atoms
 import Buttons from './components/Buttons'
 import Dropdowns from './components/Dropdowns'
 import Icons from './components/Icons'
 import Links from './components/Links'
 import ProgressBars from './components/ProgressBars'
-import TableCellExamples from './components/TableCellExamples'
-
-// Molecules
 import Forms from './components/Forms'
 import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
-import FixedDataTableExample from './components/FixedDataTableExample'
-import InfiniteScrollTableExample from './components/InfiniteScrollTableExample'
-import BasicTableExample from './components/BasicTableExample'
-import SelectionTableExample from './components/SelectionTableExample'
-import InfiniteTableExample from './components/InfiniteTableExample'
-
-// Organisms
 import NavbarExample from './components/NavbarExample'
+import Table from './components/Table'
 
 const panes = [
   {
@@ -74,14 +63,6 @@ const panes = [
     ),
   },
   {
-    menuItem: 'Table Cells',
-    render: () => (
-      <Tab.Pane>
-        <TableCellExamples />
-      </Tab.Pane>
-    ),
-  },
-  {
     menuItem: 'Forms',
     render: () => (
       <Tab.Pane>
@@ -106,42 +87,10 @@ const panes = [
     ),
   },
   {
-    menuItem: 'Fixed Data Table',
+    menuItem: 'Table',
     render: () => (
       <Tab.Pane>
-        <FixedDataTableExample />
-      </Tab.Pane>
-    ),
-  },
-  {
-    menuItem: 'Infinite Scroll Table',
-    render: () => (
-      <Tab.Pane>
-        <InfiniteScrollTableExample />
-      </Tab.Pane>
-    ),
-  },
-  {
-    menuItem: 'Basic Table',
-    render: () => (
-      <Tab.Pane>
-        <BasicTableExample />
-      </Tab.Pane>
-    ),
-  },
-  {
-    menuItem: 'Selection Table',
-    render: () => (
-      <Tab.Pane>
-        <SelectionTableExample />
-      </Tab.Pane>
-    ),
-  },
-  {
-    menuItem: 'Infinite Table',
-    render: () => (
-      <Tab.Pane>
-        <InfiniteTableExample />
+        <Table />
       </Tab.Pane>
     ),
   },

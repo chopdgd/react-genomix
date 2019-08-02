@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "faker": "4.1.0",
-    "fixed-data-table-2": "0.8.26",
     "immutability-helper": "3.0.1",
     "moment": "2.22.2",
     "react-base-table": "1.6.5",
