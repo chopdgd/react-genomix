@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.12.0](https://github.com/chopdgd/react-genomix/tree/v0.12.0) (2019-08-02)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.11.1...v0.12.0)
+
+- Dropped support for fixed data table
+- Consolidated react-base-table to one main Table
+- Droppped support for all table cells, only use table cell renderers for react-base table
+- Added table cell renderers for common cells we use
+
 ## [v0.11.1](https://github.com/chopdgd/react-genomix/tree/v0.11.1) (2019-07-26)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.11.0...v0.11.1)
