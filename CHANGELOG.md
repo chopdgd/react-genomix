@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.13.0](https://github.com/chopdgd/react-genomix/tree/v0.13.0) (2019-08-09)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.12.0...v0.13.0)
+
+- Dropped support for using localStorage to "remember" column widths in BaseTable.
+- Updated deps
+
 ## [v0.12.0](https://github.com/chopdgd/react-genomix/tree/v0.12.0) (2019-08-02)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.11.1...v0.12.0)
