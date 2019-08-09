@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import BaseTable from 'react-base-table'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { Dimmer, Header, Loader, Segment } from 'semantic-ui-react'
-import { get } from 'lodash'
-
-import { useLocalStorage } from '../hooks/use-local-storage'
 
 export const NoDataRenderer = () => {
   return (
@@ -24,7 +21,6 @@ export const LoadingFooterRenderer = () => {
 }
 
 export const Table = ({
-  id,
   data = [],
   widths = {},
   height = 500,
@@ -37,9 +33,6 @@ export const Table = ({
   children,
   ...rest
 }) => {
-  const [state, setState] = useLocalStorage(id, widths)
-  const columns = children.map(item => React.cloneElement(item, { width: get(state, item.props.dataKey, 100) }))
-
   const [isLoading, setLoading] = useState(loading)
   useEffect(() => setLoading(loading), [loading])
 
@@ -59,7 +52,6 @@ export const Table = ({
     footerHeight: isLoading ? footerHeight : 0,
     footerRenderer: LoadingFooterRenderer,
     emptyRenderer: NoDataRenderer,
-    onColumnResize: ({ column, width }) => setState({ [column.key]: width }),
     onEndReached,
   }
 
@@ -69,7 +61,7 @@ export const Table = ({
         {({ width: autoWidth }) => {
           return (
             <BaseTable width={autoWidth} {...props} {...rest}>
-              {columns}
+              {children}
             </BaseTable>
           )
         }}
@@ -79,15 +71,13 @@ export const Table = ({
 
   return (
     <BaseTable width={width} {...props} {...rest}>
-      {columns}
+      {children}
     </BaseTable>
   )
 }
 
 Table.propTypes = {
-  id: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.shape({})),
-  widths: PropTypes.shape({}),
   height: PropTypes.number,
   width: PropTypes.number,
   noDataHeight: PropTypes.number,

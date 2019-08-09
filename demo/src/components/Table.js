@@ -50,14 +50,6 @@ const generateRows = () =>
     target: 100,
   }))
 
-const defaultWidths = {
-  id: 200,
-  text: 200,
-  chromosome: 200,
-  start: 200,
-  end: 200,
-}
-
 const coreProps = {
   minWidth: 100,
   maxWidth: 500,
@@ -89,10 +81,11 @@ const ExampleTable = () => {
   }
 
   return (
-    <Table id="example" data={rows} responsive widths={defaultWidths} loading={loading} onFetch={onEndReached}>
+    <Table data={rows} responsive loading={loading} onFetch={onEndReached}>
       <Column
         key="bigint"
         dataKey="bigint"
+        width={150}
         {...coreProps}
         cellRenderer={BigIntCellRenderer}
         headerRenderer={() => 'bigint'}
@@ -100,6 +93,7 @@ const ExampleTable = () => {
       <Column
         key="boolean"
         dataKey="boolean"
+        width={150}
         {...coreProps}
         cellRenderer={BooleanCellRenderer}
         headerRenderer={() => 'boolean'}
@@ -107,6 +101,7 @@ const ExampleTable = () => {
       <Column
         key="checkbox"
         dataKey="checkbox"
+        width={150}
         {...coreProps}
         selectedRows={state}
         onSelect={onSelect}
@@ -117,6 +112,7 @@ const ExampleTable = () => {
       <Column
         key="classification"
         dataKey="classification"
+        width={150}
         {...coreProps}
         cellRenderer={ClassificationCellRenderer}
         headerRenderer={() => 'classification'}
@@ -124,22 +120,39 @@ const ExampleTable = () => {
       <Column
         key="consequence"
         dataKey="consequence"
+        width={150}
         {...coreProps}
         cellRenderer={ConsequenceCellRenderer}
         headerRenderer={() => 'consequence'}
       />
-      <Column key="date" dataKey="date" {...coreProps} cellRenderer={DateCellRenderer} headerRenderer={() => 'date'} />
+      <Column
+        key="date"
+        dataKey="date"
+        width={150}
+        {...coreProps}
+        cellRenderer={DateCellRenderer}
+        headerRenderer={() => 'date'}
+      />
       <Column
         key="float"
         dataKey="float"
+        width={150}
         {...coreProps}
         cellRenderer={FloatCellRenderer}
         headerRenderer={() => 'float'}
       />
-      <Column key="gene" dataKey="gene" {...coreProps} cellRenderer={GeneCellRenderer} headerRenderer={() => 'gene'} />
+      <Column
+        key="gene"
+        dataKey="gene"
+        width={150}
+        {...coreProps}
+        cellRenderer={GeneCellRenderer}
+        headerRenderer={() => 'gene'}
+      />
       <Column
         key="cdna"
         dataKey="cdna"
+        width={150}
         {...coreProps}
         cellRenderer={TranscriptCellRenderer}
         headerRenderer={() => 'transcript'}
@@ -147,6 +160,7 @@ const ExampleTable = () => {
       <Column
         key="interpretation"
         dataKey="interpretation"
+        width={150}
         {...coreProps}
         cellRenderer={InterpretationCellRenderer}
         headerRenderer={() => 'interpretation'}
@@ -154,23 +168,40 @@ const ExampleTable = () => {
       <Column
         key="link"
         dataKey="link"
+        width={150}
         {...coreProps}
         cellRenderer={LinkCellRenderer}
         urlBuilder={rowData => `https://google.com?q=${get(rowData, 'link')}`}
         headerRenderer={() => 'link'}
       />
-      <Column key="id" dataKey="id" {...coreProps} cellRenderer={LocusCellRenderer} headerRenderer={() => 'locus'} />
+      <Column
+        key="id"
+        dataKey="id"
+        width={150}
+        {...coreProps}
+        cellRenderer={LocusCellRenderer}
+        headerRenderer={() => 'locus'}
+      />
       <Column
         key="moment"
         dataKey="moment"
+        width={150}
         {...coreProps}
         cellRenderer={MomentCellRenderer}
         headerRenderer={() => 'moment'}
       />
-      <Column key="sex" dataKey="sex" {...coreProps} cellRenderer={SexCellRenderer} headerRenderer={() => 'sex'} />
+      <Column
+        key="sex"
+        dataKey="sex"
+        width={150}
+        {...coreProps}
+        cellRenderer={SexCellRenderer}
+        headerRenderer={() => 'sex'}
+      />
       <Column
         key="status"
         dataKey="status"
+        width={150}
         {...coreProps}
         cellRenderer={StatusCellRenderer}
         headerRenderer={() => 'status'}
@@ -183,6 +214,7 @@ const ExampleTable = () => {
           signout: rowData.signoutDate,
         })}
         props={{ compact: true }}
+        width={150}
         {...coreProps}
         cellRenderer={TurnAroundTimeCellRenderer}
         headerRenderer={() => 'tat'}
