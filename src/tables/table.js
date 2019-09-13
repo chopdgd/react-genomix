@@ -23,6 +23,7 @@ export const LoadingFooterRenderer = () => {
 export const Table = ({
   data = [],
   widths = {},
+  maxHeight = 500,
   height = 500,
   width = 500,
   noDataHeight = 100,
@@ -48,7 +49,8 @@ export const Table = ({
   const props = {
     fixed: true,
     data,
-    height: data.length === 0 ? noDataHeight : height,
+    maxHeight: data.length === 0 ? undefined : maxHeight,
+    height: data.length === 0 ? noDataHeight : undefined,
     footerHeight: isLoading ? footerHeight : 0,
     footerRenderer: LoadingFooterRenderer,
     emptyRenderer: NoDataRenderer,
@@ -78,6 +80,7 @@ export const Table = ({
 
 Table.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({})),
+  maxHeight: PropTypes.number,
   height: PropTypes.number,
   width: PropTypes.number,
   noDataHeight: PropTypes.number,
