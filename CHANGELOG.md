@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.14.2](https://github.com/chopdgd/react-genomix/tree/v0.14.2) (2019-09-13)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.14.1...v0.14.2)
+
+- Fixed bug with no data message renderer in Table
+
 ## [v0.14.1](https://github.com/chopdgd/react-genomix/tree/v0.14.1) (2019-09-09)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.14.0...v0.14.1)
