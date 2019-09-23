@@ -39,12 +39,12 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "23.6.0",
-    "babel-preset-react-app": "9.0.1",
+    "babel-preset-react-app": "9.0.2",
     "dotenv": "8.1.0",
     "dotenv-expand": "5.1.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
-    "eslint": "6.3.0",
+    "eslint": "6.4.0",
     "eslint-config-react-app": "5.0.2",
     "eslint-plugin-flowtype": "4.3.0",
     "eslint-plugin-import": "2.18.2",
@@ -58,7 +58,7 @@
     "nwb": "0.23.x",
     "prettier": "1.18.2",
     "react": "^16.8.0",
-    "react-app-polyfill": "1.0.2",
+    "react-app-polyfill": "1.0.3",
     "react-dom": "^16.8.0"
   },
   "jest": {
