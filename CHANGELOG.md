@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.15.0](https://github.com/chopdgd/react-genomix/tree/v0.15.0) (2019-10-14)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.14.2...v0.15.0)
+
+- Updated dependencies
+- Added a custom hook for parsing URL parameters if you are using React Router
+
 ## [v0.14.2](https://github.com/chopdgd/react-genomix/tree/v0.14.2) (2019-09-13)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.14.1...v0.14.2)
