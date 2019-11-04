@@ -1,5 +1,11 @@
 # Change Log
 
+## [v1.0.0](https://github.com/chopdgd/react-genomix/tree/v1.0.0) (2019-11-04)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.15.0...v1.0.0)
+
+- First version used in production
+
 ## [v0.15.0](https://github.com/chopdgd/react-genomix/tree/v0.15.0) (2019-10-14)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.14.2...v0.15.0)
