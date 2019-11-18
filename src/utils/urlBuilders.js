@@ -100,3 +100,7 @@ export const orphanetEntry = id => `${urls.ORPHANET_URL}/consor/cgi-bin/OC_Exp.p
 
 // Internal Resources
 export const alamutEntry = cdna => `${urls.ALAMUT_URL}/show?request=${cdna}`
+
+// ClinGen urls
+export const clinGenHGNCGene = hgncId => `${urls.CLINGEN_URL}/genes/HGNC:${hgncId}`
+export const clinGenCondition = mondoId => `${urls.CLINGEN_URL}/conditions/MONDO_${mondoId}`
