@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.1.0](https://github.com/chopdgd/react-genomix/tree/v1.1.0) (2019-11-19)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v1.0.0...v1.1.0)
+
+- Updated dependencies
+- Added urlBuilder fro ClinGen resources
+
 ## [v1.0.0](https://github.com/chopdgd/react-genomix/tree/v1.0.0) (2019-11-04)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v0.15.0...v1.0.0)
