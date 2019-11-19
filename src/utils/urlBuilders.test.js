@@ -258,4 +258,16 @@ describe('Test URL Builders', () => {
     const expected = `${urls.ALAMUT_URL}/show?request=cDNA-1`
     expect(observed).toEqual(expected)
   })
+
+  it('Build URL to ClinGen Gene entry', () => {
+    const observed = utils.urlBuilders.clinGenHGNCGene(1234)
+    const expected = `${urls.CLINGEN_URL}/genes/HGNC:1234`
+    expect(observed).toEqual(expected)
+  })
+
+  it('Build URL to ClinGen Disease entry', () => {
+    const observed = utils.urlBuilders.clinGenCondition(1234)
+    const expected = `${urls.CLINGEN_URL}/conditions/MONDO_1234`
+    expect(observed).toEqual(expected)
+  })
 })
