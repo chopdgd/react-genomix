@@ -37,3 +37,6 @@ export const ORPHANET_URL = 'http://www.orpha.net'
 
 // Internal Resources
 export const ALAMUT_URL = 'http://localhost:10000'
+
+// ClinGen
+export const CLINGEN_URL = 'https://search.clinicalgenome.org/kb/'
