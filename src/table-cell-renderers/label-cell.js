@@ -4,10 +4,10 @@ import { get } from 'lodash'
 
 import { getColor } from '../utils'
 
-export const InterpretationCell = ({ cellData, column }) => {
+export const LabelCell = ({ cellData, column }) => {
   const labelProps = get(column, 'props')
   const color = getColor(cellData)
   return <Label color={color} content={cellData} {...labelProps} />
 }
 
-export default InterpretationCell
+export default LabelCell

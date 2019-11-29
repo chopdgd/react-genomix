@@ -2,16 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
-import { ClassificationCell } from './classification-cell'
+import { LabelCell } from './label-cell'
 
-describe('ClassificationCell List', () => {
+describe('LabelCell List', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<ClassificationCell cellData="data" />, div)
+    ReactDOM.render(<LabelCell cellData="data" />, div)
   })
 
   it('renders Label', () => {
-    const node = <ClassificationCell cellData="data" />
+    const node = <LabelCell cellData="data" />
     const wrapper = shallow(node)
     expect(wrapper.find('Label')).toHaveLength(1)
   })
