@@ -93,6 +93,18 @@ describe('Utils - getColor', () => {
     expect(getColor('inframe deletion')).toEqual('blue')
   })
 
+  it('Truthy values should be green', () => {
+    expect(getColor('true')).toEqual('green')
+    expect(getColor(true)).toEqual('green')
+    expect(getColor('Yes')).toEqual('green')
+  })
+
+  it('Falsy values should be red', () => {
+    expect(getColor('false')).toEqual('red')
+    expect(getColor(false)).toEqual('red')
+    expect(getColor('No')).toEqual('red')
+  })
+
   it('everything else should be black', () => {
     expect(getColor('UTR')).toEqual('black')
   })
