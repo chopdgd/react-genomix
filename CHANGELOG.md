@@ -1,11 +1,18 @@
 # Change Log
 
+## [v1.2.0](https://github.com/chopdgd/react-genomix/tree/v1.2.0) (2019-12-02)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v1.1.0...v1.2.0)
+
+- Updated dependencies
+- Dropped support for various cell renderers, now will be `LabelRenderer`
+
 ## [v1.1.0](https://github.com/chopdgd/react-genomix/tree/v1.1.0) (2019-11-19)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v1.0.0...v1.1.0)
 
 - Updated dependencies
-- Added urlBuilder fro ClinGen resources
+- Added urlBuilder for ClinGen resources
 
 ## [v1.0.0](https://github.com/chopdgd/react-genomix/tree/v1.0.0) (2019-11-04)
 
