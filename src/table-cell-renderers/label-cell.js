@@ -7,6 +7,7 @@ import { getColor } from '../utils'
 export const LabelCell = ({ cellData, column }) => {
   const labelProps = get(column, 'props')
   const color = getColor(cellData)
+  if (!cellData) return ''
   return <Label color={color} content={cellData} {...labelProps} />
 }
 
