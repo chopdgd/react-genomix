@@ -84,7 +84,7 @@ describe('Utils - getColor', () => {
     expect(getColor('missense')).toEqual('blue')
   })
 
-  it('splice should be blue', () => {
+  it('splice should be red', () => {
     expect(getColor('splice_acceptor')).toEqual('red')
   })
 
@@ -103,6 +103,30 @@ describe('Utils - getColor', () => {
     expect(getColor('false')).toEqual('red')
     expect(getColor(false)).toEqual('red')
     expect(getColor('No')).toEqual('red')
+  })
+
+  it('stat should be red', () => {
+    expect(getColor('STAT')).toEqual('red')
+  })
+
+  it('urgent should be orange', () => {
+    expect(getColor('urgent')).toEqual('orange')
+  })
+
+  it('routine should be black', () => {
+    expect(getColor('routine')).toEqual('black')
+  })
+
+  it('definitive should be green', () => {
+    expect(getColor('definitive')).toEqual('green')
+  })
+
+  it('moderate should be orange', () => {
+    expect(getColor('moderate')).toEqual('orange')
+  })
+
+  it('limited should be red', () => {
+    expect(getColor('limited')).toEqual('red')
   })
 
   it('everything else should be black', () => {
