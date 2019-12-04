@@ -52,6 +52,22 @@ export const getColor = value => {
     case value.includes('insert') || value.includes('deletion'):
       return 'blue'
 
+    // Priority values
+    case value === 'stat':
+      return 'red'
+    case value === 'urgent':
+      return 'orange'
+    case value === 'routine':
+      return 'black'
+
+    // Gene Validity values
+    case value === 'definitive':
+      return 'green'
+    case value === 'moderate':
+      return 'orange'
+    case value === 'limited':
+      return 'red'
+
     case ['yes', 'true', true].includes(value):
       return 'green'
 
