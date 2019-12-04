@@ -15,4 +15,10 @@ describe('LabelCell List', () => {
     const wrapper = shallow(node)
     expect(wrapper.find('Label')).toHaveLength(1)
   })
+
+  it('renders no Label', () => {
+    const node = <LabelCell cellData={null} />
+    const wrapper = shallow(node)
+    expect(wrapper.find('Label')).toHaveLength(0)
+  })
 })
