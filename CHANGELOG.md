@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.2.1](https://github.com/chopdgd/react-genomix/tree/v1.2.1) (2019-12-04)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v1.2.0...v1.2.1)
+
+- LabelCellRender can now handle null values
+- Left out a few colors from getColor function
+
 ## [v1.2.0](https://github.com/chopdgd/react-genomix/tree/v1.2.0) (2019-12-02)
 
 [Full Changelog](https://github.com/chopdgd/react-genomix/compare/v1.1.0...v1.2.0)
