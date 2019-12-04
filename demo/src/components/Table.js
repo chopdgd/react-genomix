@@ -6,13 +6,11 @@ import {
   BigIntCellRenderer,
   BooleanCellRenderer,
   CheckboxCellRenderer,
-  ClassificationCellRenderer,
-  ConsequenceCellRenderer,
   DateCellRenderer,
   FloatCellRenderer,
   GeneCellRenderer,
   TranscriptCellRenderer,
-  InterpretationCellRenderer,
+  LabelCellRenderer,
   LinkCellRenderer,
   LocusCellRenderer,
   MomentCellRenderer,
@@ -114,7 +112,7 @@ const ExampleTable = () => {
         dataKey="classification"
         width={150}
         {...coreProps}
-        cellRenderer={ClassificationCellRenderer}
+        cellRenderer={LabelCellRenderer}
         headerRenderer={() => 'classification'}
       />
       <Column
@@ -122,7 +120,7 @@ const ExampleTable = () => {
         dataKey="consequence"
         width={150}
         {...coreProps}
-        cellRenderer={ConsequenceCellRenderer}
+        cellRenderer={LabelCellRenderer}
         headerRenderer={() => 'consequence'}
       />
       <Column
@@ -162,7 +160,7 @@ const ExampleTable = () => {
         dataKey="interpretation"
         width={150}
         {...coreProps}
-        cellRenderer={InterpretationCellRenderer}
+        cellRenderer={LabelCellRenderer}
         headerRenderer={() => 'interpretation'}
       />
       <Column
