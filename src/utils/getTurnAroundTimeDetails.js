@@ -3,7 +3,6 @@ import moment from 'moment'
 const getTurnAroundTimeDetails = (target, start, signout) => {
   const now = moment(Date.now())
   const startMoment = moment(start)
-  const targetMoment = moment(start).add(target, 'days')
 
   let daysPassed
   let label
