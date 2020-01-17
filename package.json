@@ -57,7 +57,7 @@
     "node-sass-chokidar": "1.4.0",
     "nwb": "0.23.x",
     "prettier": "1.19.1",
-    "query-string": "6.9.0",
+    "query-string": "6.10.1",
     "react": "^16.8.0",
     "react-app-polyfill": "1.0.5",
     "react-dom": "^16.8.0",
