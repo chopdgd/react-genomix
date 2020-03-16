@@ -270,4 +270,10 @@ describe('Test URL Builders', () => {
     const expected = `${urls.CLINGEN_URL}/conditions/MONDO_1234`
     expect(observed).toEqual(expected)
   })
+
+  it('Build URL to Mouse Genome Database entry', () => {
+    const observed = utils.urlBuilders.mgiGene(gene)
+    const expected = 'http://www.informatics.jax.org//searchtool/Search.do?query=MFN2'
+    expect(observed).toEqual(expected)
+  })
 })
