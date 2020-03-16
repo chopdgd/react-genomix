@@ -75,6 +75,12 @@ describe('Test URL Builders', () => {
     expect(observed).toEqual(expected)
   })
 
+  it('Build URL to NCBI Gene search', () => {
+    const observed = utils.urlBuilders.pubmedGene(gene)
+    const expected = `${urls.NCBI_GENE_URL}/?term=${gene}`
+    expect(observed).toEqual(expected)
+  })
+
   it('Build URL to NCBI Variation Viewer entry', () => {
     const observed = utils.urlBuilders.variationViewer(chr, pos, pos)
     const expected = `${urls.NCBI_VARIATION_URL}/?assm=GCF_000001405.25&chr=1&from=10&to=10`

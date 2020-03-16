@@ -17,6 +17,8 @@ export const pubmedSearch = term => `${urls.PUBMED_URL}/?term=${term}`
 
 export const pubmedEntry = pmid => `${urls.PUBMED_URL}/${pmid}`
 
+export const pubmedGene = gene => `${urls.NCBI_GENE_URL}/?term=${gene}`
+
 export const variationViewer = (chr, start, end, assembly = 'GCF_000001405.25') =>
   `${urls.NCBI_VARIATION_URL}/?assm=${assembly}&chr=${chr}&from=${start}&to=${end}`
 

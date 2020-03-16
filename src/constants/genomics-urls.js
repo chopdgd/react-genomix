@@ -7,6 +7,7 @@ export const NCBI_ESEARCH_ENDPOINT = `${NCBI_EUTILS_ENDPOINT}/esearch.fcgi`
 // NCBI URLs
 export const NCBI_URL = 'https://www.ncbi.nlm.nih.gov'
 export const PUBMED_URL = `${NCBI_URL}/pubmed`
+export const NCBI_GENE_URL = `${NCBI_URL}/gene`
 export const NCBI_VARIATION_URL = `${NCBI_URL}/variation/view`
 export const CLINVAR_URL = 'https://preview.ncbi.nlm.nih.gov/clinvar'
 
