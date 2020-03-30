@@ -68,11 +68,11 @@ export const getColor = value => {
 
     // Gene Validity values
     case value === 'definitive':
-      return 'green'
+      return 'red'
     case value === 'moderate':
       return 'orange'
     case value === 'limited':
-      return 'red'
+      return 'green'
 
     case ['yes', 'true', true].includes(value):
       return 'green'

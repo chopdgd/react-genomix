@@ -129,16 +129,16 @@ describe('Utils - getColor', () => {
     expect(getColor('routine')).toEqual('black')
   })
 
-  it('definitive should be green', () => {
-    expect(getColor('definitive')).toEqual('green')
+  it('definitive should be red', () => {
+    expect(getColor('definitive')).toEqual('red')
   })
 
   it('moderate should be orange', () => {
     expect(getColor('moderate')).toEqual('orange')
   })
 
-  it('limited should be red', () => {
-    expect(getColor('limited')).toEqual('red')
+  it('limited should be green', () => {
+    expect(getColor('limited')).toEqual('green')
   })
 
   it('everything else should be black', () => {
