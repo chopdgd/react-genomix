@@ -32,12 +32,18 @@ export const getColor = value => {
 
     // Contributions
     case value === 'associated':
-      return 'green'
-    case value === 'not associated':
       return 'red'
+    case value === 'not associated':
+      return 'green'
     case value.includes('finding'):
       return 'blue'
     case value === 'uncertain':
+      return 'orange'
+    case value === 'previously reported':
+      return 'purple'
+    case value === 'candidate':
+      return 'pink'
+    case value === 'not applicable':
       return 'grey'
 
     // Molecular values
@@ -62,11 +68,11 @@ export const getColor = value => {
 
     // Gene Validity values
     case value === 'definitive':
-      return 'green'
+      return 'red'
     case value === 'moderate':
       return 'orange'
     case value === 'limited':
-      return 'red'
+      return 'green'
 
     case ['yes', 'true', true].includes(value):
       return 'green'

@@ -20,6 +20,7 @@ import LoginFormExample from './components/LoginFormExample'
 import Modals from './components/Modals'
 import NavbarExample from './components/NavbarExample'
 import Table from './components/Table'
+import Labels from './components/Labels'
 
 const panes = [
   {
@@ -91,6 +92,14 @@ const panes = [
     render: () => (
       <Tab.Pane>
         <Table />
+      </Tab.Pane>
+    ),
+  },
+  {
+    menuItem: 'Labels',
+    render: () => (
+      <Tab.Pane>
+        <Labels />
       </Tab.Pane>
     ),
   },
