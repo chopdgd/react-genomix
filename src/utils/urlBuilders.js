@@ -17,6 +17,8 @@ export const pubmedSearch = term => `${urls.PUBMED_URL}/?term=${term}`
 
 export const pubmedEntry = pmid => `${urls.PUBMED_URL}/${pmid}`
 
+export const pubmedGene = gene => `${urls.NCBI_GENE_URL}/?term=${gene}`
+
 export const variationViewer = (chr, start, end, assembly = 'GCF_000001405.25') =>
   `${urls.NCBI_VARIATION_URL}/?assm=${assembly}&chr=${chr}&from=${start}&to=${end}`
 
@@ -104,3 +106,6 @@ export const alamutEntry = cdna => `${urls.ALAMUT_URL}/show?request=${cdna}`
 // ClinGen urls
 export const clinGenHGNCGene = hgncId => `${urls.CLINGEN_URL}/genes/HGNC:${hgncId}`
 export const clinGenCondition = mondoId => `${urls.CLINGEN_URL}/conditions/MONDO_${mondoId}`
+
+// Mouse Genome DB urls
+export const mgiGene = geneSymbol => `${urls.MGI_URL}/searchtool/Search.do?query=${geneSymbol}`
