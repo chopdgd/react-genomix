@@ -5,7 +5,7 @@ import { Popup, Progress, Label, Icon, Button } from 'semantic-ui-react'
 import { utils } from '../index'
 
 export const TurnAroundTimeProgress = ({ target, start, signout, compact = false, ...rest }) => {
-  const { label, color, value, completed } = utils.getTurnAroundTimeDetails(target, start, signout)
+  const { label, color, value, daysPassed } = utils.getTurnAroundTimeDetails(target, start, signout)
 
   if (start) {
     return (
@@ -21,7 +21,7 @@ export const TurnAroundTimeProgress = ({ target, start, signout, compact = false
               </Label>
             </Button>
           ) : (
-            <Progress value={value} total={target} color={color} active disabled={completed ? true : false} {...rest}>
+            <Progress value={value} total={target} color={color} active {...rest}>
               <Label>{label}</Label>
             </Progress>
           )
@@ -29,6 +29,8 @@ export const TurnAroundTimeProgress = ({ target, start, signout, compact = false
       >
         <Popup.Content>
           <strong>Target:</strong> {target} days
+          <br />
+          <strong>{signout ? 'TAT' : 'Current TAT'}:</strong> {daysPassed} days
           <br />
           <strong>Started:</strong> {utils.dateFormatter(start, 'YYYY-MM,DD')}
           <br />

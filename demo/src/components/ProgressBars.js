@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Grid } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import { map } from 'lodash'
 import moment from 'moment'
 import * as GenomiX from '../../../src'
@@ -47,6 +47,12 @@ const data = [
       .format('YYYY-MM-DD'),
     signout: null,
   },
+  {
+    header: 'Not Started',
+    target: 20,
+    start: null,
+    signout: null,
+  },
 ]
 
 const items = map(data, ({ header, target, start, signout }) => ({
@@ -61,12 +67,6 @@ const items = map(data, ({ header, target, start, signout }) => ({
   extra: <GenomiX.TurnAroundTimeProgress target={target} start={start} signout={signout} />,
 }))
 
-const ProgressBars = () => (
-  <Grid padded centered>
-    <Grid.Column width={16} textAlign="left">
-      <Card.Group items={items} textAlign="center" itemsPerRow={3} stackable />
-    </Grid.Column>
-  </Grid>
-)
+const ProgressBars = () => <Card.Group items={items} textAlign="center" itemsPerRow={3} stackable />
 
 export default ProgressBars
