@@ -43,4 +43,4 @@ export const ALAMUT_URL = 'http://localhost:10000'
 export const CLINGEN_URL = 'https://search.clinicalgenome.org/kb/'
 
 // Mouse Genome Database
-export const MGI_URL = 'http://www.informatics.jax.org/'
+export const MGI_URL = 'http://www.informatics.jax.org'
