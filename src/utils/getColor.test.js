@@ -48,11 +48,11 @@ describe('Utils - getColor', () => {
   })
 
   it('associated should be green', () => {
-    expect(getColor('associated')).toEqual('green')
+    expect(getColor('associated')).toEqual('red')
   })
 
   it('not associated should be red', () => {
-    expect(getColor('not associated')).toEqual('red')
+    expect(getColor('not associated')).toEqual('green')
   })
 
   it('findings should be blue', () => {
@@ -60,8 +60,20 @@ describe('Utils - getColor', () => {
     expect(getColor('secondary finding')).toEqual('blue')
   })
 
-  it('uncertain should be grey', () => {
-    expect(getColor('uncertain')).toEqual('grey')
+  it('uncertain should be orange', () => {
+    expect(getColor('uncertain')).toEqual('orange')
+  })
+
+  it('candidate should be pink', () => {
+    expect(getColor('candidate')).toEqual('pink')
+  })
+
+  it('previously reported should be purple', () => {
+    expect(getColor('previously reported')).toEqual('purple')
+  })
+
+  it('not applicable should be grey', () => {
+    expect(getColor('not applicable')).toEqual('grey')
   })
 
   it('negative should be green', () => {
@@ -117,16 +129,16 @@ describe('Utils - getColor', () => {
     expect(getColor('routine')).toEqual('black')
   })
 
-  it('definitive should be green', () => {
-    expect(getColor('definitive')).toEqual('green')
+  it('definitive should be red', () => {
+    expect(getColor('definitive')).toEqual('red')
   })
 
   it('moderate should be orange', () => {
     expect(getColor('moderate')).toEqual('orange')
   })
 
-  it('limited should be red', () => {
-    expect(getColor('limited')).toEqual('red')
+  it('limited should be green', () => {
+    expect(getColor('limited')).toEqual('green')
   })
 
   it('everything else should be black', () => {

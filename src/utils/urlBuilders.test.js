@@ -75,6 +75,12 @@ describe('Test URL Builders', () => {
     expect(observed).toEqual(expected)
   })
 
+  it('Build URL to NCBI Gene search', () => {
+    const observed = utils.urlBuilders.pubmedGene(gene)
+    const expected = `${urls.NCBI_GENE_URL}/?term=${gene}`
+    expect(observed).toEqual(expected)
+  })
+
   it('Build URL to NCBI Variation Viewer entry', () => {
     const observed = utils.urlBuilders.variationViewer(chr, pos, pos)
     const expected = `${urls.NCBI_VARIATION_URL}/?assm=GCF_000001405.25&chr=1&from=10&to=10`
@@ -268,6 +274,12 @@ describe('Test URL Builders', () => {
   it('Build URL to ClinGen Disease entry', () => {
     const observed = utils.urlBuilders.clinGenCondition(1234)
     const expected = `${urls.CLINGEN_URL}/conditions/MONDO_1234`
+    expect(observed).toEqual(expected)
+  })
+
+  it('Build URL to Mouse Genome Database entry', () => {
+    const observed = utils.urlBuilders.mgiGene(gene)
+    const expected = 'http://www.informatics.jax.org//searchtool/Search.do?query=MFN2'
     expect(observed).toEqual(expected)
   })
 })
