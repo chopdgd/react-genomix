@@ -1,4 +1,11 @@
 # Change Log
+## [v1.2.2](https://github.com/chopdgd/react-genomix/tree/v1.3.0) (2020-04-22)
+
+[Full Changelog](https://github.com/chopdgd/react-genomix/compare/v1.2.2...v1.3.0)
+
+- Updated dependencies
+- Updated color functions
+- Updated genomics URLs
 
 ## [v1.2.2](https://github.com/chopdgd/react-genomix/tree/v1.2.2) (2020-01-22)
 

@@ -279,7 +279,7 @@ describe('Test URL Builders', () => {
 
   it('Build URL to Mouse Genome Database entry', () => {
     const observed = utils.urlBuilders.mgiGene(gene)
-    const expected = 'http://www.informatics.jax.org//searchtool/Search.do?query=MFN2'
+    const expected = 'http://www.informatics.jax.org/searchtool/Search.do?query=MFN2'
     expect(observed).toEqual(expected)
   })
 })
