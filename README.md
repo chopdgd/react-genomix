@@ -6,8 +6,6 @@
 
 [![codecov](https://codecov.io/gh/chopdgd/react-genomix/branch/develop/graph/badge.svg)](https://codecov.io/gh/chopdgd/react-genomix)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/chopdgd/react-genomix.svg)](https://greenkeeper.io/)
-
 Core library for Nexus projects using ReactJS
 
 ## Getting Started
