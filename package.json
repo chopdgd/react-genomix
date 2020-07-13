@@ -37,7 +37,6 @@
   "devDependencies": {
     "@babel/core": "7.9.0",
     "babel-core": "7.0.0-bridge.0",
-    "react-scripts": "3.4.1",
     "babel-eslint": "10.1.0",
     "babel-preset-react-app": "9.1.2",
     "dotenv": "8.2.0",
@@ -60,25 +59,8 @@
     "react": "^16.8.0",
     "react-app-polyfill": "1.0.6",
     "react-dom": "^16.8.0",
-    "react-router-dom": "5.1.2"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/tests/config/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/tests/config/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    }
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.1"
   },
   "author": "Michael A. Gonzalez",
   "homepage": "https://github.com/chopdgd/react-genomix",
