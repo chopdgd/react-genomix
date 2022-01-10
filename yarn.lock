@@ -9681,10 +9681,10 @@ react-base-table@1.9.3:
     react-virtualized-auto-sizer "^1.0.2"
     react-window "^1.8.2"
 
-react-csv@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-csv/-/react-csv-2.0.3.tgz#f5d17a3c71107d9bcbe580049350200debdc042a"
-  integrity sha512-exyAdFLAxtuM4wNwLYrlKyPYLiJ7e0mv9tqPAd3kq+k1CiJFtznevR3yP0icv5q/y200w+lzNgi7TQn1Wrhu0w==
+react-csv@2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/react-csv/-/react-csv-2.1.8.tgz#e5e68f1b6bd3d25a7e456c2b6ec7f2d5f989af3a"
+  integrity sha512-xHH7OIhG5EfXREKbVBQzaJ5n2jFPJuirmKsEs9LRxPr3bo0wZEd3pUuQQJK9vNcmmvc+gTVrmejoL6/+e2a0yA==
 
 react-dev-utils@^9.1.0:
   version "9.1.0"
