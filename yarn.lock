@@ -1322,6 +1322,11 @@
     exenv "^1.2.2"
     prop-types "^15.6.2"
 
+"@snyk/protect@^1.1014.0":
+  version "1.1014.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.1014.0.tgz#5c2ebc4e0959218159e5273d02af6835ddd50b3c"
+  integrity sha512-dTuWkCXZVr0Vi5G+uiHbRwLcqApDFQQ/QnJ49vM9Jwt69EFzYebi/YdID5O42PFUeMnU7gNlhm5MoZH34XciMg==
+
 "@stardust-ui/react-component-event-listener@~0.38.0":
   version "0.38.0"
   resolved "https://registry.yarnpkg.com/@stardust-ui/react-component-event-listener/-/react-component-event-listener-0.38.0.tgz#1787faded94b40ad41226e6289baf13e701c6e7f"
@@ -7924,10 +7929,10 @@ mocha@7.1.1:
     yargs-parser "13.1.2"
     yargs-unparser "1.6.0"
 
-moment@2.22.2:
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
-  integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
+moment@2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 moo@^0.5.0:
   version "0.5.1"
