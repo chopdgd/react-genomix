@@ -19,17 +19,20 @@
     "start": "nwb serve-react-demo",
     "test": "node tests/index.js",
     "test:coverage": "node tests/index.js --coverage",
-    "test:watch": "node tests/index.js --watch"
+    "test:watch": "node tests/index.js --watch",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "faker": "4.1.0",
     "immutability-helper": "3.0.2",
-    "moment": "2.22.2",
+    "moment": "2.29.4",
     "react-base-table": "1.9.3",
     "react-csv": "2.0.3",
     "react-virtualized-auto-sizer": "1.0.2",
     "semantic-ui-css": "2.4.1",
-    "semantic-ui-react": "0.88.2"
+    "semantic-ui-react": "0.88.2",
+    "@snyk/protect": "latest"
   },
   "peerDependencies": {
     "react": "^16.8.0"
@@ -111,5 +114,6 @@
   "keywords": [
     "react-component",
     "genomics"
-  ]
+  ],
+  "snyk": true
 }
